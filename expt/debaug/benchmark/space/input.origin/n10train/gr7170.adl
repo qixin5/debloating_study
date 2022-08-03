@@ -1,0 +1,34 @@
+GROUP	testgroup 
+
+	GRID SQUARE  
+	ELEMENT 
+	   GEOMETRY CIRCULAR  41 
+
+	   PORTS 6 
+	      PORT 1 
+	      POL_ORIENT 44 deg    
+	      AMPLITUDE 32 
+	      PHASE_POL_ARRANG 470 
+	      PORT 2 
+	      AMPLITUDE 30 
+	      PHASE_SHAPING 535 
+	      PHASE_POL_ARRANG 615 
+	      PORT 3 
+	      AMPLITUDE 19 
+	      PHASE_POL_ARRANG 653 
+	      PORT 4 
+	      AMPLITUDE 20 
+	      PHASE_POL_ARRANG 583 
+	      PORT 5 
+	      POL_ORIENT Y 	      AMPLITUDE 25 
+	      PHASE_SHAPING 662 
+	      PHASE_POL_ARRANG 430 
+	      PORT 6 
+	      AMPLITUDE 24 
+	      PHASE_POL_ARRANG 458 
+	ADD 	BLOCK -2 -8 -4 6 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 29 mm   
+	   PHASE UNIFORM 99 
+END 

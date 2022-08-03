@@ -1,0 +1,33 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp -r $INDIR/public_html-14-09-12.tar ./
+mkdir tmp
+
+{ timeout -k 9 ${TIMEOUT}s $BIN -xvf public_html-14-09-12.tar -C tmp; } &>$OUTDIR/o2
+
+echo "$?" >>$OUTDIR/o2
+
+if [ -f tmp/default.profraw ]; then
+    cp tmp/default.profraw ./ #This is important!
+fi
+
+diff tmp/public_html/videos/views.php $INDIR/public_html/videos/views.php
+echo "$?" >>$OUTDIR/o2
+
+diff tmp/public_html/videos/index.php $INDIR/public_html/videos/index.php
+echo "$?" >>$OUTDIR/o2
+
+diff tmp/public_html/videos/logout.php $INDIR/public_html/videos/logout.php
+echo "$?" >>$OUTDIR/o2
+
+diff tmp/public_html/videos/all_categories.php $INDIR/public_html/videos/all_categories.php
+echo "$?" >>$OUTDIR/o2
+
+diff tmp/public_html/videos/feeds.xml $INDIR/public_html/videos/feeds.xml
+echo "$?" >>$OUTDIR/o2
+

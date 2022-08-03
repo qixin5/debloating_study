@@ -1,0 +1,3 @@
+
+temp:= $(word (bar.c), (foo.c))
+

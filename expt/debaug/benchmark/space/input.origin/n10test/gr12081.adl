@@ -1,0 +1,36 @@
+GROUP	testgroup 
+
+	GRID SQUARE  STEP 51 
+	ELEMENT 
+	   GEOMETRY CIRCULAR  76 mm   
+
+	   PORTS 7 
+	      PORT 1 
+	      POL_ORIENT Y 	      AMPLITUDE 35 
+	      PHASE_SHAPING 566 
+	      PHASE_POL_ARRANG 576 
+	      PORT 2 
+	      AMPLITUDE 36 
+	      PORT 3 
+	      POL_ORIENT X 	      AMPLITUDE 25 
+	      PORT 4 
+	      AMPLITUDE 28 
+	      PHASE_POL_ARRANG 669 
+	      PORT 5 
+	      POL_ORIENT Y 	      AMPLITUDE 24 
+	      PORT 6 
+	      AMPLITUDE 21 
+	      PHASE_SHAPING 555 
+	      PHASE_POL_ARRANG 494 
+	      PORT 7 
+	      AMPLITUDE 17 
+	      PHASE_POL_ARRANG 512 
+	ADD 	BLOCK 0 3 -11 -4 
+	ADD 	NODE -2 3 
+	ADD 	BLOCK -8 0 -3 -2 
+	ADD 	HEXAGON -8 5 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 17 
+           PHASE 	SECOND ORDER 1.0 a.b
+END 

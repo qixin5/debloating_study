@@ -1,0 +1,3 @@
+
+temp:= $(patsubst (bar.c), (foo.c))
+

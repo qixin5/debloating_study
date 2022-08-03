@@ -1,0 +1,11 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp -r $INDIR/tecmint-14-09-12.tar ./
+cp -r $INDIR/php ./
+
+$BIN -rvf tecmint-14-09-12.tar php

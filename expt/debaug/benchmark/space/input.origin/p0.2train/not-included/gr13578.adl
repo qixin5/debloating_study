@@ -1,0 +1,13 @@
+GROUP   testgroup 
+
+        GRID SQUARE  STEP 56 
+        ELEMENT 
+           GEOMETRY RECTANGULAR  78 38 
+
+        ADD     NODE 11 4 ORIENTATION 29 8 14 
+
+        GROUP_EXCITATION 
+           AMPLITUDE UNIFORM 20 
+           PHASE ROTATION SEQUENTIAL CW ANGLE START 0 STEP 43 
+           PHASE 91 -22 
+END 

@@ -1,0 +1,12 @@
+GROUP   testgroup 
+
+        GRID RECTANGULAR  
+        ELEMENT 
+           GEOMETRY RECTANGULAR  PDIM 38 QDIM 22 
+
+        ADD     NODE -4 -8 ORIENTATION 18 -4 7 
+
+        GROUP_EXCITATION 
+           AMPLITUDE UNIFORM 24 
+           PHASE ROTATION SEQUENTIAL CW 
+END 

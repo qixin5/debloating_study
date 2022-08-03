@@ -1,0 +1,17 @@
+GROUP	testgroup 
+
+	GRID SQUARE  
+	ELEMENT 
+	   GEOMETRY CIRCULAR  74 
+
+           PORTS 1
+              PORT 1
+              POL_ORIENT X
+              AMPLITUDE 1.0 POWER
+              PHASE_SHAPING a.b
+	ADD 	BLOCK -6 0 -7 -10 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 27 
+	   PHASE UNIFORM -27 deg   
+END 

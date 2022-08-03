@@ -1,0 +1,60 @@
+This is gnubg.info, produced by makeinfo version 4.0 from gnubg.texi.
+
+INFO-DIR-SECTION Games
+START-INFO-DIR-ENTRY
+* gnubg: (gnubg).               GNU Backgammon.
+END-INFO-DIR-ENTRY
+
+   This file documents GNU Backgammon, a program for playing and
+analysing backgammon games and matches.
+
+   Copyright (C) 1999, 2000, 2001 Gary Wong.
+
+   Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1; with
+no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.  A
+copy of the license is included in the section entitled "GNU Free
+Documentation License".
+
+
+Indirect:
+gnubg.info-1: 645
+gnubg.info-2: 50413
+
+Tag Table:
+(Indirect)
+Node: Top645
+Node: Introduction1951
+Node: How to Play Backgammon4539
+Node: Rules of Backgammon5000
+Node: Match Play17317
+Node: Sample Game19482
+Node: Invocation29226
+Node: Invoking gnubg29650
+Node: Leaving gnubg30808
+Node: Shell Commands31547
+Node: Basic Commands31975
+Node: Playing33160
+Node: The Game33757
+Ref: The Game-Footnote-144028
+Node: Dice44209
+Node: Computer Player48679
+Node: Matches and Sessions49746
+Node: Cube50413
+Node: Recording50705
+Node: GTK50903
+Node: Analysis51096
+Node: Databases51434
+Node: Training51753
+Node: Guile53700
+Node: Frequently Asked Questions53845
+Node: Where can I get GNU Backgammon?54168
+Node: How do I play a game?54964
+Node: gnubg.bd errors56062
+Node: gnubg.weights errors56966
+Node: Black and white board window57989
+Node: GNU Free Documentation License59572
+Node: Command Index78322
+Node: Concept Index83526
+
+End Tag Table

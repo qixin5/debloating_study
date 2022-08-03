@@ -1,0 +1,17 @@
+GROUP	testgroup 
+
+	GRID RECTANGULAR  
+        ELEMENT 
+           GEOMETRY CIRCULAR  64 
+           POLARIZATION CIRCULAR 
+
+           PORTS 8
+              PORT 1
+              AMPLITUDE a.b
+	ADD  XX 
+	ADD 	BLOCK 6 -1 7 -2 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 24 
+	   PHASE UNIFORM -52 
+END 

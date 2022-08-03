@@ -1,0 +1,11 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp -r $INDIR/* ./
+
+timeout -k 9 ${TIMEOUT}s $BIN -r -i memfree . &>$OUTDIR/o5
+echo "$?" >>$OUTDIR/o5

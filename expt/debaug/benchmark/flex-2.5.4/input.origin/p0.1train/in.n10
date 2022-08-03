@@ -1,0 +1,15 @@
+%%
+Ъ
+ас
+[[\400]]
+[\270-\271] printf("big char range %s\n", yytext);
+\1000   printf("big char %s\n", yytext);
+
+~
+~
+~
+~
+~
+~
+~
+

@@ -1,0 +1,38 @@
+GROUP	testgroup 
+
+	GRID SQUARE  
+	ELEMENT 
+	   GEOMETRY RECTANGULAR  44 38 mm   
+
+	   POLARIZATION CIRCULAR 
+	   PORTS 8 
+	      PORT 1 
+	      AMPLITUDE 27 
+	      PHASE_POL_ARRANG 548 deg   
+	      PORT 2 
+	      AMPLITUDE 25 mm   
+	      PORT 3 
+	      AMPLITUDE 18 
+	      PHASE_POL_ARRANG 516 
+	      PORT 4 
+	      AMPLITUDE 26 
+	      PHASE_SCANNING 467 
+	      PHASE_POL_ARRANG 605 
+	      PORT 5 
+	      AMPLITUDE 20 
+	      PHASE_POL_ARRANG 392 
+	      PORT 6 
+	      AMPLITUDE 35 
+	      PHASE_POL_ARRANG 571 
+	      PORT 7 
+	      AMPLITUDE 31 
+	      PHASE_POL_ARRANG 392 
+	      PORT 8 
+	      AMPLITUDE 36 
+	      PHASE_POL_ARRANG 544 
+	ADD 	BLOCK 1 2 -3 0 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 22 mm   
+	   PHASE UNIFORM -107 
+END 

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '[A-G]' '0YCrgUE!LL6G_5f<m,Jkg0xpW' < $INDIR/input/ruin.777 &> $OUTDIR/o702
+

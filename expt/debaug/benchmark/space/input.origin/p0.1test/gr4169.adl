@@ -1,0 +1,31 @@
+GROUP	testgroup 
+
+	GRID RECTANGULAR  
+	ELEMENT 
+	   GEOMETRY RECTANGULAR  PDIM 56 QDIM 30 
+
+
+	   PORTS 6 
+	      PORT 1 
+	      POL_ORIENT X deg    
+	      AMPLITUDE 21 
+	      PORT 2 
+	      POL_ORIENT X 	      AMPLITUDE 23 
+	      PORT 3 
+	      POL_ORIENT 33 	      AMPLITUDE 23 
+	      PHASE_POL_ARRANG 579 rad   
+	      PORT 4 
+	      AMPLITUDE 22 
+	      PHASE_SCANNING 534 
+	      PHASE_POL_ARRANG 653 
+	      PORT 5 
+	      POL_ORIENT 49 	      AMPLITUDE 30 
+	      PHASE_POL_ARRANG 485 deg   
+	      PORT 6 
+	      AMPLITUDE 26 mm   
+	ADD 	BLOCK 7 5 -4 0 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 23 
+	   PHASE UNIFORM -104 
+END 

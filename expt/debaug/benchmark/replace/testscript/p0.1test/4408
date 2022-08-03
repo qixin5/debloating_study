@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '@@' 'fQ`{IB:H3a=WSdme}w6|h!vb$*%!K;Y* R-b3=Mi1glBYW>x]t<h' < $INDIR/input/ruin.1792 &> $OUTDIR/o4408
+

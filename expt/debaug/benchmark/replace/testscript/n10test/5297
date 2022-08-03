@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '[>-A>-A>-A<z-}c-a]@@' '(1FO34>$"?Wo1x\X' < $INDIR/input/ruin.1642 &> $OUTDIR/o5297
+

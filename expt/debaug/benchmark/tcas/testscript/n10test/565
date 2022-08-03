@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN 1077 1 -1 593 324 636 2 0 448 0 2 1 &> $OUTDIR/o565
+

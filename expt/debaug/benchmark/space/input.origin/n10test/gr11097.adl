@@ -1,0 +1,20 @@
+GROUP	testgroup 
+
+	GRID HEXAGONAL  STEP 62 cm   
+	ELEMENT 
+	   GEOMETRY CIRCULAR RADIUS 72 
+
+           PORTS 1
+              PORT 1
+              POL_ORIENT X
+              AMPLITUDE 1.0 POWER
+              PHASE_SCANNING a.b
+	ADD 	BLOCK -9 -8 -6 -1 
+	ADD 	BLOCK -4 -4 -2 1 
+	ADD 	BLOCK 11 1 -4 0 
+	ADD 	BLOCK -2 1 0 1 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 27 mm   
+	   PHASE UNIFORM 9 
+END 

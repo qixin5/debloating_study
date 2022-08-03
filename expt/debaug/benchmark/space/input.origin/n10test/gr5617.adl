@@ -1,0 +1,34 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  PSTEP 50 QSTEP 27 mm   
+	ELEMENT 
+	   GEOMETRY CIRCULAR 47 
+
+	   PORTS 7 
+	      PORT 1 
+	      POL_ORIENT X 	      AMPLITUDE 33 
+	      PHASE_SCANNING 596 
+	      PORT 2 
+	      POL_ORIENT X 	      AMPLITUDE 29 
+	      PHASE_POL_ARRANG 736 deg   
+	      PORT 3 
+	      AMPLITUDE 30 
+	      PHASE_POL_ARRANG 870 
+	      PORT 4 
+	      AMPLITUDE 24 
+	      PHASE_SCANNING 468 
+	      PORT 5 
+	      AMPLITUDE 30 
+	      PHASE_POL_ARRANG 602 
+	      PORT 6 
+	      AMPLITUDE 33 mm   
+	      PHASE_POL_ARRANG 361 deg   
+	      PORT 7 
+	      AMPLITUDE 27 mm   
+	      PHASE_POL_ARRANG 401 
+	ADD 	BLOCK 0 -6 0 2 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 20 
+	   PHASE UNIFORM 207 
+END 

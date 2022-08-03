@@ -1,0 +1,24 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	ELEMENT 
+	   GEOMETRY CIRCULAR RADIUS 35 mm   
+
+	   PORTS 4 
+	      PORT 1 
+	      AMPLITUDE 58 
+	      PORT 2 
+	      AMPLITUDE 24 
+	      PHASE_POL_ARRANG 488 deg   
+	      PORT 3 
+	      AMPLITUDE 23 
+	      PHASE_POL_ARRANG 612 
+	      PORT 4 
+	      AMPLITUDE 22 
+	      PHASE_POL_ARRANG 589 deg   
+	ADD 	NODE -1 -4 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 31 
+	   PHASE UNIFORM 165 
+END 

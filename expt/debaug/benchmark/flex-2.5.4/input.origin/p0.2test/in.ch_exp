@@ -1,0 +1,8 @@
+%%
+
+[[:alnum:]]	printf("AlphaNumeric character class: %s\n", yytext);
+[[:blank:]]	printf("Blank character: %s\n", yytext);
+[[:cntrl:]]	printf("Control character: %s\n", yytext);
+[[:punct:]]	printf("Punctual character: %s\n", yytext);
+	/* [[:print:]]	printf("Print character: %s\n", yytext); */
+	/* [[:graph:]]	printf("Graph character: %s\n", yytext);  */

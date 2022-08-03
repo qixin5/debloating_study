@@ -1,0 +1,14 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+uname=$(whoami)
+uid=`id -u ${uname}`
+
+cp -r $INDIR/Documents ./
+cp -r $INDIR/inbox ./
+
+$BIN -Rc --reference inbox Documents/work

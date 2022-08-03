@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '?' ''\''["<]>V(0?ks?"32CO!wk-P)_U,v\,?v$/eL7Gk$' < $INDIR/input/ruin.507 &> $OUTDIR/o876
+

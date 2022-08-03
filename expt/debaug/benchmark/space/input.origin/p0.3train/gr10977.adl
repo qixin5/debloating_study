@@ -1,0 +1,16 @@
+GROUP	testgroup 
+
+	GRID HEXAGONAL  
+	ELEMENT 
+	   GEOMETRY CIRCULAR 67 
+
+           PORTS 1
+              PORT 1
+              POL_ORIENT X
+              AMPLITUDE 1.0 dB
+	ADD 	HEXAGON 0 -1 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 31 
+	   PHASE ROTATION SEQUENTIAL 
+END 

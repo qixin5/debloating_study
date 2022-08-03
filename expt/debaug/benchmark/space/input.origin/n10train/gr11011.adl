@@ -1,0 +1,17 @@
+GROUP	testgroup 
+
+	GRID SQUARE  
+	ELEMENT 
+	   GEOMETRY RECTANGULAR  PDIM 36 QDIM 69 
+
+
+           PORTS 1
+              PORT 1
+              POL_ORIENT X
+              AMPLITUDE 1.0 LINEAR
+	ADD 	BLOCK 3 -8 -3 -8 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 26 m    
+	   PHASE ROTATION SEQUENTIAL 
+END 

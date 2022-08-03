@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '?' 'y,l/Nu^x9o4<WBXS,6]j{R^EdlGsRtTVRa\OY+' < $INDIR/input/ruin.1463 &> $OUTDIR/o3611
+

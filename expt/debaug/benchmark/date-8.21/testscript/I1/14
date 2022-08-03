@@ -1,0 +1,17 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp $INDIR/file.txt ./
+
+timeout -k 9 ${TIMEOUT}s $BIN -r file.txt &>output.txt
+exit_val=$?
+
+#Compare "UTC" and YEAR
+info_to_compare=`head -1 output.txt | tr -s ' ' | cut -d' ' -f5,6`
+
+echo ${info_to_compare} &>$OUTDIR/o14
+echo ${exit_val} >>$OUTDIR/o14

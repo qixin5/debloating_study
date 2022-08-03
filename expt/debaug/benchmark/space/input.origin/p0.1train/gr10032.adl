@@ -1,0 +1,26 @@
+    
+GROUP	testgroup 
+
+	GRID SQUARE  STEP 67 
+	ELEMENT 
+	   GEOMETRY XX  
+
+
+	   PORTS 2 
+	      PORT 1 
+	      AMPLITUDE 24 
+	      PHASE_POL_ARRANG 580 
+	      PORT 2 
+	      AMPLITUDE 25 
+	      PHASE_POL_ARRANG 661 
+	ADD 	HEXAGON 5 -10 
+	ADD 	HEXAGON 10 -4 
+	ADD 	BLOCK 2 2 -1 0 
+	ADD 	BLOCK 4 8 -3 1 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 33 
+	   PHASE UNIFORM -5 deg   
+END 
+    
+    

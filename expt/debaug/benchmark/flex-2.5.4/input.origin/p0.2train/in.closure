@@ -1,0 +1,7 @@
+%%
+
+r*		printf("Zero or more r's: %s\n", yytext);
+[a|b]*"."r+	printf("Zero or more (a or b) . one or more r's: %s\n", yytext);
+z{2,5}		printf("Two to five z's: %s\n", yytext);
+s{2,}	  	printf("Two or more s's: %s\n", yytext);
+u{4}    	printf("Exactly 4 u's: %s\n", yytext);

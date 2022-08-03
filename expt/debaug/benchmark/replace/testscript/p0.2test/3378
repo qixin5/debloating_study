@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '@@' 'NGN4ij?opj(>9`>.1rUs0vJ{7?' < $INDIR/input/ruin.1575 &> $OUTDIR/o3378
+

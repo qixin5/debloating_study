@@ -1,0 +1,3 @@
+%%
+½	printf("big char %s\n", yytext);
+[\270-\271] printf("big char range %s\n", yytext);

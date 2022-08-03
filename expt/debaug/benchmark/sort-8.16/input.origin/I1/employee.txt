@@ -1,0 +1,6 @@
+manager  5000
+clerk    4000
+employee  6000
+peon     4500
+director 9000
+guard     3000

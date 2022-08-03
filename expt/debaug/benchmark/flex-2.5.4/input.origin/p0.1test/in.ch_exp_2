@@ -1,0 +1,3 @@
+%%
+
+(foo)|(ba(r*))	printf("foo or ba(zero or more than r's) %s\n", yytext);

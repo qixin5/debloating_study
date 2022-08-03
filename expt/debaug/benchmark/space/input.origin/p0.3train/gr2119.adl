@@ -1,0 +1,25 @@
+GROUP	testgroup 
+
+	GRID SQUARE  
+	ELEMENT 
+	   GEOMETRY RECTANGULAR  66 41 
+
+
+	   PORTS 3 
+	      PORT 1 
+	      POL_ORIENT X 	      AMPLITUDE 27 
+	      PHASE_POL_ARRANG 619 deg   
+	      PORT 2 
+	      POL_ORIENT 30 	      AMPLITUDE 24 dm   
+	      PHASE_SCANNING 705 
+	      PORT 3 
+	      AMPLITUDE 27 
+	ADD 	HEXAGON 5 8 
+	ADD 	BLOCK -7 -4 5 -7 
+	ADD 	BLOCK 0 -5 -5 -6 
+	ADD 	BLOCK -7 0 -2 4 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 22 cm   
+	   PHASE UNIFORM -16 deg   
+END 

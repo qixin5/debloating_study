@@ -1,0 +1,39 @@
+GROUP	testgroup 
+
+	GRID HEXAGONAL  STEP 89 
+	ELEMENT 
+	   GEOMETRY CIRCULAR RADIUS 100 
+	   POLARIZATION CIRCULAR RH 
+
+	   PORTS 7 
+	      PORT 1 
+	      AMPLITUDE 92 
+
+	      PHASE_SHAPING 608 deg   
+	      PORT 2 
+	      AMPLITUDE 59 mm   
+
+	      PHASE_POL_ARRANG 526 deg   
+	      PORT 3 
+	      AMPLITUDE 53 
+
+	      PORT 4 
+	      AMPLITUDE 65 
+
+	      PORT 5 
+	      AMPLITUDE 28 
+
+	      PORT 6 
+	      AMPLITUDE 68 
+
+	      PORT 7 
+	      AMPLITUDE 42 
+
+	      PHASE_SHAPING 478 
+	      PHASE_POL_ARRANG 665 
+	ADD 	HEXAGON -3 1 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 23 
+	   PHASE ROTATION SEQUENTIAL CW 
+END 

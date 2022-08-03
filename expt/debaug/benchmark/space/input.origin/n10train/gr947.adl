@@ -1,0 +1,33 @@
+GROUP	testgroup 
+
+	GRID SQUARE  STEP 35 
+	ELEMENT 
+	   GEOMETRY XX  
+
+
+	   PORTS 6 
+	      PORT 1 
+	      AMPLITUDE 20 
+	      PORT 2 
+	      AMPLITUDE 28 
+	      PORT 3 
+	      POL_ORIENT -8 deg    
+	      AMPLITUDE 21 
+	      PHASE_SHAPING 568 
+	      PHASE_POL_ARRANG 738 
+	      PORT 4 
+	      AMPLITUDE 27 
+	      PHASE_SHAPING 541 
+	      PHASE_SCANNING 597 
+	      PORT 5 
+	      AMPLITUDE 22 mm   
+	      PHASE_SHAPING 495 
+	      PORT 6 
+	      POL_ORIENT Y 	      AMPLITUDE 26 
+	      PHASE_POL_ARRANG 503 
+	ADD 	NODE 11 1 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 19 
+	   PHASE UNIFORM -165 
+END 

@@ -1,0 +1,30 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp $INDIR/dump.doc ./
+cp $INDIR/file1 ./
+cp $INDIR/test.sh ./
+
+{ timeout -k 9 ${TIMEOUT}s $BIN dump.doc file1 test.sh; } &>$OUTDIR/o0
+
+echo "$?" >>$OUTDIR/o0
+test -f dump.doc
+echo "$?" >>$OUTDIR/o0
+gzip -d <dump.doc.gz >rslt
+cat rslt &>>$OUTDIR/o0
+
+test -f file1
+echo "$?" >>$OUTDIR/o0
+gzip -d <file1.gz >rslt
+cat rslt &>>$OUTDIR/o0
+
+test -f test.sh
+echo "$?" >>$OUTDIR/o0
+gzip -d <test.sh.gz >rslt
+cat rslt &>>$OUTDIR/o0
+
+

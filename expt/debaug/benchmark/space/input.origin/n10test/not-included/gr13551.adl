@@ -1,0 +1,16 @@
+GROUP   testgroup 
+
+        GRID RECTANGULAR  PSTEP 51 QSTEP 57 
+        ELEMENT 
+           GEOMETRY CIRCULAR RADIUS 51 
+           PORTS 1 
+              PORT 1 
+              POL_ORIENT X            AMPLITUDE 26 
+              PHASE_SCANNING 432 
+
+        ADD     BLOCK 9 3 9 -2 
+
+        GROUP_EXCITATION 
+           AMPLITUDE SECOND ORDER 24 30 23 27 36 
+           PHASE ROTATION SEQUENTIAL 
+END 

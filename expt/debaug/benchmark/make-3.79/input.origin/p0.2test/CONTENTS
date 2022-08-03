@@ -1,0 +1,9 @@
+see CONTENTS files inside startup-directories (sdirs) for explanations of 
+what they contain.
+
+makefile-1a is a make file under 100 lines.
+makefile-2a is a make file over 100 lines.
+makefile-bad is a make file with syntax errors.
+
+-J. Ruthruff
+1:25a, 2/20/2001

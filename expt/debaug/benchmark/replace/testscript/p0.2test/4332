@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN 'D' '%0,*G^75(j/ZwU5liE,jWQ((cq::$.B SGUhf% uN' < $INDIR/input/ruin.1654 &> $OUTDIR/o4332
+

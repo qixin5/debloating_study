@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN 1084 1 1 704 538 707 2 0 -1 0 2 0 &> $OUTDIR/o1528
+

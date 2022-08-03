@@ -1,0 +1,31 @@
+GROUP	testgroup 
+
+	GRID SQUARE  
+	ELEMENT 
+	   GEOMETRY RECTANGULAR  PDIM 36 QDIM 23 
+
+
+	   PORTS 7 
+	      PORT 1 
+	      AMPLITUDE 23 
+	      PORT 2 
+	      POL_ORIENT Y 	      AMPLITUDE 17 
+	      PHASE_POL_ARRANG 567 
+	      PORT 3 
+	      POL_ORIENT Y 	      AMPLITUDE 22 
+	      PORT 4 
+	      AMPLITUDE 26 
+	      PHASE_POL_ARRANG 618 deg   
+	      PORT 5 
+	      AMPLITUDE 31 
+	      PORT 6 
+	      POL_ORIENT X 	      AMPLITUDE 29 
+	      PORT 7 
+	      POL_ORIENT Y 	      AMPLITUDE 15 
+	      PHASE_POL_ARRANG 720 deg   
+	ADD 	BLOCK -1 3 -1 5 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE SECOND ORDER 22 28 23 26 29 
+	   PHASE UNIFORM -81 
+END 

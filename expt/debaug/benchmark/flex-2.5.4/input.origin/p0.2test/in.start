@@ -1,0 +1,2 @@
+%%
+<*>S		printf("S in any start condition: %s", yytext);

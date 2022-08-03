@@ -1,0 +1,17 @@
+GROUP	testgroup 
+
+	GRID HEXAGONAL  
+	ELEMENT 
+	   GEOMETRY CIRCULAR 65 
+
+           PORTS 1
+              PORT 1
+              POL_ORIENT X
+              AMPLITUDE 1.0 POWER
+              PHASE_SCANNING a.b
+	ADD 	NODE 4 -2 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 23 
+	   PHASE SECOND ORDER 27 22 17 27 26 
+END 

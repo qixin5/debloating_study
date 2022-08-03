@@ -1,0 +1,36 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN -p Music/{Jazz/Blues,Folk,Disco,Rock/{Gothic,Punk,Progressive},Classical/Baroque/Early} &>$OUTDIR/o8
+
+echo "$?" >>$OUTDIR/o8
+info=`ls -ald Music | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o8
+info=`ls -ald Music/Jazz | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o8
+info=`ls -ald Music/Jazz/Blues | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o8
+info=`ls -ald Music/Folk | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o8
+info=`ls -ald Music/Disco | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o8
+info=`ls -ald Music/Rock | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o8
+info=`ls -ald Music/Rock/Gothic | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o8
+info=`ls -ald Music/Rock/Punk | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o8
+info=`ls -ald Music/Rock/Progressive | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o8
+info=`ls -ald Music/Classical | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o8
+info=`ls -ald Music/Classical/Baroque | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o8
+info=`ls -ald Music/Classical/Baroque/Early | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o8
+
+

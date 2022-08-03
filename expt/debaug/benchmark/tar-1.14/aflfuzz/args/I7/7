@@ -1,0 +1,1 @@
+-cpvf myarchive.tar --exclude=*.html

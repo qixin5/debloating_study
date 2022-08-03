@@ -1,0 +1,23 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	         PX -26 
+	         PY 2 
+	         QX -56 
+	         QY -23 
+	ELEMENT 
+	   GEOMETRY CIRCULAR 43 
+	   POLARIZATION CIRCULAR LH 
+
+           PORTS 1
+              PORT 1
+              POL_ORIENT X
+              AMPLITUDE 1.0 dB
+	ADD 	HEXAGON -2 5 
+	ADD 	BLOCK 9 0 0 4 
+	ADD 	NODE -3 -2 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 25 
+	   PHASE SECOND ORDER CENTRE 27 P1_VAL 25 P2_VAL 30 Q1_VAL 19 Q2_VAL 20 
+END 

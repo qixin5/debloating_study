@@ -1,0 +1,24 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp -r $INDIR/etc ./
+cp -r $INDIR/anaconda-ks.cfg ./
+CURRDIR=$(pwd)
+
+{ timeout -k 9 ${TIMEOUT}s $BIN -cvf myarchive.tar $CURRDIR/etc $CURRDIR/anaconda-ks.cfg; } &>$OUTDIR/o0
+
+echo "$?" >>$OUTDIR/o0
+
+leadpath=`echo $CURRDIR | cut -c2-` #First "/" is ignored for compression
+rm -fr etc
+rm -fr anaconda-ks.cfg
+tar xf myarchive.tar
+diff ${leadpath}/etc/file $INDIR/etc/file
+echo "$?" >>$OUTDIR/o0
+diff ${leadpath}/anaconda-ks.cfg $INDIR/anaconda-ks.cfg
+echo "$?" >>$OUTDIR/o0
+

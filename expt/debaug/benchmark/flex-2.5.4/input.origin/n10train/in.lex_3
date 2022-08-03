@@ -1,0 +1,3 @@
+%%
+
+foo	printf("foo matched: " ); printf("%s\n", yytext);

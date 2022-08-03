@@ -1,0 +1,17 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	         PX 6 
+	         PY 14 
+	         QX -8 
+	         QY 26 
+	ELEMENT 
+	   GEOMETRY CIRCULAR RADIUS 62 mm   
+	   POLARIZATION CIRCULAR 
+	ADD 	NODE 5 -8 
+	ADD 	HEXAGON 0 0 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 20 
+	   PHASE UNIFORM 3 
+END 

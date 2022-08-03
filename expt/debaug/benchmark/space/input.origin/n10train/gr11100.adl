@@ -1,0 +1,19 @@
+GROUP	testgroup 
+
+	GRID SQUARE  
+	ELEMENT 
+	   GEOMETRY CIRCULAR  86 
+
+           PORTS 1
+              PORT 1
+              POL_ORIENT X
+              AMPLITUDE 1.0 POWER
+              PHASE_SCANNING a.b
+	ADD 	BLOCK -2 -3 4 2 
+	ADD 	HEXAGON 0 -6 
+	ADD 	BLOCK 7 5 -1 0 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 24 
+	   PHASE SECOND ORDER 31 34 30 29 19 
+END 

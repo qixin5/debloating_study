@@ -1,0 +1,17 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp $INDIR/mydoc.txt ./
+gzip mydoc.txt
+
+{ timeout -k 9 ${TIMEOUT}s $BIN -d mydoc.txt.gz; } &>$OUTDIR/o7
+
+echo "$?" >>$OUTDIR/o7
+test -f mydoc.txt.gz
+echo "$?" >>$OUTDIR/o7
+cat mydoc.txt &>>$OUTDIR/o7
+

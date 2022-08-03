@@ -1,0 +1,7 @@
+%%
+"[" { printf("OPEN_BRAC\n");}
+"]" { printf("CLOSE_BRAC\n");}
+"+" { printf("ADDOP\n");}
+"*" { printf("MULTOP\n");}
+[0-9] {printf("NUMBER = %s\n", yytext);}
+[ \t\n];

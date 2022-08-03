@@ -1,0 +1,8 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:1129: gcc -o conftest -g -O   conftest.c -ldir   1>&5
+ld: fatal: library -ldir: not found
+ld: fatal: File processing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure:1198: gcc -o conftest -g -O   conftest.c  1>&5

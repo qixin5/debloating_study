@@ -1,0 +1,14 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp $INDIR/file.txt.gz ./
+
+{ timeout -k 9 ${TIMEOUT}s $BIN -lv file.txt.gz; } &>rslt
+
+echo "$?" >$OUTDIR/o10
+info=`cat rslt | tr -s ' ' | cut -d' ' -f1,2,6,7,8,9` #Skip the date and time parts
+echo ${info} >>$OUTDIR/o10

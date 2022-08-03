@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '9' '@Z-Co8/r+-k_V3^|>xU#m:Zn4 ' < $INDIR/input/ruin.836 &> $OUTDIR/o2284
+

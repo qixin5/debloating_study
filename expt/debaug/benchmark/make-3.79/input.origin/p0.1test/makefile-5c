@@ -1,0 +1,1 @@
+temp:= $(filter-out (tempobjects2))

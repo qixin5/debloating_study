@@ -1,0 +1,12 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp -r $INDIR/GPL-3 ./
+
+timeout -k 9 ${TIMEOUT}s $BIN -E "[AEIOUaeiou]{3}" GPL-3 &>$OUTDIR/o18
+echo "$?" >>$OUTDIR/o18
+

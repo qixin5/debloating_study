@@ -1,0 +1,36 @@
+GROUP	testgroup 
+
+	GRID RECTANGULAR  PSTEP 102 QSTEP 92 
+	ELEMENT 
+	   GEOMETRY RECTANGULAR  47 77 
+
+
+	   PORTS 8 
+	      PORT 1 
+	      AMPLITUDE 32 
+	      PORT 2 
+	      AMPLITUDE 21 
+	      PHASE_POL_ARRANG 488 deg   
+	      PORT 3 
+	      AMPLITUDE 35 
+	      PHASE_POL_ARRANG 478 
+	      PORT 4 
+	      AMPLITUDE 26 
+	      PORT 5 
+	      POL_ORIENT 39 	      AMPLITUDE 22 
+	      PHASE_POL_ARRANG 584 
+	      PORT 6 
+	      AMPLITUDE 17 
+	      PORT 7 
+	      AMPLITUDE 27 
+	      PHASE_SHAPING 604 
+	      PHASE_POL_ARRANG 548 
+	      PORT 8 
+	      AMPLITUDE 22 mm   
+	      PHASE_POL_ARRANG 504 
+	ADD 	BLOCK 6 0 6 -6 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 29 
+	   PHASE UNIFORM 71 
+END 

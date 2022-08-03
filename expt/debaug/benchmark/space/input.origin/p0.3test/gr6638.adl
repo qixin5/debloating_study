@@ -1,0 +1,16 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	         PX -36 
+	         PY -1 
+	         QX -9 
+	         QY 32 
+	ELEMENT 
+	   GEOMETRY CIRCULAR 43 
+
+	ADD 	NODE 8 -14 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE SECOND ORDER 22 18 32 32 15 
+	   PHASE ROTATION SEQUENTIAL CW 
+END 

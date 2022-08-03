@@ -1,0 +1,15 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp $INDIR/e.txt ./
+chmod 444 e.txt #Made read only
+
+{ timeout -k 9 ${TIMEOUT}s $BIN -f e.txt; } &>$OUTDIR/o4
+
+echo "$?" >>$OUTDIR/o4
+test -f e.txt
+echo "$?" >>$OUTDIR/o4

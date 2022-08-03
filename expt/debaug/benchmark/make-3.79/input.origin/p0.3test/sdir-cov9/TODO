@@ -1,0 +1,240 @@
+People's names next to entries in this file mean they intend to work on that
+item soon.  Please contact them before working on related areas, to avoid
+duplication of effort and to make sure our changes merge easily.
+
+* Evaluations:
+** Allow different settings (e.g. search ply, candidates, tolerance) for each
+  position class. Also allow different settings for cube action.
+** Add more evaluation classes.
+*** Add a neural net to correct errors in BEAROFF1 class.
+*** Classes for bearing off against contact, back games, containment
+  positions, prime-vs-prime...
+*** Consider meta-pi scheme for using output from multiple nets.
+** See http://www.oasya.com/CubefulAdvantages.html for example of
+  cubeful evaluation. The current money game code can do cubeful
+  evaluations (currently only used for cube action) but it should be
+  easy to write code for cubeful checkerplay (i.e. let FindBestMove call
+  EvaluatePositionCubeful instead of EvaluatePosition). For cubeful
+  checkerplay there should probably be a rScore2 field with the
+  cubeless equity which, when two
+  moves give (exactly) the same equity, is used as score (e.g. when
+  two moves both are so bad that the opponent should double, and we 
+  should pass, both moves have cubeful equity -1. But the opponent
+  might not double, in which case it had been best to choose the
+  move with highest cubeless equity. (thyssen) (this looks like it's done
+  already)
+** Add another "eval"-like command that show the distribution of
+  equities n rolls ahead.  SW does bar graphs of this stuff; Cam Trenor
+  suggests alternative output.
+** Improve quasi-random dice generation for rollouts. (gary)
+** Create multiple threads to parallelise rollouts (and evaluations?) on
+  multiprocessors.  Perhaps start remote processes?
+** Add more statistics for rollouts (e.g. number of times each player hit,
+  number of turns on the bar, whether each player is closed out, average
+  number of pips wasted bearing off, etc.)
+** Add cubeful rollouts
+** Make gnubg offer resignations when its position is hopeless.
+** EvaluatePositionCache doesn't currently cache evaluations deeper than
+  0-ply for match play.  Update EvalCacheHash so that spurious collisions
+  won't occur, and then change EvaluatePositionCache to cache what it can.
+** Bearoff database changes:
+*** Use a more intelligent encoding in the 1-sided database, to conserve
+  space.
+*** Joseph notes the 1-sided bearoff database is nearly as good as the
+  2-sided.  Add an option to omit the 2-sided one, to conserve disk
+  and memory space.  (And time to generate them -- on a 330MHz Pentium II,
+  it takes 3 minutes to generate the 1-sided database and 20 for the
+  2-sided.)
+
+* Commands:
+** Add more completions to readline (player names, filenames for load/save).
+** Add interactive rollouts.
+** Analyse games and matches.
+** Finish saving positions and evaluations to databases.
+** Finish supervised training, and allow people to submit training data via
+  web.
+** Make output*() functions wrap words, and pause before scrolling (as in
+  gdb).  Make sure output to stderr is available when using GTK -- perror
+  calls will have to be replaced, for instance.
+** Extend FormatMove() and ParseMove() to handle abbreviation of
+  multiple moves (e.g. "8/7(2) 6/5(2)").
+** Allow resuming interrupted rollouts, and extending completed rollouts.
+** Save partial input when TTY input is overwritten by an X command.
+  The best way would be to unify what GetInput does and ProcessInput,
+  with push/pop semantics for readline state. (gary)
+** Change "set beavers" to allow a limit on the number of beavers
+  permitted.
+** Add a "set record" command; when "record" is off, no moves are
+  recorded (which implies that "save", "list" and the game list window
+  won't work, but it will save memory for situations like playing
+  10,000 games vs. pubeval).
+** Add a command "show moves" which shows a list of legal moves, like hint
+  does, but without evaluating them.
+** Also "add move", to add a specific move to the list (e.g.
+  "add move 8/5 6/5").
+** Once we have cubeful rollouts, allow the command "rollout =cube"
+  to perform a rollout to judge cube decisions (under GTK, there should
+  be a "Rollout" button in the hint window for cube decisions, and something
+  under the Analyse menu).
+** Make "show marketwindow" say something for money games.
+** Make "set score" handle "set score crawford -3" or "set score 4C 3".
+
+* Guile:
+** Add more data types and Scheme bindings for useful functions.
+** Define Scheme "port"s for the gnubg output() functions.
+** Use Guile keywords in cube-info.  Add a similar function for eval
+  contexts.
+** Add Guile functions to access the current game state.
+
+* TTY interface:
+** Display the score and match length in ShowBoard().
+** Handle "list game" and "list match".
+
+* X interface:
+** Does anybody still use the old Xlib (Ext) interface any more?  If so,
+  perhaps they are interested in maintaining it.  If not, maybe it should
+  be deprecated and eventually removed (all the recent GUI effort has
+  concentrated on the GTK interface anyway).
+
+* GTK interface:
+** Allow copy/paste and drag & drop of the board ID in the board window.
+** Finish menus.  Make sure there is a GUI equivalent for every command.
+  Currently missing:
+*** set beavers
+*** set * evaluation reduced
+*** set output *
+*** set rollout *
+** Add a prompt and entry field to allow commands to be entered (replacing
+  stdin).
+** Allow the user to decide whether short messages appear in dialogs
+  instead of the status bar, or whether all messages are appended to a
+  message window.
+** Disable the reset/edit buttons in the board window when no game is in
+  progress.  (Disable appropriate menu items, too.)  Disable the "stop"
+  button when nothing is happening.
+** Add optional point number labels on the board.
+** Have a progress bar along with some text in the main window, which
+   indicates progress for the current possibly time-consuming operation.
+   E.g. when the user clicks 'hint' the progress text will show
+   "finding best moves..." and the progress bar will indicate how far
+   gnubg is in the process. This could/should be implemented for
+   "evaluation", "hint", when gnubg is considering cube action,
+   when gnubg is searching for it's best move etc.
+** Left mouse moves checker left-die, the two dice then interchanges,
+  and the user can now move the other die. If the user clicks a
+  checker that cannot be moved with the left die, it should move the 
+  checker with the right die if possible [this is analogous to the
+  behaviour in Snowie].
+** Add progress indicators for everything that checks fShowProgress.
+  A function that generates a progress bar/ASCII to stdout would help.
+** Show "take" and "drop" buttons in the off-board dice window when
+  a double is offered; also "agree" and "decline" for resignations.
+** Make sure we apply GTK styles correctly: create a GtkRcStyle; set the
+  background colour in the style and the flag indicating the background is
+  set; call gtk_widget_modify_style; unref the style.  This makes sure the
+  style will survive across theme changes.
+** Make usage() show the GDK and GTK options, if appropriate.
+** Make load/save and prev game/next game freeze and thaw the game list;
+  load match shouldn't update the score between games, either. (gary)
+** When the user is moving, show _complete_ moves differently from
+  incomplete ones.
+** Animate the chequers when the computer moves.
+** Show a preview of the chequers in the appearances dialog.
+** Allow the border colour to be changed, and honour the user's lighting
+  angle when rendering the border.
+** Make "next" and "previous" change the off-board dice (see
+  game_set_old_dice()).
+** Use a file selection widget for the socket in the player dialog.
+** Would ShowList() look better if it used a text widget?
+
+** Dialogs:
+*** Make "help" show its output in a CList (CTree?).  The user must be able
+  to recurse through help for subcommands.
+*** Make the match equity table dialog prettier (make the row/column headings
+  bold, and don't scroll them), and allow selection of data in it.
+*** Allow selection of data from the rollout dialog (see the hint dialog for
+  an example). (gary)
+*** Make the rollout dialog look more like the hint dialog. (gary)
+*** Matija Kejzar suggests making the hint dialog non-modal.
+
+* Bugs:
+** Nothing handles running out of memory gracefully.  A solution
+  could be to write a malloc() wrapper that (if malloc fails) first
+  tries to free memory (e.g. flush the eval cache); if malloc still
+  doesn't succeed, then print an error message and longjmp() to the
+  main loop.  When using the GNU C library, __malloc_hook can be used
+  too (so we can intercept calls coming from Xlib, for instance).  We
+  shouldn't longjmp() out of the hook, though (it might confuse library
+  functions).
+** When using mmap()ed bearoff databases, add a signal handler for
+  SIGBUS/SIGSEGV to trap I/O errors.
+** The erroneous commands "set player both" and "set player both evaluation"
+  give poor error messages.
+** The GTK code uses ConnectionNumber() at various places to detect X
+  events.  This is unportable and ugly; find something better. (gary)
+** "set player <tab>" gives incorrect completions.
+** Cosmetic problems when a "set board" is shown in the game list (the
+  wrong cell is highlighted).
+** When using guile and guile isn't using readline, X events are not
+  handled while in the REPL.  When using guile and guile _is_ using
+  readline, its readline state and ours get completely confused...
+  see what the REPL in guile-gtk does.
+** "set eval cubeful" gives a poor error message.
+** Cosmetic bug when using the rollout button in the hint window (the
+  commands echoed to stdout and the prompts are in the wrong order).
+** Changing a player's name doesn't affect the names in the drop-down
+  menu in the game window.
+** The SGF loading (saving?) routines and CommandLoadCommands use
+  stdio, which restarts system calls on signals.  This means TTY interrupts
+  and the GTK `stop' button don't work. (gary)
+** Make sure the socket changes for external players work on Solaris.  Things
+  to check: #include <sys/types.h>; don't use the identifier "sun";
+  #define AF_LOCAL AF_UNIX (same with PF_).
+** The fread() calls in import.c need to be byte-swapped on big-endian
+  machines.
+
+* Documentation:
+** Complete the Texinfo manual.  Perhaps for now, only things that are
+  unlikely to change should be documented.
+
+* Miscellaneous:
+** Add internationalisation (gettext).
+** Add more to http://www.gnu.org/software/gnubg/... -- perhaps pages to
+  submit training data, an online evaluator like Monte Carlo, maybe even an
+  entire game like Motif.
+** Submit something to <http://www.distributed.net/nextgen/projects.html>.
+** Allow loading and saving weights to specify binary or ASCII format.
+** Allow annotating moves in matches (both human commentary and automatic
+  analysis).
+** Import FIBS `oldmoves' games and matches.
+** Export games, matches and analysis to ASCII, HTML, PostScript, etc.
+  Examples: "export game html foo.html", "export match mat bar.mat".
+  Make the .mat format identical to Jellyfish (things to check:
+  beavers, resignations, "and the match"...)
+** Add option to flip the board.
+** Think about generating huge databases for CD-ROMs (we can get 1-sided
+  databases for all chequers up to the 11 point, or 2-sided databases where
+  both players have up to 11 chequers in the home board onto a CD-ROM).
+** Add optional time rules, for tournament play when clocks are used.
+** Add more optional feature tests to "make check" -- databases, X?
+** Change the fConfirm ("are you sure you want to abort the game in
+  progress") checks so that they _do_ ask when the game is over but the
+  match is still in progress, and they _don't_ ask if a game has not been
+  modified since it was last loaded/saved.
+** Extend ParsePosition to cope with other formats, e.g. FIBS
+  "boardstyle 3" and/or a human friendly position description,
+  like "set board (0 -1 2 -2 2 -3 -4 -2 -3 0 0 0 0 1 0 0 0 0 1 2 2 2 2 1 0 0)".
+** Do more in CommandSaveSettings.
+** Handle SGF setup properties when loading games.
+** Handle SGF variations.
+** Make the external player handle cube and resignation decisions, and allow
+  connection via TCP/IP.
+** Allow an option for illegal moves to be entered.
+** Allow ~ and $ escapes in filenames (use wordexp()).
+** Allow printing positions/games/matches/etc.
+** Keep statistics of won/lost games/matches.
+
+
+Local Variables:
+mode: outline
+End:

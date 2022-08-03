@@ -1,0 +1,16 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	ELEMENT 
+	   GEOMETRY CIRCULAR 63 
+
+           PORTS 1
+              PORT 1
+              POL_ORIENT X
+              AMPLITUDE 1.0 POWER
+	ADD 	HEXAGON 4 5 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 21 
+	   PHASE UNIFORM -21 
+END 

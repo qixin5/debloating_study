@@ -1,0 +1,40 @@
+GROUP	testgroup 
+
+	GRID RECTANGULAR  
+	ELEMENT 
+	   GEOMETRY RECTANGULAR  PDIM 48 QDIM 68 
+
+	   POLARIZATION LINEAR 
+	   PORTS 9 
+	      PORT 1 
+	      POL_ORIENT X 	      AMPLITUDE 34 
+	      PHASE_POL_ARRANG 603 deg   
+	      PORT 2 
+	      AMPLITUDE 23 
+	      PORT 3 
+	      POL_ORIENT 31 	      AMPLITUDE 21 
+	      PHASE_POL_ARRANG 403 
+	      PORT 4 
+	      AMPLITUDE 18 
+	      PORT 5 
+	      POL_ORIENT Y 	      AMPLITUDE 25 cm   
+	      PHASE_POL_ARRANG 568 
+	      PORT 6 
+	      AMPLITUDE 29 
+	      PHASE_POL_ARRANG 681 deg   
+	      PORT 7 
+	      AMPLITUDE 21 
+	      PHASE_SHAPING 443 
+	      PHASE_POL_ARRANG 640 deg   
+	      PORT 8 
+	      AMPLITUDE 19 
+	      PHASE_POL_ARRANG 642 
+	      PORT 9 
+	      AMPLITUDE 26 mm   
+	      PHASE_POL_ARRANG 523 deg   
+	ADD 	HEXAGON 7 -2 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 30 
+	   PHASE UNIFORM 49 
+END 

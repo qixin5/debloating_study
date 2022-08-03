@@ -1,0 +1,18 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp $INDIR/file1.txt ./
+
+{ timeout -k 9 ${TIMEOUT}s $BIN -5 file1.txt; } &>$OUTDIR/o4
+
+echo "$?" >>$OUTDIR/o4
+test -f file1.txt
+echo "$?" >>$OUTDIR/o4
+gzip -d <file1.txt.gz >rslt
+cat rslt &>>$OUTDIR/o4
+
+

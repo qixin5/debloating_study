@@ -1,0 +1,8 @@
+This startup directory has all five .c files modified.  The only
+difference between this directory and sdir3 is that this directory
+contains a Makefile, unlike sdir3, where you have to use the -f flag to
+specify a Makefile residing from outside the directory.
+
+====================
+J. Ruthruff
+8:25p, 9/25/2000

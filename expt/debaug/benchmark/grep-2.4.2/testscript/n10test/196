@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN -G 'main\|n\?clude' $INDIR/grep*.dat  > $OUTDIR/o196 2>&1
+

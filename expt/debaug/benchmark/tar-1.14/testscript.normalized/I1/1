@@ -1,0 +1,21 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp -r $INDIR/bigfile.tar ./
+mkdir tmp
+
+{ timeout -k 9 ${TIMEOUT}s $BIN -xvf bigfile.tar -C tmp; } &>$OUTDIR/o1
+
+if [ -f tmp/default.profraw ]; then
+    cp tmp/default.profraw ./ #Important!
+fi
+
+echo "$?" >>$OUTDIR/o1
+diff tmp/bigfile $INDIR/bigfile
+echo "$?" >>$OUTDIR/o1
+
+

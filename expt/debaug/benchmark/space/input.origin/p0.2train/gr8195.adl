@@ -1,0 +1,42 @@
+GROUP	testgroup 
+
+	GRID HEXAGONAL  
+	ELEMENT 
+	   GEOMETRY CIRCULAR 53 
+	   POLARIZATION CIRCULAR 
+	   PORTS 7 
+	      PORT 1 
+	      POL_ORIENT Y 	      AMPLITUDE 53 mm   
+
+	      PHASE_POL_ARRANG 614 
+	      PORT 2 
+	      AMPLITUDE 77 
+
+	      PORT 3 
+	      AMPLITUDE 47 
+
+	      PHASE_SCANNING 560 
+	      PORT 4 
+	      AMPLITUDE 73 
+
+	      PHASE_SCANNING 615 
+	      PORT 5 
+	      AMPLITUDE 83 
+
+	      PHASE_POL_ARRANG 526 deg   
+	      PORT 6 
+	      AMPLITUDE 85 
+
+	      PHASE_POL_ARRANG 467 
+	      PORT 7 
+	      AMPLITUDE 36 cm   
+
+	      PHASE_SHAPING 641 
+	      PHASE_POL_ARRANG 577 
+	ADD 	NODE -4 -3 
+	ADD 	BLOCK 1 4 -3 2 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 25 
+	   PHASE UNIFORM -169 
+END 

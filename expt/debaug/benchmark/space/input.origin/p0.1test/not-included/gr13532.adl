@@ -1,0 +1,20 @@
+GROUP   testgroup 
+
+        GRID TRIANGULAR  
+                 PX 4 
+                 PY 15 
+                 QX 11 
+                 QY 0 
+        ELEMENT 
+           GEOMETRY CIRCULAR 85 
+
+           PORTS 1 
+              PORT 1 
+              POL_ORIENT X            AMPLITUDE 44 
+
+        ADD     BLOCK -4 0 -4 0 
+
+        GROUP_EXCITATION 
+           AMPLITUDE UNIFORM 34 
+           PHASE UNIFORM 7 
+END 

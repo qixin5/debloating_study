@@ -1,0 +1,19 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+CURRDIR=$(pwd)
+
+cp -r -p $INDIR/sdir-cov1 ./sdir
+export MAKEFILES="$INDIR/makefile-cov1"
+cd sdir
+timeout -k 9 ${TIMEOUT}s $BIN -f $MAKEFILES > $OUTDIR/o263 2>&1
+${DEBAUG_DIR}/bin/makeoutputcleanup $OUTDIR/o263
+if [ -f default.profraw ]; then
+    mv default.profraw ${CURRDIR}/
+fi
+
+cd ..
+rm -r -f sdir

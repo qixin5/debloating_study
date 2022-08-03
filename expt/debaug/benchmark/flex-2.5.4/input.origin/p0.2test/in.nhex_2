@@ -1,0 +1,4 @@
+%%
+
+\x0		printf("hex : %s\n", yytext);
+\xb		printf("hex : %s\n", yytext);

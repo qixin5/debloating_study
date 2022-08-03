@@ -1,0 +1,13 @@
+GROUP   testgroup 
+
+        GRID TRIANGULAR  
+        ELEMENT 
+          GEOMETRY RECTANGULAR  82 88 
+
+
+        ADD     NODE 11 4 ORIENTATION 29 8 14 
+
+        GROUP_EXCITATION 
+           AMPLITUDE UNIFORM 20 
+           PHASE ROTATION SEQUENTIAL 
+END 

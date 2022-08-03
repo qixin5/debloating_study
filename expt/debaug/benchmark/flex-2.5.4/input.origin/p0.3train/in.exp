@@ -1,0 +1,7 @@
+%%
+(r)		printf("Match an r: %s\n",yytext);
+(ab|cd)		printf("Match ab or cd: %s\n",yytext);
+x*[efg]		printf("Match x*(e+f+g): %s\n", yytext);
+Rose/Garden	printf("Match Rose followed by Garden: %s\n", yytext);
+^A		printf("Begin with A: %s\n", yytext);
+Z$		printf("End with Z: %s\n", yytext);

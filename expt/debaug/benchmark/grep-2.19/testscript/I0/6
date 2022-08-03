@@ -1,0 +1,16 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+echo '#!/bin/bash' >run.sh
+echo "" >>run.sh
+echo "dpkg --list | $BIN htop" >>run.sh
+chmod 700 run.sh
+
+timeout -k 9 ${TIMEOUT}s ./run.sh &>$OUTDIR/o6
+echo "$?" >>$OUTDIR/o6
+
+rm run.sh

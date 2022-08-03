@@ -1,0 +1,22 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp -r $INDIR/dbstore ./
+
+{ timeout -k 9 ${TIMEOUT}s $BIN -r dbstore/; } &>$OUTDIR/o4
+
+echo "$?" >>$OUTDIR/o4
+test -d dbstore
+echo "$?" >>$OUTDIR/o4
+test -f dbstore/file1.log
+echo "$?" >>$OUTDIR/o4
+test -f dbstore/file2.log
+echo "$?" >>$OUTDIR/o4
+test -f dbstore/file3.log
+echo "$?" >>$OUTDIR/o4
+test -f dbstore/service
+echo "$?" >>$OUTDIR/o4

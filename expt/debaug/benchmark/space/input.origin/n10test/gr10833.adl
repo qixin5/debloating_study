@@ -1,0 +1,17 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	         PX 28 
+	         PY -39 
+	         QX 28 
+	         QY -18 
+	ELEMENT 
+	   GEOMETRY CIRCULAR RADIUS 70 cm   
+
+PORTS -3
+	ADD 	HEXAGON 1 2 
+
+	GROUP_EXCITATION 
+ XX UNIFORM 23 
+	   PHASE UNIFORM -57 
+END 

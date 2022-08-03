@@ -1,0 +1,19 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp -r $INDIR/home ./
+
+{ timeout -k 9 ${TIMEOUT}s $BIN -r ./home/examples; } &>$OUTDIR/o5
+
+echo "$?" >>$OUTDIR/o5
+for i in {0..11}; do
+    test -f ./home/examples/screenshot$i
+    echo "$?" >>$OUTDIR/o5
+    gzip -d <./home/examples/screenshot${i}.gz >rslt
+    cat rslt &>>$OUTDIR/o5
+done
+

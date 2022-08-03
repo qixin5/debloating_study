@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '[^Z-a]^_`a-z-}z-}-A-GABCDEFG-0-90123456789-z-}z-}-0-90123456789]' 'pF)HeS a`g9$#F>7z9x$' < $INDIR/input/ruin.572 &> $OUTDIR/o620
+

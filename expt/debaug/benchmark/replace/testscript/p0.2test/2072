@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '?' '`OM,I.7$B>8KwR3#e1>SqfWB3_5]@4o' < $INDIR/input/ruin.776 &> $OUTDIR/o2072
+

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+CURRDIR=$(pwd)
+
+cp -r -p $INDIR/sdir0 ./sdir
+cd sdir
+rm -f makefile
+rm -f Makefile.in
+timeout -k 9 ${TIMEOUT}s $BIN > $OUTDIR/o517 2>&1
+${DEBAUG_DIR}/bin/makeoutputcleanup $OUTDIR/o517
+if [ -f default.profraw ]; then
+    mv default.profraw ${CURRDIR}/
+fi
+
+cat hello >> $OUTDIR/o517
+cd ..
+rm -r -f sdir

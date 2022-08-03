@@ -1,0 +1,3 @@
+%%
+
+[[:lower:]]	printf("Lower character: %s\n", yytext);

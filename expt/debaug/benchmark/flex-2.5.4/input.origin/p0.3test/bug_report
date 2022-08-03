@@ -1,0 +1,3 @@
+If any number greater than 7 is present on the last input line of in.nhex,
+the instrumented and non-instrumented version of program produce different
+outputs. A bug in the program is suspected.

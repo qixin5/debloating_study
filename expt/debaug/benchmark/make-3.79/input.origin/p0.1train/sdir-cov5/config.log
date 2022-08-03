@@ -1,0 +1,129 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:533: checking whether you requested dynamic linking
+configure:561: checking for gcc
+configure:674: checking whether the C compiler (gcc  ) works
+configure:690: gcc -o conftest    conftest.c  1>&5
+configure:716: checking whether the C compiler (gcc  ) is a cross-compiler
+configure:721: checking whether we are using GNU C
+configure:730: gcc -E conftest.c
+configure:749: checking whether gcc accepts -g
+configure:781: checking how to run the C preprocessor
+configure:802: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:863: checking for ranlib
+configure:921: checking for a BSD compatible install
+configure:977: checking for poll
+configure:1005: gcc -o conftest -g -O2   conftest.c  1>&5
+configure:1031: checking for socket
+configure:1059: gcc -o conftest -g -O2   conftest.c  1>&5
+Undefined			first referenced
+ symbol  			    in file
+socket                              /var/tmp/ccd8Nwlb.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 1036 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char socket(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char socket();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_socket) || defined (__stub___socket)
+choke me
+#else
+socket();
+#endif
+
+; return 0; }
+configure:1078: checking for socket in -lsocket
+configure:1097: gcc -o conftest -g -O2   conftest.c -lsocket   1>&5
+configure:1133: checking for inet_ntoa
+configure:1161: gcc -o conftest -g -O2   conftest.c -lsocket  1>&5
+Undefined			first referenced
+ symbol  			    in file
+inet_ntoa                           /var/tmp/ccfMcr9a.o  (symbol belongs to implicit dependency /usr/lib/libnsl.so.1)
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 1138 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char inet_ntoa(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char inet_ntoa();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_inet_ntoa) || defined (__stub___inet_ntoa)
+choke me
+#else
+inet_ntoa();
+#endif
+
+; return 0; }
+configure:1180: checking for inet_ntoa in -lnsl
+configure:1199: gcc -o conftest -g -O2   conftest.c -lnsl  -lsocket  1>&5
+configure:1237: checking for tsearch
+configure:1265: gcc -o conftest -g -O2   conftest.c -lnsl -lsocket  1>&5
+configure:1292: checking for INADDR_LOOPBACK
+configure:1311: gcc -c -g -O2  conftest.c 1>&5
+configure:1372: checking for inet_aton
+configure:1400: gcc -o conftest -g -O2   conftest.c -lnsl -lsocket  1>&5
+Undefined			first referenced
+ symbol  			    in file
+inet_aton                           /var/tmp/ccLfNMOd.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 1377 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char inet_aton(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char inet_aton();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_inet_aton) || defined (__stub___inet_aton)
+choke me
+#else
+inet_aton();
+#endif
+
+; return 0; }
+configure:1419: checking for inet_aton in -lresolv
+configure:1438: gcc -o conftest -g -O2   conftest.c -lresolv  -lnsl -lsocket  1>&5
+configure:1471: checking inlines
+configure:1484: gcc -c -g -O2  conftest.c 1>&5
+configure:1513: checking __attribute__((,,))
+configure:1526: gcc -c -g -O2  conftest.c 1>&5
+configure:1548: checking __attribute__((noreturn))
+configure:1561: gcc -c -g -O2  conftest.c 1>&5
+configure:1588: checking __attribute__((const))
+configure:1601: gcc -c -g -O2  conftest.c 1>&5
+configure:1628: checking __attribute__((format...))
+configure:1641: gcc -c -g -O2  conftest.c 1>&5
+configure:1676: checking for sys/select.h
+configure:1686: gcc -E  conftest.c >/dev/null 2>conftest.out

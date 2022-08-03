@@ -1,0 +1,8 @@
+This startup directory has no .c files modified.  The only difference
+between this directory and sdir0 is that this directory has a Makefile
+within the directory, whereas sdir0 does not (you have to use the -f flag
+to specify a makefile from another location).
+
+====================
+J. Ruthruff
+8:35p, 9/25/2000

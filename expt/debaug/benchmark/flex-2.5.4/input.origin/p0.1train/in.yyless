@@ -1,0 +1,4 @@
+%%
+foobar	ECHO; yyless(3);
+yyless	ECHO; yyless(0);
+[a-z]+	ECHO;

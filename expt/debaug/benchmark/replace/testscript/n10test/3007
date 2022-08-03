@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '[^A-G]' '`T0QCI\YA:p1`8M(v)J.;m+=d_V]a@uddt@#`;*d7EupFJ%SV1"Wczcv&\ma2 .{N[G:X8[+*yj\!*B#%#6.&JU(l6^U1mTncrlWq' < $INDIR/input/ruin.1893 &> $OUTDIR/o3007
+

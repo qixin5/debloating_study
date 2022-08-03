@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN 'q' 'cC4(j6a>IX1EH2r{.d V<%s]2X' < $INDIR/input/ruin.1589 &> $OUTDIR/o4259
+

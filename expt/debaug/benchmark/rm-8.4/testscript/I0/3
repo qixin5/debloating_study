@@ -1,0 +1,22 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp $INDIR/e.txt ./
+chmod 444 e.txt #Made read only
+
+echo '#!/bin/bash' >run.sh
+echo "" >>run.sh
+echo "echo n | $BIN e.txt" >>run.sh
+chmod 700 run.sh
+
+{ timeout -k 9 ${TIMEOUT}s ./run.sh; } &>$OUTDIR/o3
+
+echo "$?" >>$OUTDIR/o3
+test -f e.txt
+echo "$?" >>$OUTDIR/o3
+
+rm run.sh

@@ -1,0 +1,13 @@
+	int	word_count = 0;
+
+%%
+
+frob		ECHO; REJECT;
+[^ \t\n]+	++word_count;
+
+%%
+main()
+	{
+	yylex();
+	printf("# of words = %d\n", word_count);
+	}

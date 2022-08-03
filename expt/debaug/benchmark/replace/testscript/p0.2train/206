@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '@@' '[5K_$J[8o>B'\''+shEe>eT4x )#X}](v'\''=1Gx2W&!Ur[8o>B'\''+shEe>eT4x )#X}](v'\''=1Gx2W&!Ur[8o>B'\''+shEe>eT4x )#X}](v'\''=1Gx2W&!Ur[8o>B'\''+shEe>eT4x )#X}](v'\''=1Gx2W&!Ur[8o>B'\''+shEe>eT4x )#X}](v'\''=1Gx2W&!Ur[8o>B'\''+shEe>eT4x )#X}](v'\''=1Gx2W&!Ur[8o>B'\''+shEe>eT4x )#X}](v'\''=1Gx2W&!Ur[8o>B'\''+shEe>eT4x )#X}](v'\''=1Gx2W&!UrsD[0-9]*[a-b]' < $INDIR/input/ruin.1329 &> $OUTDIR/o206
+

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+uname=$(whoami)
+
+cp -r $INDIR/sample ./
+ln -s sample/ symbolic_folder
+
+{ timeout -k 9 ${TIMEOUT}s $BIN -R -H root symbolic_folder; } &>$OUTDIR/o12
+
+echo "$?" >>$OUTDIR/o12
+own0=`ls -al symbolic_folder | tr -s ' ' | cut -d ' ' -f 3`
+own1=`ls -al symbolic_folder | tr -s ' ' | cut -d ' ' -f 4`
+echo "${own0} ${own1}" >>$OUTDIR/o12

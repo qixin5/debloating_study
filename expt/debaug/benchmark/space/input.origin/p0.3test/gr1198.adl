@@ -1,0 +1,29 @@
+GROUP	testgroup 
+
+	GRID HEXAGONAL  
+	ELEMENT 
+	   GEOMETRY CIRCULAR RADIUS 31 m    
+
+	   PORTS 6 
+	      PORT 1 
+	      AMPLITUDE 75 
+	      PHASE_POL_ARRANG 602 
+	      PORT 2 
+	      AMPLITUDE 24 
+	      PORT 3 
+	      AMPLITUDE 30 
+	      PHASE_POL_ARRANG 436 
+	      PORT 4 
+	      AMPLITUDE 37 cm   
+	      PORT 5 
+	      AMPLITUDE 15 
+	      PHASE_POL_ARRANG 419 deg   
+	      PORT 6 
+	      AMPLITUDE 26 
+	ADD 	NODE -2 -3 
+	ADD 	BLOCK -2 5 -9 -8 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE SECOND ORDER 26 28 19 26 16 mm   
+	   PHASE SECOND ORDER 21 26 17 21 18 
+END 

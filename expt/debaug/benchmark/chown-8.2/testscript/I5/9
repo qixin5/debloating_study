@@ -1,0 +1,20 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+uname=$(whoami)
+uid=`id -u ${uname}`
+
+cp $INDIR/testfile1 ./
+cp $INDIR/testfile2 ./
+chown :sudo testfile1
+
+{ timeout -k 9 ${TIMEOUT}s $BIN --reference=testfile1 testfile2; } &>$OUTDIR/o9
+
+echo "$?" >>$OUTDIR/o9
+own0=`ls -al testfile2 | tr -s ' ' | cut -d ' ' -f 3`
+own1=`ls -al testfile2 | tr -s ' ' | cut -d ' ' -f 4`
+echo "${own0} ${own1}" >>$OUTDIR/o9

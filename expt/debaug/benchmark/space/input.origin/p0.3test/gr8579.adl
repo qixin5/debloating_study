@@ -1,0 +1,26 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	         PX 40 
+	         PY -18 
+	         QX -11 
+	         QY -12 
+	ELEMENT 
+	   GEOMETRY CIRCULAR 63 
+
+	   PORTS 3 
+	      PORT 1 
+	      AMPLITUDE 53 
+	      PHASE_POL_ARRANG 490 
+	      PORT 2 
+	      AMPLITUDE 23 
+	      PORT 3 
+	      AMPLITUDE 22 
+	ADD 	BLOCK 0 3 0 3 
+	ADD 	NODE 0 -1 ORIENTATION 49 41 8 rad   
+	ADD 	HEXAGON -2 1 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 30 
+	   PHASE ROTATION SEQUENTIAL CCW 
+END 

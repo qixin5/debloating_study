@@ -1,0 +1,25 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN -p /tmp/lab01/{expr1,expr2} /tmp/lab02/{expr3,expr4} &>$OUTDIR/o6
+
+echo "$?" >>$OUTDIR/o6
+info=`ls -ald /tmp/lab01 | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o6
+info=`ls -ald /tmp/lab01/expr1 | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o6
+info=`ls -ald /tmp/lab01/expr2 | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o6
+info=`ls -ald /tmp/lab02 | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o6
+info=`ls -ald /tmp/lab02/expr3 | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o6
+info=`ls -ald /tmp/lab02/expr4 | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o6
+
+rm -fr /tmp/lab01 /tmp/lab02
+

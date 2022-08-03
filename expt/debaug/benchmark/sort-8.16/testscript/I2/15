@@ -1,0 +1,12 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp $INDIR/specialChar.txt ./
+
+{ timeout -k 9 ${TIMEOUT}s $BIN -d specialChar.txt; } &>$OUTDIR/o15
+
+echo "$?" >>$OUTDIR/o15

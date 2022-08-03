@@ -1,0 +1,35 @@
+GROUP	testgroup 
+
+	GRID HEXAGONAL  
+	ELEMENT 
+	   GEOMETRY CIRCULAR 66 
+	   POLARIZATION CIRCULAR 
+	   PORTS 6 
+	      PORT 1 
+	      AMPLITUDE 48 
+
+	      PORT 2 
+	      AMPLITUDE 36 
+
+	      PORT 3 
+	      AMPLITUDE 78 mm   
+
+	      PHASE_POL_ARRANG 305 
+	      PORT 4 
+	      AMPLITUDE 68 mm   
+
+	      PHASE_POL_ARRANG 582 
+	      PORT 5 
+	      AMPLITUDE 78 mm   
+
+	      PHASE_POL_ARRANG 499 
+	      PORT 6 
+	      AMPLITUDE 55 
+
+	      PHASE_POL_ARRANG 632 
+	ADD 	NODE -3 -5 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 24 
+	   PHASE UNIFORM 184 
+END 

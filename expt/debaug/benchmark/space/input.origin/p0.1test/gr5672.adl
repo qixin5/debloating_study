@@ -1,0 +1,45 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	         PX 33 
+	         PY -11 
+	         QX -12 
+	         QY 11 
+	ELEMENT 
+	   GEOMETRY CIRCULAR 61 
+
+	   PORTS 8 
+	      PORT 1 
+	      AMPLITUDE 46 
+	      PHASE_SHAPING 531 
+	      PHASE_POL_ARRANG 528 
+	      PORT 2 
+	      AMPLITUDE 24 
+	      PHASE_POL_ARRANG 632 
+	      PORT 3 
+	      AMPLITUDE 28 
+	      PHASE_SHAPING 585 
+	      PHASE_POL_ARRANG 482 
+	      PORT 4 
+	      AMPLITUDE 23 mm   
+	      PHASE_SHAPING 652 
+	      PORT 5 
+	      AMPLITUDE 29 
+	      PORT 6 
+	      AMPLITUDE 30 
+	      PHASE_POL_ARRANG 479 
+	      PORT 7 
+	      AMPLITUDE 28 
+	      PHASE_POL_ARRANG 566 
+	      PORT 8 
+	      AMPLITUDE 30 
+	      PHASE_POL_ARRANG 555 
+	ADD 	BLOCK -2 -1 2 0 
+	ADD 	BLOCK 0 -2 9 0 
+	ADD 	NODE -5 0 
+	ADD 	BLOCK -2 -2 -3 -13 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 19 m    
+	   PHASE SECOND ORDER 23 19 24 27 18 cm   
+END 

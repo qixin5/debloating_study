@@ -1,0 +1,41 @@
+GROUP	testgroup 
+
+	GRID RECTANGULAR  
+	ELEMENT 
+	   GEOMETRY CIRCULAR  55 
+
+	   PORTS 9 
+	      PORT 1 
+	      POL_ORIENT 29 deg    
+	      AMPLITUDE 22 
+	      PHASE_SCANNING 534 
+	      PORT 2 
+	      POL_ORIENT X 	      AMPLITUDE 23 
+	      PHASE_POL_ARRANG 394 
+	      PORT 3 
+	      AMPLITUDE 27 mm   
+	      PHASE_SHAPING 502 
+	      PHASE_POL_ARRANG 738 
+	      PORT 4 
+	      AMPLITUDE 28 
+	      PORT 5 
+	      AMPLITUDE 25 
+	      PORT 6 
+	      POL_ORIENT X 	      AMPLITUDE 23 
+	      PORT 7 
+	      AMPLITUDE 27 
+	      PORT 8 
+	      AMPLITUDE 17 
+	      PHASE_POL_ARRANG 684 deg   
+	      PORT 9 
+	      AMPLITUDE 27 
+	      PHASE_POL_ARRANG 535 
+	ADD 	NODE 14 -1 ORIENTATION 19 51 7 
+	ADD 	BLOCK -4 -6 1 -1 
+	ADD 	BLOCK 1 -8 1 -3 
+	ADD 	BLOCK -4 1 -3 0 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE SECOND ORDER 29 31 27 22 32 
+	   PHASE ROTATION SEQUENTIAL 
+END 

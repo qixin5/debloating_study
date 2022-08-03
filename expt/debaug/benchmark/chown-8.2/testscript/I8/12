@@ -1,0 +1,19 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+uname=$(whoami)
+uid=`id -u ${uname}`
+
+cp -r $INDIR/Documents ./
+
+{ timeout -k 9 ${TIMEOUT}s $BIN -R ${uname}:${uname} Documents; } &>$OUTDIR/o12
+
+echo "$?" >>$OUTDIR/o12
+own0=`ls -al Documents | tr -s ' ' | cut -d ' ' -f 3`
+own1=`ls -al Documents | tr -s ' ' | cut -d ' ' -f 4`
+echo "${own0} ${own1}" >>$OUTDIR/o12
+

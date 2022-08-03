@@ -1,0 +1,17 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+uname=$(whoami)
+
+cp -r $INDIR/otherfiles ./
+
+{ timeout -k 9 ${TIMEOUT}s $BIN -R ${uname}:${uname} otherfiles; } &>$OUTDIR/o2
+
+echo "$?" >>$OUTDIR/o2
+own0=`ls -al otherfiles | tr -s ' ' | cut -d ' ' -f 3`
+own1=`ls -al otherfiles | tr -s ' ' | cut -d ' ' -f 4`
+echo "${own0} ${own1}" >>$OUTDIR/o2

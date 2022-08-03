@@ -1,0 +1,258 @@
+# Generated automatically from Makefile.in by configure.
+# Makefile for GNU hello.	-*- Indented-Text -*-
+# Copyright (C) 1992, 1993 Free Software Foundation, Inc.
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+#### Start of system configuration section. ####
+
+VPATH = .
+srcdir = $(VPATH)
+
+CC = gcc
+
+INSTALL = cp
+INSTALL_PROGRAM = $(INSTALL)
+INSTALL_DATA = $(INSTALL)
+TEXI2DVI = texi2dvi
+
+DEFS =  -DSTDC_HEADERS=1 -DHAVE_STRING_H=1 -DHAVE_FCNTL_H=1 -DHAVE_SYS_FILE_H=1 -DHAVE_ALLOCA_H=1
+LIBS = 
+
+CFLAGS = -g
+LDFLAGS = -g
+
+prefix = /usr/local
+exec_prefix = $(prefix)
+
+bindir = $(exec_prefix)/bin
+infodir = $(prefix)/info
+
+# Prefix to be prepended to each installed program, normally empty or `g'.
+binprefix = 
+
+#### End of system configuration section. ####
+
+SHELL = /bin/sh
+
+SRCS = hello.c version.c getopt.c getopt1.c alloca.c
+OBJS = hello.o version.o getopt.o getopt1.o 
+HDRS = getopt1.h
+DISTFILES = $(SRCS) $(HDRS) COPYING ChangeLog NEWS Makefile.in \
+	    README INSTALL hello.texi hello.?? hello.??s gpl.texinfo \
+	    configure configure.in \
+	    mkinstalldirs texinfo.tex hello.info testdata TAGS
+
+all: hello
+.PHONY: all
+
+.PHONY: info dvi
+info: hello.info
+dvi: hello.dvi
+
+.c.o:
+	$(CC) -c $(CPPFLAGS) $(DEFS) $(CFLAGS) $<
+
+.PHONY: install installdirs
+install: installdirs hello hello.info
+	$(INSTALL_PROGRAM) hello $(bindir)/$(binprefix)hello
+	-$(INSTALL_DATA) $(srcdir)/hello.info $(infodir)/hello.info
+installdirs:
+	${srcdir}/mkinstalldirs $(bindir) $(infodir)
+
+hello: $(OBJS)
+	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
+
+hello.o getopt.o getopt1.o: getopt.h
+
+
+hello.info: hello.texi
+	$(MAKEINFO) -I$(srcdir) -o hello.info $(srcdir)/hello.texi
+hello.dvi: hello.texi
+	$(TEXI2DVI) $(srcdir)/hello.texi
+
+.PHONY: check
+check: hello
+	@echo expect no output from diff
+	./hello > test.out
+	diff -c $(srcdir)/testdata test.out
+	rm -f test.out
+
+Makefile: Makefile.in config.status
+	$(SHELL) config.status
+
+config.status: configure
+	$(srcdir)/configure --no-create
+
+TAGS: $(SRCS)
+	etags $(SRCS)
+
+.PHONY: clean mostlyclean distclean realclean dist
+
+clean:
+	rm -f hello *.o core test.out hello.dvi hello.?? hello.??s
+
+mostlyclean: clean
+
+distclean: clean
+	rm -f Makefile config.status
+
+realclean: distclean
+	rm -f TAGS hello.info*
+
+dist: $(DISTFILES)
+	echo hello-`sed -e '/version/!d' -e 's/[^0-9.]*\([0-9.]*\).*/\1/' -e q version.c` > .fname
+	rm -rf `cat .fname`
+	mkdir `cat .fname`
+	ln $(DISTFILES) `cat .fname`
+	tar chozf `cat .fname`.tar.z `cat .fname`
+	rm -rf `cat .fname` .fname
+
+%.o : %.c
+	echo nothing really is done here
+
+# Prevent GNU make v3 from overflowing arg limit on SysV.
+.NOEXPORT:
+
+auto_var:=$(@D)
+auto_var:=$(@F)
+auto_var:=$(*D)
+auto_var:=$(*F)
+auto_var:=$(%D)
+auto_var:=$(%F)
+auto_var:=$(<D)
+auto_var:=$(<D)
+auto_var:=$(^D)
+auto_var:=$(^F)
+auto_var:=$(?D)
+auto_var:=$(?F)
+
+
+comma:= ,
+empty:=
+space:= $(empty) $(empty)
+foo:= a b c
+bar:= $(subst $(space),$(comma),$(foo))
+
+temp:= $(subst ee,EE,feet on the street)
+temp:= $(patsubst %.c,%.o,x.c.c bar.c)
+
+tempobjects = foo.o bar.o baz.o
+temp:= $(objects:.o=.c)
+
+temp:= $(strip   a b  c  )
+temp:= $(strip )
+
+temp:= $(findstring a,a b c)
+temp:= $(findstring a,b c)
+
+tempobjects := foo.c bar.c baz.s ugh.h
+temp:= $(filter %.c %.s,$(tempobjects))
+
+tempobjects:= main1.o foo.o main2.o bar.o
+tempobjects2:= main1.o main2.o
+temp:= $(filter-out $(tempobjects2),$(tempobjects))
+
+tempobjects:= 
+tempobjects2:= main1.o main2.o
+temp:= $(filter-out $(tempobjects2),$(tempobjects))
+
+tempobjects:= main1.o foo.o main2.o bar.o
+tempobjects2:= 
+temp:= $(filter-out $(tempobjects2),$(tempobjects))
+
+temp:= $(sort )
+temp:= $(sort same same same)
+temp:= $(sort foo bar lose)
+temp:= $(sort one two three four five six seven eight nine ten eleven)
+
+temp:= $(dir src/foo.c hacks)
+temp:= $(notdir src/foo.c hacks)
+temp:= $(suffix src/foo.c src-1.0/bar.c hacks)
+temp:= $(basename src/foo.c src-1.0/bar hacks)
+temp:= $(addsuffix .c,foo bar)
+temp:= $(addprefix src/,foo bar)
+
+temp:= $(join a b,.c .o)
+temp:= $(join a b, .o)
+temp:= $(join a b, )
+temp:= $(join a,.c .o)
+temp:= $(join  ,.c .o)
+
+temp:= $(word 2, foo bar baz)
+temp:= $(wordlist 2, 3, foo bar baz)
+temp:= $(words this is some text)
+temp:= $(firstword  )
+temp:= $(firstword foo bar)
+temp:= $(wildcard *.o)
+
+
+tempdirs := 
+tempfiles := $(foreach tempdir,$(tempdirs),$(wildcard $(tempdir)/*))
+tempdirs := a b c d
+tempfiles := $(foreach tempdir,$(tempdirs),$(wildcard $(tempdir)/*))
+tempfiles := $(wildcard a/* b/* c/* d/*)
+
+foo:= something
+bar:= nothing
+
+ifeq ($foo, $bar)
+temp:= true
+else
+temp:= false
+endif
+
+ifneq ($foo, $bar)
+temp:= true
+else
+temp:= false
+endif
+
+bar =
+foo = $(bar)
+ifdef foo
+frobozz = yes
+else
+frobozz = no
+endif
+
+foo =
+ifdef foo
+frobozz = yes
+else
+frobozz = no
+endif
+
+
+reverse = $(2) $(1)
+temp = $(call reverse,a,b)
+
+temp:= $(origin MAKEINFO)
+temp:= $(origin temp)
+temp:= $(origin nosuchvar)
+temp:= $(origin HOME)
+temp:= $(origin cl_var)
+override cl_var += newvalue
+override cl_var := newervalue
+temp:= $(origin cl_var)
+temp:= $(origin $?)
+
+temp:= $(shell )
+temp:= $(cat -s nothere)
+temp:= $(shell echo *.c)
+export var = $(shell echo foo)
+temp:= $(shell cat hello.c)
+
+

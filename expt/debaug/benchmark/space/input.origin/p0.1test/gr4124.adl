@@ -1,0 +1,18 @@
+GROUP	testgroup 
+
+	GRID SQUARE  STEP 50 
+	ELEMENT 
+	   GEOMETRY XX  
+
+
+	   PORTS 1 
+	      PORT 1 
+	      POL_ORIENT X rad    
+	      AMPLITUDE 21 
+	ADD 	NODE 4 -10 
+	ADD 	BLOCK 3 2 0 1 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 32 
+	   PHASE UNIFORM -19 
+END 

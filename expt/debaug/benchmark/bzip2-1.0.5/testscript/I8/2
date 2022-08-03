@@ -1,0 +1,22 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp $INDIR/file7.tar ./
+
+{ timeout -k 9 ${TIMEOUT}s $BIN file7.tar; } &>$OUTDIR/o2
+
+echo "$?" >>$OUTDIR/o2
+test -f file7.tar
+echo "$?" >>$OUTDIR/o2
+
+if [ -f file7.tar ]; then
+    rm file7.tar #In case the file still exists
+fi
+bzip2 -d file7.tar.bz2
+diff file7.tar $INDIR/file7.tar
+echo "$?" >>$OUTDIR/o2
+

@@ -1,0 +1,10 @@
+This directory contains input files to be compressed/decompressed by 
+allfile.c.inst.exe. The format of this directory is as follow
+
+	inputs/
+	 |
+	 |---testdir/		-> contain binary/text input files
+	 |
+	 |---gzdir/		-> contain compress input file
+
+To create a long file name, set write mode to input.alt then run longfilename.sh 

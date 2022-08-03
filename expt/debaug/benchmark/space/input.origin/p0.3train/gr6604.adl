@@ -1,0 +1,39 @@
+GROUP	testgroup 
+
+	GRID RECTANGULAR  
+	ELEMENT 
+	   GEOMETRY CIRCULAR  28 
+	   POLARIZATION LINEAR 
+	   PORTS 9 
+	      PORT 1 
+	      POL_ORIENT 5 	      AMPLITUDE 28 
+	      PHASE_SHAPING 621 
+	      PORT 2 
+	      AMPLITUDE 24 
+	      PHASE_POL_ARRANG 353 
+	      PORT 3 
+	      AMPLITUDE 21 
+	      PORT 4 
+	      AMPLITUDE 21 
+	      PHASE_POL_ARRANG 599 
+	      PORT 5 
+	      AMPLITUDE 24 
+	      PHASE_POL_ARRANG 583 
+	      PORT 6 
+	      POL_ORIENT X 	      AMPLITUDE 28 
+	      PHASE_POL_ARRANG 731 
+	      PORT 7 
+	      AMPLITUDE 33 
+	      PORT 8 
+	      POL_ORIENT 12 	      AMPLITUDE 26 m    
+	      PHASE_POL_ARRANG 592 
+	      PORT 9 
+	      POL_ORIENT Y deg    
+	      AMPLITUDE 19 mm   
+	      PHASE_POL_ARRANG 548 
+	ADD 	BLOCK 0 2 1 -2 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 30 
+	   PHASE UNIFORM 24 
+END 

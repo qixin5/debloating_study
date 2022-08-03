@@ -1,0 +1,16 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+>/rmtest/newuser/info
+
+{ timeout -k 9 ${TIMEOUT}s $BIN /rmtest/newuser/info; } &>$OUTDIR/o2
+
+echo "$?" >>$OUTDIR/o2
+test -f /rmtest/newuser/info
+echo "$?" >>$OUTDIR/o2
+
+

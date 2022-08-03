@@ -1,0 +1,16 @@
+GROUP	testgroup 
+
+	GRID RECTANGULAR  
+	ELEMENT 
+	   GEOMETRY CIRCULAR  92 
+
+           PORTS 1
+              PORT 1
+              POL_ORIENT X
+              AMPLITUDE 1.0 dB
+	ADD 	BLOCK -5 9 -2 0 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 18 
+	   PHASE UNIFORM -35 
+END 

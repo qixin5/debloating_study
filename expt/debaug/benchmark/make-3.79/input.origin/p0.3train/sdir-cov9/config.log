@@ -1,0 +1,394 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:576: checking for a BSD compatible install
+configure:629: checking whether build environment is sane
+configure:686: checking whether make sets ${MAKE}
+configure:732: checking for working aclocal
+configure:745: checking for working autoconf
+configure:758: checking for working automake
+configure:771: checking for working autoheader
+configure:784: checking for working makeinfo
+configure:811: checking for gawk
+configure:843: checking for gcc
+configure:956: checking whether the C compiler (gcc  ) works
+configure:972: gcc -o conftest    conftest.c  1>&5
+configure:998: checking whether the C compiler (gcc  ) is a cross-compiler
+configure:1003: checking whether we are using GNU C
+configure:1012: gcc -E conftest.c
+configure:1031: checking whether gcc accepts -g
+configure:1063: checking whether ln -s works
+configure:1086: checking for ranlib
+configure:1116: checking for bison
+configure:1146: checking for flex
+configure:1176: checking for gnuplot
+configure:1205: checking for pngtopnm
+configure:1234: checking for pnmtops
+configure:1263: checking for tr
+configure:1291: checking for sqrt in -lm
+configure:1310: gcc -o conftest -g -O2   conftest.c -lm   1>&5
+configure:1303: warning: conflicting types for built-in function `sqrt'
+configure:1346: checking for tgetent in -ltermcap
+configure:1365: gcc -o conftest -g -O2   conftest.c -ltermcap  -lm  1>&5
+configure:1387: checking for readline in -lreadline
+configure:1406: gcc -o conftest -g -O2   conftest.c -lreadline  -ltermcap -lm  1>&5
+configure:1442: checking for gdbm_open in -lgdbm
+configure:1461: gcc -o conftest -g -O2   conftest.c -lgdbm  -lreadline -ltermcap -lm  1>&5
+configure:1490: checking for dlopen in -ldl
+configure:1509: gcc -o conftest -g -O2   conftest.c -ldl  -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:1560: checking for guile-config
+configure:1630: checking how to run the C preprocessor
+configure:1651: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1710: checking for ANSI C header files
+configure:1723: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1790: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:1814: checking whether time.h and sys/time.h may both be included
+configure:1828: gcc -c -g -O2  conftest.c 1>&5
+configure:1852: checking for fcntl.h
+configure:1862: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1852: checking for sys/file.h
+configure:1862: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1852: checking for sys/ioctl.h
+configure:1862: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1852: checking for limits.h
+configure:1862: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1852: checking for sys/mman.h
+configure:1862: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1852: checking for pwd.h
+configure:1862: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1852: checking for stropts.h
+configure:1862: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1852: checking for sys/socket.h
+configure:1862: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1852: checking for sys/stat.h
+configure:1862: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1852: checking for sys/time.h
+configure:1862: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1852: checking for sys/types.h
+configure:1862: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1852: checking for sys/uio.h
+configure:1862: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1852: checking for unistd.h
+configure:1862: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1852: checking for sys/wait.h
+configure:1862: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1890: checking for working const
+configure:1944: gcc -c -g -O2  conftest.c 1>&5
+configure:1965: checking for inline
+configure:1979: gcc -c -g -O2  conftest.c 1>&5
+configure:2005: checking return type of signal handlers
+configure:2027: gcc -c -g -O2  conftest.c 1>&5
+configure:2046: checking for size_t
+configure:2082: checking for working alloca.h
+configure:2094: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:2115: checking for alloca
+configure:2148: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:2317: checking for unistd.h
+configure:2356: checking for getpagesize
+configure:2384: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:2409: checking for working mmap
+configure:2557: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:2580: checking for vprintf
+configure:2608: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:2687: checking for sigaction
+configure:2715: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:2742: checking for sigprocmask
+configure:2770: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:2797: checking for fork
+configure:2825: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:2797: checking for fstat
+configure:2825: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:2797: checking for getdtablesize
+configure:2825: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:2797: checking for getlogin
+configure:2825: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:2797: checking for getpwuid
+configure:2825: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:2797: checking for gettimeofday
+configure:2825: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:2797: checking for isatty
+configure:2825: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:2797: checking for random
+configure:2825: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:2797: checking for readv
+configure:2825: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:2797: checking for select
+configure:2825: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:2797: checking for setvbuf
+configure:2825: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:2852: checking for acosf
+configure:2880: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+Undefined			first referenced
+ symbol  			    in file
+acosf                               /var/tmp/cc2XQojd.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 2857 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char acosf(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char acosf();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_acosf) || defined (__stub___acosf)
+choke me
+#else
+acosf();
+#endif
+
+; return 0; }
+configure:2852: checking for asinf
+configure:2880: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+Undefined			first referenced
+ symbol  			    in file
+asinf                               /var/tmp/ccs9eCOa.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 2857 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char asinf(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char asinf();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_asinf) || defined (__stub___asinf)
+choke me
+#else
+asinf();
+#endif
+
+; return 0; }
+configure:2852: checking for atanf
+configure:2880: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+Undefined			first referenced
+ symbol  			    in file
+atanf                               /var/tmp/cc3Iv5nd.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 2857 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char atanf(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char atanf();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_atanf) || defined (__stub___atanf)
+choke me
+#else
+atanf();
+#endif
+
+; return 0; }
+configure:2852: checking for cosf
+configure:2880: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:2864: warning: conflicting types for built-in function `cosf'
+Undefined			first referenced
+ symbol  			    in file
+cosf                                /var/tmp/ccgcJjna.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 2857 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char cosf(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char cosf();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_cosf) || defined (__stub___cosf)
+choke me
+#else
+cosf();
+#endif
+
+; return 0; }
+configure:2852: checking for lrint
+configure:2880: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+Undefined			first referenced
+ symbol  			    in file
+lrint                               /var/tmp/ccB2Ojia.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 2857 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char lrint(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char lrint();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_lrint) || defined (__stub___lrint)
+choke me
+#else
+lrint();
+#endif
+
+; return 0; }
+configure:2852: checking for sinf
+configure:2880: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:2864: warning: conflicting types for built-in function `sinf'
+Undefined			first referenced
+ symbol  			    in file
+sinf                                /var/tmp/ccbagjod.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 2857 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char sinf(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char sinf();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_sinf) || defined (__stub___sinf)
+choke me
+#else
+sinf();
+#endif
+
+; return 0; }
+configure:2852: checking for tanf
+configure:2880: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+Undefined			first referenced
+ symbol  			    in file
+tanf                                /var/tmp/ccdNb3Qb.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 2857 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char tanf(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char tanf();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_tanf) || defined (__stub___tanf)
+choke me
+#else
+tanf();
+#endif
+
+; return 0; }
+configure:2905: checking for signbit macro
+configure:2918: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+Undefined			first referenced
+ symbol  			    in file
+signbit                             /var/tmp/ccybONHd.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 2910 "configure"
+#include "confdefs.h"
+#define _GNU_SOURCE 1
+#include <math.h>
+int main() {
+if(signbit(1.0f));
+; return 0; }
+configure:2939: checking for library containing connect
+configure:2957: gcc -o conftest -g -O2   conftest.c -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+Undefined			first referenced
+ symbol  			    in file
+connect                             /var/tmp/ccoQLNkc.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 2946 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char connect();
+
+int main() {
+connect()
+; return 0; }
+configure:2979: gcc -o conftest -g -O2   conftest.c -lsocket  -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:3068: checking for gtk-config
+configure:3103: checking for GTK - version >= 1.2.0
+configure:3204: gcc -o conftest -g -O2 -I/usr/local/lib/glib/include -I/usr/local/include -I/usr/local/X11R6.4/include   conftest.c -L/usr/local/lib -L/usr/local/X11R6.4/lib -R/usr/local/X11R6.4/lib -lgtk -lgdk -lgmodule -lglib -ldl -lXext -lX11 -lsocket -lnsl -lm -lsocket -ldl -lgdbm -lreadline -ltermcap -lm  1>&5
+configure:4161: checking for gdk/gdkx.h
+configure:4171: gcc -E  -I/usr/local/lib/glib/include -I/usr/local/include -I/usr/local/X11R6.4/include conftest.c >/dev/null 2>conftest.out
+configure:4200: checking for XCopyPlane
+configure:4228: gcc -o conftest -g -O2 -I/usr/local/lib/glib/include -I/usr/local/include -I/usr/local/X11R6.4/include  -I/usr/local/lib/glib/include -I/usr/local/include -I/usr/local/X11R6.4/include  conftest.c -lsocket -ldl -lgdbm -lreadline -ltermcap -lm  -L/usr/local/lib -L/usr/local/X11R6.4/lib -R/usr/local/X11R6.4/lib -lgtk -lgdk -lgmodule -lglib -ldl -lXext -lX11 -lsocket -lnsl -lm 1>&5
+configure:4257: checking for gtkextra/gtksheet.h
+configure:4267: gcc -E  -I/usr/local/lib/glib/include -I/usr/local/include -I/usr/local/X11R6.4/include conftest.c >/dev/null 2>conftest.out
+configure:4263: gtkextra/gtksheet.h: No such file or directory
+configure: failed program was:
+#line 4262 "configure"
+#include "confdefs.h"
+#include <gtkextra/gtksheet.h>
+configure:4294: checking for gtk_sheet_new in -lgtkextra
+configure:4313: gcc -o conftest -g -O2 -I/usr/local/lib/glib/include -I/usr/local/include -I/usr/local/X11R6.4/include  -I/usr/local/lib/glib/include -I/usr/local/include -I/usr/local/X11R6.4/include  conftest.c -lgtkextra  -lsocket -ldl -lgdbm -lreadline -ltermcap -lm  -L/usr/local/lib -L/usr/local/X11R6.4/lib -R/usr/local/X11R6.4/lib -lgtk -lgdk -lgmodule -lglib -ldl -lXext -lX11 -lsocket -lnsl -lm 1>&5
+ld: fatal: library -lgtkextra: not found
+ld: fatal: File processing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4302 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char gtk_sheet_new();
+
+int main() {
+gtk_sheet_new()
+; return 0; }

@@ -1,0 +1,17 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	         PX -3 
+	         PY 13 
+	         QX 20 
+	         QY -32 mm   
+	ELEMENT 
+	   GEOMETRY CIRCULAR RADIUS 87 
+
+	ADD 	HEXAGON -8 3 
+	ADD 	BLOCK -3 3 4 -6 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE SECOND ORDER 27 25 20 18 20 
+	   PHASE UNIFORM -9 
+END 

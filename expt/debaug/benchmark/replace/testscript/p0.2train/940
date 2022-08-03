@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '[^A-GA-GA-Gc-aZ-a]^_`a][^A-GA-GA-Gc-aZ-a]^_`a]' 'p' < $INDIR/input/ruin.663 &> $OUTDIR/o940
+

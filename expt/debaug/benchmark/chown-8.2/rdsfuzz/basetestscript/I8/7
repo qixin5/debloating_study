@@ -1,0 +1,13 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+uname=$(whoami)
+
+cp $INDIR/file1 ./
+cp $INDIR/file2 ./
+
+$BIN ${uname}:sudo file1 file2

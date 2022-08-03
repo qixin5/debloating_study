@@ -1,0 +1,23 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp -r $INDIR/os2.c ./
+cp -r $INDIR/os3.c ./
+cp -r $INDIR/os4.c ./
+
+{ timeout -k 9 ${TIMEOUT}s $BIN -cvf file.tar *.c; } &>$OUTDIR/o0
+
+echo "$?" >>$OUTDIR/o0
+rm -f *.c
+tar xf file.tar
+diff os2.c $INDIR/os2.c
+echo "$?" >>$OUTDIR/o0
+diff os3.c $INDIR/os3.c
+echo "$?" >>$OUTDIR/o0
+diff os4.c $INDIR/os4.c
+echo "$?" >>$OUTDIR/o0
+

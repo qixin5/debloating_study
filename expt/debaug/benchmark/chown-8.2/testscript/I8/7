@@ -1,0 +1,23 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+uname=$(whoami)
+
+cp $INDIR/file1 ./
+cp $INDIR/file2 ./
+
+{ timeout -k 9 ${TIMEOUT}s $BIN ${uname}:sudo file1 file2; } &>$OUTDIR/o7
+
+echo "$?" >>$OUTDIR/o7
+own0=`ls -al file1 | tr -s ' ' | cut -d ' ' -f 3`
+own1=`ls -al file1 | tr -s ' ' | cut -d ' ' -f 4`
+echo "${own0} ${own1}" >>$OUTDIR/o7
+
+own0=`ls -al file2 | tr -s ' ' | cut -d ' ' -f 3`
+own1=`ls -al file2 | tr -s ' ' | cut -d ' ' -f 4`
+echo "${own0} ${own1}" >>$OUTDIR/o7
+

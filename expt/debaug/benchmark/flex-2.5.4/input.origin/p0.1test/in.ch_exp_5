@@ -1,0 +1,11 @@
+%x s
+%x s1
+%x s2
+%x s3
+
+%%
+
+<s>r	printf("r in start condition s: %s\n", yytext);
+<s1,s2,s3>R	printf("r in start condition s1,s2,s3: %s\n", yytext);
+<*>s	printf("s in any start condition: %s\n", yytext);
+

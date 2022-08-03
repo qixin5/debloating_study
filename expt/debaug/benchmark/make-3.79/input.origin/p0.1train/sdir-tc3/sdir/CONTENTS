@@ -1,0 +1,7 @@
+This startup directory is within another directory to test the -C flag of
+make.  It has a Makefile, but has not been made yet, so therefore when
+make is executed all five .c files should be compiled.
+
+====================
+J. Ruthruff
+8:30p, 9/25/2000

@@ -1,0 +1,17 @@
+GROUP	testgroup 
+
+	GRID HEXAGONAL  
+	ELEMENT 
+	   GEOMETRY CIRCULAR 86 
+	   POLARIZATION LINEAR 
+           PORTS 1
+              PORT 1
+              POL_ORIENT X
+              AMPLITUDE 1.0 POWER
+              PHASE_SHAPING a.b
+	ADD 	BLOCK -2 -2 0 -2 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 25 
+	   PHASE  XX 
+END 

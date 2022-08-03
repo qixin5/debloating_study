@@ -1,0 +1,667 @@
+
+%x incl
+%x s
+%x s1
+%x s2
+%x s3
+%x quote
+
+DIGIT	[0-9]
+ID	[a-z][a-z0-9]*
+	int num_lines = 0, num_chars = 0;
+digit [0-9]
+digits {digit}+
+whitespace [\t\n]
+NAME	[A-Z][A-Z0-9]*
+	int	word_count = 0;
+%%
+
+{DIGIT}*	{
+		printf("An integer: %s (%d)\n", yytext, atoi(yytext));
+		}
+
+{DIGIT}+"."{DIGIT}*	{
+		printf("A float: %s (%g)\n", yytext, atof(yytext));
+		}
+
+if|then|begin|end|procedure|function	{
+		printf("A keyword: %s\n", yytext);
+		}
+
+{ID}		printf("An identifier: %s\n", yytext);
+
+"+"|"-"|"*"|"/"	printf("An operator: %s\n", yytext);
+
+"{"[^}\n]*"}"	/* eat up one-line comments */
+
+[ \t\n]+	/* eat up whitespace */
+
+.		printf("Unrecognized character: %s\n", yytext);
+\n	++num_lines; ++num_chars;
+.	++num_chars;
+"[" { printf("OPEN_BRAC\n");}
+"]" { printf("CLOSE_BRAC\n");}
+"+" { printf("ADDOP\n");}
+"*" { printf("MULTOP\n");}
+{digit} {printf("NUMBER = %s\n", yytext);}
+whitespace;
+
+xyz"++"		printf("Match character: %s\n", yytext);
+[xyz]		printf("Character class[x, y or z]: %s\n", yytext);
+[abj-oZ]	printf("Character class with range: %s\n", yytext);
+[^A-Z\n]	printf("Negated character class with range: %s\n", yytext);
+"[XYZ]\"foo"	printf("The literal string: %s\n", yytext);
+.		printf("Any character except newline: %s\n", yytext);
+foo|bar*	printf("foo or ba(zero or more than r's) %s\n", yytext);
+(foo)|(ba(r*))	printf("foo or ba(zero or more than r's) %s\n", yytext);
+foo|(bar$)	printf("foo or bar$: %s\n", yytext);
+foo|^bar	printf("foo or ^bar: %s\n", yytext);
+^s	printf("s at the beginning of a line: %s\n", yytext);
+r$	printf("r at the end of a line: %s\n", yytext);
+<s>r	printf("r in start condition s: %s\n", yytext);
+<s1,s2,s3>R	printf("r in start condition s1,s2,s3: %s\n", yytext);
+<*>s	printf("s in any start condition: %s\n", yytext);
+r*		printf("Zero or more r's: %s\n", yytext);
+[a|b]*"."r+	printf("Zero or more (a or b) . one or more r's: %s\n", yytext);
+z{2,5}		printf("Two to five z's: %s\n", yytext);
+s{2,}	  	printf("Two or more s's: %s\n", yytext);
+u{4}    	printf("Exactly 4 u's: %s\n", yytext);
+
+[\a]		printf("Zero or more r's: %s\n", yytext);
+[\40-\176]	printf("octal: %d\n", yytext);
+\0		printf("Two to five z's: %s\n", yytext);
+[\400-\415]	printf("over 256: %d\n", yytext);
+[ \t]+	putchar(' ');
+[ \t]+$	/*ignore this token */
+"zap me"
+<quote><<EOF>> {
+	error("unterminated quote");
+	yyterminate();
+	}
+<<EOF>> {
+	if (*++filelist)
+		yyin = fopen(*filelist, "r");
+	else
+		yyterminate();
+	}
+(r)		printf("Match an r: %s\n",yytext);
+(a)		printf("Match an r: %s\n",yytext);
+(b)		printf("Match an r: %s\n",yytext);
+(c)		printf("Match an r: %s\n",yytext);
+(d)		printf("Match an r: %s\n",yytext);
+(e)		printf("Match an r: %s\n",yytext);
+(f)		printf("Match an r: %s\n",yytext);
+(g)		printf("Match an r: %s\n",yytext);
+(h)		printf("Match an r: %s\n",yytext);
+(j)		printf("Match an r: %s\n",yytext);
+(i)		printf("Match an r: %s\n",yytext);
+(k)		printf("Match an r: %s\n",yytext);
+(l)		printf("Match an r: %s\n",yytext);
+(m)		printf("Match an r: %s\n",yytext);
+(o)		printf("Match an r: %s\n",yytext);
+(p)		printf("Match an r: %s\n",yytext);
+(q)		printf("Match an r: %s\n",yytext);
+(s)		printf("Match an r: %s\n",yytext);
+(t)		printf("Match an r: %s\n",yytext);
+(u)		printf("Match an r: %s\n",yytext);
+(v)		printf("Match an r: %s\n",yytext);
+(w)		printf("Match an r: %s\n",yytext);
+(x)		printf("Match an r: %s\n",yytext);
+(y)		printf("Match an r: %s\n",yytext);
+(z)		printf("Match an r: %s\n",yytext);
+(ra)		printf("Match an r: %s\n",yytext);
+(rb)		printf("Match an r: %s\n",yytext);
+(rc)		printf("Match an r: %s\n",yytext);
+(rd)		printf("Match an r: %s\n",yytext);
+(re)		printf("Match an r: %s\n",yytext);
+(rf)		printf("Match an r: %s\n",yytext);
+(rg)		printf("Match an r: %s\n",yytext);
+(rh)		printf("Match an r: %s\n",yytext);
+(rj)		printf("Match an r: %s\n",yytext);
+(ri)		printf("Match an r: %s\n",yytext);
+(rk)		printf("Match an r: %s\n",yytext);
+(rl)		printf("Match an r: %s\n",yytext);
+(rm)		printf("Match an r: %s\n",yytext);
+(ro)		printf("Match an r: %s\n",yytext);
+(rp)		printf("Match an r: %s\n",yytext);
+(rq)		printf("Match an r: %s\n",yytext);
+(rs)		printf("Match an r: %s\n",yytext);
+(rt)		printf("Match an r: %s\n",yytext);
+(ru)		printf("Match an r: %s\n",yytext);
+(rv)		printf("Match an r: %s\n",yytext);
+(ry)		printf("Match an r: %s\n",yytext);
+(ay)		printf("Match an r: %s\n",yytext);
+(by)		printf("Match an r: %s\n",yytext);
+(cy)		printf("Match an r: %s\n",yytext);
+(dy)		printf("Match an r: %s\n",yytext);
+(ey)		printf("Match an r: %s\n",yytext);
+(fy)		printf("Match an r: %s\n",yytext);
+(gy)		printf("Match an r: %s\n",yytext);
+(hy)		printf("Match an r: %s\n",yytext);
+(jy)		printf("Match an r: %s\n",yytext);
+(iy)		printf("Match an r: %s\n",yytext);
+(ky)		printf("Match an r: %s\n",yytext);
+(ly)		printf("Match an r: %s\n",yytext);
+(my)		printf("Match an r: %s\n",yytext);
+(oy)		printf("Match an r: %s\n",yytext);
+(py)		printf("Match an r: %s\n",yytext);
+(qy)		printf("Match an r: %s\n",yytext);
+(sy)		printf("Match an r: %s\n",yytext);
+(ty)		printf("Match an r: %s\n",yytext);
+(uy)		printf("Match an r: %s\n",yytext);
+(vy)		printf("Match an r: %s\n",yytext);
+(wy)		printf("Match an r: %s\n",yytext);
+(xy)		printf("Match an r: %s\n",yytext);
+(yy)		printf("Match an r: %s\n",yytext);
+(zy)		printf("Match an r: %s\n",yytext);
+(ray)		printf("Match an r: %s\n",yytext);
+(ab|cd)		printf("Match ab or cd: %s\n",yytext);
+x*[efg]		printf("Match x*(e+f+g): %s\n", yytext);
+Rose/Garden	printf("Match Rose followed by Garden: %s\n", yytext);
+Ros/Garden	printf("Match Rose followed by Garden: %s\n", yytext);
+Rose/Gard	printf("Match Rose followed by Garden: %s\n", yytext);
+Rosa/Garden	printf("Match Rose followed by Garden: %s\n", yytext);
+Rose/Garen	printf("Match Rose followed by Garden: %s\n", yytext);
+Rose/barden	printf("Match Rose followed by Garden: %s\n", yytext);
+Roe/Garden	printf("Match Rose followed by Garden: %s\n", yytext);
+Rose/arden	printf("Match Rose followed by Garden: %s\n", yytext);
+Rose/Garden	printf("Match Rose followed by Garden: %s\n", yytext);
+Rose/rden	printf("Match Rose followed by Garden: %s\n", yytext);
+Rose/den	printf("Match Rose followed by Garden: %s\n", yytext);
+Rose/Grden	printf("Match Rose followed by Garden: %s\n", yytext);
+^A		printf("Begin with A: %s\n", yytext);
+Z$		printf("End with Z: %s\n", yytext);
+foo{NAME}?	printf("Found it\n");
+abc{1,3}	printf("Match %s\n", yytext);
+
+include         BEGIN(incl);
+
+[a-z]+          ECHO;
+[^a-z\n]*\n?    ECHO;
+
+<incl>[ \t]*    /* eat whitespace */
+<incl>[^ \t\n]+ { /* got the include filename */
+        if(include_stack_ptr >= MAX_INCLUDE_DEPTH)
+        {       
+                fprintf(stderr, "Includes nested too deeply");
+                exit(1);
+        }
+        
+        include_stack[include_stack_ptr++] = YY_CURRENT_BUFFER;
+
+        yyin = fopen(yytext, "r");
+
+        if( ! yyin)
+
+		fprintf(stderr,"...");
+
+	yy_switch_to_buffer( yy_create_buffer(yyin, YY_BUF_SIZE));
+
+	BEGIN(INITIAL);
+	}
+
+a	|
+ab	|
+abc	|
+abcd	ECHO; REJECT;
+.|\n	/* eat up any unmatched character */
+frob		ECHO; REJECT;
+[^ \t\n]+	++word_count;
+<*>S		printf("S in any start condition: %s", yytext);
+
+"abc"	{
+int i;
+char *yycopy = strdup(yytext);
+unput(')');
+for(i = yyleng - 1; i >= 0; --i)
+	unput(yycopy[i]);
+unput('(');
+free(yycopy);
+}
+[a-z]+	printf("matched %s\n", yytext);
+foo	printf("foo matched %s\n", yytext);
+bar	printf("foo matched: " ); printf("%s\n", yytext);
+foobar	printf("foo matched: " ); printf("%s\n", yytext);
+barfoo	printf("foo matched: " ); printf("%s\n", yytext);
+foe	printf("foo matched: " ); printf("%s\n", yytext);
+bas	printf("foo matched: " ); printf("%s\n", yytext);
+foebas	printf("foo matched: " ); printf("%s\n", yytext);
+basfoe	printf("foo matched: " ); printf("%s\n", yytext);
+goo	printf("foo matched: " ); printf("%s\n", yytext);
+bal	printf("foo matched: " ); printf("%s\n", yytext);
+goobaa	printf("foo matched: " ); printf("%s\n", yytext);
+bargoo	printf("foo matched: " ); printf("%s\n", yytext);
+fot	printf("foo matched: " ); printf("%s\n", yytext);
+baf	printf("foo matched: " ); printf("%s\n", yytext);
+foebar	printf("foo matched: " ); printf("%s\n", yytext);
+barfoe	printf("foo matched: " ); printf("%s\n", yytext);
+fog	printf("foo matched: " ); printf("%s\n", yytext);
+boo	printf("foo matched: " ); printf("%s\n", yytext);
+fooboo	printf("foo matched: " ); printf("%s\n", yytext);
+boofoo	printf("foo matched: " ); printf("%s\n", yytext);
+soo	printf("foo matched: " ); printf("%s\n", yytext);
+baq	printf("foo matched: " ); printf("%s\n", yytext);
+soobas	printf("foo matched: " ); printf("%s\n", yytext);
+bassoo	printf("foo matched: " ); printf("%s\n", yytext);
+foa	printf("foo matched: " ); printf("%s\n", yytext);
+gaf	printf("foo matched: " ); printf("%s\n", yytext);
+foogaf	printf("foo matched: " ); printf("%s\n", yytext);
+gaffoo	printf("foo matched: " ); printf("%s\n", yytext);
+fte	printf("foo matched: " ); printf("%s\n", yytext);
+btr	printf("foo matched: " ); printf("%s\n", yytext);
+ftebtr	printf("foo matched: " ); printf("%s\n", yytext);
+btrfte	printf("foo matched: " ); printf("%s\n", yytext);
+yoo	printf("foo matched: " ); printf("%s\n", yytext);
+gws	printf("foo matched: " ); printf("%s\n", yytext);
+yoogwr	printf("foo matched: " ); printf("%s\n", yytext);
+garyoo	printf("foo matched: " ); printf("%s\n", yytext);
+fok	printf("foo matched: " ); printf("%s\n", yytext);
+bak	printf("foo matched: " ); printf("%s\n", yytext);
+fokbak	printf("foo matched: " ); printf("%s\n", yytext);
+barfok	printf("foo matched: " ); printf("%s\n", yytext);
+hoo	printf("foo matched %s\n", yytext);
+qar	printf("foo matched: " ); printf("%s\n", yytext);
+hooqar	printf("foo matched: " ); printf("%s\n", yytext);
+qarhoo	printf("foo matched: " ); printf("%s\n", yytext);
+hoe	printf("foo matched: " ); printf("%s\n", yytext);
+qas	printf("foo matched: " ); printf("%s\n", yytext);
+hoeqas	printf("foo matched: " ); printf("%s\n", yytext);
+qashoe	printf("foo matched: " ); printf("%s\n", yytext);
+joo	printf("foo matched: " ); printf("%s\n", yytext);
+qal	printf("foo matched: " ); printf("%s\n", yytext);
+jooqar	printf("foo matched: " ); printf("%s\n", yytext);
+qarjoo	printf("foo matched: " ); printf("%s\n", yytext);
+hot	printf("foo matched: " ); printf("%s\n", yytext);
+qaf	printf("foo matched: " ); printf("%s\n", yytext);
+hoeqar	printf("foo matched: " ); printf("%s\n", yytext);
+qarhoe	printf("foo matched: " ); printf("%s\n", yytext);
+hog	printf("foo matched: " ); printf("%s\n", yytext);
+qoo	printf("foo matched: " ); printf("%s\n", yytext);
+hooqoo	printf("foo matched: " ); printf("%s\n", yytext);
+qoohoo	printf("foo matched: " ); printf("%s\n", yytext);
+coo	printf("foo matched: " ); printf("%s\n", yytext);
+qaq	printf("foo matched: " ); printf("%s\n", yytext);
+cooqas	printf("foo matched: " ); printf("%s\n", yytext);
+qascoo	printf("foo matched: " ); printf("%s\n", yytext);
+hoa	printf("foo matched: " ); printf("%s\n", yytext);
+taf	printf("foo matched: " ); printf("%s\n", yytext);
+hootaf	printf("foo matched: " ); printf("%s\n", yytext);
+tafhoo	printf("foo matched: " ); printf("%s\n", yytext);
+hte	printf("foo matched: " ); printf("%s\n", yytext);
+qtr	printf("foo matched: " ); printf("%s\n", yytext);
+hteqtr	printf("foo matched: " ); printf("%s\n", yytext);
+qtrhte	printf("foo matched: " ); printf("%s\n", yytext);
+too	printf("foo matched: " ); printf("%s\n", yytext);
+vws	printf("foo matched: " ); printf("%s\n", yytext);
+toovwr	printf("foo matched: " ); printf("%s\n", yytext);
+vartoo	printf("foo matched: " ); printf("%s\n", yytext);
+hok	printf("foo matched: " ); printf("%s\n", yytext);
+qak	printf("foo matched: " ); printf("%s\n", yytext);
+hokqak	printf("foo matched: " ); printf("%s\n", yytext);
+qarhok	printf("foo matched: " ); printf("%s\n", yytext);
+
+fee	printf("foo matched %s\n", yytext);
+ber	printf("foo matched: " ); printf("%s\n", yytext);
+fpe	printf("foo matched: " ); printf("%s\n", yytext);
+berfee	printf("foo matched: " ); printf("%s\n", yytext);
+fre	printf("foo matched: " ); printf("%s\n", yytext);
+bes	printf("foo matched: " ); printf("%s\n", yytext);
+foebes	printf("foo matched: " ); printf("%s\n", yytext);
+besfoe	printf("foo matched: " ); printf("%s\n", yytext);
+gee	printf("foo matched: " ); printf("%s\n", yytext);
+bel	printf("foo matched: " ); printf("%s\n", yytext);
+geeber	printf("foo matched: " ); printf("%s\n", yytext);
+bergee	printf("foo matched: " ); printf("%s\n", yytext);
+fet	printf("foo matched: " ); printf("%s\n", yytext);
+bef	printf("foo matched: " ); printf("%s\n", yytext);
+frebef	printf("foo matched: " ); printf("%s\n", yytext);
+beffre	printf("foo matched: " ); printf("%s\n", yytext);
+feg	printf("foo matched: " ); printf("%s\n", yytext);
+bee	printf("foo matched: " ); printf("%s\n", yytext);
+frebee	printf("foo matched: " ); printf("%s\n", yytext);
+beefre	printf("foo matched: " ); printf("%s\n", yytext);
+see	printf("foo matched: " ); printf("%s\n", yytext);
+beq	printf("foo matched: " ); printf("%s\n", yytext);
+seebes	printf("foo matched: " ); printf("%s\n", yytext);
+bessee	printf("foo matched: " ); printf("%s\n", yytext);
+fea	printf("foo matched: " ); printf("%s\n", yytext);
+gef	printf("foo matched: " ); printf("%s\n", yytext);
+feegef	printf("foo matched: " ); printf("%s\n", yytext);
+geffee	printf("foo matched: " ); printf("%s\n", yytext);
+fie	printf("foo matched: " ); printf("%s\n", yytext);
+bir	printf("foo matched: " ); printf("%s\n", yytext);
+fiebir	printf("foo matched: " ); printf("%s\n", yytext);
+birfie	printf("foo matched: " ); printf("%s\n", yytext);
+yee	printf("foo matched: " ); printf("%s\n", yytext);
+gis	printf("foo matched: " ); printf("%s\n", yytext);
+yeegir	printf("foo matched: " ); printf("%s\n", yytext);
+giryee	printf("foo matched: " ); printf("%s\n", yytext);
+fik	printf("foo matched: " ); printf("%s\n", yytext);
+bik	printf("foo matched: " ); printf("%s\n", yytext);
+fikbik	printf("foo matched: " ); printf("%s\n", yytext);
+birfik	printf("foo matched: " ); printf("%s\n", yytext);
+hee	printf("foo matched %s\n", yytext);
+qir	printf("foo matched: " ); printf("%s\n", yytext);
+heeqir	printf("foo matched: " ); printf("%s\n", yytext);
+qirhee	printf("foo matched: " ); printf("%s\n", yytext);
+hie	printf("foo matched: " ); printf("%s\n", yytext);
+qis	printf("foo matched: " ); printf("%s\n", yytext);
+hieqis	printf("foo matched: " ); printf("%s\n", yytext);
+qishie	printf("foo matched: " ); printf("%s\n", yytext);
+jee	printf("foo matched: " ); printf("%s\n", yytext);
+qil	printf("foo matched: " ); printf("%s\n", yytext);
+jioqir	printf("foo matched: " ); printf("%s\n", yytext);
+qirjee	printf("foo matched: " ); printf("%s\n", yytext);
+hit	printf("foo matched: " ); printf("%s\n", yytext);
+qif	printf("foo matched: " ); printf("%s\n", yytext);
+hieqir	printf("foo matched: " ); printf("%s\n", yytext);
+qirhie	printf("foo matched: " ); printf("%s\n", yytext);
+hig	printf("foo matched: " ); printf("%s\n", yytext);
+qee	printf("foo matched: " ); printf("%s\n", yytext);
+hieqee	printf("foo matched: " ); printf("%s\n", yytext);
+qeehie	printf("foo matched: " ); printf("%s\n", yytext);
+cee	printf("foo matched: " ); printf("%s\n", yytext);
+qiq	printf("foo matched: " ); printf("%s\n", yytext);
+cooqis	printf("foo matched: " ); printf("%s\n", yytext);
+qiscee	printf("foo matched: " ); printf("%s\n", yytext);
+hia	printf("foo matched: " ); printf("%s\n", yytext);
+tif	printf("foo matched: " ); printf("%s\n", yytext);
+heetif	printf("foo matched: " ); printf("%s\n", yytext);
+tifhee	printf("foo matched: " ); printf("%s\n", yytext);
+hye	printf("foo matched: " ); printf("%s\n", yytext);
+qyr	printf("foo matched: " ); printf("%s\n", yytext);
+hyeqyr	printf("foo matched: " ); printf("%s\n", yytext);
+qyrhye	printf("foo matched: " ); printf("%s\n", yytext);
+tee	printf("foo matched: " ); printf("%s\n", yytext);
+vys	printf("foo matched: " ); printf("%s\n", yytext);
+teevyr	printf("foo matched: " ); printf("%s\n", yytext);
+vyrtee	printf("foo matched: " ); printf("%s\n", yytext);
+hyk	printf("foo matched: " ); printf("%s\n", yytext);
+qyk	printf("foo matched: " ); printf("%s\n", yytext);
+hykqyk	printf("foo matched: " ); printf("%s\n", yytext);
+qyrhyk	printf("foo matched: " ); printf("%s\n", yytext);
+
+faa	printf("foo matched %s\n", yytext);
+bev	printf("foo matched: " ); printf("%s\n", yytext);
+faa	printf("foo matched: " ); printf("%s\n", yytext);
+bevfaa	printf("foo matched: " ); printf("%s\n", yytext);
+fer	printf("foo matched: " ); printf("%s\n", yytext);
+bus	printf("foo matched: " ); printf("%s\n", yytext);
+foebus	printf("foo matched: " ); printf("%s\n", yytext);
+busfoe	printf("foo matched: " ); printf("%s\n", yytext);
+gaa	printf("foo matched: " ); printf("%s\n", yytext);
+bil	printf("foo matched: " ); printf("%s\n", yytext);
+gaabil	printf("foo matched: " ); printf("%s\n", yytext);
+bilgaa	printf("foo matched: " ); printf("%s\n", yytext);
+fil	printf("foo matched: " ); printf("%s\n", yytext);
+bil	printf("foo matched: " ); printf("%s\n", yytext);
+filbil	printf("foo matched: " ); printf("%s\n", yytext);
+bilfil	printf("foo matched: " ); printf("%s\n", yytext);
+fig	printf("foo matched: " ); printf("%s\n", yytext);
+baa	printf("foo matched: " ); printf("%s\n", yytext);
+figbaa	printf("foo matched: " ); printf("%s\n", yytext);
+baafig	printf("foo matched: " ); printf("%s\n", yytext);
+saa	printf("foo matched: " ); printf("%s\n", yytext);
+biq	printf("foo matched: " ); printf("%s\n", yytext);
+saabiq	printf("foo matched: " ); printf("%s\n", yytext);
+biqsaa	printf("foo matched: " ); printf("%s\n", yytext);
+fel	printf("foo matched: " ); printf("%s\n", yytext);
+gel	printf("foo matched: " ); printf("%s\n", yytext);
+faagel	printf("foo matched: " ); printf("%s\n", yytext);
+glffaa	printf("foo matched: " ); printf("%s\n", yytext);
+fiw	printf("foo matched: " ); printf("%s\n", yytext);
+biw	printf("foo matched: " ); printf("%s\n", yytext);
+fiwbiw	printf("foo matched: " ); printf("%s\n", yytext);
+biwfiw	printf("foo matched: " ); printf("%s\n", yytext);
+yaa	printf("foo matched: " ); printf("%s\n", yytext);
+giw	printf("foo matched: " ); printf("%s\n", yytext);
+yaagiw	printf("foo matched: " ); printf("%s\n", yytext);
+giwyaa	printf("foo matched: " ); printf("%s\n", yytext);
+fwk	printf("foo matched: " ); printf("%s\n", yytext);
+bwk	printf("foo matched: " ); printf("%s\n", yytext);
+fwkbwk	printf("foo matched: " ); printf("%s\n", yytext);
+bwrfwk	printf("foo matched: " ); printf("%s\n", yytext);
+haa	printf("foo matched %s\n", yytext);
+qwr	printf("foo matched: " ); printf("%s\n", yytext);
+haaqwr	printf("foo matched: " ); printf("%s\n", yytext);
+qwrhaa	printf("foo matched: " ); printf("%s\n", yytext);
+hwe	printf("foo matched: " ); printf("%s\n", yytext);
+qws	printf("foo matched: " ); printf("%s\n", yytext);
+hweqws	printf("foo matched: " ); printf("%s\n", yytext);
+qwshwe	printf("foo matched: " ); printf("%s\n", yytext);
+jaa	printf("foo matched: " ); printf("%s\n", yytext);
+qwl	printf("foo matched: " ); printf("%s\n", yytext);
+jaaqir	printf("foo matched: " ); printf("%s\n", yytext);
+qirjaa	printf("foo matched: " ); printf("%s\n", yytext);
+hwt	printf("foo matched: " ); printf("%s\n", yytext);
+qwf	printf("foo matched: " ); printf("%s\n", yytext);
+hweqwr	printf("foo matched: " ); printf("%s\n", yytext);
+qwrhwe	printf("foo matched: " ); printf("%s\n", yytext);
+hwg	printf("foo matched: " ); printf("%s\n", yytext);
+qaa	printf("foo matched: " ); printf("%s\n", yytext);
+hweqaa	printf("foo matched: " ); printf("%s\n", yytext);
+qaahwe	printf("foo matched: " ); printf("%s\n", yytext);
+caa	printf("foo matched: " ); printf("%s\n", yytext);
+qwq	printf("foo matched: " ); printf("%s\n", yytext);
+cooqws	printf("foo matched: " ); printf("%s\n", yytext);
+qwscaa	printf("foo matched: " ); printf("%s\n", yytext);
+hwa	printf("foo matched: " ); printf("%s\n", yytext);
+twf	printf("foo matched: " ); printf("%s\n", yytext);
+haatwf	printf("foo matched: " ); printf("%s\n", yytext);
+twfhaa	printf("foo matched: " ); printf("%s\n", yytext);
+hwe	printf("foo matched: " ); printf("%s\n", yytext);
+qwr	printf("foo matched: " ); printf("%s\n", yytext);
+hweqwr	printf("foo matched: " ); printf("%s\n", yytext);
+qwrhwe	printf("foo matched: " ); printf("%s\n", yytext);
+taa	printf("foo matched: " ); printf("%s\n", yytext);
+vws	printf("foo matched: " ); printf("%s\n", yytext);
+taavwr	printf("foo matched: " ); printf("%s\n", yytext);
+vwrtaa	printf("foo matched: " ); printf("%s\n", yytext);
+hwk	printf("foo matched: " ); printf("%s\n", yytext);
+qwk	printf("foo matched: " ); printf("%s\n", yytext);
+hwkqwk	printf("foo matched: " ); printf("%s\n", yytext);
+qwrhwk	printf("foo matched: " ); printf("%s\n", yytext);
+
+fll	printf("foo matched %s\n", yytext);
+buu	printf("foo matched: " ); printf("%s\n", yytext);
+flo	printf("foo matched: " ); printf("%s\n", yytext);
+buufll	printf("foo matched: " ); printf("%s\n", yytext);
+fpe	printf("foo matched: " ); printf("%s\n", yytext);
+bps	printf("foo matched: " ); printf("%s\n", yytext);
+fpebps	printf("foo matched: " ); printf("%s\n", yytext);
+bpsfpe	printf("foo matched: " ); printf("%s\n", yytext);
+gll	printf("foo matched: " ); printf("%s\n", yytext);
+bpl	printf("foo matched: " ); printf("%s\n", yytext);
+gllbuu	printf("foo matched: " ); printf("%s\n", yytext);
+buugll	printf("foo matched: " ); printf("%s\n", yytext);
+fpt	printf("foo matched: " ); printf("%s\n", yytext);
+bpf	printf("foo matched: " ); printf("%s\n", yytext);
+fpebpf	printf("foo matched: " ); printf("%s\n", yytext);
+beffre	printf("foo matched: " ); printf("%s\n", yytext);
+fpg	printf("foo matched: " ); printf("%s\n", yytext);
+bll	printf("foo matched: " ); printf("%s\n", yytext);
+fpebll	printf("foo matched: " ); printf("%s\n", yytext);
+bllfpe	printf("foo matched: " ); printf("%s\n", yytext);
+sll	printf("foo matched: " ); printf("%s\n", yytext);
+bpq	printf("foo matched: " ); printf("%s\n", yytext);
+sllbps	printf("foo matched: " ); printf("%s\n", yytext);
+bpssll	printf("foo matched: " ); printf("%s\n", yytext);
+fpa	printf("foo matched: " ); printf("%s\n", yytext);
+gpf	printf("foo matched: " ); printf("%s\n", yytext);
+fllgpf	printf("foo matched: " ); printf("%s\n", yytext);
+gpffll	printf("foo matched: " ); printf("%s\n", yytext);
+fpe	printf("foo matched: " ); printf("%s\n", yytext);
+bpr	printf("foo matched: " ); printf("%s\n", yytext);
+fpebpr	printf("foo matched: " ); printf("%s\n", yytext);
+bprfpe	printf("foo matched: " ); printf("%s\n", yytext);
+yll	printf("foo matched: " ); printf("%s\n", yytext);
+gps	printf("foo matched: " ); printf("%s\n", yytext);
+yllgpr	printf("foo matched: " ); printf("%s\n", yytext);
+gpryll	printf("foo matched: " ); printf("%s\n", yytext);
+fpk	printf("foo matched: " ); printf("%s\n", yytext);
+bpk	printf("foo matched: " ); printf("%s\n", yytext);
+fpkbpk	printf("foo matched: " ); printf("%s\n", yytext);
+bprfpk	printf("foo matched: " ); printf("%s\n", yytext);
+hll	printf("foo matched %s\n", yytext);
+qpr	printf("foo matched: " ); printf("%s\n", yytext);
+hllqpr	printf("foo matched: " ); printf("%s\n", yytext);
+qprhll	printf("foo matched: " ); printf("%s\n", yytext);
+hpe	printf("foo matched: " ); printf("%s\n", yytext);
+qps	printf("foo matched: " ); printf("%s\n", yytext);
+hpeqps	printf("foo matched: " ); printf("%s\n", yytext);
+qpshpe	printf("foo matched: " ); printf("%s\n", yytext);
+jll	printf("foo matched: " ); printf("%s\n", yytext);
+qpl	printf("foo matched: " ); printf("%s\n", yytext);
+jioqpr	printf("foo matched: " ); printf("%s\n", yytext);
+qprjll	printf("foo matched: " ); printf("%s\n", yytext);
+hpt	printf("foo matched: " ); printf("%s\n", yytext);
+qpf	printf("foo matched: " ); printf("%s\n", yytext);
+hpeqpr	printf("foo matched: " ); printf("%s\n", yytext);
+qprhpe	printf("foo matched: " ); printf("%s\n", yytext);
+hpg	printf("foo matched: " ); printf("%s\n", yytext);
+qll	printf("foo matched: " ); printf("%s\n", yytext);
+hpeqll	printf("foo matched: " ); printf("%s\n", yytext);
+qllhpe	printf("foo matched: " ); printf("%s\n", yytext);
+cll	printf("foo matched: " ); printf("%s\n", yytext);
+qpq	printf("foo matched: " ); printf("%s\n", yytext);
+cooqps	printf("foo matched: " ); printf("%s\n", yytext);
+qpscll	printf("foo matched: " ); printf("%s\n", yytext);
+hpa	printf("foo matched: " ); printf("%s\n", yytext);
+tpf	printf("foo matched: " ); printf("%s\n", yytext);
+hlltpf	printf("foo matched: " ); printf("%s\n", yytext);
+tpfhll	printf("foo matched: " ); printf("%s\n", yytext);
+hpe	printf("foo matched: " ); printf("%s\n", yytext);
+qpr	printf("foo matched: " ); printf("%s\n", yytext);
+hpeqpr	printf("foo matched: " ); printf("%s\n", yytext);
+qprhpe	printf("foo matched: " ); printf("%s\n", yytext);
+tll	printf("foo matched: " ); printf("%s\n", yytext);
+vps	printf("foo matched: " ); printf("%s\n", yytext);
+tllvpr	printf("foo matched: " ); printf("%s\n", yytext);
+vprtll	printf("foo matched: " ); printf("%s\n", yytext);
+hpk	printf("foo matched: " ); printf("%s\n", yytext);
+qpk	printf("foo matched: " ); printf("%s\n", yytext);
+hpkqpk	printf("foo matched: " ); printf("%s\n", yytext);
+qprhpk	printf("foo matched: " ); printf("%s\n", yytext);
+
+
+tll	printf("foo matched %s\n", yytext);
+tuu	printf("foo matched: " ); printf("%s\n", yytext);
+tlo	printf("foo matched: " ); printf("%s\n", yytext);
+tuutll	printf("foo matched: " ); printf("%s\n", yytext);
+tpe	printf("foo matched: " ); printf("%s\n", yytext);
+tps	printf("foo matched: " ); printf("%s\n", yytext);
+tpetps	printf("foo matched: " ); printf("%s\n", yytext);
+tpstpe	printf("foo matched: " ); printf("%s\n", yytext);
+wll	printf("foo matched: " ); printf("%s\n", yytext);
+wpl	printf("foo matched: " ); printf("%s\n", yytext);
+wllwuu	printf("foo matched: " ); printf("%s\n", yytext);
+wuuwll	printf("foo matched: " ); printf("%s\n", yytext);
+tpt	printf("foo matched: " ); printf("%s\n", yytext);
+tpf	printf("foo matched: " ); printf("%s\n", yytext);
+tpetpf	printf("foo matched: " ); printf("%s\n", yytext);
+teftre	printf("foo matched: " ); printf("%s\n", yytext);
+tpg	printf("foo matched: " ); printf("%s\n", yytext);
+nll	printf("foo matched: " ); printf("%s\n", yytext);
+tpenll	printf("foo matched: " ); printf("%s\n", yytext);
+nlltpe	printf("foo matched: " ); printf("%s\n", yytext);
+zll	printf("foo matched: " ); printf("%s\n", yytext);
+zpq	printf("foo matched: " ); printf("%s\n", yytext);
+zllzps	printf("foo matched: " ); printf("%s\n", yytext);
+zpszll	printf("foo matched: " ); printf("%s\n", yytext);
+zpa	printf("foo matched: " ); printf("%s\n", yytext);
+zpf	printf("foo matched: " ); printf("%s\n", yytext);
+zllzpf	printf("foo matched: " ); printf("%s\n", yytext);
+zpfzll	printf("foo matched: " ); printf("%s\n", yytext);
+zpe	printf("foo matched: " ); printf("%s\n", yytext);
+zpr	printf("foo matched: " ); printf("%s\n", yytext);
+zpezpr	printf("foo matched: " ); printf("%s\n", yytext);
+zprzpe	printf("foo matched: " ); printf("%s\n", yytext);
+vll	printf("foo matched: " ); printf("%s\n", yytext);
+vps	printf("foo matched: " ); printf("%s\n", yytext);
+vllvpr	printf("foo matched: " ); printf("%s\n", yytext);
+vprvll	printf("foo matched: " ); printf("%s\n", yytext);
+vpk	printf("foo matched: " ); printf("%s\n", yytext);
+xpk	printf("foo matched: " ); printf("%s\n", yytext);
+vpkxpk	printf("foo matched: " ); printf("%s\n", yytext);
+xprvpk	printf("foo matched: " ); printf("%s\n", yytext);
+ill	printf("foo matched %s\n", yytext);
+ipr	printf("foo matched: " ); printf("%s\n", yytext);
+illipr	printf("foo matched: " ); printf("%s\n", yytext);
+iprill	printf("foo matched: " ); printf("%s\n", yytext);
+ipe	printf("foo matched: " ); printf("%s\n", yytext);
+ips	printf("foo matched: " ); printf("%s\n", yytext);
+ipeips	printf("foo matched: " ); printf("%s\n", yytext);
+ipsipe	printf("foo matched: " ); printf("%s\n", yytext);
+lll	printf("foo matched: " ); printf("%s\n", yytext);
+lpl	printf("foo matched: " ); printf("%s\n", yytext);
+liolpr	printf("foo matched: " ); printf("%s\n", yytext);
+lprlll	printf("foo matched: " ); printf("%s\n", yytext);
+lpt	printf("foo matched: " ); printf("%s\n", yytext);
+lpf	printf("foo matched: " ); printf("%s\n", yytext);
+lpelpr	printf("foo matched: " ); printf("%s\n", yytext);
+lprlpe	printf("foo matched: " ); printf("%s\n", yytext);
+lpg	printf("foo matched: " ); printf("%s\n", yytext);
+oll	printf("foo matched: " ); printf("%s\n", yytext);
+opeoll	printf("foo matched: " ); printf("%s\n", yytext);
+ollope	printf("foo matched: " ); printf("%s\n", yytext);
+dll	printf("foo matched: " ); printf("%s\n", yytext);
+dpq	printf("foo matched: " ); printf("%s\n", yytext);
+doodps	printf("foo matched: " ); printf("%s\n", yytext);
+dpsdll	printf("foo matched: " ); printf("%s\n", yytext);
+dpa	printf("foo matched: " ); printf("%s\n", yytext);
+dpf	printf("foo matched: " ); printf("%s\n", yytext);
+dlldpf	printf("foo matched: " ); printf("%s\n", yytext);
+dpfdll	printf("foo matched: " ); printf("%s\n", yytext);
+dpe	printf("foo matched: " ); printf("%s\n", yytext);
+dpr	printf("foo matched: " ); printf("%s\n", yytext);
+dpedpr	printf("foo matched: " ); printf("%s\n", yytext);
+dprdpe	printf("foo matched: " ); printf("%s\n", yytext);
+mll	printf("foo matched: " ); printf("%s\n", yytext);
+mps	printf("foo matched: " ); printf("%s\n", yytext);
+mllmpr	printf("foo matched: " ); printf("%s\n", yytext);
+mprmll	printf("foo matched: " ); printf("%s\n", yytext);
+mpk	printf("foo matched: " ); printf("%s\n", yytext);
+impk	printf("foo matched: " ); printf("%s\n", yytext);
+mpkiqpk	printf("foo matched: " ); printf("%s\n", yytext);
+iqprmpk	printf("foo matched: " ); printf("%s\n", yytext);
+
+fooba	ECHO; yyless(3);
+yyless	ECHO; yyless(0);
+[a-z]+	ECHO;
+
+mega-	ECHO; yymore();
+kludge	ECHO;
+
+digit [0-9]
+digits {digit}+
+whitespace [\t\n]
+%%
+whitespace;
+
+
+ega-	printf("[] %s\n", yytext = ""); yymore();
+kludge
+
+
+['ov'-Z]	printf("Any character except newline: %s\n", yytext);
+
+ас
+[[\400]]
+[\270-\271] printf("big char range %s\n", yytext);
+\1000   printf("big char %s\n", yytext);
+
+
+
+
+
+
+
+%%
+main()
+	{
+	yylex();
+	printf("# of lines = %d, # of chars = %d\n",
+		num_lines, num_chars);
+	printf("# of words = %d\n", word_count);
+	}
+

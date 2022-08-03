@@ -1,0 +1,17 @@
+GROUP	testgroup 
+
+	GRID RECTANGULAR  
+	ELEMENT 
+	   GEOMETRY RECTANGULAR  26 97 
+
+	   POLARIZATION LINEAR 
+           PORTS 1
+              PORT 1
+              POL_ORIENT X
+              AMPLITUDE 1.0 LINEAR
+	ADD 	NODE -4 -3 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 20 mm   
+	   PHASE UNIFORM 21 deg   
+END 

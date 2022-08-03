@@ -1,0 +1,32 @@
+GROUP	testgroup 
+
+	GRID SQUARE  STEP 41 mm   
+	ELEMENT 
+	   GEOMETRY RECTANGULAR  PDIM 108 QDIM 67 
+
+
+	   PORTS 7 
+	      PORT 1 
+	      POL_ORIENT X 	      AMPLITUDE 29 
+	      PHASE_POL_ARRANG 738 
+	      PORT 2 
+	      AMPLITUDE 24 
+	      PORT 3 
+	      AMPLITUDE 13 
+	      PHASE_POL_ARRANG 616 
+	      PORT 4 
+	      POL_ORIENT Y 	      AMPLITUDE 24 
+	      PHASE_POL_ARRANG 532 
+	      PORT 5 
+	      AMPLITUDE 16 
+	      PORT 6 
+	      POL_ORIENT Y deg    
+	      AMPLITUDE 17 
+	      PORT 7 
+	      AMPLITUDE 36 
+	ADD 	BLOCK 0 3 0 8 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 34 mm   
+	   PHASE UNIFORM -92 
+END 

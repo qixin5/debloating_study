@@ -1,0 +1,40 @@
+GROUP	testgroup 
+
+	GRID SQUARE  
+	ELEMENT 
+	   GEOMETRY CIRCULAR  RADIUS 70 
+	   POLARIZATION CIRCULAR 
+	   PORTS 8 
+	      PORT 1 
+	      AMPLITUDE 30 
+	      PHASE_POL_ARRANG 387 
+	      PORT 2 
+	      AMPLITUDE 16 mm   
+	      PHASE_SCANNING 537 deg   
+	      PHASE_POL_ARRANG 572 
+	      PORT 3 
+	      AMPLITUDE 35 
+	      PHASE_POL_ARRANG 644 
+	      PORT 4 
+	      AMPLITUDE 23 
+	      PHASE_POL_ARRANG 647 
+	      PORT 5 
+	      AMPLITUDE 34 
+	      PHASE_SCANNING 347 
+	      PORT 6 
+	      AMPLITUDE 27 
+	      PHASE_POL_ARRANG 472 deg   
+	      PORT 7 
+	      AMPLITUDE 23 
+	      PHASE_POL_ARRANG 484 
+	      PORT 8 
+	      AMPLITUDE 28 
+	ADD 	BLOCK 9 1 1 -2 
+	ADD 	BLOCK 3 -7 -1 2 
+	ADD 	BLOCK 5 2 -3 -8 
+	ADD 	BLOCK -6 -4 -8 3 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 14 
+	   PHASE UNIFORM -9 
+END 

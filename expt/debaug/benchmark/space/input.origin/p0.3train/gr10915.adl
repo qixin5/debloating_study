@@ -1,0 +1,41 @@
+GROUP	testgroup 
+
+	GRID HEXAGONAL  STEP 80 
+	ELEMENT 
+	   GEOMETRY CIRCULAR 57 
+
+	   PORTS 9 
+	      PORT a.b
+	      POL_ORIENT Y 	      AMPLITUDE 102 
+	      PHASE_SHAPING 574 
+	      PHASE_POL_ARRANG 641 
+	      PORT 2 
+	      POL_ORIENT Y 	      AMPLITUDE 21 
+	      PORT 3 
+	      AMPLITUDE 20 
+	      PHASE_SCANNING 513 deg   
+	      PORT 4 
+	      AMPLITUDE 23 
+	      PORT 5 
+	      AMPLITUDE 28 
+	      PHASE_POL_ARRANG 540 deg   
+	      PORT 6 
+	      AMPLITUDE 24 
+	      PHASE_SHAPING 553 
+	      PHASE_POL_ARRANG 555 
+	      PORT 7 
+	      AMPLITUDE 28 
+	      PHASE_SHAPING 453 
+	      PHASE_POL_ARRANG 610 
+	      PORT 8 
+	      AMPLITUDE 28 mm   
+	      PHASE_POL_ARRANG 532 
+	      PORT 9 
+	      AMPLITUDE 14 
+	      PHASE_SCANNING 303 
+	ADD 	BLOCK -1 -4 6 1 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE SECOND ORDER 19 26 25 21 22 
+	   PHASE UNIFORM 22 
+END 

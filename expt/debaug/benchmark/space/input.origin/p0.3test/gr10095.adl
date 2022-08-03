@@ -1,0 +1,17 @@
+GROUP	
+
+	GRID TRIANGULAR  
+	         PX -17 
+	         PY 3 
+	         QX 19 
+	         QY -35 
+	ELEMENT 
+	   GEOMETRY CIRCULAR 113 mm   
+
+	ADD 	NODE -1 -4 
+	ADD 	BLOCK -12 4 3 -4 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 35 m    
+	 XX UNIFORM 71 
+END 

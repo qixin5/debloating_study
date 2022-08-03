@@ -1,0 +1,50 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  ANGLE 55 deg   PSTEP 69 QSTEP 49 
+	ELEMENT 
+	   GEOMETRY CIRCULAR 105 
+	   POLARIZATION CIRCULAR 
+	   PORTS 9 
+	      PORT 1 
+	      AMPLITUDE 52 
+
+	      PORT 2 
+	      AMPLITUDE 74 
+
+	      PHASE_POL_ARRANG 580 
+	      PORT 3 
+	      POL_ORIENT X 	      AMPLITUDE 61 mm   
+
+	      PHASE_POL_ARRANG 274 
+	      PORT 4 
+	      AMPLITUDE 31 
+
+	      PHASE_SHAPING 612 
+	      PHASE_POL_ARRANG 553 
+	      PORT 5 
+	      AMPLITUDE 56 
+
+	      PORT 6 
+	      AMPLITUDE 20 
+
+	      PHASE_POL_ARRANG 650 
+	      PORT 7 
+	      AMPLITUDE 72 
+
+	      PHASE_POL_ARRANG 391 
+	      PORT 8 
+	      AMPLITUDE 48 
+
+	      PHASE_POL_ARRANG 635 deg   
+	      PORT 9 
+	      AMPLITUDE 36 
+
+	      PHASE_POL_ARRANG 489 
+	ADD 	HEXAGON -6 -4 
+	ADD 	BLOCK 1 -2 7 7 
+	ADD 	BLOCK -4 1 -2 0 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE SECOND ORDER 22 26 23 27 23 
+	   PHASE  XX 
+END 

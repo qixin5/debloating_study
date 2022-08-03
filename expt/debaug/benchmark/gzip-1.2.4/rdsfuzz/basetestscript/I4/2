@@ -1,0 +1,13 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp $INDIR/test1.txt ./
+cp $INDIR/test2.txt ./
+cp $INDIR/test3.txt ./
+cp $INDIR/test4.txt ./
+
+$BIN test1.txt test2.txt test3.txt test4.txt

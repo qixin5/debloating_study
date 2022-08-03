@@ -1,0 +1,16 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	         PX -36 
+	         PY 2 
+	         QX 27 
+	         QY 13 mm   
+	ELEMENT 
+	   GEOMETRY CIRCULAR 81 
+
+	ADD 	NODE -2 0 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 23 
+	   PHASE UNIFORM 58 
+END 

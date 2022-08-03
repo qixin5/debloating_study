@@ -1,0 +1,11 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+{ timeout -k 9 ${TIMEOUT}s $BIN --version; } &>$OUTDIR/o7
+
+echo "$?" >>$OUTDIR/o7
+

@@ -1,0 +1,36 @@
+GROUP	testgroup 
+
+	GRID HEXAGONAL  STEP 64 
+	ELEMENT 
+	   GEOMETRY CIRCULAR 31 
+
+	   PORTS 7 
+	      PORT 1 
+	      AMPLITUDE 41 
+	      PORT 2 
+	      AMPLITUDE 34 
+	      PHASE_POL_ARRANG 437 
+	      PORT 3 
+	      AMPLITUDE 29 
+	      PHASE_SCANNING 555 
+	      PHASE_POL_ARRANG 657 
+	      PORT 4 
+	      POL_ORIENT X 	      AMPLITUDE 23 
+	      PHASE_SCANNING 518 
+	      PHASE_POL_ARRANG 479 
+	      PORT 5 
+	      AMPLITUDE 26  
+	      PHASE_POL_ARRANG 577 
+	      PORT 6 
+	      AMPLITUDE 25 
+	      PHASE_SHAPING 552 
+	      PORT 7 
+	      AMPLITUDE 20 
+	      PHASE_SHAPING 432 
+	      PHASE_SCANNING 666 deg   
+	ADD 	NODE 8 6 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 19 
+           PHASE 	THETA a.b PHI 1.0
+END 

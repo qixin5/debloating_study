@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '@n' '&5D$6:)'\''!!WaohoC<DMt/ns5zA:0vzT p?PADhjzrF.e*NbJLCd;0Sr/.Ja+?2sn-MP+uf6)IZet;aI!3=TH7?$d_6t)!l=Wfh37`[%\<5' < $INDIR/input/ruin.1200 &> $OUTDIR/o600
+

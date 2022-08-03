@@ -1,0 +1,27 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	         PX -12 
+	         PY -28 
+	         QX -2 
+	         QY -27 
+	ELEMENT 
+	   GEOMETRY CIRCULAR RADIUS 84 
+
+	   PORTS 2 
+	      PORT 1 
+	      AMPLITUDE 35 
+	      PHASE_POL_ARRANG 437 
+	      PORT 2 
+	      AMPLITUDE 21 
+	      PHASE_SCANNING 466 
+	      PHASE_POL_ARRANG 653 
+	ADD 	HEXAGON -8 3 
+	ADD 	BLOCK 4 -7 1 -4 
+	ADD 	NODE -7 -5 ORIENTATION -9 -1 63 
+	ADD 	BLOCK 2 0 0 -2 
+
+	GROUP_EXCITATION 
+           AMPLITUDE	SECOND ORDER	1.0 1.0 1.0 1.0 a.b
+	   PHASE UNIFORM -74 
+END 

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '@@' ',o-'\'' G$8%4u=+op(<[' < $INDIR/input/ruin.238 &> $OUTDIR/o4388
+

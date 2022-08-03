@@ -1,0 +1,6 @@
+%%
+abc	|
+zx*/xy*	printf("trailing context\n", yytext);
+abc	|
+bba	|
+zx*/xy*	printf("trailing context\n", yytext);

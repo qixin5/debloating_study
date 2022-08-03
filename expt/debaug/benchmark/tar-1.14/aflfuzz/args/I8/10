@@ -1,0 +1,1 @@
+--create --exclude='file*' -f test2.tar

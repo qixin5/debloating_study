@@ -1,0 +1,24 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN -p /home/qxin6/tmp/test/test1/test2/test3/test4 &>$OUTDIR/o3
+
+echo "$?" >>$OUTDIR/o3
+info=`ls -ald /home/qxin6/tmp | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o3
+info=`ls -ald /home/qxin6/tmp/test | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o3
+info=`ls -ald /home/qxin6/tmp/test/test1 | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o3
+info=`ls -ald /home/qxin6/tmp/test/test1/test2 | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o3
+info=`ls -ald /home/qxin6/tmp/test/test1/test2/test3 | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o3
+info=`ls -ald /home/qxin6/tmp/test/test1/test2/test3/test4 | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o3
+
+rm -fr /home/qxin6/tmp/test

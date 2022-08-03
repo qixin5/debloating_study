@@ -1,0 +1,48 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp -r $INDIR/test ./
+cp -r $INDIR/test1 ./
+cp -r $INDIR/test2 ./
+cp -r $INDIR/test3 ./
+cp -r $INDIR/test4 ./
+cp -r $INDIR/filenamenotcontainingtest ./
+cp -r $INDIR/testdir ./
+
+{ timeout -k 9 ${TIMEOUT}s $BIN --create -f test2.tar * --exclude='file*'; } &>$OUTDIR/o10
+
+echo "$?" >>$OUTDIR/o10
+rm -fr test test1 test2 test3 test4 filenamenotcontainingtest testdir
+tar xf test2.tar
+diff test $INDIR/test
+echo "$?" >>$OUTDIR/o10
+diff test1 $INDIR/test1
+echo "$?" >>$OUTDIR/o10
+diff test2 $INDIR/test2
+echo "$?" >>$OUTDIR/o10
+diff test3 $INDIR/test3
+echo "$?" >>$OUTDIR/o10
+diff test4 $INDIR/test4
+echo "$?" >>$OUTDIR/o10
+test -f filenamenotcontainingtest
+echo "$?" >>$OUTDIR/o10
+
+diff testdir/test $INDIR/testdir/test
+echo "$?" >>$OUTDIR/o10
+diff testdir/test1 $INDIR/testdir/test1
+echo "$?" >>$OUTDIR/o10
+diff testdir/test2 $INDIR/testdir/test2
+echo "$?" >>$OUTDIR/o10
+diff testdir/test3 $INDIR/testdir/test3
+echo "$?" >>$OUTDIR/o10
+diff testdir/test4 $INDIR/testdir/test4
+echo "$?" >>$OUTDIR/o10
+
+
+
+
+

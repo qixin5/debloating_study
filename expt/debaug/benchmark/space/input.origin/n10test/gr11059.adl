@@ -1,0 +1,20 @@
+GROUP	testgroup 
+
+	GRID HEXAGONAL  
+	ELEMENT 
+	   GEOMETRY RECTANGULAR PDIM 82 QDIM 113 
+
+
+           PORTS 1
+              PORT 1
+              POL_ORIENT X
+              AMPLITUDE 1.0 POWER
+              PHASE_SHAPING a.b
+	ADD 	BLOCK -5 0 -6 0 
+	ADD 	BLOCK -4 -9 -4 4 
+	ADD 	BLOCK -2 -4 -1 -2 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 26 
+	   PHASE UNIFORM -70 
+END 

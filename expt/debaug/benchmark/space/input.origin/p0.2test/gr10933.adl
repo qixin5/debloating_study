@@ -1,0 +1,15 @@
+GROUP	testgroup 
+
+	GRID HEXAGONAL  STEP 99 
+	ELEMENT 
+	   GEOMETRY CIRCULAR 34 
+
+           PORTS 8
+              PORT 1
+              AMPLITUDE a.b
+	ADD 	BLOCK 0 5 0 -4 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 24 
+	   PHASE UNIFORM -11 
+END 

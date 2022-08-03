@@ -1,0 +1,10 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN $INDIR/testdir/file11 -v  > $OUTDIR/o37 2>&1
+
+/home/qxin6/debaug_expt/debaug/benchmark/gzip-1.3_template/testscript/util/cpoptv.sh $INDIR $OUTDIR/o37

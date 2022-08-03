@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN -rsul 20 -e's/([Cc]at)|([Dd]og)/MEOWBARK/g; l' $INDIR/default.in  > $OUTDIR/o256 2>&1
+

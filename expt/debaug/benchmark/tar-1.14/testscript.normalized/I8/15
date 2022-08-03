@@ -1,0 +1,26 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp -r $INDIR/archive.tar ./
+
+{ timeout -k 9 ${TIMEOUT}s $BIN -xf archive.tar --no-same-permissions; } &>$OUTDIR/o15
+
+echo "$?" >>$OUTDIR/o15
+info=`ls -l | sed -n '1!p' | tr -s ' ' | cut -d' ' -f1,2,3,4`
+echo ${info} >>$OUTDIR/o15
+diff filenamenotcontainingtest $INDIR/filenamenotcontainingtest
+echo "$?" >>$OUTDIR/o15
+diff test $INDIR/test
+echo "$?" >>$OUTDIR/o15
+diff file2 $INDIR/file2
+echo "$?" >>$OUTDIR/o15
+
+
+
+
+
+

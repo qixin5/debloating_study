@@ -1,0 +1,36 @@
+GROUP	testgroup 
+
+	GRID XX   
+	ELEMENT 
+	   GEOMETRY CIRCULAR  46 
+
+	   PORTS 8 
+	      PORT 1 
+	      AMPLITUDE 29 
+	      PORT 2 
+	      POL_ORIENT X 	      AMPLITUDE 23 
+	      PHASE_POL_ARRANG 431 
+	      PORT 3 
+	      AMPLITUDE 29 
+	      PHASE_POL_ARRANG 603 
+	      PORT 4 
+	      AMPLITUDE 26 
+	      PHASE_POL_ARRANG 514 
+	      PORT 5 
+	      AMPLITUDE 20 
+	      PHASE_POL_ARRANG 583 
+	      PORT 6 
+	      AMPLITUDE 31 mm   
+	      PHASE_POL_ARRANG 335 
+	      PORT 7 
+	      AMPLITUDE 20 
+	      PHASE_POL_ARRANG 692 
+	      PORT 8 
+	      AMPLITUDE 26 
+	      PHASE_SCANNING 635 
+	ADD 	BLOCK -4 -2 0 -1 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 24 
+	   PHASE SECOND ORDER 26 23 34 27 21 
+END 

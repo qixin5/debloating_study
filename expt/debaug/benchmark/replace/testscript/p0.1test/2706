@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '@n' '<u2]r/0cjs<u2]r/0cjs<u2]r/0cjs<u2]r/0cjs<u2]r/0cjs<u2]r/0cjs<u2]r/0cjs<u2]r/0cjs<u2]r/0cjs<u2]r/0cjs<u2]r/0cjs<u2]r/0cjs<u2]r/0cjs<u2]r/0cjs<u2]r/0cjs<u2]r/0cjsO' < $INDIR/input/ruin.1045 &> $OUTDIR/o2706
+

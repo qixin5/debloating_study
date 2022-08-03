@@ -1,0 +1,6 @@
+%%
+
+[\a]		printf("Zero or more r's: %s\n", yytext);
+[\40-\176]	printf("octal: %d\n", yytext);
+\0		printf("Two to five z's: %s\n", yytext);
+[\400-\415]	printf("over 256: %d\n", yytext);

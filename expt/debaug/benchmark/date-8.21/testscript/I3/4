@@ -1,0 +1,14 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN +'%-4.4h %2.1d %H:%M' &>output.txt
+exit_val=$?
+
+info_to_compare=`head -1 output.txt | tr -s ' ' | cut -d' ' -f1,2`
+
+echo ${info_to_compare} &>$OUTDIR/o4
+echo ${exit_val} >>$OUTDIR/o4

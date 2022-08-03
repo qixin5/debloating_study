@@ -1,0 +1,140 @@
+dnl  Autoconf script for gnubg, the backgammon player.
+dnl To rebuild the `configure' script from this, execute the command
+dnl     autoconf
+dnl in the directory containing this script.
+dnl
+dnl by Gary Wong <gtw@gnu.org>, 1999, 2000.
+dnl
+dnl This program is free software; you can redistribute it and/or modify
+dnl it under the terms of the GNU General Public License as published by
+dnl the Free Software Foundation, version 2.
+dnl
+dnl This program is distributed in the hope that it will be useful,
+dnl but WITHOUT ANY WARRANTY; without even the implied warranty of
+dnl MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+dnl GNU General Public License for more details.
+dnl
+dnl You should have received a copy of the GNU General Public License
+dnl along with this program; if not, write to the Free Software
+dnl Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+AC_INIT(gnubg.c)
+AM_INIT_AUTOMAKE(gnubg,0.10)
+AM_CONFIG_HEADER(config.h)
+
+if test -f config.options
+then
+  . ./config.options
+fi
+
+dnl Checks for programs.
+AC_PROG_AWK
+AC_PROG_CC
+AC_PROG_LN_S
+AC_PROG_RANLIB
+AC_CHECK_PROG(BISON, bison, bison, true)
+AC_CHECK_PROG(FLEX, flex, flex, true)
+AC_CHECK_PROG(GNUPLOT, gnuplot, gnuplot)
+AC_CHECK_PROG(PNGTOPNM, pngtopnm, pngtopnm)
+AC_CHECK_PROG(PNMTOPS, pnmtops, pnmtops)
+AC_CHECK_PROG(TR, tr, tr)
+
+dnl Checks for libraries.
+AC_CHECK_LIB(m, sqrt)
+AC_ARG_WITH(readline,[  --with-readline         support fancy command line editing])
+if test "$with_readline" != "no"; then
+  for lib in termcap ncurses curses; do
+    AC_CHECK_LIB($lib, tgetent, LIBS="-l$lib $LIBS"; break)
+  done
+  AC_CHECK_LIB(readline, readline)
+fi
+AC_ARG_WITH(gdbm,[  --with-gdbm             use GNU dbm for position databases])
+if test "$with_gdbm" != "no"; then
+  AC_CHECK_LIB(gdbm, gdbm_open)
+fi
+AC_CHECK_LIB(dl, dlopen)
+AC_ARG_WITH(guile,[  --with-guile            use the Guile extensibility language])
+if test "$with_guile" = "no"; then
+  no_guile=yes
+else
+  AM_GUILE
+  if test "$with_guile" != ""; then
+    GUILE_LDFLAGS="$with_guile"
+  fi
+fi
+if test "$no_guile" != "yes"; then
+  AC_DEFINE(USE_GUILE,1,Define if you want to use the Guile extensibility language.)
+fi
+
+dnl Checks for header files.
+AC_HEADER_STDC
+AC_HEADER_TIME
+AC_CHECK_HEADERS(fcntl.h sys/file.h sys/ioctl.h limits.h sys/mman.h pwd.h stropts.h sys/socket.h sys/stat.h sys/time.h sys/types.h sys/uio.h unistd.h sys/wait.h)
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+AC_C_CONST
+AC_C_INLINE
+AC_TYPE_SIGNAL
+AC_TYPE_SIZE_T
+
+dnl Checks for library functions.
+AC_FUNC_ALLOCA
+AC_FUNC_MMAP
+AC_FUNC_VPRINTF
+AC_CHECK_FUNCS(sigaction sigvec,break)
+AC_CHECK_FUNCS(sigprocmask sigblock,break)
+AC_CHECK_FUNCS(fork fstat getdtablesize getlogin getpwuid gettimeofday isatty random readv select setvbuf)
+AC_CHECK_FUNCS(acosf asinf atanf cosf lrint sinf tanf)
+AC_CACHE_CHECK(for signbit macro, ac_cv_func_signbit,
+[AC_TRY_LINK([#define _GNU_SOURCE 1
+#include <math.h>], [if(signbit(1.0f));],
+  eval "ac_cv_func_signbit=yes",
+  eval "ac_cv_func_signbit=no")])
+if test "$ac_cv_func_signbit" = "yes"; then
+  AC_DEFINE(HAVE_SIGNBIT,1,Define if you have a signbit() macro faster than a compare to 0.0.)
+fi
+AC_SEARCH_LIBS(connect,socket,AC_DEFINE(HAVE_SOCKETS,1,Define if the system supports AC_LOCAL sockets.))
+
+dnl Check for GTK
+AC_ARG_WITH(gtk,[  --with-gtk              use GTK library and widgets])
+AC_ARG_WITH(gtkextra,[  --with-gtkextra         use GtkExtra widgets])
+if test "$with_gtk" = "no"; then
+  no_gtk=yes
+else
+  AM_PATH_GTK(1.2.0)
+fi
+AM_CONDITIONAL(USE_GTK, test "$no_gtk" != "yes" )
+if test "$no_gtk" = "yes"; then
+  AC_PATH_XTRA
+  AM_CONDITIONAL(USE_EXT, test "$no_x" != "yes" )
+  if test "$no_x" != "yes"; then
+    AC_DEFINE(USE_EXT,1,Define if you want to use the ext toolkit and widgets.)
+  fi
+else
+  AC_DEFINE(USE_GTK,1,Define if you want to use the GTK toolkit and widgets.)
+  ac_save_CPPFLAGS="$CPPFLAGS"
+  ac_save_CFLAGS="$CFLAGS"
+  ac_save_LIBS="$LIBS"
+  CPPFLAGS="$CPPFLAGS $GTK_CFLAGS"
+  CFLAGS="$CFLAGS $GTK_CFLAGS"
+  LIBS="$LIBS $GTK_LIBS"
+  AC_CHECK_HEADERS(gdk/gdkx.h)
+  AC_CHECK_FUNCS(XCopyPlane)
+  if test "$with_gtkextra" != "no"; then
+    AC_CHECK_HEADERS(gtkextra/gtksheet.h)
+    AC_CHECK_LIB(gtkextra,gtk_sheet_new,
+[AC_DEFINE_UNQUOTED(HAVE_LIBGTKEXTRA)
+GTK_LIBS="-lgtkextra $GTK_LIBS"
+])
+  fi
+  CPPFLAGS="$ac_save_CPPFLAGS"
+  CFLAGS="$ac_save_CFLAGS"
+  LIBS="$ac_save_LIBS"
+fi
+
+AM_CONDITIONAL(CROSS_COMPILING, test "$cross_compiling" = "yes")
+
+dnl Record installation paths.
+AC_DEFINE_DIR(DATADIR, datadir)
+
+AC_OUTPUT(Makefile doc/Makefile ext/Makefile lib/Makefile)

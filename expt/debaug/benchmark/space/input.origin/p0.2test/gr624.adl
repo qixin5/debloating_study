@@ -1,0 +1,38 @@
+GROUP	testgroup 
+
+	GRID HEXAGONAL  
+	ELEMENT 
+	   GEOMETRY RECTANGULAR 65 70 
+
+
+	   PORTS 8 
+	      PORT 1 
+	      AMPLITUDE 30 
+	      PHASE_POL_ARRANG 456 deg   
+	      PORT 2 
+	      AMPLITUDE 24 m    
+	      PHASE_POL_ARRANG 749 
+	      PORT 3 
+	      AMPLITUDE 30 mm   
+	      PHASE_SCANNING 572 
+	      PHASE_POL_ARRANG 591 
+	      PORT 4 
+	      AMPLITUDE 29 
+	      PHASE_POL_ARRANG 558 
+	      PORT 5 
+	      AMPLITUDE 28 
+	      PORT 6 
+	      AMPLITUDE 23 
+	      PORT 7 
+	      AMPLITUDE 25 
+	      PHASE_SHAPING 638 
+	      PORT 8 
+	      AMPLITUDE 22 
+	      PHASE_POL_ARRANG 492 deg   
+	ADD 	NODE -3 4 
+	ADD 	BLOCK 7 7 -2 -2 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 25 
+	   PHASE UNIFORM -95 
+END 

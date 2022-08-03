@@ -1,0 +1,18 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	         PX -16 
+	         PY -31 
+	         QX 3 
+	         QY -22 
+	ELEMENT 
+	   GEOMETRY CIRCULAR RADIUS 79 
+	   POLARIZATION LINEAR 
+	ADD 	HEXAGON -4 -7 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 25 
+           PHASE 	ROTATION SEQUENTIAL
+           ANGLE 1.0 1.0
+           PHASE a.b
+END 

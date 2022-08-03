@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN "\|\(for\|12345\)a*b\?c\+" $INDIR/grep1.dat  > $OUTDIR/o265 2>&1
+

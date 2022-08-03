@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN -d "UTC 1970-01-01 126507600 secs" &>$OUTDIR/o12
+echo "$?" >>$OUTDIR/o12

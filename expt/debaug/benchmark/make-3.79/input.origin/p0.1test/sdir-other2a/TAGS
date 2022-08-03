@@ -1,0 +1,29 @@
+
+hello.c,56
+#define	alloca(56,1417
+main 87,2003
+xmalloc 253,5012
+
+version.c,0
+
+getopt.c,146
+_getopt_internal 314,11325
+exchange 236,7931
+getopt 648,19454
+main 667,19836
+#define	my_bcopy(183,6650
+my_bcopy 206,7003
+my_index 192,6833
+
+getopt1.c,61
+getopt_long 55,1748
+getopt_long_only 71,2251
+main 89,2607
+
+alloca.c,154
+#define ADDRESS_FUNCTION(50,1678
+#define ADDRESS_FUNCTION(52,1741
+alloca 139,4004
+find_stack_direction 85,2515
+i00afunc 313,9259
+i00afunc 387,11207

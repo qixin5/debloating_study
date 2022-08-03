@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '6*' ')W"v#jga.ue\v[5syHzI,K,QJ+\k#52`Q%<B(@I^t' < $INDIR/input/ruin.1736 &> $OUTDIR/o1583
+

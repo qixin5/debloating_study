@@ -1,0 +1,13 @@
+%%
+
+\x16		printf("hex : %s\n", yytext);
+\xc		printf("hex : %s\n", yytext);
+\a		printf("hex : %s\n", yytext);
+\b		printf("hex : %s\n", yytext);
+\f		printf("hex : %s\n", yytext);
+\n		printf("hex : %s\n", yytext);
+\t		printf("hex : %s\n", yytext);
+\r		printf("hex : %s\n", yytext);
+\v		printf("hex : %s\n", yytext);
+\xf		printf("hex : %s\n", yytext);
+\1		printf("hex : %s\n", yytext);

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+CURRDIR=$(pwd)
+
+cp -r -p $INDIR/sdir-cov4d ./sdir
+cd sdir
+timeout -k 9 ${TIMEOUT}s $BIN > $OUTDIR/o423 2>&1
+${DEBAUG_DIR}/bin/makeoutputcleanup $OUTDIR/o423
+if [ -f default.profraw ]; then
+    mv default.profraw ${CURRDIR}/
+fi
+
+cd ..
+rm -r -f sdir

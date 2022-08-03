@@ -1,0 +1,30 @@
+GROUP	testgroup 
+
+	GRID HEXAGONAL  STEP 96 
+	ELEMENT 
+	   GEOMETRY CIRCULAR RADIUS 75 
+
+	   PORTS 6 
+	      PORT 1 
+	      POL_ORIENT Y 	      AMPLITUDE 37 
+	      PORT 2 
+	      AMPLITUDE 29 
+	      PHASE_POL_ARRANG 527 
+	      PORT 3 
+	      AMPLITUDE 25 
+	      PORT 4 
+	      AMPLITUDE 29 
+	      PHASE_POL_ARRANG 551 
+	      PORT 5 
+	      AMPLITUDE 29 
+	      PHASE_SHAPING 417 
+	      PORT 6 
+	      AMPLITUDE 27 
+	      PHASE_POL_ARRANG 624 deg   
+	ADD 	BLOCK 4 -3 4 1 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 21 
+           PHASE 	ROTATION SEQUENTIAL
+           ANGLE 1.0 a.b
+END 

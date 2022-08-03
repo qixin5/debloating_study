@@ -1,0 +1,43 @@
+GROUP	testgroup 
+
+	GRID SQUARE  STEP 51 
+	ELEMENT 
+	   GEOMETRY CIRCULAR  24 
+	   POLARIZATION LINEAR 
+	   PORTS 9 
+	      PORT 1 
+	      AMPLITUDE 22 
+	      PHASE_POL_ARRANG 523 
+	      PORT 2 
+	      AMPLITUDE 23 
+	      PHASE_SHAPING 613 
+	      PHASE_POL_ARRANG 564 
+	      PORT 3 
+	      POL_ORIENT X 	      AMPLITUDE 23 mm   
+	      PHASE_POL_ARRANG 511 
+	      PORT 4 
+	      AMPLITUDE 28 mm   
+	      PORT 5 
+	      POL_ORIENT 26 	      AMPLITUDE 32 
+	      PHASE_SHAPING 668 
+	      PHASE_SCANNING 714 
+	      PORT 6 
+	      POL_ORIENT X 	      AMPLITUDE 13 
+	      PORT 7 
+	      AMPLITUDE 31 mm   
+	      PHASE_POL_ARRANG 627 deg   
+	      PORT 8 
+	      POL_ORIENT X deg    
+	      AMPLITUDE 18 
+	      PORT 9 
+	      AMPLITUDE 31 
+	      PHASE_SCANNING 550 
+	ADD 	BLOCK -5 5 3 0 
+	ADD 	BLOCK 0 -3 4 -2 
+	ADD 	NODE -2 -1 
+	ADD 	BLOCK 2 -2 0 1 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 23 
+	   PHASE UNIFORM -82 deg   
+END 

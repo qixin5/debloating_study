@@ -1,0 +1,14 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp -r $INDIR/file1 ./
+cp -r $INDIR/file2 ./
+cp -r $INDIR/file3 ./
+cp -r $INDIR/dir1 ./
+cp -r $INDIR/dir2 ./
+
+$BIN -cf all.tar *

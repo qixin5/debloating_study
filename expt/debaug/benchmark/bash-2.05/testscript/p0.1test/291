@@ -1,0 +1,24 @@
+#!/usr/bin/perl -w
+
+use File::Basename;
+
+$scriptName = "read#1.1.1.test";
+$TEST_DIR = "${DEBSTUDY_DIR}/expt/debaug/working/bash/testplans.alt/testplans.fine";
+
+$BIN = $ARGV[0];
+$OUT_DIR = $ARGV[1];
+$TIMEOUT = $ARGV[2];
+$SCRIPT_FILE = "testfile";
+$ENV{BASH_SRC_DIR} = dirname($BIN);
+$ENV{TESTS_SRC} = $TEST_DIR;
+$ENV{SHLVL} = 4;
+
+close(STDERR);
+
+@fileParts = split(/\./, $scriptName);
+`cd $TEST_DIR && cat setup$fileParts[1] $scriptName cleanup$fileParts[2] > $TEST_DIR/$SCRIPT_FILE && chmod 700 $TEST_DIR/$SCRIPT_FILE`;
+
+$outfile = "$OUT_DIR/o291";
+
+`cd $TEST_DIR`;
+`timeout -k 9 ${TIMEOUT}s $BIN $TEST_DIR/$SCRIPT_FILE > $outfile`;

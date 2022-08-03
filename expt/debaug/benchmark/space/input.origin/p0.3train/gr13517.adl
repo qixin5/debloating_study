@@ -1,0 +1,49 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	         PX 10 
+	         PY -69 
+	         QX -54 
+	         QY 7 dm   
+	ELEMENT 
+	   GEOMETRY CIRCULAR 83 
+	   POLARIZATION CIRCULAR 
+	   PORTS 8 
+	      PORT 1 
+	      AMPLITUDE 88 
+
+	      PHASE_POL_ARRANG 628 
+	      PORT 2 
+	      AMPLITUDE 86 
+
+	      PHASE_SCANNING 565 
+	      PHASE_POL_ARRANG 689 
+	      PORT 3 
+	      AMPLITUDE 41 
+
+	      PHASE_POL_ARRANG 522 deg   
+	      PORT 4 
+	      AMPLITUDE 62 
+
+	      PHASE_POL_ARRANG 376 
+	      PORT 5 
+	      AMPLITUDE 64 mm   
+
+	      PORT 6 
+	      AMPLITUDE 76 
+
+	      PHASE_POL_ARRANG 488 
+	      PORT 7 
+	      AMPLITUDE 87 
+
+	      PORT 8 
+	      AMPLITUDE 52 
+
+	      PHASE_SHAPING 535 
+	      PHASE_SCANNING 511 
+        ADD     NODE -4 -10 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 27 
+	   PHASE SECOND ORDER 25 26 18 18 25 
+END 

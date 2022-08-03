@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '[s]' 'SWCmkAgq0?ml-.(QE"<D(s5YN' < $INDIR/input/ruin.501 &> $OUTDIR/o837
+

@@ -1,0 +1,17 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	ELEMENT 
+	   GEOMETRY CIRCULAR 48 mm   
+	   POLARIZATION LINEAR 
+           PORTS 1
+              PORT 1
+              POL_ORIENT X
+              AMPLITUDE 1.0 POWER
+              PHASE_POL_ARRANG a.b
+	ADD 	BLOCK -1 -5 -5 -5 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 13 
+	   PHASE UNIFORM -36 
+END 

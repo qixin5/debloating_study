@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '-@t*-[@@]?-@[*?[^9-B]?[^0-9]-[^a--b] ' '@t' < $INDIR/temp-test/1796.inp.764.1 &> $OUTDIR/o1150
+

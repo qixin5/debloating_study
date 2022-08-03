@@ -1,0 +1,19 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	         PX 7 
+	         PY -25 
+	         QX -24 
+	         QY 12 
+	ELEMENT 
+	   GEOMETRY CIRCULAR RADIUS 88 
+
+	ADD 	HEXAGON 11 10 
+	ADD 	BLOCK -8 -5 1 -9 
+	ADD 	BLOCK 10 -9 7 9 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 23 
+           PHASE 	THETA 1.0 1.0
+
+END 

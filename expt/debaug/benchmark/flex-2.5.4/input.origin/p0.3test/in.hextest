@@ -1,0 +1,8 @@
+%%
+
+\xa		printf("hex : %s\n", yytext);
+\xb		printf("hex : %s\n", yytext);
+\xc		printf("hex : %s\n", yytext);
+\xd		printf("hex : %s\n", yytext);
+\xe		printf("hex : %s\n", yytext);
+\xf		printf("hex : %s\n", yytext);

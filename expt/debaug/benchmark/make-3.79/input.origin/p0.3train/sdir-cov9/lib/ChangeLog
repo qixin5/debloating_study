@@ -1,0 +1,64 @@
+Thu Feb 22 11:42:57 2001  Gary Wong  <gtw@research.att.com>
+
+	* buffer.c: Check whether <sys/uio.h> exists.
+
+Tue Feb 13 13:12:19 2001  Gary Wong  <gtw@research.att.com>
+
+	* neuralnet.c (NeuralNetCreate): Fix initial random weights
+	(allow negative values).
+
+Tue Jan 16 13:34:39 2001  Gary Wong  <gtw@research.att.com>
+
+	* hash.c (CacheResize): Recreate the original size if the new
+	allocation fails.
+
+Tue Nov 14 13:03:23 2000  Gary Wong  <gtw@research.att.com>
+
+	* isaacs.h: Remove definitions which polluted the namespace
+	(and weren't even used).
+
+Fri Nov 10 13:45:53 2000  Gary Wong  <gtw@research.att.com>
+
+	* neuralnet.c (sigmoid): Optimisations.
+	(NeuralNetCreate, NeuralNetResize): Use irand() instead of rand_r(),
+	for better quality random numbers and improved portability.
+
+Fri Sep 29 14:08:05 2000  Joseph Heled  <pepe@internet.co.nz>
+
+	* config.h: undef VERSION and PACKAGE before setting them.
+
+Wed Aug  2 13:26:08 2000  Joseph Heled  <pepe@internet.co.nz>
+
+	* neuralnet.c: Improve sigmoid accuracy by using a table lookup for
+	the first two digits and using (exp(x) = 1 + x) for x < 0.1. 
+
+Thu Jul 27 18:20:58 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* event.c: Define nothing on systems that can't support it.
+	* buffer.c: Define nothing on systems that can't support it.
+	* fifo.c (FifoIOVec): Do not define on systems that can't support it.
+
+Sat Mar 11 20:09:10 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* neuralnet.c (NeuralNetDifferentiate): New function.
+	
+Fri Jan 14 09:34:52 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* fifo.c: replaced bcopy with memcpy.
+
+Sat Jan  8 17:57:54 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* event.c: removed syslog code (unportable and unnecessary).
+
+Thu Jan  6 22:24:39 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* neuralnet.c (NeuralNetLoadBinary, NeuralNetLoadBinary): New
+	functions.
+
+Mon Jan  3 03:40:48 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* rand_r.c (rand_r): New function.
+
+Sun Jan  2 11:33:58 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* hash.c (CacheResize): New function.

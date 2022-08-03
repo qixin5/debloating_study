@@ -1,0 +1,10 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp -r $INDIR/Music.tar ./
+
+$BIN -xv -f Music.tar "new/two.mp3" "new/three.mp3"

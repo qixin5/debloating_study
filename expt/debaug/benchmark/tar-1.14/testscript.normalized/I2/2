@@ -1,0 +1,34 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp -r $INDIR/ubuntu/Downloads ./
+cp -r $INDIR/ubuntu/Documents ./
+CURRDIR=$(pwd)
+
+{ timeout -k 9 ${TIMEOUT}s $BIN -cvf archive.tar $CURRDIR/Downloads /usr/local/mytest $CURRDIR/Documents; } &>$OUTDIR/o2
+
+echo "$?" >>$OUTDIR/o2
+
+leadpath=`echo $CURRDIR | cut -c2-` #First "/" is ignored for compression
+rm -fr Downloads
+rm -fr Documents
+
+tar xf archive.tar
+diff ${leadpath}/Downloads/song.mp3 $INDIR/ubuntu/Downloads/song.mp3
+echo "$?" >>$OUTDIR/o2
+diff ${leadpath}/Downloads/video.mp4 $INDIR/ubuntu/Downloads/video.mp4
+echo "$?" >>$OUTDIR/o2
+diff ${leadpath}/Downloads/image.png $INDIR/ubuntu/Downloads/image.png
+echo "$?" >>$OUTDIR/o2
+
+diff ${leadpath}/Documents/notes.txt $INDIR/ubuntu/Documents/notes.txt
+echo "$?" >>$OUTDIR/o2
+
+diff usr/local/mytest/file /usr/local/mytest/file
+echo "$?" >>$OUTDIR/o2
+
+

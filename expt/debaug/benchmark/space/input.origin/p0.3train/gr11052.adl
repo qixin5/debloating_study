@@ -1,0 +1,21 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	ELEMENT 
+	   GEOMETRY CIRCULAR 23 
+	   POLARIZATION CIRCULAR RH 
+
+           PORTS 1
+              PORT 1
+              POL_ORIENT X
+              AMPLITUDE 1.0 POWER
+              PHASE_SHAPING a.b
+	ADD 	HEXAGON 9 1 
+	ADD 	BLOCK 5 -3 0 -1 
+	ADD 	BLOCK 2 8 -7 1 
+	ADD 	BLOCK -3 -2 6 1 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 17 
+	   PHASE  XX 
+END 

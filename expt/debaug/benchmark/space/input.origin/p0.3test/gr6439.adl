@@ -1,0 +1,35 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  XX  
+	ELEMENT 
+	   GEOMETRY CIRCULAR 54 
+
+	   PORTS 7 
+	      PORT 1 
+	      POL_ORIENT X 	      AMPLITUDE 59 
+	      PHASE_SCANNING 502 
+	      PHASE_POL_ARRANG 444 
+	      PORT 2 
+	      AMPLITUDE 34 
+	      PHASE_SCANNING 548 
+	      PORT 3 
+	      AMPLITUDE 23 
+	      PHASE_POL_ARRANG 498 deg   
+	      PORT 4 
+	      AMPLITUDE 20 
+	      PHASE_SHAPING 482 
+	      PHASE_SCANNING 560 
+	      PHASE_POL_ARRANG 372 deg   
+	      PORT 5 
+	      AMPLITUDE 28 
+	      PORT 6 
+	      AMPLITUDE 24 
+	      PORT 7 
+	      AMPLITUDE 27 
+	      PHASE_POL_ARRANG 751 
+	ADD 	BLOCK 4 -3 1 0 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 20 
+	   PHASE UNIFORM -223 
+END 

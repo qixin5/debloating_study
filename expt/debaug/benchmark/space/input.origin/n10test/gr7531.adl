@@ -1,0 +1,23 @@
+GROUP	testgroup 
+
+	GRID SQUARE  
+	ELEMENT 
+	   GEOMETRY CIRCULAR  61 
+
+	   PORTS 2 
+	      PORT 1 
+	      AMPLITUDE 10 
+	      PHASE_SHAPING 605 
+	      PORT 2 
+	      POL_ORIENT Y deg    
+	      AMPLITUDE 17 
+	      PHASE_SHAPING 611 
+	ADD 	NODE -5 0 
+	ADD 	BLOCK -1 0 -4 3 
+	ADD 	HEXAGON 0 5 
+	ADD 	BLOCK -4 -2 0 6 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 21 m    
+	   PHASE UNIFORM -135 
+END 

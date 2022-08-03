@@ -1,0 +1,18 @@
+GROUP   testgroup 
+
+        GRID RECTANGULAR  PSTEP 74 QSTEP 78 cm   
+        ELEMENT 
+           GEOMETRY CIRCULAR  63 
+
+           PORTS 1 
+              PORT 1 
+              POL_ORIENT Y            AMPLITUDE 77 
+              PHASE_SHAPING 687 
+              PHASE_SCANNING 580 
+              PHASE_POL_ARRANG 534 
+        ADD     BLOCK 8 -1 -6 6 
+
+        GROUP_EXCITATION 
+           AMPLITUDE UNIFORM 24 
+           PHASE ROTATION SEQUENTIAL
+END 

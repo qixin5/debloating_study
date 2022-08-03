@@ -1,0 +1,17 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp -r $INDIR/Book.tar ./
+cp -r $INDIR/pageone.txt ./
+
+{ timeout -k 9 ${TIMEOUT}s $BIN -rv -f Book.tar pageone.txt; } &>$OUTDIR/o9
+
+echo "$?" >>$OUTDIR/o9
+rm pageone.txt
+tar xf Book.tar pageone.txt
+diff pageone.txt $INDIR/pageone.txt
+echo "$?" >>$OUTDIR/o9

@@ -1,0 +1,49 @@
+GROUP	testgroup 
+
+	GRID HEXAGONAL  
+	ELEMENT 
+	   GEOMETRY CIRCULAR RADIUS 78 
+	   POLARIZATION CIRCULAR LH 
+
+	   PORTS 8 
+	      PORT 1 
+	      AMPLITUDE 30 
+
+	      PORT 2 
+	      AMPLITUDE 52 
+
+	      PHASE_POL_ARRANG 440 
+	      PORT 3 
+	      AMPLITUDE 58 
+
+	      PHASE_POL_ARRANG 658 
+	      PORT 4 
+	      AMPLITUDE 67 
+
+	      PHASE_SCANNING 519 deg   
+	      PHASE_POL_ARRANG 433 deg   
+	      PORT 5 
+	      AMPLITUDE 63 
+
+	      PHASE_SHAPING 468 
+	      PHASE_POL_ARRANG 569 
+	      PORT 6 
+	      AMPLITUDE 22 mm   
+
+	      PHASE_SHAPING 571 
+	      PHASE_POL_ARRANG 614 
+	      PORT 7 
+	      AMPLITUDE 45 
+
+	      PHASE_SHAPING 514 
+	      PHASE_POL_ARRANG 635 
+	      PORT 8 
+	      AMPLITUDE 99 
+
+	      PHASE_SCANNING 576 
+	ADD 	NODE -2 5 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 28 
+	   PHASE UNIFORM 42 
+END 

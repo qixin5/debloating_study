@@ -1,0 +1,13 @@
+GROUP   testgroup 
+
+        GRID SQUARE  
+        ELEMENT 
+           GEOMETRY RECTANGULAR  56 16 mm   
+
+           POLARIZATION CIRCULAR 
+        ADD     NODE 5 7 ORIENTATION 17 36 4 
+
+        GROUP_EXCITATION 
+           AMPLITUDE SECOND ORDER 24 22 20 24 23 
+           PHASE ROTATION SEQUENTIAL 
+END 

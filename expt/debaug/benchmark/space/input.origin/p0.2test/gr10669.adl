@@ -1,0 +1,16 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	         PX 6 
+	         PY 3 
+	         QX -49 
+	         QY -12 
+	ELEMENT testgroup
+	   GEOMETRY CIRCULAR 48 mm   
+
+	ADD 	NODE 0 0 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 28 
+	   PHASE ROTATION SEQUENTIAL 
+END 

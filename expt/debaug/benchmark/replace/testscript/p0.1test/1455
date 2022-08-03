@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '*' 'DVM*w<2(OU&\_HGSyM6o2TxiF3]v37y.opwBH/&y2'\''-V4^vk?H'\''5HuognF[}F&n@V' < $INDIR/input/ruin.1733 &> $OUTDIR/o1455
+

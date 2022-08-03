@@ -1,0 +1,28 @@
+#!/bin/bash
+
+BENCH=$1
+PROGNAME=$2
+inputset=$3
+
+SCRIPTDIR=$(pwd)
+
+
+if [ -z $BENCH ] || [ -z $PROGNAME ] || [ -z ${inputset} ]; then
+    echo "Missing arguments!"
+    exit 1
+fi
+
+
+cd $SCRIPTDIR/../debop/$BENCH/$PROGNAME || exit 1
+
+
+#Copy scripts
+cp $SCRIPTDIR/debop_run/script_used_by_debop/clean_sirprog.sh ./clean.sh
+cp $SCRIPTDIR/debop_run/script_used_by_debop/run_debop_main_sirprog.sh ./run_debop_main.sh
+cp $SCRIPTDIR/debop_run/script_used_by_debop/run_debop.sh ./
+cp $SCRIPTDIR/debop_run/script_used_by_debop/testcore.sh ./
+cp $SCRIPTDIR/debop_run/script_used_by_debop/run_test.sh ./
+
+
+#Run debop
+./run_debop_main.sh $PROGNAME ${inputset}

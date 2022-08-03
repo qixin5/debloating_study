@@ -1,0 +1,9 @@
+ExtractParameters("DAYNAME", "sI", Text);
+ExtractParameters("MONTHNAME", "sI", Text);
+ExtractParameters("HOUR", "i", Text);
+ExtractParameters("MINUTE", "i", Text);
+ExtractParameters("SECOND", "i", Text);
+ExtractParameters("HUNDRED", "i", Text);
+ExtractParameters("YEAR", "i", Text);
+ExtractParameters("MONTH", "i", Text);
+ExtractParameters("DAY", "i", Text);

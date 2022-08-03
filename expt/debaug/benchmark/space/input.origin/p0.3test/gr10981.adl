@@ -1,0 +1,17 @@
+GROUP	testgroup 
+
+	GRID XX   
+	ELEMENT 
+	   GEOMETRY RECTANGULAR  PDIM 64 QDIM 49 
+
+
+           PORTS 1
+              PORT 1
+              POL_ORIENT X
+              AMPLITUDE 1.0 dB
+	ADD 	BLOCK -13 -1 -13 3 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 26 
+	   PHASE UNIFORM -87 
+END 

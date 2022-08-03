@@ -1,0 +1,11 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp $INDIR/myfile.txt ./
+bzip2 myfile.txt
+
+$BIN -t myfile.txt.bz2

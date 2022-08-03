@@ -1,0 +1,18 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN -p /home/hope/Documents/pdf &>$OUTDIR/o3
+
+echo "$?" >>$OUTDIR/o3
+info=`ls -ald /home | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o3
+info=`ls -ald /home/hope | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o3
+info=`ls -ald /home/hope/Documents | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o3
+info=`ls -ald /home/hope/Documents/pdf | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o3

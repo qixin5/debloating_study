@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '@@*[0-9]' '&' < $INDIR/temp-test/624.inp.269.2 &> $OUTDIR/o449
+

@@ -1,0 +1,4 @@
+bruce_wayne,212,batman
+tony_stark,90,ironman
+clark_kent,123,superman
+peter_parker,43,spiderman

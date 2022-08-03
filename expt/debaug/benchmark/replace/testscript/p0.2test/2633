@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '??' '0LcGrfGr r,X@m,;,+r/AlJ>Uv)\ |Cr_fk[JEoA=}sUma`8rt]' < $INDIR/input/ruin.1130 &> $OUTDIR/o2633
+

@@ -1,0 +1,6 @@
+This directory is the startup directory where 0 .c files have been
+modified.  Therefore a run of make should not rebuild anything.
+
+====================
+J. Ruthruff
+8:25p, 9/25/2000

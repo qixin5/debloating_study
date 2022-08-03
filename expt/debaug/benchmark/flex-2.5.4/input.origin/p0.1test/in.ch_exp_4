@@ -1,0 +1,5 @@
+%%
+
+^s	printf("s at the beginning of a line: %s\n", yytext);
+r$	printf("r at the end of a line: %s\n", yytext);
+

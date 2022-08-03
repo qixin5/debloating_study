@@ -1,0 +1,210 @@
+\input texinfo @c -*-texinfo-*-
+@c %**start of header
+@setfilename hello.info
+@settitle Printing a Greeting
+@finalout
+@setchapternewpage odd
+@c %**end of header
+
+@set EDITION 1.03
+@set VERSION 1.3
+@set UPDATED 22 May 1993
+
+@ifinfo
+This file documents the the GNU @code{hello} command for printing a
+greeting message.
+
+Copyright (C) 1992, 1993 Free Software Foundation, Inc.
+
+Permission is granted to make and distribute verbatim copies of
+this manual provided the copyright notice and this permission notice
+are preserved on all copies.
+
+@ignore
+Permission is granted to process this file through TeX and print the
+results, provided the printed document carries copying permission
+notice identical to this one except for the removal of this paragraph
+(this paragraph not being relevant to the printed manual).
+
+@end ignore
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided that the entire
+resulting derived work is distributed under the terms of a permission
+notice identical to this one.
+
+Permission is granted to copy and distribute translations of this manual
+into another language, under the above conditions for modified versions,
+except that this permission notice may be stated in a translation approved
+by the Foundation.
+@end ifinfo
+
+@titlepage
+@title GNU Hello
+@subtitle The Greeting Printing Program
+@subtitle Edition @value{EDITION}, for Hello Version @value{VERSION}
+@subtitle @value{UPDATED}
+@author by David MacKenzie and the GNU Hello Development Team
+
+@page
+@vskip 0pt plus 1filll
+Copyright @copyright{} 1992, 1993 Free Software Foundation, Inc.
+
+Permission is granted to make and distribute verbatim copies of
+this manual provided the copyright notice and this permission notice
+are preserved on all copies.
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided that the entire
+resulting derived work is distributed under the terms of a permission
+notice identical to this one.
+
+Permission is granted to copy and distribute translations of this manual
+into another language, under the above conditions for modified versions,
+except that this permission notice may be stated in a translation approved
+by the Foundation.
+@end titlepage
+
+@node Top, , , (dir)
+
+@ifinfo
+This file documents the the GNU @code{hello} command to print a
+greeting message.
+@end ifinfo
+
+@menu
+* Instructions::	How to read this manual. 
+* Copying::		How you can copy and share @code{hello}.
+* Overview::		Preliminary information.
+* Sample::		Sample output from @code{hello}.
+* Invoking hello::	How to run @code{hello}.
+* Problems::		Reporting bugs.
+* Concept Index::	Index of concepts.
+@end menu
+
+@node Instructions, Copying, , Top
+@chapter How to Read This Manual
+
+@cindex reading
+@cindex manual, how to read
+@cindex how to read
+To read this manual, begin at the beginning, reading from left to right
+and top to bottom, until you get to the end.  Then stop.  You may pause
+for a beer anywhere in the middle as well, if you wish.  (Please note,
+however, that The King strongly advises against heavy use of
+prescription pharmaceuticals, based on his extensive personal and
+professional experience.)
+
+@node Copying, Overview, Instructions, Top
+@include gpl.texinfo
+
+@node Overview, Sample, Copying, Top
+@chapter Overview
+@cindex greetings
+@cindex overview
+
+The GNU @code{hello} program produces a familiar, friendly greeting.
+It allows nonprogrammers to use a classic computer science tool which
+would otherwise be unavailable to them.  Because it is protected by the
+GNU General Public License, users are free to share and change it.
+
+GNU @code{hello} was written by Mike Haertel, David MacKenzie, @w{Jan
+Brittenson}, Charles Hannum, Roland McGrath, Noah Friedman, and @w{The King}.
+
+@node Sample, Invoking hello, Overview, Top
+@chapter Sample Output
+@cindex sample
+
+Here are some realistic examples of running GNU @code{hello}.
+
+This is the output of the command @samp{hello}:
+
+@example
+Hello, world!
+@end example
+
+This is the output of the command @samp{hello --help}:
+
+@example
+This is GNU Hello, THE greeting printing program.
+Usage: hello [-htvm] [--help] [--traditional] [--version] [--mail]
+  -h, --help                    Print a summary of the options
+  -t, --traditional             Use traditional greeting format
+  -v, --version                 Print the version number
+  -m, --mail                    Print your mail
+@end example
+
+This is the output of the command @samp{hello --traditional}:
+
+@example
+hello, world
+@end example
+
+@node Invoking hello, Problems, Sample, Top
+@chapter Invoking @code{hello}
+@cindex invoking
+@cindex version
+@cindex options
+@cindex usage
+@cindex help
+@cindex getting help
+
+The format for running the @code{hello} program is:
+
+@example
+hello @var{option} @dots{}
+@end example
+
+@code{hello} supports the following options:
+
+@table @samp
+@item --help
+@itemx -h
+Print an informative help message describing the options and then exit.
+
+@item --version
+@itemx -v
+Print the version number of @code{hello} on the standard error output
+and then exit.
+
+@item --traditional
+@itemx -t
+@cindex traditional
+@cindex modern
+Use the traditional greeting message @samp{hello, world} rather 
+than the more modern @samp{Hello, world!}.
+
+@item --mail
+@itemx -m
+@cindex mail
+@cindex creeping feature
+@cindex feature, creeping
+@cindex feeping creature
+@cindex creature, feeping
+Print your mail on the standard output.
+@end table
+
+@node Problems, Concept Index, Invoking hello, Top
+@chapter Reporting Bugs
+@cindex bugs
+@cindex problems
+
+If you find a bug in GNU @code{hello}, please send electronic mail
+to @w{@samp{bug-gnu-hello@@prep.ai.mit.edu}}.  Include the version
+number, which you can find by running @w{@samp{hello --version}}.  Also
+include in your message the output that the program produced and the
+output you expected.@refill
+
+If you have other questions, comments or suggestions about GNU
+@code{hello}, contact The King via electronic mail to
+@w{@samp{elvis@@graceland.gnu.ai.mit.edu}}.  The King will try to help
+you out, although he may not have time to fix your problems.
+
+@node Concept Index, , Problems, Top
+@unnumbered Concept Index
+
+@cindex tail recursion
+@printindex cp
+
+@shortcontents
+@contents
+@bye

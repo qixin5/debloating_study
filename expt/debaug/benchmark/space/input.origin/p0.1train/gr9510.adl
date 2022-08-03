@@ -1,0 +1,16 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	         PX 2 
+	         PY 19 
+	         QX -15 
+	         QY 44 
+	ELEMENT 
+	   GEOMETRY CIRCULAR 70 
+
+	ADD 	HEXAGON -5 -2 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 21 
+	   PHASE ROTATION SEQUENTIAL CCW 
+END 

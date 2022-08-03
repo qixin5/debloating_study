@@ -1,0 +1,45 @@
+GROUP	testgroup 
+
+	GRID XX   
+	ELEMENT 
+	   GEOMETRY CIRCULAR  60 
+	   POLARIZATION CIRCULAR LH 
+
+	   PORTS 9 
+	      PORT 1 
+	      AMPLITUDE 24 
+	      PHASE_SCANNING 689 
+	      PHASE_POL_ARRANG 460 
+	      PORT 2 
+	      AMPLITUDE 29 
+	      PHASE_SCANNING 518 
+	      PORT 3 
+	      AMPLITUDE 22 
+	      PHASE_POL_ARRANG 614 deg   
+	      PORT 4 
+	      AMPLITUDE 30 mm   
+	      PHASE_SHAPING 553 
+	      PHASE_POL_ARRANG 338 
+	      PORT 5 
+	      AMPLITUDE 26 cm   
+	      PHASE_POL_ARRANG 552 
+	      PORT 6 
+	      AMPLITUDE 24 
+	      PORT 7 
+	      AMPLITUDE 21 
+	      PHASE_SHAPING 446 
+	      PHASE_POL_ARRANG 401 
+	      PORT 8 
+	      AMPLITUDE 36 cm   
+	      PORT 9 
+	      AMPLITUDE 21 
+	      PHASE_SCANNING 478 
+	      PHASE_POL_ARRANG 551 
+	ADD 	BLOCK 0 2 10 -3 
+	ADD 	BLOCK -4 0 -3 -4 
+	ADD 	BLOCK 8 0 0 9 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE SECOND ORDER 19 26 16 32 21 
+	   PHASE UNIFORM 57 deg   
+END 

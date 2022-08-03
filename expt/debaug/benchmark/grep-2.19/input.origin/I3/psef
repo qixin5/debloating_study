@@ -1,0 +1,50 @@
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 Jun09 ?        00:00:20 /sbin/init
+root        62     1  0 Jun09 ?        00:00:05 /lib/systemd/systemd-journald
+root        65     1  0 Jun09 ?        00:00:04 /lib/systemd/systemd-udevd
+systemd+   166     1  0 Jun09 ?        00:00:07 /lib/systemd/systemd-networkd
+systemd+   168     1  0 Jun09 ?        00:00:08 /lib/systemd/systemd-resolved
+daemon     189     1  0 Jun09 ?        00:00:00 /usr/sbin/atd -f
+root       192     1  0 Jun09 ?        00:00:05 /lib/systemd/systemd-logind
+root       197     1  0 Jun09 ?        00:00:43 /usr/lib/accountsservice/accounts-daemon
+root       201     1  0 Jun09 ?        00:00:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+syslog     204     1  0 Jun09 ?        00:00:01 /usr/sbin/rsyslogd -n
+root       206     1  0 Jun09 ?        00:00:05 /usr/sbin/cron -f
+message+   208     1  0 Jun09 ?        00:00:01 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root       269     1  0 Jun09 ?        00:00:00 /usr/sbin/sshd -D
+root       276     1  0 Jun09 ?        00:00:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root       278     1  0 Jun09 ?        00:00:00 /usr/lib/policykit-1/polkitd --no-debug
+root       287     1  0 Jun09 pts/0    00:00:00 /sbin/agetty -o -p -- \u --noclear --keep-baud console 115200,38400,9600 linux
+root       422     1  0 Jun09 ?        00:00:12 /usr/lib/postfix/sbin/master -w
+postfix    426   422  0 Jun09 ?        00:00:03 qmgr -l -t unix -u
+qxin6      436     1  0 Jun09 ?        00:00:00 /lib/systemd/systemd --user
+qxin6      437   436  0 Jun09 ?        00:00:00 (sd-pam)
+root      9242   269  0 13:58 ?        00:00:00 sshd: qxin6 [priv]
+qxin6     9372  9242  0 13:58 ?        00:00:01 sshd: qxin6@pts/0
+qxin6     9374  9372  0 13:58 pts/0    00:00:01 -bash
+root      9455   269  0 13:59 ?        00:00:00 sshd: qxin6 [priv]
+qxin6     9554  9455  0 13:59 ?        00:00:00 sshd: qxin6@pts/1
+qxin6     9555  9554  0 13:59 pts/1    00:00:01 -bash
+postfix  12228   422  0 14:07 ?        00:00:00 pickup -l -t unix -u -c
+qxin6    13168 17005  0 14:42 pts/2    00:00:00 /bin/bash evalprog/evalprog_main_forallinputsets.sh benchmark mkdir-5.2.1 covrandaugcovfuzzallfaugrprfreqflexs38
+qxin6    17004     1  0 14:11 ?        00:00:00 SCREEN evalprog/evalprog_tmp_mkdir-5.2.1.sh
+qxin6    17005 17004  0 14:11 pts/2    00:00:00 /bin/bash evalprog/evalprog_tmp_mkdir-5.2.1.sh
+qxin6    18451 13168  0 14:45 pts/2    00:00:00 /bin/bash evalprog/evalprog_main.sh benchmark mkdir-5.2.1 I0_covrandaugcovfuzzallfaugrprfreqflexs38/2
+qxin6    19456     1  0 04:56 ?        00:00:01 SCREEN ./run_tmp2.sh
+qxin6    19457 19456  0 04:56 pts/4    00:00:00 /bin/bash ./run_tmp2.sh
+qxin6    19459 19457  0 04:56 pts/4    00:00:00 /bin/bash getprog/getprog_randaug_main_tmp_uniq-8.16.sh benchmark uniq-8.16 0
+qxin6    19746 18451  0 14:46 pts/2    00:00:00 /bin/bash evalprog/evalprog.sh benchmark mkdir-5.2.1 I0_covrandaugcovfuzzallfaugrprfreqflexs38/2 I6
+qxin6    19802 19746  0 14:46 pts/2    00:00:00 /bin/bash test/run_test_and_compare_output.sh benchmark mkdir-5.2.1 I0_covrandaugcovfuzzallfaugrprfreqflexs38/2 I6
+qxin6    19987 19802  0 14:46 pts/2    00:00:00 /bin/bash test/run_test.sh benchmark mkdir-5.2.1 I0_covrandaugcovfuzzallfaugrprfreqflexs38/2 I6
+qxin6    20103 19987  0 14:46 pts/2    00:00:00 /bin/bash /home/qxin6/debaug_expt/debaug/benchmark/mkdir-5.2.1/testscript/I6/5 /home/qxin6/debaug_expt/debaug/benchmark/mkdir-5.2.1/mkdir-5.2.1 /home/qxin6/debaug_expt/debaug/benchmark/mkdir-5.2.1/output/reduced/I0_covrandaugcovfuzzallfaugrprfreqflexs38/2 5 /home/qxin6/debaug_expt/debaug/benchmark/mkdir-5.2.1/input
+qxin6    20107 20103  0 14:46 pts/2    00:00:00 timeout -k 9 5s /home/qxin6/debaug_expt/debaug/benchmark/mkdir-5.2.1/mkdir-5.2.1 -p /home/qxin6/tmp/sysadmins/engineers
+qxin6    20108 20107  0 14:46 pts/2    00:00:04 /home/qxin6/debaug_expt/debaug/benchmark/mkdir-5.2.1/mkdir-5.2.1 -p /home/qxin6/tmp/sysadmins/engineers
+qxin6    20119 28944  0 14:46 pts/4    00:00:00 /bin/bash /home/qxin6/debaug_expt/script/getsizeinstmt.sh rslt.c size.txt
+qxin6    20120 20119  0 14:46 pts/4    00:00:00 /home/qxin6/chisel/build/bin/chisel -S rslt.c
+qxin6    20121 20119  0 14:46 pts/4    00:00:00 tail -1
+qxin6    20122 20119  0 14:46 pts/4    00:00:00 cut -d  -f4
+qxin6    20123  9555  0 14:46 pts/1    00:00:00 ps -ef
+qxin6    28934 19459  0 14:33 pts/4    00:00:00 /bin/bash getprog/getprog_randaug_main_forallinputsets.sh benchmark uniq-8.16 cov covfaugrprfreqflexs33 statement 0
+qxin6    28935 28934  0 14:33 pts/4    00:00:00 /bin/bash getprog/getprog_randaug_main.sh benchmark uniq-8.16 I0 cov covfaugrprfreqflexs33 statement 0
+qxin6    28943 28935  0 14:33 pts/4    00:00:00 /bin/bash /home/qxin6/debaug/bin/randomaugmenter src/reduced/I0_cov/uniq-8.16.nodce.c src/origin/uniq-8.16.c ./line.txt statement 881 /home/qxin6/debaug_expt/debaug/benchmark/uniq-8.16/compile.sh /home/qxin6/debaug_expt/script/getsizeinstmt.sh ./src/reduced/I0_covrandaugcovfaugrprfreqflexs33/0/uniq-8.16.nodce.c 0
+qxin6    28944 28943  0 14:33 pts/4    00:00:05 java -cp :/home/qxin6/debaug/build/java:/home/qxin6/debaug/lib/java/* edu.gatech.cc.debaug.RandomAugmenter src/reduced/I0_cov/uniq-8.16.nodce.c src/origin/uniq-8.16.c ./line.txt statement 881 /home/qxin6/debaug_expt/debaug/benchmark/uniq-8.16/compile.sh /home/qxin6/debaug_expt/script/getsizeinstmt.sh ./src/reduced/I0_covrandaugcovfaugrprfreqflexs33/0/uniq-8.16.nodce.c 0

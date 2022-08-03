@@ -1,0 +1,1636 @@
+Fri Mar 16 10:18:26 2001  Gary Wong  <gtw@research.att.com>
+
+	* set.c (CommandSetTrainingThreshold): New function.
+	* show.c (CommandShowTraining): New function.
+	* gtkgame.c (SetAlpha, SetAnneal, SetThreshold): New functions.
+
+Thu Mar 15 10:48:53 2001  Gary Wong  <gtw@research.att.com>
+
+	* gtkgame.c (GTKShowMatchEquityTable): Use a GtkSheet (from
+	GtkExtra), if available.
+	
+	* show.c (CommandShowGammonPrice): Complain if no game is being
+	played.
+
+Wed Mar 14 17:33:25 2001  Gary Wong  <gtw@research.att.com>
+
+	* external.c (CommandExternal): Make sure we unlink() the socket.
+
+	* gtkgame.c (LoadCommands): New function.
+
+	* gtkgame.c (GTKShowMatchEquityTable): New function.
+	* matchequity.c: Keep the match equity table titles in an array.
+	* show.c (CommandShowMatchEquityTable): Read the table title from
+	that array.
+
+	* gtkboard.c (board_set): Add extra redraws to workaround cosmetic
+	problems when running under Wine.
+
+Tue Mar 13 12:20:31 2001  Gary Wong  <gtw@research.att.com>
+
+	* acinclude.m4 (AM_GUILE): Allow a `--with-guile-prefix=' parameter.
+
+	* backgammon.h: Separate ec and h in the player struct (they were
+	formerly in a union).
+
+	* gnubg.c (PortableSignalRestore): Add a type cast to the signal()
+	call, to pacify the compiler.
+
+	* gnubg.c (strcpyn): New function.
+
+	* gtkgame.c: Add "Windows" menu.
+
+	* gtkgame.c (SetEvalCommands): Don't issue commands for unchanged
+	parameters.
+
+	* gtkgame.c (SetPlayers): Finished the player settings dialog.
+
+Mon Mar 12 11:03:37 2001  Gary Wong  <gtw@research.att.com>
+
+	* gdkgetrgb.c (gdk_get_rgb_image): Use gdk_drawable_get_size()
+	instead of gdk_window_get_geometry(), if available.
+
+	* gnubg.c (outputpostpone, outputresume): New functions.
+
+	* gnubg.c (real_main): Set `-w' option on by default under
+	MS Windows.
+
+	* gtkboard.c: Use GC clip masks instead of draw_bitplane().
+	Many related changes.
+	
+	* gtkprefs.c (colour_parse): Handle rgb:rr/gg/bb colour
+	specifications under MS Windows, since they're not understood
+	natively.
+	
+	* gtkgame.c (EvalWidget): Finish evaluation settings widget.
+	(SetPlayers): Started a player settings dialog.  Not working yet.
+
+	* eval.c (EvalRace): Fall back to neural net when trying to save
+	backgammon, if bearoff databases aren't present.
+
+	* eval.c (TrainPosition): Allow annealing rate to be specified.
+	All callers changed.
+
+	* play.c (NextTurn): Roll when "auto roll" is on and the cube
+	is dead.
+	
+Fri Mar  9 11:01:09 2001  Gary Wong  <gtw@research.att.com>
+
+	* eval.c (TrainPosition): Added alpha and anneal parameters.  All
+	callers changed.
+	* set.c (CommandSetTrainingAlpha, CommandSetTrainingAnneal): New
+	functions.
+	
+	* guile.c (current_score, play_game): New functions.
+
+Thu Mar  8 10:30:15 2001  Gary Wong  <gtw@research.att.com>
+
+	* database.c (CommandDatabaseTrain): Allow a timeout parameter.
+	* gnubg.c (CommandTrainTD): Likewise.
+	
+	* eval.c (EvalInitialise): Pay attention to the user-specified
+	net size.
+
+	* gnubg.c (CommandSaveWeights): Allow a filename parameter.
+	
+	* acinclude.m4: Check for Guile 1.4 or newer (Zvezdan Petkovic reports
+	gnubg won't link with 1.3.)
+
+Wed Mar  7 17:46:24 2001  Gary Wong  <gtw@research.att.com>
+
+	* gnubg.6: Added man page contributed by Corrin Lakeland.
+
+Tue Mar  6 11:37:32 2001  Gary Wong  <gtw@research.att.com>
+
+	* gnubg.c (real_main): Disable stdio buffering for pipes and sockets.
+
+Fri Mar  2 10:30:12 2001  Gary Wong  <gtw@research.att.com>
+
+	* external.c (CommandExternal): unlink() the socket. 
+
+Tue Feb 27 10:58:31 2001  Gary Wong  <gtw@research.att.com>
+
+	* gnubg.c (real_main): Added call to fflush, to ensure initial
+	messages are not left buffered when stdout is not a TTY.
+
+Mon Feb 26 18:56:14 2001  Gary Wong  <gtw@research.att.com>
+
+	* set.c (CommandSetOutputRawboard): New function.
+	* gnubg.c (ShowBoard): Show a FIBS "boardstyle 3" board if
+	fOutputRawboard is set.
+
+Fri Feb 23 13:09:48 2001  Gary Wong  <gtw@research.att.com>
+
+	* Makefile.am: Don't run makebearoff or makeweights if cross-compiling.
+
+	* dice.c (InitRNG): Return the seed used.  All callers changed.
+
+	* gnubg.c (CommandNewWeights): Output a message confirming the
+	new net.
+
+	* gtkgame.c: GUI equivalents to more commands added.
+
+Thu Feb 22 11:36:18 2001  Gary Wong  <gtw@research.att.com>
+
+	* configure.in: Test fork(), the *f float math functions, and whether
+	GDK is running over X.
+	* acconfig.h: Define alternatives to the *f float math functions.
+
+	* external.c, set.c: Improve portability of the socket calls.
+
+	* gnubg.c (ShellEscape): Disable shell escapes if we can't fork().
+
+	* gtkboard.c, gtkgame.c, gtkprefs.c: Work around problems with GTK+
+	on MS Windows.
+
+	* play.c: Disable the delay if we can't select().
+	
+Thu Feb 15 11:49:16 2001  Joseph Heled  <pepe@internet.co.nz>
+
+	* database.c: added dummy CommandDatabaseExport and
+	CommandDatabaseImport when gdbm is not available.
+
+Thu Feb 15 11:48:53 2001  Joseph Heled  <pepe@internet.co.nz>
+
+	* external.c: added missing include for assert.h
+
+Thu Feb 15 11:39:17 2001  Joseph Heled  <pepe@internet.co.nz>
+
+	* set.c: change variable name from sun to socsun, since on a Sun
+	machine cpp predefines sun to the constant 1.
+
+Thu Feb 15 11:26:43 2001  Joseph Heled  <pepe@internet.co.nz>
+
+	* positionid.c (PositionFromKey): a faster version. Eliminate return
+	value, which is not used anyway (since PositionFromKey is used only for
+	internally generated positions, known to be valid).
+
+Wed Feb 14 13:54:53 2001  Gary Wong  <gtw@research.att.com>
+
+	* database.c (CommandDatabaseExport, CommandDatabaseImport): New
+	functions.
+
+	* guile.c (GuileStartIntHandler, GuileEndIntHandler): Don't change
+	SIGINT behaviour if stdin is not a TTY.
+
+Tue Feb 13 12:55:52 2001  Gary Wong  <gtw@research.att.com>
+
+	* external.c: New file (to support external players).
+	* drawboard.c (FIBSBoard, ParseFIBSBoard): New functions.
+	* play.c (ComputerTurn): Handle external players.
+	* set.c (CommandSetPlayerExternal): New function.
+
+	* gnubg.c (CommandNewWeights): New function.
+	(real_main): Change `--no-weights' to `--new-weights', and allow the
+	net size to be specified.
+	* eval.c (EvalNewWeights): New function.
+
+	* guile.c: Handle signals when in Guile and gnubg callbacks.
+	(GuileStartIntHandler, GuileEndIntHandler): New functions.
+	* gnubg.c (HandleCommand): Install a SIGINT handler when handling
+	Guile escapes.
+	* gnubg.c (PortableSignal): Don't restart system calls on SIGIOs.
+
+	* gnubg.c: Don't use readline if stdin is not a TTY.
+	(Prompt): Don't issue a prompt if stdin is not a TTY.
+
+	* set.c (CommandSetScore): Allow "n-away" notation.
+	
+	* eval.c (DumpPosition): Display evaluations in either percentages
+	or probabilities.
+
+	* positionid.c (CheckPosition): Bug fix checking for closed boards.
+
+	* rollout.c (Rollout): Don't get upset if GTKRolloutUpdate fails.
+	
+Mon Feb 12 14:27:41 2001  Gary Wong  <gtw@research.att.com>
+
+	* gnubg.c (real_main): Implement the `-w' option again (it was
+	accidentally deleted in revision 1.74).  Do not install the SIGINT
+	handler if stdin is not a TTY.
+
+Thu Feb  8 16:10:10 2001  Gary Wong  <gtw@research.att.com>
+
+	* database.c (CommandDatabaseGenerate): Allow unlimited generation
+	without the INT_MAX hack.
+
+Thu Feb  8 11:38:12 2001  Gary Wong  <gtw@research.att.com>
+
+	* gnubg.c (HandleCommand): Print the result of Scheme expressions.
+
+	* gnubg.c (CommandEval): Give a cubeless evaluation if a position
+	is specified while no game is being played.
+
+	* show.c (CommandShowMarketWindow): Complain if there's no game.
+
+Wed Feb  7 12:58:50 2001  Gary Wong  <gtw@research.att.com>
+
+	* rollout.c (Rollout): Don't set fInterrupt when GTKRolloutUpdate
+	returns an error (it could be for other reasons, e.g. database
+	rollouts don't have a GTK dialog at all).
+
+	* guile.c (gnubg_command): New function.
+
+	* gtkgame.c (StdinReadNotify): Handle "next turn" processing before
+	looking at input.
+
+	* gnubg.c (PortableSignal): Don't restart system calls on SIGINT.
+
+	* eval.c (FindBestMovePlied): Check fAction and fInterrupt.
+
+	* database.c (CommandDatabaseGenerate): Accept a parameter limiting
+	the number of positions to generate.
+
+Wed Jan 31 10:39:29 2001  Gary Wong  <gtw@research.att.com>
+
+	* show.c (ShowCommands): New function.
+
+Tue Jan 30 10:38:32 2001  Gary Wong  <gtw@research.att.com>
+
+	* gnubg.c (ShowBoard): Always inform the board window about dice
+	rolls.
+	* gtkboard.c (game_set_old_dice): Allow the off-board dice to
+	be modified.
+
+	* gnubg.c (CommandHelp): Fix help for abbreviations (e.g.
+	"help r" now gives the same output as "help roll").
+	
+	* gtkboard.c (board_stop): Add a `stop' button to the board
+	window.
+	* gtkgame.c (InitGTK): The `stop' button is now the grab widget
+	when gnubg is busy.
+	* eval.c: Check fAction in the cubeful evaluation functions.
+	
+	* gtkgame.c (GTKEval): New function.  Show `eval' output in a
+	text widget, so the formatting is correct and output can be copied.
+
+	* gtkgame.c (GTKHint): Show either MWC or gammon-adjusted equity.
+	
+	* gnubgtest: Play the example game from the manual, and make
+	sure it works and gnubg makes the same moves.
+
+	* rollout.c (Rollout): Fix the call to SanityCheck() (make sure the
+	correct player is on roll).
+
+	* sgf.c: Start adding support for SGF setup properties in saved
+	games.
+	
+Fri Jan 19 15:20:24 2001  Gary Wong  <gtw@research.att.com>
+
+	* gnubg.c (FormatMoveHint): New function.
+	* gtkgame.c (GTKHint): Selecting rows in the hint dialog now
+	uses X selections.
+
+Wed Jan 17 17:13:46 2001  Gary Wong  <gtw@research.att.com>
+
+	* positionid.c (PositionKey): Added Joseph's optimised version.
+
+	* gnubg.c: Turn variance reduction on by default.
+	
+Tue Jan 16 13:18:49 2001  Gary Wong  <gtw@research.att.com>
+
+	* gnubg.c (CommandHint): Display probabilities or percentages,
+	according to settings.
+	* set.c (CommandSetOutputWinPC, CommandSetOutputMatchPC): New
+	functions.
+	* show.c (CommandShowOutput): New function.
+
+	* gnubg.c (real_main): Add `-r' (--no-rc) option.
+	* gnubgtest: Use `-r' option in tests.
+
+	* gtkboard.c (board_pointer): Use the pm_saved pixmap even in
+	translucent mode, because using the RGB buffer to save the image
+	restored a dithered version rather than the original.
+	(board_dice_widget): New function.
+
+	* gtkgame.c (GTKGetManualDice): New function.
+	(PixmapButton): Use gdk_pixmap_colormap_create_from_xpm_d,
+	to avoid realising a window just to get its colourmap.
+	(GTKSetMoveRecord): Don't scroll window when the newly selected
+	move is already visible.
+	(InitGTK): Apply the main accelerators to the game window.
+	(GTKHint): Updated to match the new CommandHint.
+
+	* gtkprefs.c (BoardPreferencesCommand): New function.
+
+	* show.c (CommandShowCache): Avoid possible integer overflow.
+
+	* play.c (ComputerTurn): Avoid bugs when dice roll fails.
+	
+Thu Jan 11 16:17:46 2001  Gary Wong  <gtw@research.att.com>
+
+	* eval.c (EvalInitialise): Give better error messages about bad
+	weights files.
+	* makeweights.c (main): Likewise.
+
+Wed Jan 10 19:34:57 2001  Gary Wong  <gtw@research.att.com>
+
+	* gtkprefs.c (BoardPreferencesParam): More work on parameters to
+	"set colours".  Still not quite finished.
+
+Mon Jan  8 14:28:55 2001  Gary Wong  <gtw@research.att.com>
+
+	* gnubg.c (ParseKeyValue): New function.
+	* gtkboard.c (board_create_pixmaps): Set user_data on the key widgets;
+	fixes a crash when toggling translucency.
+	* gtkprefs.c (BoardPreferencesStart, BoardPreferencesDone,
+	BoardPreferencesParam): New functions.
+	* set.c (CommandSetColours): Start handling parameters to
+	"set colours".  Not finished yet.
+
+Thu Jan  4 10:28:09 2001  Gary Wong  <gtw@research.att.com>
+
+	* gdkgetrgb.c: New file; allows image capture to RGB format.
+	* gtkboard.c: Added translucent chequers option.
+	* gtkprefs.c: New file; allows changing board appearance.
+	* set.c (CommandSetColours): New function.
+
+Tue Dec 26 16:11:14 2000  Jørn Thyssen  <joern@thyssen.nu>
+
+	* eval.c (EvaluatePositionCubeful1): fix of bug noted by Steve Baedke.
+
+Sat Dec 16 11:45:12 2000  Øystein Johansen <oeysteij@online.no>
+	
+        * import.c import.h - new files for import of file formats from 
+        other programs.
+        
+        * gnubg.c (New function CommandImportJF) New function to import
+        Jellyfish position files.
+ 
+Wed Nov 29 11:35:41 2000  Gary Wong  <gtw@research.att.com>
+
+	* eval.c (ApplyMove): Added `fCheckLegal' parameter; this is required
+	to handle loading games with abbreviated (or illegal!) moves.  All
+	callers changed.
+
+	* play.c (ApplyMoveRecord): Set fCrawford and fPostCrawford when
+	applying a GAMEINFO record.
+	(NextTurn): If fAutoCrawford is on, then decide whether the end of
+	game triggers the Crawford rule.
+
+Tue Nov 21 12:54:21 2000  Gary Wong  <gtw@research.att.com>
+
+	* gnubg.c (ShowBoard): Show the player name line correctly in the
+	board output when the cube is owned.
+
+Fri Nov 17 10:38:37 2000  Gary Wong  <gtw@research.att.com>
+
+	* eval.c (DumpContact): Added remaining partial derivative outputs.
+
+	* gnubg.c (CommandRollout): Rollout more than one position at once.
+	* gtkgame.c (GTKRollout): Handle multiple rows in the rollout
+	dialog.
+	* guile.c (rollout_position): Add parameter for reporting result
+	from opponent's perspective.
+	* rollout.c (Rollout): Add `fInvert' parameter.
+
+	* gnubg.c (ParsePosition): Store a description of the position
+	parsed.  All callers changed.
+
+Wed Nov 15 13:00:36 2000  Gary Wong  <gtw@research.att.com>
+
+	* eval.c (DumpPosition, GetCubeActionSz): Add fOutputInvert
+	parameter, for reporting result from opponent's perspective.
+	All callers changed.
+	* gnubg.c (CommandEval): Report evaluations specified with
+	=n notation from player's perspective.
+
+	* gnubgtest: Add Guile test.
+
+Tue Nov 14 10:25:54 2000  Gary Wong  <gtw@research.att.com>
+
+	* eval.c: Global game state (e.g. nCube, fCubeOwner, anScore)
+	removed from eval.c; this information must now be given as part
+	of the cubeinfo parameter.  All callers changed.
+
+Mon Nov 13 18:21:57 2000  Gary Wong  <gtw@research.att.com>
+
+	* gtkgame.c (LoadGame, LoadMatch, SaveGame, SaveMatch): use
+	g_free() instead of free().
+
+Mon Nov 13 10:42:29 2000  Gary Wong  <gtw@research.att.com>
+
+	* analysis.c (AnalyzeGame): Pacify compiler warnings.
+
+	* backgammon.h, gnubg.c, play.c, set.c, sgf.c, show.c: Add
+	variable gs indicating the game state; don't use fTurn to decide
+	whether there's a game in progress.
+
+	* configure.in: Cache the test for signbit().
+	
+	* gnubg.c (ParsePosition): Allow "=n" notation for boards.
+
+	* gtkboard.c: Replaced the "set" button with "reset".
+	
+	* gtkgame.c: Added buttons in the game window for next/prev
+	move/game.  Fixed the game option menu.  Added menu items and
+	accelerator keys.  Added file selection dialogs for loading and
+	saving.
+
+	* guile.c: Evaluate "gnubg.scm" at startup.
+
+	* set.c (CommandSetDice): Add a MOVE_SETDICE moverecord.
+	
+Fri Nov 10 14:14:35 2000  Gary Wong  <gtw@research.att.com>
+
+	* Makefile.am (gnubg.wd): Ignore errors from makeweights.
+
+	* md5.c, isaac.c, mt19937int.c: Moved to lib/.
+	
+	* gtkboard.c: Use irand() instead of rand_r(), for better portability.
+
+	* gtkgame.c (GTKHint): Recheck whether the move/rollout buttons
+	should be enabled when a move is _de_selected, as well.
+
+Fri Nov 10 16:17:43 2000  Joern Thyssen  <joern@thyssen.nu>
+
+	* show.c (ShowMarketWindow): bug fixes; allow user input of gammon
+ 	ratios.
+
+	* matchequity.c (GetPoints, GetDoublePointDeadCube): bug fix.
+
+Tue Nov  7 10:14:08 2000  Gary Wong  <gtw@research.att.com>
+
+	* gnubg.c (ParsePosition): Allow "=n" notation for boards (not
+	finished yet).
+	
+	* play.c (AddGame, ChangeGame, CommandNextGame, CommandPreviousGame):
+	New functions.
+	* gtkgame.c (CreateGameWindow): Add option menu for selecting a
+	game within a match/session.
+	(GTKAddGame, GTKPopGame, GTKSetGame): New functions.
+	
+	* gtkgame.c (GTKHint): Add "move" and "rollout" buttons.
+	
+	* configure.in: Use AC_FUNC_ALLOCA.
+
+	* gnubgtest: Test beavers, loading and saving.
+	
+Thu Nov  2 20:26:19 2000  Joern Thyssen  <joern@thyssen.nu>
+
+	* eval.c (EvaluatePositionCubeful, EvaluatePositionCubeful1): Calculate
+	cubeless equities as well (for example, used in CommandHint).
+	* gnubg.c (CommandHint), play.c (ComputerTurn), eval.c (ScoreMoves,
+	DumpPosition), analysis.c (AnalyzeGame): EvaluatePositionCubeful now
+	takes an extra parameter where cubeless evaluation is stored. 
+	* eval.c (ScoreMoves): Save cubeless evaluation in move struct.
+	* eval.c (FindnSaveBestMoves): sort moves for 0-ply as well.
+
+Thu Nov  2 10:23:43 2000  Gary Wong  <gtw@research.att.com>
+
+	* gtkgame.c (CreateGameWindow, GTKHint): Add correct scroll bars to
+	these windows.
+
+Thu Nov  2 09:34:52 2000  Joern Thyssen  <joern@thyssen.nu>
+
+	* eval.c (Cl2CfMatchCentered): correct small problem that could lead to
+        numerical problems.
+
+	* backgammon.h, gnubg.c, show.c (CommandShowMarketWindow): new function
+  	that shows market window for doubles. Uses evaluate to get (back)gammon
+	rates, and calculates initial double points and cash points for 
+	dead and fully live cube, and much more :-)
+
+Wed Nov  1 10:08:44 2000  Gary Wong  <gtw@research.att.com>
+
+	* guile.c (cube_info, cube_info_match, cube_info_money): New functions.
+
+	* play.c (CommandRedouble): Don't increase the cube value -- that's
+	already done by ApplyMoveRecord().
+	(CommandTake): Show message _before_ calling ApplyMoveRecord, so
+	that fTurn is still correct.
+
+	* gnubg.c (real_main): Don't treat an empty argument as a filename
+	to load.
+
+	* gnubgtest: Fix --datadir parameter.
+
+	* eval.c (SetCubeInfoMoney, SetCubeInfoMatch): New functions.
+
+Tue Oct 31 10:29:15 2000  Gary Wong  <gtw@research.att.com>
+
+	* guile.c (board_to_position_id, position_id_to_board,
+	rollout_position): New functions.
+
+Mon Oct 30 11:34:16 2000  Gary Wong  <gtw@research.att.com>
+
+	* gnubg.scm: New file.
+	* guile.c: Removed the board smob, and added current-board and
+	evaluate-position functions.
+
+Fri Oct 27 10:20:10 2000  Gary Wong  <gtw@research.att.com>
+
+	* guile.c, guile.h: New files.
+	
+	* gtkgame.c (GTKAddMoveRecord): Handle MOVE_SETCUBEPOS and
+	MOVE_SETCUBEVAL records.
+	* set.c (CommandSetCubeCentre, CommandSetCubeOwner,
+	CommandSetCubeValue): Add move records.
+
+	* gnubg.c (real_main): Check for --help and --version options
+	earlier (before connecting to X server).
+
+Thu Oct 26 10:27:21 2000  Gary Wong  <gtw@research.att.com>
+
+	* gnubg.c (CommandHint): [USE_GTK] Free the move list allocated
+	by FindnSaveBestMoves().
+
+Thu Oct 26 10:13:51 2000  Gary Wong  <gtw@research.att.com>
+
+	* Makefile.am: Don't build gnubg.bd by default (since we don't
+	strictly need it).
+
+	* eval.c: Remove the fRelativeAccuracy code.
+
+	* gtkgame.c (GameListSelectRow): Allow the first and last cells
+	to be selected correctly.
+
+	* play.c (ApplyMoveRecord): Handle "set board", "set cubeval"
+	and "set cubepos" records.
+	* set.c (CommandSetBoard): Add a "set board" record.
+	
+Thu Oct 26 11:27:39 2000  Jørn Thyssen  <joern@thyssen.nu>
+
+	* gnubg.c (CommandHint): `hint' now takes a parameter specifying
+ 	how many moves to show. Default is 10.
+
+Wed Oct 25 17:45:55 2000  Jørn Thyssen  <joern@thyssen.nu>
+
+	* play.c (ComputerTurn): resignations are now correct for 
+	match play. 
+	* play.c (CommandDecline): move `fResigned  = FALSE' statement,
+        otherwise `outputf' will print junk (fResigned - 1 = -1).
+
+Wed Oct 25 10:19:32 2000  Gary Wong  <gtw@research.att.com>
+
+	* gnubg.c (HandleCommand): Process ":" as a Guile escape, if
+	available.
+
+Tue Oct 24 10:16:22 2000  Gary Wong  <gtw@research.att.com>
+
+	* eval.c (FindnSaveBestMoves): Free the move list on error (e.g.
+	interrupt), and don't allocate anything if there are no legal moves.
+	* gnubg.c (CommandHint): If there are no legal moves, say so.
+
+	* gnubgtest: Add a resignation test.
+
+	* gtkgame.c (GameListSelectRow): New function.  Allow the user
+	to select a move in the list.
+
+	* play.c: Fixed resignation bug (resignations had no effect).
+
+	* set.c (CommandSetPlayerName): Allow the names "b", "bo" and "bot",
+	even though they're prefixes of "both".
+
+Tue Oct 24 13:42:37 2000  Jørn Thyssen  <joern@thyssen.nu>
+
+	* eval.c (SetCubeInfo): bugfix: reset negative(!) gammon price to 
+        zero. Gammon prices can be negative due to numerical instabilities
+        (FIXME: think of a stable way to calculate them)
+
+Tue Oct 24 12:45:59 2000  Jørn Thyssen  <joern@thyssen.nu>
+
+	* set.c (CommandSetEvalCubeful): new function. Controls whether
+	checkerplay is cubeful or cubeless.
+	* show.c (ShowEvaluation): print cubeful/cubeless.
+	* eval.c (FormatEval): FormatEval5 renamed to FormatEval; now
+	returns a variable string describing the evaluation type - and not
+	some junk text :-)
+	* gnubg.c, play.c, analysis.c, eval.c: set the new fCubeful
+	parameter in evalcontexts. 
+	* gnubg.c (CommandHint): use new function FormatEval; use rScore
+	in output instead of calling Utility.
+	* eval.c (EvaluatePositionCubeful1): add new parameter that
+	controls whether we should check for automatic redoubles or not.
+	* eval.c (ScoresMoves): Bugfix: invert fMove in cubeinfo. Also,
+	implement cubeful checkerplay. Save cubeful evaluation in rScore
+	and cubeless in rScore2 (and rScore1 if cubeless evaluation).
+
+Mon Oct 23 12:31:30 2000  Gary Wong  <gtw@research.att.com>
+
+	* backgammon.h: New `setdice' record.
+	* gnubg.c (UpdateBoard): New function; defer board updates 
+	until the server has caught up with the previous board.
+	* gnubgtest: Added a pubeval game, cubeful game, and test of
+	previous/next commands.
+	* gtkgame.c: Extensive changes to add a "game record" window
+	("list game" to see it).
+	* play.c (AddMoveRecord, ApplyMoveRecord, PopMoveRecord,
+	SetMoveRecord): Revised moverecord handling.
+	* eval.c (HeuristicDatabase): Show progress indicator while
+	building database.
+
+Sat Oct 21 10:59:00 2000  Jørn Thyssen  <joern@thyssen.nu>
+
+	* eval.h: `float *pEval' is changed to `float arEvalMove[ 5 ]'.
+	* eval.c (FindnSaveBestMoves): new function that find best moves,
+	but save evaluation for all moves (used for analysis).
+	* eval.c (Cl2CfMatchCentered): new function to calculate cube
+	centered cubeful equities for match play.
+	* eval.c (FormatEval5): return a 5 character string of the
+	evaluation type, for example: `2-ply' or 'R'.
+	* backgammon.h: Added new `movedouble' and added evaluation stuff
+	to `movenormal'.
+	* analysis.c: starting to implement analysis. It's working so far,
+	but it generates lots of debug output. Still missing: count
+	(anti-)jokers, errors, blunders etc.
+	* play.c (CommandDouble): New `movedouble' record.
+	* gnubg.c (CommandHint): new format for giving hint on moves. What
+	do you think?
+	* gnubg.c (ExportGame): bugfixes: missing new lines, and much
+	more. Snowie likes the format again :-)
+
+Sat Oct 21 01:04:26 2000  Gary Wong  <gary@research.att.com>
+
+	* play.c: Fix stupid bugs to _allow_ the computer to use the
+	"double", "take", "drop" and "resign" commands when it's its
+	turn (see Oct 19 entry), whoops...
+	(CommandMove): When no legal moves can be made, accept "move"
+	with no parameters as giving up the player's turn.
+
+	* eval.c (HeuristicDatabase): New function.  If the bearoff database
+	isn't found, generate an approximate one on the fly using
+	Eric Groleau's method.
+
+Fri Oct 20 14:52:22 2000  Gary Wong  <gtw@research.att.com>
+
+	* gtkboard.c (board_set_crawford): New function; move the "Crawford"
+	check box from the Game menu to the score table.
+
+	* play.c (CommandNext, CommandPrevious): New commands.
+
+Thu Oct 19 18:03:26 2000  Gary Wong  <gtw@research.att.com>
+
+	* play.c: Do not allow commands "double", "take", "drop" or "resign"
+	when it is the computer's turn.
+
+Thu Oct 19 10:45:32 2000  Gary Wong  <gtw@research.att.com>
+
+	* sgf.c: More work parsing SGF input.  Loading should mostly work.
+
+	* gtkgame.c (ShowList): Improve copying/warranty dialogs.
+
+Thu Oct 19 16:37:17 2000  Jørn Thyssen  <joern@thyssen.nu>
+
+	* eval.c (Cl2CfMoney): bugfix - too good to double with
+        centered cube did not work.
+
+Wed Oct 18 11:43:00 2000  Gary Wong  <gtw@research.att.com>
+
+	* gnubg.c (ShowBoard): Don't display GTK board if !fGTKOutput
+	(this could occur when loading a match given on command line).
+	* sgf.c: More work parsing SGF input.  Loading partially works, now.
+
+Wed Oct 18 14:52:47 2000  Jørn Thyssen  <joern@thyssen.nu>
+
+	* eval.c (EvaluatePositionCubeful1): Correct bugs introduced in
+	1.49.
+	* gnubg.c, eval.c, play.c, set.c, show.c: Rename match equity
+	table from aafA1 to aafMET. Ripped match equity tables from
+	fibs2html. 
+
+Tue Oct 17 11:11:24 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c (main): Better support for `-w' option.
+
+	* sgf.c: More work parsing SGF input.
+
+Tue Oct 17 16:04:32 2000  Jørn Thyssen  <joern@thyssen.nu>
+
+	* eval.c (EvaluatePositionCubeful1): Don't calculate cubeful
+	equity when cube is dead (or score is -2, -2).
+	* gnubg.c, set.c, show.c, matchequity.c: Implement different match
+	equity tables.
+
+Sun Oct 15 19:51:43 2000  Gary Wong  <gtw@research.att.com>
+
+	* gtkboard.c (board_pointer): Don't allow the user to move
+	chequers unless the dice have been rolled or they're in edit mode.
+	
+	* gtkboard.c (board_size_allocate): Move the "current move" output
+	in the board window up slightly, next to the off-board dice
+	(there's more room for it there).
+
+	* sgf.c, sgf.h, sgf.l, sgf.y: New files to parse SGF input.
+	
+	* gtkboard.c (game_set): Call dice_expose(), so that the off-board
+	dice will be drawn in the right colour.
+
+Fri Oct 13 18:07:49 2000  Gary Wong  <gtw@research.att.com>
+
+	* play.c (CancelCubeAction): New function.
+
+	* gnubg.c, play.c: Add a "MOVE_GAMEINFO" record to the beginning
+	of each game, specifying initial score, rules, game result, etc.
+	
+	* gnubg.c (main): New option `-w' (--window-system-only) used by GTK
+	port to disable TTY input.
+	* gtkgame.c: Do not set up any stdin handlers if fTTY is false.
+
+Fri Oct 13 13:41:00 2000  Jørn Thyssen  <joern@thyssen.nu>
+
+	* show.c: (CommandShowGammonPrice): Bugfix. Code gave wrong ouput.
+
+Fri Oct 13 10:57:09 2000  Jørn Thyssen  <joern@thyssen.nu>
+
+	* gnubg.c: (CommandHint): Don't give hint on cube action when
+	player is not allowed/able to double. 
+
+Thu Oct 12 22:48:09 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c (CommandSaveGame, CommandSaveMatch): Write output in
+	SGF format.  (The old JF .mat format is now written by the
+	"export" command.)
+	
+	* eval.c (FindPubevalMove): Return the move chosen in anMove.
+	play.c (ComputerTurn): Record moves pubeval makes.
+
+Thu Oct 12 18:18:37 2000  Gary Wong  <gtw@research.att.com>
+
+	* play.c (ComputerTurn): Don't consider doubling if !fCubeUse
+	(i.e. "set cube use off").
+	
+Wed Oct 11 23:30:47 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gtkboard.c (cube_position): New function.  Calculate where
+	(and which way around) cube should be drawn.
+	(board_set): Changed to update cube more often (now shows cube
+	on board when double offered).
+	
+	* play.c (CommandTake): Fixed bug for beavers (wrong player was on
+	roll after beaver accepted).
+
+	* gnubg.c, eval.c: Minor changes to avoid compiler warnings.
+	
+Wed Oct 11 10:46:09 2000  Joseph Heled  <pepe@internet.co.nz>
+
+	* redo changes to net 0.10 that were lost after I added them in 1.42.
+
+Sun Oct  8 20:44:00 2000  Joern Thyssen  <joern@thyssen.nu>
+
+	* eval.c (DumpPosition): remove unused debug code
+	* eval.c (EvaluatePositionCache): only cache 0-ply evaluations for
+	match play, as `deeper' moves might have been played wrong
+	at current matchscore.
+	* eval.c (EvalEfficiency): add basic code for calculating cube
+	efficiency.
+
+Sun Oct  8 14:15:35 2000  Joern Thyssen  <joern@thyssen.nu>
+
+	* show.c (CommandShowGammonPrice, CommandShowMatchEquityTable,
+	CommandShowOutputMWC): new functions
+	* set.c (CommandSetBeavers): corrected typo
+	* set.c (CommandSetOutputMWC): new function
+	* play.c (CommandNewMatch): initialize PostCrawford to FALSE.
+	* gnubg.c: new code for output in mwc or normalized equity; bugfix
+	in SaveGame; initialize match equity table.
+	* eval.c: implement cubeless to cubeful formulae for match play.
+	* matchequity.[ch]: new files; match equity tables.
+	* analysis.[ch]: new files; analyze match (not implemented yet!)
+
+Tue Oct  3 20:48:30 2000  Joseph Heled  <pepe@internet.co.nz>
+
+	* eval.c: Move to inputs version 10.
+
+Tue Oct  3 20:35:45 2000  Joseph Heled  <pepe@internet.co.nz>
+
+	* eval.c (EvalRace): Add checks for possiblity of backgammon and
+	almost exact evaluation.
+
+Fri Sep 29 18:12:48 2000  Gary Wong  <gtw@research.att.com>
+
+	* play.c (ComputerTurn): Bug fix (pubeval wouldn't roll dice).
+
+Tue Aug 29 20:48:56 2000  Joseph Heled  <pepe@internet.co.nz>
+
+	* eval.c (EvalBearoff1Full): Fix evaluation of bearoff positions
+	where gammons are possible. The former use of the race net is not
+	appropriate, since the race net has not been trained on such positions.
+
+Mon Aug 28 07:39:17 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gtkboard.c (game_set): If no game is in progress, display the
+	cube centred at 1.
+	
+	* gtkboard.c (board_expose): Fix buggy exposure calculation.
+
+Thu Aug 17 14:11:44 2000  Joern Thyssen  <joern@thyssen.nu>
+
+	* eval.c (EvaluatePositionCubeful1): Misc. bugfixes.
+
+Mon Aug 14 15:29:57 2000  Joern Thyssen  <joern@thyssen.nu>
+
+	* eval.c (EvaluatePositionCubeful): Bugfix: corrected some typos,
+	and initialize fDoubleBranch. Using an un-initialized value often
+ 	led to wrong evaluations.
+
+Mon Aug 14 14:39:08 2000  Joern Thyssen  <joern@thyssen.nu>
+
+	* set.c (CommandSetEvalReduced): Corrected faulty logic, where 
+	"set eval reduced 0" or "set eval reduced 21" would give 
+	nReduced = 7.
+
+Mon Aug 14 00:22:48 2000  Joern Thyssen  <joern@thyssen.nu>
+
+  * eval.c (GetDoublePointDeadCube): Corrected bug in double
+	point for Jacoby and Beavers.
+
+Sun Aug 13 23:14:23 2000  Joern Thyssen  <joern@thyssen.nu>
+
+	* gnubg.c (CommandHint): Give hints on cube action.
+	* eval.c (GetCubeActionSz): New function.
+	* play.c (ComputerTurn): Write dice or moves to status bar.
+
+Sun Aug 13 11:44:20 2000  Joern Thyssen  <joern@thyssen.nu>
+
+	* eval.c: New function EvaluatePositionCubeful[1].
+	* play.c (ComputerTurn): Double strategy for money play.
+	* set.c, show.c: show/set beavers (for money game with or without
+	beavers, racoons, and other critters)
+	* gnubg.c, database.c, rollout.c: Changes related to the above.
+
+Wed Aug  2 13:29:02 2000  Joseph Heled  <pepe@internet.co.nz>
+
+	* eval.c: Create new race net. See race inputs in file.
+
+Tue Aug  1 09:34:50 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c (CommandSaveSettings): Add "this file is automatically
+	generated" warning at top of output.
+
+	* eval.c (EvaluatePositionFull): Fix bug that would force evaluation
+	using old positionclass, even if fRelativeAccuracy was FALSE.
+
+Mon Jul 31 13:27:37 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* xgame.c (RunExt): If BSD FASYNC-style I/O notification is not
+	available, use System V SIGPOLL instead.
+	
+Mon Jul 31 10:49:18 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* rollout.c (Rollout) [USE_GTK]: Added graphical rollout output.
+	
+	* gtkboard.c: Finished edit mode; added entry fields for player
+	names and scores.
+
+	* gtkgame.c: Added more menu commands.
+	
+	* eval.c (DumpBearoff1): Show from the first to the last non-zero
+	probability, even if there are zeroes in between.
+
+	* gnubg.c (UpdateSetting): New function.  Anybody that changes the
+	global settings (e.g. fConfirm) or game/match state (e.g. nMatchTo)
+	should call this function afterwards so that other code can update
+	things as necessary -- a sort of minimalist MVC arrangement.
+
+	* gnubg.c (outputnew, outputoff, outputon): New functions.
+
+	* gnubg.c (CommandLoadCommands, CommandSaveSettings): New functions.
+	Loading and saving settings is now implemented.
+
+	* gnubg.c: Set fRelativeAccuracy to FALSE in all the default
+	evalcontexts (gnubg seems to play better without it).
+	
+Fri Jul 28 10:08:49 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gtkboard.c (board_pointer, board_edit): More work on board
+	editing.
+
+	* gnubg.c (main): Add a `-b' (--no-bearoff) option, to enable
+	gnubg to run without the bearoff database.
+
+	* eval.c (ClassifyPosition): Do not classify anything as a bearoff
+	position if the bearoff database was not loaded (i.e. use the
+	race evaluator).
+
+Thu Jul 27 10:03:33 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gtkboard.c (board_init): Change position ID to an entry field,
+	add "set" and "edit" buttons.
+
+Tue Jul 25 10:33:54 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c (output, outputl, outputc, outputf, outputv, outputx): New
+	functions replacing stdout operations.  They display in the status
+	bar or a dialog box when using GTK, or to stdout otherwise.
+	Extensive related changes elsewhere.
+	
+Sat Jul 15 14:28:35 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c (GetInputYN): New function.
+	* gtkgame.c (GTKGetInputYN): New function.
+
+Fri Jul 14 22:44:45 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gtkgame.c (ShowList): New function, to replace ShowPaged()
+	when GTK is in use (for "show copying" and "show warranty" commands).
+
+	* dice.c (PrintRNGSeed): New function, for "show seed" command.
+
+Fri Jul 14 10:12:48 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* md5.c: New file.  Add another dice generator (MD5 hash of the seed).
+
+	* gtkboard.c: Allow clicking on an empty point (or opponent blot) to
+	make the point.
+
+Thu Jul 13 09:08:01 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* configure.in: Merged the GTK and Ext ports back together.  Use
+	GTK if possible; otherwise use Ext if possible; otherwise use
+	plain TTY.  Extensive changes elsewhere to support merge.
+
+	* makebearoff.c (main): use binary mode on stdout, if possible,
+	to avoid problems on non-POSIX systems.
+
+Wed Jul 12 10:27:11 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gtkgame.c (HandleXAction): Recursive event handling is now
+	implemented again.  More GTK changes.  The GTK port should now
+	be more functional than the old X one.
+
+Wed Jul 12 09:14:34 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* eval.c: Added fRelativeAccuracy=TRUE to ecBasic.
+
+Tue Jul 11 13:44:49 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gtkgame.c: New file.  More extensive changes elsewhere.
+
+Mon Jul 10 09:54:48 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gtkboard.c: New file.  Extensive changes elsewhere for GTK port.
+
+Mon Jul 10 09:40:11 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c: Expanded "help" command.
+
+	* set.c (CommandSetDice): Allow dice to be entered without
+	space in between.
+	
+	* play.c (ComputerTurn): Don't add move to game if interrupted.
+
+Wed Jul  5 12:55:35 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c (CommandShowGame): More work on saving.
+	
+	* show.c: Added several missing "show" commands.
+
+	* eval.c (EvaluatePositionCache): Add more information to the
+	hash key, to avoid cache collisions between evaluations with
+	different parameters.
+
+	* drawboard.c (FormatMovePlain): Output Jellyfish compatible
+	point numbers.
+
+Thu Jun 29 19:03:57 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* eval.c: Added positionclass parameter to evaluation functions to
+	allow consistent evaluations across different moves.
+	* set.c (CommandSetEvalConsistency): New function.
+
+Mon Jun 26 12:21:17 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* show.c (CommandShowDelay): new function (patch supplied
+	by Eric Augustine).
+
+Mon Jun 19 20:39:36 2000  Oystein Johansen <oeysteij@online.no>
+
+        * rollout.c: Fixed Cygwin bug
+
+        * Makefile.am: Changed the linking order of the X11 libraries
+        to make it easyer to compile for Win32/Cygwin
+
+        * /lib/rand_r.h: Don't include the prototype in Cygwin
+ 
+Tue Jun 13 10:47:36 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* show.c (CommandShowThorp): deleted duplicate line.
+
+Mon Jun 12 09:29:30 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	Bug report from Sam Pottle:
+	
+	* rollout.c (BasicRollout): remove `+1' from dice parameters to
+	FindBestMove.
+
+	* kleinman.c: all occurrences of `Kleinmann' renamed to `Kleinman'.
+
+Tue May  9 12:10:58 2000  Joern Thyssen  <joern@thyssen.nu>
+
+	* gnubg.c (main,StdinReadNotify): Chop the newline returned
+        from the fgets call, otherwise many 'set' commands won't work
+        on machines without libreadline.
+
+Thu May  4 14:05:33 2000  Joseph Heled  <pepe@internet.co.nz>
+
+	* eval.c: Changed net inputs. Removed uncontributing ones, added
+	2 new ones (I_TIMING and I_BACKBONE). New weights as well. 
+
+Thu May 4 14:25:00 2000  Joern Thyssen  <joern@thyssen.nu>
+
+	* backgammon.h, eval.c, eval.h, set.c, show.c: implementation of
+	reduced 2+ ply searches.
+
+Mon Apr 10 14:13:37 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* makeweights.c (main): use binary mode on stdout, if possible,
+	to avoid problems on non-POSIX systems.
+	* eval.c (EvalInitialise): open gnubg.wd in binary mode, to
+ 	avoid problems on non-POSIX systems.
+
+Fri Apr  7 09:13:50 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* play.c (ComputerTurn): return a value after abort(), to pacify
+	compiler warnings.
+	(NextTurn): add parentheses to pacify compiler.
+
+Sat Mar 11 20:10:36 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* eval.c (DumpContact): Show the partial derivates of the
+	equity with respect to the inputs shown.
+
+Tue Mar  7 10:06:32 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* xboard.c (BoardPointer): Use PointerMotionHintMask to make sure
+	we don't lag behind drawing dragging chequers.
+
+	* eval.c (TrainPosition): Fix stupid syntax error in yesterday's
+	change.
+
+Mon Mar  6 10:27:44 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* configure.in: Use $datadir (not $pkgdatadir) to find installation
+	path.  $pkgdatadir is an automake invention; configure doesn't know
+	about it.
+
+	* eval.c (TrainPosition): Calculate alpha based on the correct net.
+	* database.c (CommandDatabaseDump): Fix spelling mistake.
+
+Sun Mar  5 14:56:42 2000  Joseph Heled  <pepe@internet.co.nz>
+
+	* eval.c: Disable BPG net until I figure if there is a way to get rid
+	of the discontinuities between the two nets. Evaluation is less
+	accurate in absolute terms, but generates less incorrect moves.
+	
+	With the latest weights, gnu vs. pub is 0.66 ppg.
+	
+	'The score (after 4000 games) is: gnubg 4430, pubeval 1790
+	(money session (without Jacoby rule))'
+
+Mon Feb 28 17:41:54 2000  Joseph Heled  <pepe@internet.co.nz>
+
+	* eval.c (CalculateHalfInputs): changed evaluation inputs. see
+	comments in code. New net is required, so I changed weights version
+	as well.
+
+Sun Feb 20 17:39:07 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* rollout.c (Rollout): Correct standard error calculation; use
+	Sam Pottle's recurrence relation to compute variance incrementally.
+
+	* play.c (NextTurn): Avoid blocking SIGINTs entirely.  If NextTurn
+	is always called , it can safely check for SIGINTs itself when the
+	board is in a consistent state.
+	* gnubg.c (NextTurnNotify, main): Always call NextTurn, even if
+	interrupted.  NextTurn now exits as soon as possible if an interrupt
+	is pending.
+
+	* gnubg.c (main) [!X_DISPLAY_MISSING]: Don't attempt to start X if
+	$DISPLAY is not set.
+
+Sat Feb 19 19:27:23 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c (main): Call PromptForExit when reading EOF from stdin.
+
+	* gnubg.c (PromptForExit): Set fInterrupt to FALSE.
+
+	* play.c (ComputerTurn, NextTurn): Correct buggy SIGINT processing.
+	ComputerTurn should block SIGINTs and test fInterrupt only when
+	blocked.  NextTurn should unblock SIGINTs.
+	* gnubg.c (ResetInterrupt): Don't unblock SIGINTs; that's
+	NextTurn()'s job.
+
+Sat Feb 19 14:27:28 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* Makefile.am: Added TESTS, for "make check" (and "make distcheck").
+	* gnubgtest: New file, for self-test.
+
+	* eval.c (EvalInitialise): Add parameter `szDir' to specify
+	additional directory to search for weight/bearoff databases.
+	All callers changed.
+	* gnubg.c (main): Add option `--datadir' (-d).
+
+Fri Feb 18 19:49:35 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* xgame.c (StatsMove): Remove superfluous parameters.  Caller changed.
+
+Thu Feb 17 20:10:10 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* xboard.c (BoardPointer): Fix test of pgd->fDragColour when using
+	button 2 or 3 to bear off (this didn't word for red).
+
+	* eval.c (SaveMoves): When fPartial is TRUE, and a later move using
+	more pips or moves is found to result in the same position as an
+	earlier one (which can happen bearing off the last chequer), update
+	the old move.
+
+Wed Feb 16 14:48:16 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* dice.c, set.c [!HAVE_LIBDL]: Add `#if HAVE_LIBDL' conditions to
+	some UserRNG calls that were causing problems if libdl was not
+	available.
+	
+	* gnubg.c (GenerateKeywords) [HAVE_LIBREADLINE, X_DISPLAY_MISSING]: Set
+ 	fReadingOther correctly when using readline but not X.
+
+Wed Feb 16 10:28:51 2000  Joseph Heled  <pepe@internet.co.nz>
+
+	* eval.c (FindBestMovePlied): Set a minimum tolerance for ply 0.
+	The differences between 1 and 0ply are sometimes large enough so that a
+	small tolerance eliminates the better moves.
+	Those situations are more likely to happen when different moves are
+	evaluated with different neural nets. This is a drawback of using
+	several neural nets, and we probably want a better solution in the
+	future.
+
+Sun Feb 13 18:28:18 2000  Joseph Heled  <pepe@internet.co.nz>
+
+	* eval.c (barPrimeBackGame): fix a serious bug. Some non BPG positions
+	are classified as such.
+
+Fri Feb  4 10:00:39 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* set.c (CommandSetDelay): Warn that delays will have no effect
+	if "set display" is off.
+	
+	* rollout.c (Rollout): Show current results while performing
+	rollouts.
+	
+	* gnubg.c (PortableSignal, PortableSignalRestore): New functions.
+	(ShellEscape): New function.  Handle X events while waiting for
+	child.
+
+	* play.c (ResetDelayTimer): New function.  Correctly handle
+	"set delay" pauses.
+
+	* configure.in, config.h.in: add --with-readline and --with-gdbm
+	options.  Try linking with termcap, ncurses or curses for readline.
+	
+	* backgammon.h: #include <list.h>, even if not using X.
+
+Thu Feb  3 09:36:22 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* play.c (ShowAutoMove): New function.
+	(NextTurn): Handle X events while pausing for "set delay".
+
+Wed Feb  2 14:34:22 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* set.c (CommandSetAutoDoubles): Correct output for cAutoDoubles = 0.
+
+Tue Feb  1 21:28:41 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c (HandleInputRecursive, GetInput): Ask for confirmation
+	before exiting on EOF from stdin, when appropriate.
+	(PromptForExit): New function.
+	* database.c, gnubg.c, rollout.c: Don't show progress reports
+	if stdout isn't a TTY.
+
+Mon Jan 31 21:25:20 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c (HandleCommand): Handle "!" as shell escape.
+
+Mon Jan 31 10:43:48 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c (ResetInterrupt): New function.
+	(ProcessInput): New function.
+	(HandleInputRecursive): New function.
+	(UserCommand): New function.  Handles non-TTY commands (e.g. input
+	from board window), and echos them to TTY.
+	(GetInput): New function.  Reads input from TTY below the top level.
+	* play.c (NewGame): Abort new game if interrupted during the opening
+	roll.
+	(ComputerPlayer): Block SIGINTs if anBoard is going to be updated,
+	so that the end of the move is atomic.
+	(CommandNewGame): Ask "are you sure" if game already in progress.
+	
+	* dice.c (RollDice): Can now be interrupted (and return error).  All
+	callers changed.
+	(GetManualDice): Use GetInput to read dice, and return error on
+	interrupt.
+
+Thu Jan 27 17:34:45 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c [HAVE_SYS_FILE_H]: #include <sys/file.h> if present, to
+	get FASYNC (required on Solaris).
+
+Wed Jan 19 09:59:02 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c (HandleIO): Handle X events asynchronously.  Many other
+	small related changes.
+
+Mon Jan 17 15:25:14 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c (CommandRollout): Label the standard error as such, rather
+	than standard deviation (not quite the same thing).
+
+	* rollout.c (VarRednRollout): Do not invert evaluation after calling
+	BearoffRollout (BearoffRollout already correctly adjusts for which
+	player is on roll).
+	(BasicRollout): Add parameter pec to correctly handle cases with
+	lookahead but no variance reduction.
+	
+Sun Jan 16 11:44:10 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c (GenerateKeywords, CommandHelp): Don't list commands with
+	no help string (e.g. "r", as abbreviation for "roll") in the help
+	or completion list.
+
+	* gnubg.c (HandleInput, StdinReadNotify, NextTurnNotify): Fix
+	bugs in prompt handling.
+
+Sat Jan 15 19:00:40 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* play.c (NewGame) [!X_DISPLAY_MISSING]: Show board after opening
+	roll.
+
+	* play.c, gnubg.c: Reorganised NextTurn() to avoid recursion.
+	Code should now call TurnDone() (which will return immediately)
+	to schedule the next turn.  This should simplify event handler
+	implementation and allow better input handling.
+	
+	* play.c (CommandRoll): Give error message if it's the computer's
+	turn.
+	(ComputerTurn): Don't roll the dice when making a take decision.
+	(NextTurn): Don't apply fAutoRoll to computer turns.
+	
+Sat Jan 15 18:04:43 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* database.c, gnubg.c, backgammon.h: Give error message in
+	CommandDatabaseRollout if libgdbm is not available.
+
+	* play.c (CommandMove): Fix bug bearing off against opponent on bar.
+
+	* set.c (CommandSetTurn) [!X_DISPLAY_MISSING]: Show board after
+	setting turn.
+
+Sat Jan 15 16:56:27 2000  Joseph Heled  <pepe@internet.co.nz>
+
+	* gnubg.c, backgammon.h: add '#if HAVE_LIBGDBM' around
+        CommandDatabaseRollout
+
+Fri Jan 14 21:18:37 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* set.c, show.c: Added commands to control rollout parameters.
+
+	* database.c: Renamed CommandDatabaseEvaluate to
+	CommandDatabaseRollout.
+
+	* set.c, gnubg.c, eval.c: Added "evalcontext" parameter to
+	several evaluation calls.  The settings for each kind of evaluation
+	(per player, for rollouts, for "eval" and "hint", etc.) are now
+	maintained separately -- e.g. "set player 0 evaluation plies 1",
+	"set rollout evaluation tolerance 0.2", "set evaluation candidates 6".
+
+Thu Jan 13 22:20:11 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* drawboard.c (ParseMove): Fixed off-by-one bug in bit mask fl,
+	which caused moves like 13/12*/11 to fail (reported by Jared
+	Riley).
+
+	* rollout.c (Rollout): Added parameter fVarRedn.
+	(BearoffRollout, BasicRollout, VarRednRollout): Old function
+	RolloutGame split into 3.
+
+	* show.c (CommandShowAutomatic, CommandShowEvaluation): Show
+	current settings.
+	* drawboard.c (FormatMovePlain): Reinstate the ugly FormatMove,
+	for saving `.mat' files.
+
+Wed Jan 12 23:29:59 2000  Joseph Heled  <pepe@internet.co.nz>
+
+	* eval.c, eval.h: Added another net for special contact positions.
+
+Wed Jan 12 21:08:03 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* set.c (CommandSetEvalCandidates, CommandSetEvalTolerance,
+	CommandSetNackgammon): New functions.
+	* gnubg.c (ParseReal): New function.
+	(InitBoard): Use the Nackgammon starting position if requested.
+	* eval.c (FindBestMove): Use variables nSearchCandidates and
+	rSearchTolerance.
+
+Wed Jan 12 14:51:37 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* show.c (CommandShowCopying, CommandShowWarranty, ShowPaged): New
+	functions.
+	* copying.c: New file.
+
+Tue Jan 11 21:42:53 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* play.c (CommandTake): Fix bug when accepting beavers -- the owner
+	of the cube after an (eventual) take should be the opponent of the
+	_original_ doubler, which is not necessarily the player who finally
+	accepted.
+
+	* drawboard.c (ParseMove): New function.
+	(FormatMove): Generate prettier output (e.g. "24/13" or "24/18*/13"
+	rather than "24/18 18/13").
+
+Mon Jan 10 22:18:55 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* play.c (NextTurn): Don't show the board if fDisplay is not set.
+
+	* rollout.c (RolloutGame): Don't attempt variance reduction when doing
+	0-ply evaluations.
+	(Rollout): Fix standard deviation calculation (we want the standard
+	error in the estimated mean; the code was calculating the population
+	standard deviation).
+	
+Sat Jan  8 23:33:18 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* show.c (CommandShowPipCount): Take an optional position ID parameter.
+
+	* gnubg.c (main): Make --version list optional features supported.
+	Use XResourceManagerString instead of requesting property manually.
+
+	* positionid.c (CheckPosition): New function.
+	(PositionFromKey, PositionFromID): Fail if the position specified
+	is illegal.
+
+	* eval.c (DumpBearoff1): Wrote function.
+
+	* eval.c (SanityCheck): Don't evaluate more backgammons than gammons.
+
+	* gnubg.c: Jacoby rule defaults to off (until we have proper cube
+	evaluations).
+
+	* play.c (NextTurn): Partially implemented delay (some problems
+	remaining).
+	* set.c (CommandSetDelay): New function.
+
+	* set.c (CommandSetCubeUse, CommandSetJacoby): Print warnings if
+	the user tries to enable the Jacoby rule and disable cube use.
+	
+	* gnubg.c (main): add rl_callback_handler_remove to the atexit list.
+	
+	* xboard.c (BoardPoint, BoardPointer): Allow clicking on the cube to
+	double.
+
+2000-01-09  Joern Thyssen  <jth@localhost.localdomain>
+
+	* play.c (ComputerTurn): Call Utility for calculation of equity
+	when determining whether to accept resignation or not.
+
+2000-01-09  Joern Thyssen  <jth@localhost.localdomain>
+
+	* eval.c (DumpPosition): Call Utility for calculation of equity. 
+
+Sat Jan  8 14:16:08 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* xgame.c (StatsMove, StatsConfirm): Keep a list of legal
+	moves from the current position.  Display whether the user's
+	move is incomplete, complete, or illegal.
+	* xgame.h, xgame.c (GameSet, GameSetBoard): Old GameSetBoard
+	renamed to GameSet; old GameSet deleted.
+	* eval.c (SaveMoves, GenerateMovesSub, GenerateMoves): added
+	parameter fPartial, and include incomplete moves in the list
+	if set.
+	* positionid.c, positionid.h (EqualBoards): New function.
+	
+	* set.c (CommandSetCubeCentre, CommandSetCubeOwner,
+	CommandSetCubeValue): New functions.
+	
+	* set.c (CommandSetCubeUse): If the cube had been offered and
+	cube use is being disabled, go back to the player on roll.
+	
+	* gnubg.c (main): Initialise the players' names to "gnubg" and
+	the user's login name.
+	* gnubg.c (ShowBoard): Label the players' names with X or O in the
+	ASCII board.
+
+Fri Jan  7 21:14:19 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* xgame.c (GameHandler): Forward keyboard input in the board window
+	on to the window specified by $WINDOWID (if any), so that the user
+	can type data into the controlling xterm (or similar) while focus
+	is on the board window.
+
+Thu Jan  6 22:07:28 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* makeweights.c: New file.
+	* eval.c (EvalInitialise): read binary weights if available.
+	* gnubg.c (main): attempt reading binary weights `gnubg.wd';
+	don't read any weights if -n (--no-weights) specified.
+
+Wed Jan  5 22:20:09 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* play.c (NextTurn): ignore gammons when appropriate under the
+	Jacoby rule.
+	
+	* gnubg.c (ShowBoard): when no game is in progress under X, display
+	an empty board window.
+	
+	* set.c (CommandSetCubeUse): New function.
+	* gnubg.c (SetToggle): Add "enabled" and "disabled" (along with
+	yes/no, on/off, true/false).
+	
+	* play.c (NextTurn): Don't autoroll if the opponent has just
+	doubled.
+	
+	* set.c (CommandSetAutoDoubles): New function.
+	* play.c (NewGame): Apply automatic doubles when appropriate.
+
+Mon Jan  3 21:13:22 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* dice.c (InitRNG): Use /dev/random for initial seed if possible.
+	* set.c (SetRNG): Don't call CommandSetSeed() when changing
+	to manual dice.
+
+Mon Jan  3 03:13:02 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* xgame.c (StatsMove): call StatsUpdateBoardID earlier, so that the
+	position ID will still be updated even if more than 4 moves are
+	made.  (This is only temporary -- a better move routine should
+	be written anyway.)
+
+Sun Jan  2 11:35:41 2000  Gary Wong  <gary@cs.arizona.edu>
+
+	* eval.c (EvalCacheResize): New function.
+
+Fri Dec 24 01:12:54 1999  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c (CommandRollout): use Rollout()'s equity standard
+	deviation, rather than (incorrectly) trying to calculate it.
+	* rollout.c (Rollout): calculate equity standard deviation.
+	Also fix bug which would sometimes return NaN standard deviation.
+
+Thu Dec 23 18:45:31 1999  Gary Wong  <gary@cs.arizona.edu>
+
+	* play.c (CommandNewGame): fix bug in assert() -- the game is at
+	lMatch.plPrev->p, not lMatch.plPrev.  Also, do not free plGame
+	after calling FreeGame(); FreeGame() already does it.
+
+Mon Dec 20 17:33:06 1999  Gary Wong  <gary@cs.arizona.edu>
+
+	* play.c (TryBearoff): New function.
+	* set.c (CommandSetAutoBearoff): New function.
+
+Mon Dec 20 15:05:19 1999  Joseph Heled  <pepe@internet.co.nz>
+
+	* eval.c (SanityCheck): Insure gammons rate is less than win rate
+	This is rare, but can happen:
+	
+	(gnubg) eval wQhBvjEW/2MAAA
+        Win     W(g)    W(bg)   L(g)    L(bg)   Equity
+        static: 0.896   0.918   0.026   0.021   0.005   (+1.711)
+         1 ply: 0.853   0.888   0.024   0.028   0.005   (+1.585)
+
+Sun Dec 19 22:57:49 1999  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c (SaveGame, CommandSaveMatch): finished saving.
+	* eval.c (SaveMoves): store all bearoff moves as destination
+	point 0 (previous patch to do this was incomplete).
+	
+	* play.c (FreeGame): New function.
+	* play.c (FreeMatch): New function.
+
+Sun Dec 19 19:52:09 1999  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c (HandleCommand): Allow "b" and "ba" as abbreviations
+	for "bar".
+
+Mon Dec 20 16:19:21 1999  Joern Thyssen  <joern@thyssen.nu>
+
+	* xgame.c (StatsSet): nMatchTo == 0 is now money session.
+	* gnubg.c (ShowBoard): nMatchTo == 0 is now money session.
+	Added variables and set- and show-functions for 
+	Crawford game, post-Crawford play, and Jacoby play.
+	* set.c (CommandSetJacoby, CommandSetCrawford, 
+	CommandSetPostCrawford): New functions.
+	* show.c (CommandShowJacoby, CommandShowCrawford, 
+	CommandShowPostCrawford): New functions.
+	* play.c (CommandNewMatch, CommandNewSession): initialize 
+	new variables.
+	(Nextturn): changed code used if fAutoGame.
+
+Sat Dec 18 20:37:32 1999  Gary Wong  <gary@cs.arizona.edu>
+
+	* set.c (CommandSetPrompt): New function.
+	* gnubg.c (FormatPrompt): New function.
+	* eval.c (PipCount): New function.
+
+Sat Dec 18 15:02:32 1999  Gary Wong  <gary@cs.arizona.edu>
+
+	* xgame.c (StatsUpdateBoardID): New function.  Display board
+	ID in window.
+
+Fri Dec 17 09:14:13 1999  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c (usage): "--help" option now mentions "help" command
+	within gnubg.
+
+Thu Dec 16 18:11:41 1999  Gary Wong  <gary@cs.arizona.edu>
+
+	* xboard.c (BoardPointer): Fixed bug which prevented bearing off
+	with Button2 or Button3 with exactly the right number.
+
+Wed Dec 15 19:48:10 1999  Gary Wong  <gary@cs.arizona.edu>
+
+	* xboard.c (BoardPointer): Allow clicking Button2 or Button3 on
+	chequers to move pieces the number of pips showing on the dice,
+	and clicking Button2 or Button3 on the dice to swap the dice.
+
+Wed Dec 15 15:25:23 1999  Joern Thyssen  <joern@thyssen.nu>
+
+        * userrng.c: New file. Template for a user supplied RNG,
+        includes code for fetching random numbers from www.random.org.
+
+        * gnubg.c: Added support for user and manual RNG.
+	Added function CommandShowRNG.
+	Fixed missing options to getopt_long
+	(option --tty did not work).
+
+	* dice.c: Added support for user and manual RNG.
+
+	* show.c: Added function CommandShowRNG.
+
+	* set.c: Added support for user and manual RNG.
+
+	* configure.in: Search for library 'dl' used for dynamic linking
+	of user RNG.
+
+	* config.h.in: Define HAVE_LIBDL
+
+Fri Dec 10 18:19:16 1999  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c: Added lMatch and lGame data structures, and started
+	implementing CommandSaveMatch, etc.
+
+Thu Dec  9 17:24:14 1999  Gary Wong  <gary@cs.arizona.edu>
+
+	* isaac.c: New file.  Added support for ISAAC dice generator.
+	* dice.c: Added support for ISAAC.
+
+Fri Dec  3 17:07:35 1999  Gary Wong  <gary@cs.arizona.edu>
+
+	* dice.c: New file.  Adding support for other dice generators
+	(ANSI, BSD and Mersenne Twister supported so far).
+
+	* xgame.c (StatsMove): handle O's moves correctly (bug 100225).
+
+	* set.c (CommandSetBoard): Display new board once it's set.
+
+Thu Dec  2 18:16:21 1999  Gary Wong  <gary@cs.arizona.edu>
+
+	* xgame.c (GameSetBoard): Fixed the display of player 0's pieces.
+	Still some smaller cosmetic problems, but it works well enough to
+	see.
+
+Wed Dec  1 18:05:19 1999  Gary Wong  <gary@cs.arizona.edu>
+
+	* database.c: New file.
+
+Tue Nov 30 17:03:43 1999  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c: added --tty option to disable X operation, and made
+	everything fall back to TTY if X fails.
+
+	* eval.c (RolloutGame): added SanityCheck() so that variance
+	reduction doesn't lead to illegal output.
+
+Wed Nov 24 13:58:30 1999  Gary Wong  <gary@cs.arizona.edu>
+
+	* eval.c (EvalInitialise): read weights and bearoff database from
+	$pkgdatadir (defaults to /usr/local/share/gnubg/) if not found in
+	current directory.
+
+Tue Nov 23 15:58:39 1999  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c (usage): updated e-mail address.
+
+	* eval.c (EvalInitialise): fall back to malloc() and read() if
+ 	mmap() fails.
+
+Mon Nov 22 18:56:35 1999  Gary Wong  <gary@cs.arizona.edu>
+
+	* gnubg.c: added global definition for (gnubg) prompt.
+	[!HAVE_LIBREADLINE] Only display prompt if stdin is a TTY.
+
+	* Added rudimentary X window system support.
+	
+	* pub_eval.c: Eliminated rdwts() and hard-coded wr[] and wc[] in
+ 	pub_eval.c.
+
+	* set.c (CommandSetDice): Fixed setting dice for both players (bug
+ 	100122).
+
+	* eval.c (EvalInitialise): now gives decent error messages (bug
+ 	100110).
+	(FindBestMoves): fixed array overflow (bug 100114).
+	(SaveMoves): store all bear off moves as destination point 0,
+	even if the roll to bear off was more than necessary (bug 100150.)
+
+Sat Jan 30 12:35:04 1999  Gary Wong  <gary@cs.arizona.edu>
+
+	* Version 0.0 released.

@@ -1,0 +1,151 @@
+\entry {Makefile}{12}{\code {Makefile}}
+\entry {GNUmakefile}{12}{\code {GNUmakefile}}
+\entry {makefile}{12}{\code {makefile}}
+\entry {include}{12}{\code {include}}
+\entry {/usr/gnu/include}{13}{\code {/usr/gnu/include}}
+\entry {/usr/local/include}{13}{\code {/usr/local/include}}
+\entry {/usr/include}{13}{\code {/usr/include}}
+\entry {MAKEFILES}{14}{\code {MAKEFILES}}
+\entry {wildcard}{20}{\code {wildcard}}
+\entry {VPATH}{21}{\code {VPATH}}
+\entry {vpath}{21}{\code {vpath}}
+\entry {VPATH}{21}{\code {VPATH}}
+\entry {vpath}{22}{\code {vpath}}
+\entry {.PHONY}{26}{\code {.PHONY}}
+\entry {.PHONY}{29}{\code {.PHONY}}
+\entry {.SUFFIXES}{29}{\code {.SUFFIXES}}
+\entry {.DEFAULT}{29}{\code {.DEFAULT}}
+\entry {.PRECIOUS}{29}{\code {.PRECIOUS}}
+\entry {.INTERMEDIATE}{29}{\code {.INTERMEDIATE}}
+\entry {.SECONDARY}{29}{\code {.SECONDARY}}
+\entry {.IGNORE}{30}{\code {.IGNORE}}
+\entry {.SILENT}{30}{\code {.SILENT}}
+\entry {.EXPORT{\_}ALL{\_}VARIABLES}{30}{\code {.EXPORT{\_}ALL{\_}VARIABLES}}
+\entry {subst}{31}{\code {subst}}
+\entry {$*, and static pattern}{34}{\code {$*\r {, and static pattern}}}
+\entry {.SILENT}{39}{\code {.SILENT}}
+\entry {SHELL (command execution)}{40}{\code {SHELL \r {(command execution)}}}
+\entry {SHELL}{40}{\code {SHELL}}
+\entry {.IGNORE}{42}{\code {.IGNORE}}
+\entry {.DELETE{\_}ON{\_}ERROR}{43}{\code {.DELETE{\_}ON{\_}ERROR}}
+\entry {.PRECIOUS}{44}{\code {.PRECIOUS}}
+\entry {MAKE}{44}{\code {MAKE}}
+\entry {export}{46}{\code {export}}
+\entry {unexport}{46}{\code {unexport}}
+\entry {.EXPORT{\_}ALL{\_}VARIABLES}{47}{\code {.EXPORT{\_}ALL{\_}VARIABLES}}
+\entry {MAKELEVEL}{47}{\code {MAKELEVEL}}
+\entry {MAKEFILES}{48}{\code {MAKEFILES}}
+\entry {MAKEFLAGS}{48}{\code {MAKEFLAGS}}
+\entry {MAKEOVERRIDES}{48}{\code {MAKEOVERRIDES}}
+\entry {.POSIX}{49}{\code {.POSIX}}
+\entry {MFLAGS}{49}{\code {MFLAGS}}
+\entry {.DEFAULT, and empty commands}{52}{\code {.DEFAULT\r {, and empty commands}}}
+\entry {MAKELEVEL}{56}{\code {MAKELEVEL}}
+\entry {MAKE}{56}{\code {MAKE}}
+\entry {patsubst}{57}{\code {patsubst}}
+\entry {override}{64}{\code {override}}
+\entry {define}{65}{\code {define}}
+\entry {endef}{65}{\code {endef}}
+\entry {ifdef}{70}{\code {ifdef}}
+\entry {ifeq}{70}{\code {ifeq}}
+\entry {ifndef}{70}{\code {ifndef}}
+\entry {ifneq}{70}{\code {ifneq}}
+\entry {else}{70}{\code {else}}
+\entry {endif}{70}{\code {endif}}
+\entry {subst}{76}{\code {subst}}
+\entry {patsubst}{76}{\code {patsubst}}
+\entry {strip}{77}{\code {strip}}
+\entry {findstring}{77}{\code {findstring}}
+\entry {filter}{78}{\code {filter}}
+\entry {filter-out}{78}{\code {filter-out}}
+\entry {sort}{78}{\code {sort}}
+\entry {dir}{79}{\code {dir}}
+\entry {notdir}{79}{\code {notdir}}
+\entry {suffix}{80}{\code {suffix}}
+\entry {basename}{80}{\code {basename}}
+\entry {addsuffix}{80}{\code {addsuffix}}
+\entry {addprefix}{80}{\code {addprefix}}
+\entry {join}{80}{\code {join}}
+\entry {word}{81}{\code {word}}
+\entry {words}{81}{\code {words}}
+\entry {firstword}{81}{\code {firstword}}
+\entry {wildcard}{81}{\code {wildcard}}
+\entry {foreach}{81}{\code {foreach}}
+\entry {origin}{83}{\code {origin}}
+\entry {shell}{85}{\code {shell}}
+\entry {OUTPUT{\_}OPTION}{104}{\code {OUTPUT{\_}OPTION}}
+\entry {AR}{105}{\code {AR}}
+\entry {AS}{105}{\code {AS}}
+\entry {CC}{105}{\code {CC}}
+\entry {CXX}{105}{\code {CXX}}
+\entry {CO}{105}{\code {CO}}
+\entry {CPP}{105}{\code {CPP}}
+\entry {FC}{105}{\code {FC}}
+\entry {GET}{105}{\code {GET}}
+\entry {LEX}{105}{\code {LEX}}
+\entry {PC}{105}{\code {PC}}
+\entry {YACC}{105}{\code {YACC}}
+\entry {YACCR}{105}{\code {YACCR}}
+\entry {MAKEINFO}{105}{\code {MAKEINFO}}
+\entry {TEX}{105}{\code {TEX}}
+\entry {TEXI2DVI}{105}{\code {TEXI2DVI}}
+\entry {WEAVE}{105}{\code {WEAVE}}
+\entry {CWEAVE}{105}{\code {CWEAVE}}
+\entry {TANGLE}{105}{\code {TANGLE}}
+\entry {CTANGLE}{105}{\code {CTANGLE}}
+\entry {RM}{105}{\code {RM}}
+\entry {ARFLAGS}{106}{\code {ARFLAGS}}
+\entry {ASFLAGS}{106}{\code {ASFLAGS}}
+\entry {CFLAGS}{106}{\code {CFLAGS}}
+\entry {CXXFLAGS}{106}{\code {CXXFLAGS}}
+\entry {COFLAGS}{106}{\code {COFLAGS}}
+\entry {CPPFLAGS}{106}{\code {CPPFLAGS}}
+\entry {FFLAGS}{106}{\code {FFLAGS}}
+\entry {GFLAGS}{106}{\code {GFLAGS}}
+\entry {LDFLAGS}{106}{\code {LDFLAGS}}
+\entry {LFLAGS}{106}{\code {LFLAGS}}
+\entry {PFLAGS}{106}{\code {PFLAGS}}
+\entry {RFLAGS}{106}{\code {RFLAGS}}
+\entry {YFLAGS}{106}{\code {YFLAGS}}
+\entry {${\tt\char'100}}{110}{\code {${\tt\char'100}}}
+\entry {{\tt\char'100} (automatic variable)}{110}{\code {{\tt\char'100} \r {(automatic variable)}}}
+\entry {$%}{110}{\code {$%}}
+\entry {% (automatic variable)}{110}{\code {% \r {(automatic variable)}}}
+\entry {${\tt\less}}{110}{\code {${\tt\less}}}
+\entry {{\tt\less} (automatic variable)}{110}{\code {{\tt\less} \r {(automatic variable)}}}
+\entry {$?}{111}{\code {$?}}
+\entry {? (automatic variable)}{111}{\code {? \r {(automatic variable)}}}
+\entry {${\tt\hat}}{111}{\code {${\tt\hat}}}
+\entry {{\tt\hat} (automatic variable)}{111}{\code {{\tt\hat} \r {(automatic variable)}}}
+\entry {${\tt\char43}}{111}{\code {${\tt\char43}}}
+\entry {{\tt\char43} (automatic variable)}{111}{\code {{\tt\char43} \r {(automatic variable)}}}
+\entry {$*}{111}{\code {$*}}
+\entry {* (automatic variable)}{111}{\code {* \r {(automatic variable)}}}
+\entry {$({\tt\char'100}D)}{112}{\code {$({\tt\char'100}D)}}
+\entry {{\tt\char'100}D (automatic variable)}{112}{\code {{\tt\char'100}D \r {(automatic variable)}}}
+\entry {$({\tt\char'100}F)}{112}{\code {$({\tt\char'100}F)}}
+\entry {{\tt\char'100}F (automatic variable)}{112}{\code {{\tt\char'100}F \r {(automatic variable)}}}
+\entry {$(*D)}{112}{\code {$(*D)}}
+\entry {*D (automatic variable)}{112}{\code {*D \r {(automatic variable)}}}
+\entry {$(*F)}{112}{\code {$(*F)}}
+\entry {*F (automatic variable)}{112}{\code {*F \r {(automatic variable)}}}
+\entry {$(%D)}{112}{\code {$(%D)}}
+\entry {%D (automatic variable)}{112}{\code {%D \r {(automatic variable)}}}
+\entry {$(%F)}{112}{\code {$(%F)}}
+\entry {%F (automatic variable)}{112}{\code {%F \r {(automatic variable)}}}
+\entry {$({\tt\less}D)}{112}{\code {$({\tt\less}D)}}
+\entry {{\tt\less}D (automatic variable)}{112}{\code {{\tt\less}D \r {(automatic variable)}}}
+\entry {$({\tt\less}F)}{112}{\code {$({\tt\less}F)}}
+\entry {{\tt\less}F (automatic variable)}{112}{\code {{\tt\less}F \r {(automatic variable)}}}
+\entry {$({\tt\hat}D)}{112}{\code {$({\tt\hat}D)}}
+\entry {{\tt\hat}D (automatic variable)}{112}{\code {{\tt\hat}D \r {(automatic variable)}}}
+\entry {$({\tt\hat}F)}{112}{\code {$({\tt\hat}F)}}
+\entry {{\tt\hat}F (automatic variable)}{112}{\code {{\tt\hat}F \r {(automatic variable)}}}
+\entry {$(?D)}{112}{\code {$(?D)}}
+\entry {?D (automatic variable)}{112}{\code {?D \r {(automatic variable)}}}
+\entry {$(?F)}{112}{\code {$(?F)}}
+\entry {?F (automatic variable)}{112}{\code {?F \r {(automatic variable)}}}
+\entry {.DEFAULT}{115}{\code {.DEFAULT}}
+\entry {.SUFFIXES}{117}{\code {.SUFFIXES}}
+\entry {SUFFIXES}{117}{\code {SUFFIXES}}
+\entry {* (automatic variable), unsupported bizarre usage}{129}{\code {* \r {(automatic variable), unsupported bizarre usage}}}

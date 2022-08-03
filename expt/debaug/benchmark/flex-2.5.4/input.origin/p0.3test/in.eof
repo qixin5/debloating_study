@@ -1,0 +1,13 @@
+%x quote
+%%
+
+<quote><<EOF>> {
+	error("unterminated quote");
+	yyterminate();
+	}
+<<EOF>> {
+	if (*++filelist)
+		yyin = fopen(*filelist, "r");
+	else
+		yyterminate();
+	}

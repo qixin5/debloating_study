@@ -1,0 +1,21 @@
+GROUP	testgroup 
+
+	GRID SQUARE  STEP 65 
+	ELEMENT 
+	   GEOMETRY CIRCULAR  40 
+
+           PORTS 1
+              PORT 1
+              POL_ORIENT X
+              AMPLITUDE 1.0 POWER
+              PHASE_SHAPING a.b
+	ADD 	BLOCK 9 9 -6 -4 
+	ADD 	NODE -5 2 
+	ADD 	BLOCK 0 2 1 6 
+	ADD 	BLOCK 7 -1 -2 6 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 21 
+	   PHASE ROTATION SEQUENTIAL ANGLE 92 -215 
+
+END 

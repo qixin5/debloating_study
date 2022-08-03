@@ -1,0 +1,19 @@
+GROUP   testgroup 
+
+        GRID TRIANGULAR  
+                 PX 6 
+                 PY -10 
+                 QX -8 
+                 QY -23 
+        ELEMENT 
+           GEOMETRY CIRCULAR 58 
+
+        ADD     BLOCK -6 -3 -2 0 
+        ADD     BLOCK 8 7 6 9 
+        ADD     NODE 0 -7 
+        ADD     BLOCK -4 2 1 -7 
+
+        GROUP_EXCITATION 
+           AMPLITUDE UNIFORM 22 
+           PHASE UNIFORM 36 deg   
+END 

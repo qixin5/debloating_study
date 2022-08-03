@@ -1,0 +1,16 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	         PX 2 
+	         PY 2 
+	         QX 6 
+	         QY -18 
+	ELEMENT 
+	   GEOMETRY CIRCULAR 72 
+	   POLARIZATION LINEAR 
+	ADD 	NODE 12 2 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE SECOND ORDER 34 22 21 33 21 
+	   PHASE UNIFORM -174 
+END 

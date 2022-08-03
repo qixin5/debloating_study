@@ -1,0 +1,40 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp -r $INDIR/folder ./
+cp -r $INDIR/upload ./
+cp -r $INDIR/file ./
+
+{ timeout -k 9 ${TIMEOUT}s $BIN cfv archive.tar . --exclude='./folder' --exclude='./upload/folder2'; } &>$OUTDIR/o6
+
+echo "$?" >>$OUTDIR/o6
+rm -fr ./folder
+rm -fr ./upload
+rm -fr file
+
+#Need to back up .profraw, as in this case, a partial .profraw file will be compressed, and then decompressed, and will overwrite the real one.
+if [ -f default.profraw ]; then
+    mv default.profraw default.profraw.backup
+fi
+
+tar xf archive.tar
+test -d folder
+echo "$?" >>$OUTDIR/o6
+test -f folder/file
+echo "$?" >>$OUTDIR/o6
+test -d upload
+echo "$?" >>$OUTDIR/o6
+test -d upload/folder2
+echo "$?" >>$OUTDIR/o6
+test -f upload/folder2/file
+echo "$?" >>$OUTDIR/o6
+diff file $INDIR/file
+echo "$?" >>$OUTDIR/o6
+
+if [ -f default.profraw.backup ]; then
+    mv default.profraw.backup default.profraw
+fi

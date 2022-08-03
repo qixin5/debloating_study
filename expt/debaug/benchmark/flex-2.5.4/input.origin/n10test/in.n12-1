@@ -1,0 +1,901 @@
+
+%x incl
+%x s
+%x s1
+%x s2
+%x s3
+%x quote
+
+DIGIT	[0-9]
+ID	[a-z][a-z0-9]*
+	int num_lines = 0, num_chars = 0;
+digit [0-9]
+digits {digit}+
+whitespace [\t\n]
+NAME	[A-Z][A-Z0-9]*
+	int	word_count = 0;
+
+%%
+
+{DIGIT}*	{
+		printf("An integer: %s (%d)\n", yytext, atoi(yytext));
+		}
+
+{DIGIT}+"."{DIGIT}*	{
+		printf("A float: %s (%g)\n", yytext, atof(yytext));
+		}
+
+if|then|begin|end|procedure|function	{
+		printf("A keyword: %s\n", yytext);
+		}
+
+{ID}		printf("An identifier: %s\n", yytext);
+
+"+"|"-"|"*"|"/"	printf("An operator: %s\n", yytext);
+
+"{"[^}\n]*"}"	/* eat up one-line comments */
+
+[ \t\n]+	/* eat up whitespace */
+
+.		printf("Unrecognized character: %s\n", yytext);
+\n	++num_lines; ++num_chars;
+.	++num_chars;
+"[" { printf("OPEN_BRAC\n");}
+"]" { printf("CLOSE_BRAC\n");}
+"+" { printf("ADDOP\n");}
+"*" { printf("MULTOP\n");}
+{digit} {printf("NUMBER = %s\n", yytext);}
+whitespace;
+
+xyz"++"		printf("Match character: %s\n", yytext);
+[xyz]		printf("Character class[x, y or z]: %s\n", yytext);
+[abj-oZ]	printf("Character class with range: %s\n", yytext);
+[^A-Z\n]	printf("Negated character class with range: %s\n", yytext);
+"[XYZ]\"foo"	printf("The literal string: %s\n", yytext);
+.		printf("Any character except newline: %s\n", yytext);
+foo|bar*	printf("foo or ba(zero or more than r's) %s\n", yytext);
+(foo)|(ba(r*))	printf("foo or ba(zero or more than r's) %s\n", yytext);
+foo|(bar$)	printf("foo or bar$: %s\n", yytext);
+foo|^bar	printf("foo or ^bar: %s\n", yytext);
+^s	printf("s at the beginning of a line: %s\n", yytext);
+r$	printf("r at the end of a line: %s\n", yytext);
+<s>r	printf("r in start condition s: %s\n", yytext);
+<s1,s2,s3>R	printf("r in start condition s1,s2,s3: %s\n", yytext);
+<*>s	printf("s in any start condition: %s\n", yytext);
+r*		printf("Zero or more r's: %s\n", yytext);
+[a|b]*"."r+	printf("Zero or more (a or b) . one or more r's: %s\n", yytext);
+z{2,5}		printf("Two to five z's: %s\n", yytext);
+s{2,}	  	printf("Two or more s's: %s\n", yytext);
+u{4}    	printf("Exactly 4 u's: %s\n", yytext);
+
+[\a]		printf("Zero or more r's: %s\n", yytext);
+[\40-\176]	printf("octal: %d\n", yytext);
+\0		printf("Two to five z's: %s\n", yytext);
+[\400-\415]	printf("over 256: %d\n", yytext);
+[ \t]+	putchar(' ');
+[ \t]+$	/*ignore this token */
+"zap me"
+<quote><<EOF>> {
+	error("unterminated quote");
+	yyterminate();
+	}
+<<EOF>> {
+	if (*++filelist)
+		yyin = fopen(*filelist, "r");
+	else
+		yyterminate();
+	}
+(r)		printf("Match an r: %s\n",yytext);
+(ab|cd)		printf("Match ab or cd: %s\n",yytext);
+x*[efg]		printf("Match x*(e+f+g): %s\n", yytext);
+Rose/Garden	printf("Match Rose followed by Garden: %s\n", yytext);
+^A		printf("Begin with A: %s\n", yytext);
+Z$		printf("End with Z: %s\n", yytext);
+foo{NAME}?	printf("Found it\n");
+abc{1,3}	printf("Match %s\n", yytext);
+foo	printf("foo matched: " ); printf("%s\n", yytext);
+
+include         BEGIN(incl);
+
+[a-z]+          ECHO;
+[^a-z\n]*\n?    ECHO;
+
+<incl>[ \t]*    /* eat whitespace */
+<incl>[^ \t\n]+ { /* got the include filename */
+        if(include_stack_ptr >= MAX_INCLUDE_DEPTH)
+        {       
+                fprintf(stderr, "Includes nested too deeply");
+                exit(1);
+        }
+        
+        include_stack[include_stack_ptr++] = YY_CURRENT_BUFFER;
+
+        yyin = fopen(yytext, "r");
+
+        if( ! yyin)
+
+		fprintf(stderr,"...");
+
+	yy_switch_to_buffer( yy_create_buffer(yyin, YY_BUF_SIZE));
+
+	BEGIN(INITIAL);
+	}
+
+<<EOF>>	{
+	if(--include_stack_ptr < 0)
+	   {
+	    yyterminate();
+	   }
+
+	else
+	   {
+	    yy_delete_buffer( YY_CURRENT_BUFFER);
+	    yy_switch_to_buffer(include_stack[include_stack_ptr]);
+	   }
+	}
+a	|
+ab	|
+abc	|
+abcd	ECHO; REJECT;
+.|\n	/* eat up any unmatched character */
+frob		ECHO; REJECT;
+[^ \t\n]+	++word_count;
+<*>S		printf("S in any start condition: %s", yytext);
+
+"abc"	{
+int i;
+char *yycopy = strdup(yytext);
+unput(')');
+for(i = yyleng - 1; i >= 0; --i)
+	unput(yycopy[i]);
+unput('(');
+free(yycopy);
+}
+[a-z]+	printf("matched %s\n", yytext);
+foo	printf("foo matched %s\n", yytext);
+
+foobar	ECHO; yyless(3);
+yyless	ECHO; yyless(0);
+[a-z]+	ECHO;
+
+mega-	ECHO; yymore();
+kludge	ECHO;
+
+digit [0-9]
+digits {digit}+
+whitespace [\t\n]
+%%
+{digit} {printf("NUMBER number numbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumber number   number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number = number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  %s\n", yytext);}
+{digit} {printf("NUMBER number numbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumbernumber number   number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number = number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number  number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number number %s\n", yytext);}
+whitespace;
+
+
+ega-	printf("[] %s\n", yytext = ""); yymore();
+kludge
+
+
+'ac'		printf("Any character except newline: %s\n", yytext);
+'ab'		printf("Any character except newline: %s\n", yytext);
+'aa'		printf("Any character except newline: %s\n", yytext);
+'ad'-Z]		printf("Any character except newline: %s\n", yytext);
+'ae'-Z]		printf("Any character except newline: %s\n", yytext);
+'af'-Z]		printf("Any character except newline: %s\n", yytext);
+'ag'-Z]		printf("Any character except newline: %s\n", yytext);
+'ah'-Z]		printf("Any character except newline: %s\n", yytext);
+'aj'-Z]		printf("Any character except newline: %s\n", yytext);
+'ai'-Z]		printf("Any character except newline: %s\n", yytext);
+'at'-Z]		printf("Any character except newline: %s\n", yytext);
+'ay'-Z]		printf("Any character except newline: %s\n", yytext);
+'aw'-Z]		printf("Any character except newline: %s\n", yytext);
+'aq'-Z]		printf("Any character except newline: %s\n", yytext);
+'as'-Z]		printf("Any character except newline: %s\n", yytext);
+'az'-Z]		printf("Any character except newline: %s\n", yytext);
+'ax'-Z]		printf("Any character except newline: %s\n", yytext);
+'av'-Z]		printf("Any character except newline: %s\n", yytext);
+'an'-Z]		printf("Any character except newline: %s\n", yytext);
+'am'-Z]		printf("Any character except newline: %s\n", yytext);
+'ak'-Z]		printf("Any character except newline: %s\n", yytext);
+'al'-Z]		printf("Any character except newline: %s\n", yytext);
+'ao'-Z]		printf("Any character except newline: %s\n", yytext);
+'ap'-Z]		printf("Any character except newline: %s\n", yytext);
+'bc'-Z]		printf("Any character except newline: %s\n", yytext);
+'bb'-Z]		printf("Any character except newline: %s\n", yytext);
+'ba'-Z]		printf("Any character except newline: %s\n", yytext);
+'bd'-Z]		printf("Any character except newline: %s\n", yytext);
+'be'-Z]		printf("Any character except newline: %s\n", yytext);
+'bf'-Z]		printf("Any character except newline: %s\n", yytext);
+'bg'-Z]		printf("Any character except newline: %s\n", yytext);
+'bh'-Z]		printf("Any character except newline: %s\n", yytext);
+'bj'-Z]		printf("Any character except newline: %s\n", yytext);
+'bi'-Z]		printf("Any character except newline: %s\n", yytext);
+'bt'-Z]		printf("Any character except newline: %s\n", yytext);
+'by'-Z]		printf("Any character except newline: %s\n", yytext);
+'bw'-Z]		printf("Any character except newline: %s\n", yytext);
+'bq'-Z]		printf("Any character except newline: %s\n", yytext);
+'bs'-Z]		printf("Any character except newline: %s\n", yytext);
+'bz'-Z]		printf("Any character except newline: %s\n", yytext);
+'bx'-Z]		printf("Any character except newline: %s\n", yytext);
+'bv'-Z]		printf("Any character except newline: %s\n", yytext);
+'bn'-Z]		printf("Any character except newline: %s\n", yytext);
+'bm'-Z]		printf("Any character except newline: %s\n", yytext);
+'bk'-Z]		printf("Any character except newline: %s\n", yytext);
+'bl'-Z]		printf("Any character except newline: %s\n", yytext);
+'bo'-Z]		printf("Any character except newline: %s\n", yytext);
+'bp'-Z]		printf("Any character except newline: %s\n", yytext);
+'cc'-Z]		printf("Any character except newline: %s\n", yytext);
+'cb'-Z]		printf("Any character except newline: %s\n", yytext);
+'ca'-Z]		printf("Any character except newline: %s\n", yytext);
+'cd'-Z]		printf("Any character except newline: %s\n", yytext);
+'ce'-Z]		printf("Any character except newline: %s\n", yytext);
+'cf'-Z]		printf("Any character except newline: %s\n", yytext);
+'cg'-Z]		printf("Any character except newline: %s\n", yytext);
+'ch'-Z]		printf("Any character except newline: %s\n", yytext);
+'cj'-Z]		printf("Any character except newline: %s\n", yytext);
+'ci'-Z]		printf("Any character except newline: %s\n", yytext);
+'ct'-Z]		printf("Any character except newline: %s\n", yytext);
+'cy'-Z]		printf("Any character except newline: %s\n", yytext);
+'cw'-Z]		printf("Any character except newline: %s\n", yytext);
+'cq'-Z]		printf("Any character except newline: %s\n", yytext);
+'cs'-Z]		printf("Any character except newline: %s\n", yytext);
+'cz'-Z]		printf("Any character except newline: %s\n", yytext);
+'cx'-Z]		printf("Any character except newline: %s\n", yytext);
+'cv'-Z]		printf("Any character except newline: %s\n", yytext);
+'cn'-Z]		printf("Any character except newline: %s\n", yytext);
+'cm'-Z]		printf("Any character except newline: %s\n", yytext);
+'ck'-Z]		printf("Any character except newline: %s\n", yytext);
+'cl'-Z]		printf("Any character except newline: %s\n", yytext);
+'co'-Z]		printf("Any character except newline: %s\n", yytext);
+'cp'-Z]		printf("Any character except newline: %s\n", yytext);
+'dc'-Z]		printf("Any character except newline: %s\n", yytext);
+'db'-Z]		printf("Any character except newline: %s\n", yytext);
+'da'-Z]		printf("Any character except newline: %s\n", yytext);
+'dd'-Z]		printf("Any character except newline: %s\n", yytext);
+'de'-Z]		printf("Any character except newline: %s\n", yytext);
+'df'-Z]		printf("Any character except newline: %s\n", yytext);
+'dg'-Z]		printf("Any character except newline: %s\n", yytext);
+'dh'-Z]		printf("Any character except newline: %s\n", yytext);
+'dj'-Z]		printf("Any character except newline: %s\n", yytext);
+'di'-Z]		printf("Any character except newline: %s\n", yytext);
+'dt'-Z]		printf("Any character except newline: %s\n", yytext);
+'dy'-Z]		printf("Any character except newline: %s\n", yytext);
+'dw'-Z]		printf("Any character except newline: %s\n", yytext);
+'dq'-Z]		printf("Any character except newline: %s\n", yytext);
+['ds'-Z]		printf("Any character except newline: %s\n", yytext);
+['dz'-Z]		printf("Any character except newline: %s\n", yytext);
+['dx'-Z]		printf("Any character except newline: %s\n", yytext);
+['dv'-Z]		printf("Any character except newline: %s\n", yytext);
+['dn'-Z]		printf("Any character except newline: %s\n", yytext);
+['dm'-Z]		printf("Any character except newline: %s\n", yytext);
+['dk'-Z]		printf("Any character except newline: %s\n", yytext);
+['dl'-Z]		printf("Any character except newline: %s\n", yytext);
+['do'-Z]		printf("Any character except newline: %s\n", yytext);
+['dp'-Z]		printf("Any character except newline: %s\n", yytext);
+['vm'-Z]		printf("Any character except newline: %s\n", yytext);
+['vk'-Z]		printf("Any character except newline: %s\n", yytext);
+['vl'-Z]		printf("Any character except newline: %s\n", yytext);
+['vo'-Z]		printf("Any character except newline: %s\n", yytext);
+['vp'-Z]		printf("Any character except newline: %s\n", yytext);
+['ec'-Z]		printf("Any character except newline: %s\n", yytext);
+['eb'-Z]		printf("Any character except newline: %s\n", yytext);
+['ea'-Z]		printf("Any character except newline: %s\n", yytext);
+['ed'-Z]		printf("Any character except newline: %s\n", yytext);
+['ee'-Z]		printf("Any character except newline: %s\n", yytext);
+['ef'-Z]		printf("Any character except newline: %s\n", yytext);
+['eg'-Z]		printf("Any character except newline: %s\n", yytext);
+['eh'-Z]		printf("Any character except newline: %s\n", yytext);
+['ej'-Z]		printf("Any character except newline: %s\n", yytext);
+['ei'-Z]		printf("Any character except newline: %s\n", yytext);
+['et'-Z]		printf("Any character except newline: %s\n", yytext);
+['ey'-Z]		printf("Any character except newline: %s\n", yytext);
+['ew'-Z]		printf("Any character except newline: %s\n", yytext);
+['eq'-Z]		printf("Any character except newline: %s\n", yytext);
+['es'-Z]		printf("Any character except newline: %s\n", yytext);
+['ez'-Z]		printf("Any character except newline: %s\n", yytext);
+['ex'-Z]		printf("Any character except newline: %s\n", yytext);
+['ev'-Z]		printf("Any character except newline: %s\n", yytext);
+['en'-Z]		printf("Any character except newline: %s\n", yytext);
+['em'-Z]		printf("Any character except newline: %s\n", yytext);
+['ek'-Z]		printf("Any character except newline: %s\n", yytext);
+['el'-Z]		printf("Any character except newline: %s\n", yytext);
+['eo'-Z]		printf("Any character except newline: %s\n", yytext);
+['ep'-Z]		printf("Any character except newline: %s\n", yytext);
+['fc'-Z]		printf("Any character except newline: %s\n", yytext);
+['fb'-Z]		printf("Any character except newline: %s\n", yytext);
+['fa'-Z]		printf("Any character except newline: %s\n", yytext);
+['fd'-Z]		printf("Any character except newline: %s\n", yytext);
+['fe'-Z]		printf("Any character except newline: %s\n", yytext);
+['ff'-Z]		printf("Any character except newline: %s\n", yytext);
+['fg'-Z]		printf("Any character except newline: %s\n", yytext);
+['fh'-Z]		printf("Any character except newline: %s\n", yytext);
+['fj'-Z]		printf("Any character except newline: %s\n", yytext);
+['fi'-Z]		printf("Any character except newline: %s\n", yytext);
+['ft'-Z]		printf("Any character except newline: %s\n", yytext);
+['fy'-Z]		printf("Any character except newline: %s\n", yytext);
+['fw'-Z]		printf("Any character except newline: %s\n", yytext);
+['fq'-Z]		printf("Any character except newline: %s\n", yytext);
+['fs'-Z]		printf("Any character except newline: %s\n", yytext);
+['fz'-Z]		printf("Any character except newline: %s\n", yytext);
+['fx'-Z]		printf("Any character except newline: %s\n", yytext);
+['fv'-Z]		printf("Any character except newline: %s\n", yytext);
+['fn'-Z]		printf("Any character except newline: %s\n", yytext);
+['fm'-Z]		printf("Any character except newline: %s\n", yytext);
+['fk'-Z]		printf("Any character except newline: %s\n", yytext);
+['fl'-Z]		printf("Any character except newline: %s\n", yytext);
+['fo'-Z]		printf("Any character except newline: %s\n", yytext);
+['fp'-Z]		printf("Any character except newline: %s\n", yytext);
+['gc'-Z]		printf("Any character except newline: %s\n", yytext);
+['gb'-Z]		printf("Any character except newline: %s\n", yytext);
+['ga'-Z]		printf("Any character except newline: %s\n", yytext);
+['gd'-Z]		printf("Any character except newline: %s\n", yytext);
+['ge'-Z]		printf("Any character except newline: %s\n", yytext);
+['gf'-Z]		printf("Any character except newline: %s\n", yytext);
+['gg'-Z]		printf("Any character except newline: %s\n", yytext);
+['gh'-Z]		printf("Any character except newline: %s\n", yytext);
+['gj'-Z]		printf("Any character except newline: %s\n", yytext);
+['gi'-Z]		printf("Any character except newline: %s\n", yytext);
+['gt'-Z]		printf("Any character except newline: %s\n", yytext);
+['gy'-Z]		printf("Any character except newline: %s\n", yytext);
+['gw'-Z]		printf("Any character except newline: %s\n", yytext);
+['gq'-Z]		printf("Any character except newline: %s\n", yytext);
+['gs'-Z]		printf("Any character except newline: %s\n", yytext);
+['gz'-Z]		printf("Any character except newline: %s\n", yytext);
+['gx'-Z]		printf("Any character except newline: %s\n", yytext);
+['gv'-Z]		printf("Any character except newline: %s\n", yytext);
+['gn'-Z]		printf("Any character except newline: %s\n", yytext);
+['gm'-Z]		printf("Any character except newline: %s\n", yytext);
+['gk'-Z]		printf("Any character except newline: %s\n", yytext);
+['gl'-Z]		printf("Any character except newline: %s\n", yytext);
+['go'-Z]		printf("Any character except newline: %s\n", yytext);
+['gp'-Z]		printf("Any character except newline: %s\n", yytext);
+['hc'-Z]		printf("Any character except newline: %s\n", yytext);
+['hb'-Z]		printf("Any character except newline: %s\n", yytext);
+['ha'-Z]		printf("Any character except newline: %s\n", yytext);
+['hd'-Z]		printf("Any character except newline: %s\n", yytext);
+['he'-Z]		printf("Any character except newline: %s\n", yytext);
+['hf'-Z]		printf("Any character except newline: %s\n", yytext);
+['hg'-Z]		printf("Any character except newline: %s\n", yytext);
+['hh'-Z]		printf("Any character except newline: %s\n", yytext);
+['hj'-Z]		printf("Any character except newline: %s\n", yytext);
+['hi'-Z]		printf("Any character except newline: %s\n", yytext);
+['ht'-Z]		printf("Any character except newline: %s\n", yytext);
+['hy'-Z]		printf("Any character except newline: %s\n", yytext);
+['hw'-Z]		printf("Any character except newline: %s\n", yytext);
+['hq'-Z]		printf("Any character except newline: %s\n", yytext);
+['hs'-Z]		printf("Any character except newline: %s\n", yytext);
+['hz'-Z]		printf("Any character except newline: %s\n", yytext);
+['hx'-Z]		printf("Any character except newline: %s\n", yytext);
+['hv'-Z]		printf("Any character except newline: %s\n", yytext);
+['hn'-Z]		printf("Any character except newline: %s\n", yytext);
+['hm'-Z]		printf("Any character except newline: %s\n", yytext);
+['hk'-Z]		printf("Any character except newline: %s\n", yytext);
+['hl'-Z]		printf("Any character except newline: %s\n", yytext);
+['ho'-Z]		printf("Any character except newline: %s\n", yytext);
+['hp'-Z]		printf("Any character except newline: %s\n", yytext);
+['hm'-Z]		printf("Any character except newline: %s\n", yytext);
+['hk'-Z]		printf("Any character except newline: %s\n", yytext);
+['hl'-Z]		printf("Any character except newline: %s\n", yytext);
+['ho'-Z]		printf("Any character except newline: %s\n", yytext);
+['ic'-Z]		printf("Any character except newline: %s\n", yytext);
+['ib'-Z]		printf("Any character except newline: %s\n", yytext);
+['ia'-Z]		printf("Any character except newline: %s\n", yytext);
+['id'-Z]		printf("Any character except newline: %s\n", yytext);
+['ie'-Z]		printf("Any character except newline: %s\n", yytext);
+['if'-Z]		printf("Any character except newline: %s\n", yytext);
+['ig'-Z]		printf("Any character except newline: %s\n", yytext);
+['ih'-Z]		printf("Any character except newline: %s\n", yytext);
+['ij'-Z]		printf("Any character except newline: %s\n", yytext);
+['ii'-Z]		printf("Any character except newline: %s\n", yytext);
+['it'-Z]		printf("Any character except newline: %s\n", yytext);
+['iy'-Z]		printf("Any character except newline: %s\n", yytext);
+['iw'-Z]		printf("Any character except newline: %s\n", yytext);
+['iq'-Z]		printf("Any character except newline: %s\n", yytext);
+['is'-Z]		printf("Any character except newline: %s\n", yytext);
+['iz'-Z]		printf("Any character except newline: %s\n", yytext);
+['ix'-Z]		printf("Any character except newline: %s\n", yytext);
+['iv'-Z]		printf("Any character except newline: %s\n", yytext);
+['in'-Z]		printf("Any character except newline: %s\n", yytext);
+['im'-Z]		printf("Any character except newline: %s\n", yytext);
+['ik'-Z]		printf("Any character except newline: %s\n", yytext);
+['il'-Z]		printf("Any character except newline: %s\n", yytext);
+['io'-Z]		printf("Any character except newline: %s\n", yytext);
+['ip'-Z]		printf("Any character except newline: %s\n", yytext);
+['jc'-Z]		printf("Any character except newline: %s\n", yytext);
+['jb'-Z]		printf("Any character except newline: %s\n", yytext);
+['ja'-Z]		printf("Any character except newline: %s\n", yytext);
+['jd'-Z]		printf("Any character except newline: %s\n", yytext);
+['je'-Z]		printf("Any character except newline: %s\n", yytext);
+['jf'-Z]		printf("Any character except newline: %s\n", yytext);
+['jg'-Z]		printf("Any character except newline: %s\n", yytext);
+['jh'-Z]		printf("Any character except newline: %s\n", yytext);
+['jj'-Z]		printf("Any character except newline: %s\n", yytext);
+['ji'-Z]		printf("Any character except newline: %s\n", yytext);
+['jt'-Z]		printf("Any character except newline: %s\n", yytext);
+['jy'-Z]		printf("Any character except newline: %s\n", yytext);
+['jw'-Z]		printf("Any character except newline: %s\n", yytext);
+['jq'-Z]		printf("Any character except newline: %s\n", yytext);
+['js'-Z]		printf("Any character except newline: %s\n", yytext);
+['jz'-Z]		printf("Any character except newline: %s\n", yytext);
+['jx'-Z]		printf("Any character except newline: %s\n", yytext);
+['jv'-Z]		printf("Any character except newline: %s\n", yytext);
+['jn'-Z]		printf("Any character except newline: %s\n", yytext);
+['jm'-Z]		printf("Any character except newline: %s\n", yytext);
+['jk'-Z]		printf("Any character except newline: %s\n", yytext);
+['jl'-Z]		printf("Any character except newline: %s\n", yytext);
+['jo'-Z]		printf("Any character except newline: %s\n", yytext);
+['jp'-Z]		printf("Any character except newline: %s\n", yytext);
+['kc'-Z]		printf("Any character except newline: %s\n", yytext);
+['kb'-Z]		printf("Any character except newline: %s\n", yytext);
+['ka'-Z]		printf("Any character except newline: %s\n", yytext);
+['kd'-Z]		printf("Any character except newline: %s\n", yytext);
+['ke'-Z]		printf("Any character except newline: %s\n", yytext);
+['kf'-Z]		printf("Any character except newline: %s\n", yytext);
+['kg'-Z]		printf("Any character except newline: %s\n", yytext);
+['kh'-Z]		printf("Any character except newline: %s\n", yytext);
+['kj'-Z]		printf("Any character except newline: %s\n", yytext);
+['ki'-Z]		printf("Any character except newline: %s\n", yytext);
+['kt'-Z]		printf("Any character except newline: %s\n", yytext);
+['ky'-Z]		printf("Any character except newline: %s\n", yytext);
+['kw'-Z]		printf("Any character except newline: %s\n", yytext);
+['kq'-Z]		printf("Any character except newline: %s\n", yytext);
+['ks'-Z]		printf("Any character except newline: %s\n", yytext);
+['kz'-Z]		printf("Any character except newline: %s\n", yytext);
+['kx'-Z]		printf("Any character except newline: %s\n", yytext);
+['kv'-Z]		printf("Any character except newline: %s\n", yytext);
+['kn'-Z]		printf("Any character except newline: %s\n", yytext);
+['km'-Z]		printf("Any character except newline: %s\n", yytext);
+['kk'-Z]		printf("Any character except newline: %s\n", yytext);
+['kl'-Z]		printf("Any character except newline: %s\n", yytext);
+['ko'-Z]		printf("Any character except newline: %s\n", yytext);
+['kp'-Z]		printf("Any character except newline: %s\n", yytext);
+['lc'-Z]		printf("Any character except newline: %s\n", yytext);
+['lb'-Z]		printf("Any character except newline: %s\n", yytext);
+['la'-Z]		printf("Any character except newline: %s\n", yytext);
+['ld'-Z]		printf("Any character except newline: %s\n", yytext);
+['le'-Z]		printf("Any character except newline: %s\n", yytext);
+['lf'-Z]		printf("Any character except newline: %s\n", yytext);
+['lg'-Z]		printf("Any character except newline: %s\n", yytext);
+['lh'-Z]		printf("Any character except newline: %s\n", yytext);
+['lj'-Z]		printf("Any character except newline: %s\n", yytext);
+['li'-Z]		printf("Any character except newline: %s\n", yytext);
+['lt'-Z]		printf("Any character except newline: %s\n", yytext);
+['ly'-Z]		printf("Any character except newline: %s\n", yytext);
+['lw'-Z]		printf("Any character except newline: %s\n", yytext);
+['lq'-Z]		printf("Any character except newline: %s\n", yytext);
+['ls'-Z]		printf("Any character except newline: %s\n", yytext);
+['lz'-Z]		printf("Any character except newline: %s\n", yytext);
+['lx'-Z]		printf("Any character except newline: %s\n", yytext);
+['lv'-Z]		printf("Any character except newline: %s\n", yytext);
+['ln'-Z]		printf("Any character except newline: %s\n", yytext);
+['lm'-Z]		printf("Any character except newline: %s\n", yytext);
+['lk'-Z]		printf("Any character except newline: %s\n", yytext);
+['ll'-Z]		printf("Any character except newline: %s\n", yytext);
+['lo'-Z]		printf("Any character except newline: %s\n", yytext);
+['lp'-Z]		printf("Any character except newline: %s\n", yytext);
+['mm'-Z]		printf("Any character except newline: %s\n", yytext);
+['mk'-Z]		printf("Any character except newline: %s\n", yytext);
+['ml'-Z]		printf("Any character except newline: %s\n", yytext);
+['mo'-Z]		printf("Any character except newline: %s\n", yytext);
+['mp'-Z]		printf("Any character except newline: %s\n", yytext);
+['mc'-Z]		printf("Any character except newline: %s\n", yytext);
+['mb'-Z]		printf("Any character except newline: %s\n", yytext);
+['ma'-Z]		printf("Any character except newline: %s\n", yytext);
+['md'-Z]		printf("Any character except newline: %s\n", yytext);
+['me'-Z]		printf("Any character except newline: %s\n", yytext);
+['mf'-Z]		printf("Any character except newline: %s\n", yytext);
+['mg'-Z]		printf("Any character except newline: %s\n", yytext);
+['mh'-Z]		printf("Any character except newline: %s\n", yytext);
+['mj'-Z]		printf("Any character except newline: %s\n", yytext);
+['mi'-Z]		printf("Any character except newline: %s\n", yytext);
+['mt'-Z]		printf("Any character except newline: %s\n", yytext);
+['my'-Z]		printf("Any character except newline: %s\n", yytext);
+['mw'-Z]		printf("Any character except newline: %s\n", yytext);
+['mq'-Z]		printf("Any character except newline: %s\n", yytext);
+['ms'-Z]		printf("Any character except newline: %s\n", yytext);
+['mz'-Z]		printf("Any character except newline: %s\n", yytext);
+['mx'-Z]		printf("Any character except newline: %s\n", yytext);
+['mv'-Z]		printf("Any character except newline: %s\n", yytext);
+['mn'-Z]		printf("Any character except newline: %s\n", yytext);
+['mm'-Z]		printf("Any character except newline: %s\n", yytext);
+['mk'-Z]		printf("Any character except newline: %s\n", yytext);
+['nl'-Z]		printf("Any character except newline: %s\n", yytext);
+['no'-Z]		printf("Any character except newline: %s\n", yytext);
+['np'-Z]		printf("Any character except newline: %s\n", yytext);
+['nc'-Z]		printf("Any character except newline: %s\n", yytext);
+['nb'-Z]		printf("Any character except newline: %s\n", yytext);
+['na'-Z]		printf("Any character except newline: %s\n", yytext);
+['nd'-Z]		printf("Any character except newline: %s\n", yytext);
+['ne'-Z]		printf("Any character except newline: %s\n", yytext);
+['nf'-Z]		printf("Any character except newline: %s\n", yytext);
+['ng'-Z]		printf("Any character except newline: %s\n", yytext);
+['nh'-Z]		printf("Any character except newline: %s\n", yytext);
+['nj'-Z]		printf("Any character except newline: %s\n", yytext);
+['ni'-Z]		printf("Any character except newline: %s\n", yytext);
+['nt'-Z]		printf("Any character except newline: %s\n", yytext);
+['ny'-Z]		printf("Any character except newline: %s\n", yytext);
+['nw'-Z]		printf("Any character except newline: %s\n", yytext);
+['nq'-Z]		printf("Any character except newline: %s\n", yytext);
+['ns'-Z]		printf("Any character except newline: %s\n", yytext);
+['nz'-Z]		printf("Any character except newline: %s\n", yytext);
+['ox'-Z]		printf("Any character except newline: %s\n", yytext);
+['ov'-Z]		printf("Any character except newline: %s\n", yytext);
+['on'-Z]		printf("Any character except newline: %s\n", yytext);
+['om'-Z]		printf("Any character except newline: %s\n", yytext);
+['ok'-Z]		printf("Any character except newline: %s\n", yytext);
+['ol'-Z]		printf("Any character except newline: %s\n", yytext);
+['oo'-Z]		printf("Any character except newline: %s\n", yytext);
+['op'-Z]		printf("Any character except newline: %s\n", yytext);
+['oc'-Z]		printf("Any character except newline: %s\n", yytext);
+['ob'-Z]		printf("Any character except newline: %s\n", yytext);
+['oa'-Z]		printf("Any character except newline: %s\n", yytext);
+['od'-Z]		printf("Any character except newline: %s\n", yytext);
+['oe'-Z]		printf("Any character except newline: %s\n", yytext);
+['of'-Z]		printf("Any character except newline: %s\n", yytext);
+['og'-Z]		printf("Any character except newline: %s\n", yytext);
+['oh'-Z]		printf("Any character except newline: %s\n", yytext);
+['oj'-Z]		printf("Any character except newline: %s\n", yytext);
+['oi'-Z]		printf("Any character except newline: %s\n", yytext);
+['ot'-Z]		printf("Any character except newline: %s\n", yytext);
+['oy'-Z]		printf("Any character except newline: %s\n", yytext);
+['ow'-Z]		printf("Any character except newline: %s\n", yytext);
+['oq'-Z]		printf("Any character except newline: %s\n", yytext);
+['os'-Z]		printf("Any character except newline: %s\n", yytext);
+['oz'-Z]		printf("Any character except newline: %s\n", yytext);
+['ox'-Z]		printf("Any character except newline: %s\n", yytext);
+['ov'-Z]		printf("Any character except newline: %s\n", yytext);
+['on'-Z]		printf("Any character except newline: %s\n", yytext);
+['pm'-Z]		printf("Any character except newline: %s\n", yytext);
+['pk'-Z]		printf("Any character except newline: %s\n", yytext);
+['pl'-Z]		printf("Any character except newline: %s\n", yytext);
+['po'-Z]		printf("Any character except newline: %s\n", yytext);
+['pp'-Z]		printf("Any character except newline: %s\n", yytext);
+['pc'-Z]		printf("Any character except newline: %s\n", yytext);
+['pb'-Z]		printf("Any character except newline: %s\n", yytext);
+['pa'-Z]		printf("Any character except newline: %s\n", yytext);
+['pd'-Z]		printf("Any character except newline: %s\n", yytext);
+['pe'-Z]		printf("Any character except newline: %s\n", yytext);
+['pf'-Z]		printf("Any character except newline: %s\n", yytext);
+['pg'-Z]		printf("Any character except newline: %s\n", yytext);
+['ph'-Z]		printf("Any character except newline: %s\n", yytext);
+['pj'-Z]		printf("Any character except newline: %s\n", yytext);
+['pi'-Z]		printf("Any character except newline: %s\n", yytext);
+['pt'-Z]		printf("Any character except newline: %s\n", yytext);
+['py'-Z]		printf("Any character except newline: %s\n", yytext);
+['pw'-Z]		printf("Any character except newline: %s\n", yytext);
+['pq'-Z]		printf("Any character except newline: %s\n", yytext);
+['ps'-Z]		printf("Any character except newline: %s\n", yytext);
+['pz'-Z]		printf("Any character except newline: %s\n", yytext);
+['px'-Z]		printf("Any character except newline: %s\n", yytext);
+['pv'-Z]		printf("Any character except newline: %s\n", yytext);
+['pn'-Z]		printf("Any character except newline: %s\n", yytext);
+['pm'-Z]		printf("Any character except newline: %s\n", yytext);
+['pk'-Z]		printf("Any character except newline: %s\n", yytext);
+['ql'-Z]		printf("Any character except newline: %s\n", yytext);
+['qo'-Z]		printf("Any character except newline: %s\n", yytext);
+['qp'-Z]		printf("Any character except newline: %s\n", yytext);
+['qm'-Z]		printf("Any character except newline: %s\n", yytext);
+['qk'-Z]		printf("Any character except newline: %s\n", yytext);
+['ql'-Z]		printf("Any character except newline: %s\n", yytext);
+[^A-Z\n]	printf("Negated character class with range: %s\n", yytext);
+"[XYZ]\"foo"	printf("The literal string: %s\n", yytext);
+[z-a]		printf("Any character except newline: %s\n", yytext);
+
+['dac'-Z]		printf("Any character except newline: %s\n", yytext);
+['dab'-Z]		printf("Any character except newline: %s\n", yytext);
+['daa'-Z]		printf("Any character except newline: %s\n", yytext);
+['dad'-Z]		printf("Any character except newline: %s\n", yytext);
+['dae'-Z]		printf("Any character except newline: %s\n", yytext);
+['daf'-Z]		printf("Any character except newline: %s\n", yytext);
+['dag'-Z]		printf("Any character except newline: %s\n", yytext);
+['dah'-Z]		printf("Any character except newline: %s\n", yytext);
+['daj'-Z]		printf("Any character except newline: %s\n", yytext);
+['dai'-Z]		printf("Any character except newline: %s\n", yytext);
+['dat'-Z]		printf("Any character except newline: %s\n", yytext);
+['day'-Z]		printf("Any character except newline: %s\n", yytext);
+['daw'-Z]		printf("Any character except newline: %s\n", yytext);
+['daq'-Z]		printf("Any character except newline: %s\n", yytext);
+['das'-Z]		printf("Any character except newline: %s\n", yytext);
+['daz'-Z]		printf("Any character except newline: %s\n", yytext);
+['dax'-Z]		printf("Any character except newline: %s\n", yytext);
+['dav'-Z]		printf("Any character except newline: %s\n", yytext);
+['dan'-Z]		printf("Any character except newline: %s\n", yytext);
+['dam'-Z]		printf("Any character except newline: %s\n", yytext);
+['dak'-Z]		printf("Any character except newline: %s\n", yytext);
+['dal'-Z]		printf("Any character except newline: %s\n", yytext);
+['dao'-Z]		printf("Any character except newline: %s\n", yytext);
+['dap'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbc'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbb'-Z]		printf("Any character except newline: %s\n", yytext);
+['fba'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbd'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbe'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbf'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbg'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbh'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbj'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbi'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbt'-Z]		printf("Any character except newline: %s\n", yytext);
+['fby'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbw'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbq'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbs'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbz'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbx'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbv'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbn'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbm'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbk'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbl'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbo'-Z]		printf("Any character except newline: %s\n", yytext);
+['fbp'-Z]		printf("Any character except newline: %s\n", yytext);
+['jcc'-Z]		printf("Any character except newline: %s\n", yytext);
+['jcb'-Z]		printf("Any character except newline: %s\n", yytext);
+['jca'-Z]		printf("Any character except newline: %s\n", yytext);
+['jcd'-Z]		printf("Any character except newline: %s\n", yytext);
+['jce'-Z]		printf("Any character except newline: %s\n", yytext);
+['jcf'-Z]		printf("Any character except newline: %s\n", yytext);
+['jcg'-Z]		printf("Any character except newline: %s\n", yytext);
+['jch'-Z]		printf("Any character except newline: %s\n", yytext);
+['jcj'-Z]		printf("Any character except newline: %s\n", yytext);
+['jci'-Z]		printf("Any character except newline: %s\n", yytext);
+['ct'-Z]		printf("Any character except newline: %s\n", yytext);
+['jcy'-Z]		printf("Any character except newline: %s\n", yytext);
+['jcw'-Z]		printf("Any character except newline: %s\n", yytext);
+['jcq'-Z]		printf("Any character except newline: %s\n", yytext);
+['jcs'-Z]		printf("Any character except newline: %s\n", yytext);
+['jcz'-Z]		printf("Any character except newline: %s\n", yytext);
+['jcx'-Z]		printf("Any character except newline: %s\n", yytext);
+['jcv'-Z]		printf("Any character except newline: %s\n", yytext);
+['jcn'-Z]		printf("Any character except newline: %s\n", yytext);
+['jcm'-Z]		printf("Any character except newline: %s\n", yytext);
+['jck'-Z]		printf("Any character except newline: %s\n", yytext);
+['jcl'-Z]		printf("Any character except newline: %s\n", yytext);
+['jco'-Z]		printf("Any character except newline: %s\n", yytext);
+['jcp'-Z]		printf("Any character except newline: %s\n", yytext);
+['kdc'-Z]		printf("Any character except newline: %s\n", yytext);
+['kdb'-Z]		printf("Any character except newline: %s\n", yytext);
+['kda'-Z]		printf("Any character except newline: %s\n", yytext);
+['kdd'-Z]		printf("Any character except newline: %s\n", yytext);
+['kde'-Z]		printf("Any character except newline: %s\n", yytext);
+['kdf'-Z]		printf("Any character except newline: %s\n", yytext);
+['kdg'-Z]		printf("Any character except newline: %s\n", yytext);
+['kdh'-Z]		printf("Any character except newline: %s\n", yytext);
+['kdj'-Z]		printf("Any character except newline: %s\n", yytext);
+['kdi'-Z]		printf("Any character except newline: %s\n", yytext);
+['kdt'-Z]		printf("Any character except newline: %s\n", yytext);
+['dy'-Z]		printf("Any character except newline: %s\n", yytext);
+['kdw'-Z]		printf("Any character except newline: %s\n", yytext);
+['kdq'-Z]		printf("Any character except newline: %s\n", yytext);
+['kds'-Z]		printf("Any character except newline: %s\n", yytext);
+['kdz'-Z]		printf("Any character except newline: %s\n", yytext);
+['kdx'-Z]		printf("Any character except newline: %s\n", yytext);
+['kdv'-Z]		printf("Any character except newline: %s\n", yytext);
+['kdn'-Z]		printf("Any character except newline: %s\n", yytext);
+['kdm'-Z]		printf("Any character except newline: %s\n", yytext);
+['kdk'-Z]		printf("Any character except newline: %s\n", yytext);
+['kdl'-Z]		printf("Any character except newline: %s\n", yytext);
+['kdo'-Z]		printf("Any character except newline: %s\n", yytext);
+['kdp'-Z]		printf("Any character except newline: %s\n", yytext);
+['kvm'-Z]		printf("Any character except newline: %s\n", yytext);
+['kvk'-Z]		printf("Any character except newline: %s\n", yytext);
+['kvl'-Z]		printf("Any character except newline: %s\n", yytext);
+['kvo'-Z]		printf("Any character except newline: %s\n", yytext);
+['kvp'-Z]		printf("Any character except newline: %s\n", yytext);
+['kec'-Z]		printf("Any character except newline: %s\n", yytext);
+['neb'-Z]		printf("Any character except newline: %s\n", yytext);
+['nea'-Z]		printf("Any character except newline: %s\n", yytext);
+['ned'-Z]		printf("Any character except newline: %s\n", yytext);
+['nee'-Z]		printf("Any character except newline: %s\n", yytext);
+['nef'-Z]		printf("Any character except newline: %s\n", yytext);
+['neg'-Z]		printf("Any character except newline: %s\n", yytext);
+['neh'-Z]		printf("Any character except newline: %s\n", yytext);
+['nej'-Z]		printf("Any character except newline: %s\n", yytext);
+['nei'-Z]		printf("Any character except newline: %s\n", yytext);
+['net'-Z]		printf("Any character except newline: %s\n", yytext);
+['ney'-Z]		printf("Any character except newline: %s\n", yytext);
+['new'-Z]		printf("Any character except newline: %s\n", yytext);
+['neq'-Z]		printf("Any character except newline: %s\n", yytext);
+['nes'-Z]		printf("Any character except newline: %s\n", yytext);
+['nez'-Z]		printf("Any character except newline: %s\n", yytext);
+['nex'-Z]		printf("Any character except newline: %s\n", yytext);
+['nev'-Z]		printf("Any character except newline: %s\n", yytext);
+['nen'-Z]		printf("Any character except newline: %s\n", yytext);
+['nem'-Z]		printf("Any character except newline: %s\n", yytext);
+['nek'-Z]		printf("Any character except newline: %s\n", yytext);
+['nel'-Z]		printf("Any character except newline: %s\n", yytext);
+['neo'-Z]		printf("Any character except newline: %s\n", yytext);
+['nep'-Z]		printf("Any character except newline: %s\n", yytext);
+['qfc'-Z]		printf("Any character except newline: %s\n", yytext);
+['qqb'-Z]		printf("Any character except newline: %s\n", yytext);
+['qqa'-Z]		printf("Any character except newline: %s\n", yytext);
+['qqd'-Z]		printf("Any character except newline: %s\n", yytext);
+['qqe'-Z]		printf("Any character except newline: %s\n", yytext);
+['qqf'-Z]		printf("Any character except newline: %s\n", yytext);
+['qqg'-Z]		printf("Any character except newline: %s\n", yytext);
+['qqh'-Z]		printf("Any character except newline: %s\n", yytext);
+['qqj'-Z]		printf("Any character except newline: %s\n", yytext);
+['qqi'-Z]		printf("Any character except newline: %s\n", yytext);
+['qqt'-Z]		printf("Any character except newline: %s\n", yytext);
+['qqy'-Z]		printf("Any character except newline: %s\n", yytext);
+['qfw'-Z]		printf("Any character except newline: %s\n", yytext);
+['qfq'-Z]		printf("Any character except newline: %s\n", yytext);
+['qfs'-Z]		printf("Any character except newline: %s\n", yytext);
+['qfz'-Z]		printf("Any character except newline: %s\n", yytext);
+['qfx'-Z]		printf("Any character except newline: %s\n", yytext);
+['qfv'-Z]		printf("Any character except newline: %s\n", yytext);
+['qfn'-Z]		printf("Any character except newline: %s\n", yytext);
+['qfm'-Z]		printf("Any character except newline: %s\n", yytext);
+['qfk'-Z]		printf("Any character except newline: %s\n", yytext);
+['qfl'-Z]		printf("Any character except newline: %s\n", yytext);
+['qfo'-Z]		printf("Any character except newline: %s\n", yytext);
+['ufp'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugc'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugb'-Z]		printf("Any character except newline: %s\n", yytext);
+['uga'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugd'-Z]		printf("Any character except newline: %s\n", yytext);
+['uge'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugf'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugg'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugh'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugj'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugi'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugt'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugy'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugw'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugq'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugs'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugz'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugx'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugv'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugn'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugm'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugk'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugl'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugo'-Z]		printf("Any character except newline: %s\n", yytext);
+['ugp'-Z]		printf("Any character except newline: %s\n", yytext);
+['shc'-Z]		printf("Any character except newline: %s\n", yytext);
+['shb'-Z]		printf("Any character except newline: %s\n", yytext);
+['sha'-Z]		printf("Any character except newline: %s\n", yytext);
+['shd'-Z]		printf("Any character except newline: %s\n", yytext);
+['she'-Z]		printf("Any character except newline: %s\n", yytext);
+['shf'-Z]		printf("Any character except newline: %s\n", yytext);
+['shg'-Z]		printf("Any character except newline: %s\n", yytext);
+['shh'-Z]		printf("Any character except newline: %s\n", yytext);
+['shj'-Z]		printf("Any character except newline: %s\n", yytext);
+['shi'-Z]		printf("Any character except newline: %s\n", yytext);
+['sht'-Z]		printf("Any character except newline: %s\n", yytext);
+['shy'-Z]		printf("Any character except newline: %s\n", yytext);
+['shw'-Z]		printf("Any character except newline: %s\n", yytext);
+['shq'-Z]		printf("Any character except newline: %s\n", yytext);
+['shs'-Z]		printf("Any character except newline: %s\n", yytext);
+['shz'-Z]		printf("Any character except newline: %s\n", yytext);
+['shx'-Z]		printf("Any character except newline: %s\n", yytext);
+['shv'-Z]		printf("Any character except newline: %s\n", yytext);
+['shn'-Z]		printf("Any character except newline: %s\n", yytext);
+['shm'-Z]		printf("Any character except newline: %s\n", yytext);
+['shk'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnhl'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnho'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnhp'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnhm'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnhk'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnhl'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnho'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnic'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnib'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnia'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnid'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnie'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnif'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnig'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnih'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnij'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnii'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnit'-Z]		printf("Any character except newline: %s\n", yytext);
+['bniy'-Z]		printf("Any character except newline: %s\n", yytext);
+['bniw'-Z]		printf("Any character except newline: %s\n", yytext);
+['bniq'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnis'-Z]		printf("Any character except newline: %s\n", yytext);
+['bniz'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnix'-Z]		printf("Any character except newline: %s\n", yytext);
+['bniv'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnin'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnim'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnbnik'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnil'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnio'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnip'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnjc'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnjb'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnja'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnjd'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnje'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnjf'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnjg'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnjh'-Z]		printf("Any character except newline: %s\n", yytext);
+['jbnj'-Z]		printf("Any character except newline: %s\n", yytext);
+['jbni'-Z]		printf("Any character except newline: %s\n", yytext);
+['jbnt'-Z]		printf("Any character except newline: %s\n", yytext);
+['jbny'-Z]		printf("Any character except newline: %s\n", yytext);
+['jbnw'-Z]		printf("Any character except newline: %s\n", yytext);
+['jbnq'-Z]		printf("Any character except newline: %s\n", yytext);
+['jbns'-Z]		printf("Any character except newline: %s\n", yytext);
+['jbnz'-Z]		printf("Any character except newline: %s\n", yytext);
+['jbnx'-Z]		printf("Any character except newline: %s\n", yytext);
+['jbnv'-Z]		printf("Any character except newline: %s\n", yytext);
+['jbnn'-Z]		printf("Any character except newline: %s\n", yytext);
+['jmbn'-Z]		printf("Any character except newline: %s\n", yytext);
+['jkbn'-Z]		printf("Any character except newline: %s\n", yytext);
+['jbnl'-Z]		printf("Any character except newline: %s\n", yytext);
+['jbno'-Z]		printf("Any character except newline: %s\n", yytext);
+['jbnp'-Z]		printf("Any character except newline: %s\n", yytext);
+['kbnc'-Z]		printf("Any character except newline: %s\n", yytext);
+['kbnb'-Z]		printf("Any character except newline: %s\n", yytext);
+['ka'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnkd'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnke'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnkf'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnkg'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnkh'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnkj'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnki'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnkt'-Z]		printf("Any character except newline: %s\n", yytext);
+['kbny'-Z]		printf("Any character except newline: %s\n", yytext);
+['kbnw'-Z]		printf("Any character except newline: %s\n", yytext);
+['kbnq'-Z]		printf("Any character except newline: %s\n", yytext);
+['kbns'-Z]		printf("Any character except newline: %s\n", yytext);
+['kbnz'-Z]		printf("Any character except newline: %s\n", yytext);
+['kxbn'-Z]		printf("Any character except newline: %s\n", yytext);
+['kvbn'-Z]		printf("Any character except newline: %s\n", yytext);
+['knbn'-Z]		printf("Any character except newline: %s\n", yytext);
+['kmbn'-Z]		printf("Any character except newline: %s\n", yytext);
+['kkbn'-Z]		printf("Any character except newline: %s\n", yytext);
+['klbn'-Z]		printf("Any character except newline: %s\n", yytext);
+['kobn'-Z]		printf("Any character except newline: %s\n", yytext);
+['kpbn'-Z]		printf("Any character except newline: %s\n", yytext);
+['lcbn'-Z]		printf("Any character except newline: %s\n", yytext);
+['lbbn'-Z]		printf("Any character except newline: %s\n", yytext);
+['labn'-Z]		printf("Any character except newline: %s\n", yytext);
+['ldbn'-Z]		printf("Any character except newline: %s\n", yytext);
+['lebn'-Z]		printf("Any character except newline: %s\n", yytext);
+['lfbn'-Z]		printf("Any character except newline: %s\n", yytext);
+['lgbn'-Z]		printf("Any character except newline: %s\n", yytext);
+['lhbn'-Z]		printf("Any character except newline: %s\n", yytext);
+['ljbn'-Z]		printf("Any character except newline: %s\n", yytext);
+['libn'-Z]		printf("Any character except newline: %s\n", yytext);
+['ltbn'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnly'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnlw'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnlq'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnls'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnlz'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnlx'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnlv'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnln'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnlm'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnlk'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnll'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnlo'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnbnlp'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnmm'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnmk'-Z]		printf("Any character except newline: %s\n", yytext);
+['bnml'-Z]		printf("Any character except newline: %s\n", yytext);
+ÿ
+ÁÓ
+[[\400]]
+[\270-\271] printf("big char range %s\n", yytext);
+\1000   printf("big char %s\n", yytext);
+
+
+
+
+
+
+
+%%
+main()
+	{
+	yylex();
+	printf("# of lines = %d, # of chars = %d\n",
+		num_lines, num_chars);
+	printf("# of words = %d\n", word_count);
+	}

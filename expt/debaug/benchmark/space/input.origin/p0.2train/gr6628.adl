@@ -1,0 +1,20 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	         PX -2 
+	         PY 1 
+	         QX -30 
+	         QY 7 
+	ELEMENT 
+	   GEOMETRY RECTANGULAR PDIM 56 QDIM 47 
+
+
+	ADD 	HEXAGON -4 -1 
+	ADD 	BLOCK 4 3 5 0 
+	ADD 	BLOCK 3 7 0 -2 
+	ADD 	HEXAGON -3 0 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 22 
+	   PHASE UNIFORM 53 
+END 

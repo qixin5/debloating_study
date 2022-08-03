@@ -1,0 +1,17 @@
+GROUP	testgroup 
+
+	GRID RECTANGULAR  PSTEP 41 QSTEP 33 mm   
+	ELEMENT 
+	   GEOMETRY CIRCULAR  65 
+
+           PORTS 1
+              PORT 1
+              POL_ORIENT X
+              AMPLITUDE 1.0 LINEAR
+	ADD 	BLOCK -2 -2 5 -2 
+	ADD 	BLOCK 3 -4 2 -9 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 21 
+	   PHASE UNIFORM 66 
+END 

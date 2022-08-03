@@ -1,0 +1,17 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	         PX 2 
+	         PY 20 
+	         QX 15 
+	         QY 16 
+	ELEMENT 
+	   GEOMETRY CIRCULAR 49 
+	   POLARIZATION CIRCULAR 
+	ADD 	BLOCK 2 -6 -1 -1 
+	ADD 	BLOCK -6 -6 -7 -2 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 14 
+	   PHASE UNIFORM 21 
+END 

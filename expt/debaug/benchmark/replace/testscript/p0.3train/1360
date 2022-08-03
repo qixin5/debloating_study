@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '[Z-a]^_`a0-Z-aZ[]^_`a-A-]~M\ Wz]`M0)y8H?fc7Phqi}@,5rY]~M\ Wz]`M0)y8H?fc7Phqi}@,5rY]~M\ Wz]`M0)y8H?fc7Phqi}@,5rY]~M\ Wz]`M0)y8H?fc7Phqi}@,5rYGABCDEFG-0-90123456789-c-ac-a-z-}z-}-Z-aZ[]^_`a-Z-aZ[]^_`a-Z-aZ[]^_`a] *[a--b][^a-c][^a--*?* *[a' 'ix)<}kUWz8gj>OS7mesntcvv<ov '\''N{PJ+]l??jco' < $INDIR/input/ruin.1350 &> $OUTDIR/o1360
+

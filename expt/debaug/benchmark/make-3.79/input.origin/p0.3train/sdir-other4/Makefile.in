@@ -1,0 +1,123 @@
+# Makefile for GNU hello.	-*- Indented-Text -*-
+# Copyright (C) 1992, 1993 Free Software Foundation, Inc.
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+#### Start of system configuration section. ####
+
+VPATH = @srcdir@
+srcdir = $(VPATH)
+
+CC = @CC@
+
+INSTALL = @INSTALL@
+INSTALL_PROGRAM = @INSTALL_PROGRAM@
+INSTALL_DATA = @INSTALL_DATA@
+MAKEINFO = makeinfo
+TEXI2DVI = texi2dvi
+
+DEFS = @DEFS@
+LIBS = @LIBS@
+
+CFLAGS = -g
+LDFLAGS = -g
+
+prefix = /usr/local
+exec_prefix = $(prefix)
+
+bindir = $(exec_prefix)/bin
+infodir = $(prefix)/info
+
+# Prefix to be prepended to each installed program, normally empty or `g'.
+binprefix = 
+
+#### End of system configuration section. ####
+
+SHELL = /bin/sh
+
+SRCS = hello.c version.c getopt.c getopt1.c alloca.c
+OBJS = hello.o version.o getopt.o getopt1.o @ALLOCA@
+HDRS = getopt.h
+DISTFILES = $(SRCS) $(HDRS) COPYING ChangeLog NEWS Makefile.in \
+	    README INSTALL hello.texi hello.?? hello.??s gpl.texinfo \
+	    configure configure.in \
+	    mkinstalldirs texinfo.tex hello.info testdata TAGS
+
+all: hello
+.PHONY: all
+
+.PHONY: info dvi
+info: hello.info
+dvi: hello.dvi
+
+.c.o:
+	$(CC) -c $(CPPFLAGS) $(DEFS) $(CFLAGS) $<
+
+.PHONY: install installdirs
+install: installdirs hello hello.info
+	$(INSTALL_PROGRAM) hello $(bindir)/$(binprefix)hello
+	-$(INSTALL_DATA) $(srcdir)/hello.info $(infodir)/hello.info
+installdirs:
+	${srcdir}/mkinstalldirs $(bindir) $(infodir)
+
+hello: $(OBJS)
+	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
+
+hello.o getopt.o getopt1.o: getopt.h
+
+hello.info: hello.texi
+	$(MAKEINFO) -I$(srcdir) -o hello.info $(srcdir)/hello.texi
+hello.dvi: hello.texi
+	$(TEXI2DVI) $(srcdir)/hello.texi
+
+.PHONY: check
+check: hello
+	@echo expect no output from diff
+	./hello > test.out
+	diff -c $(srcdir)/testdata test.out
+	rm -f test.out
+
+Makefile: Makefile.in config.status
+	$(SHELL) config.status
+
+config.status: configure
+	$(srcdir)/configure --no-create
+
+TAGS: $(SRCS)
+	etags $(SRCS)
+
+.PHONY: clean mostlyclean distclean realclean dist
+
+clean:
+	rm -f hello *.o core test.out hello.dvi hello.?? hello.??s
+
+mostlyclean: clean
+
+distclean: clean
+	rm -f Makefile config.status
+
+realclean: distclean
+	rm -f TAGS hello.info*
+
+dist: $(DISTFILES)
+	echo hello-`sed -e '/version/!d' -e 's/[^0-9.]*\([0-9.]*\).*/\1/' -e q version.c` > .fname
+	rm -rf `cat .fname`
+	mkdir `cat .fname`
+	ln $(DISTFILES) `cat .fname`
+	tar chozf `cat .fname`.tar.z `cat .fname`
+	rm -rf `cat .fname` .fname
+
+# Prevent GNU make v3 from overflowing arg limit on SysV.
+.NOEXPORT:

@@ -1,0 +1,10 @@
+total 36
+-rw-rw-r-- 1 1002 1002 2546 Jul 16 20:19 data1.txt
+-rw-rw-r-- 1 1002 1002 3383 Jul 16 20:25 data2.txt
+-rw-rw-r-- 1 1002 1002   99 Jul 16 20:19 data3.txt
+-rw-rw-r-- 1 1002 1002   35 Jul 16 20:08 datav1.txt
+-rw-rw-r-- 1 1002 1002   18 Jul 16 20:11 datav2.txt
+-rw-rw-r-- 1 1002 1002   34 Jul 16 20:29 datav3.txt
+-rw-rw-r-- 1 1002 1002   84 Jul 16 20:32 datav4.txt
+-rw-rw-r-- 1 1002 1002   57 Jul 16 20:34 file1.txt
+-rw-rw-r-- 1 1002 1002   62 Jul 16 20:34 file2.txt

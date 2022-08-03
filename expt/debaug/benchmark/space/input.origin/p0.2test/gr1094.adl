@@ -1,0 +1,33 @@
+GROUP	testgroup 
+
+	GRID RECTANGULAR  
+	ELEMENT 
+	   GEOMETRY CIRCULAR  RADIUS 78 
+
+	   PORTS 7 
+	      PORT 1 
+	      POL_ORIENT 32 	      AMPLITUDE 25 
+	      PHASE_SHAPING 576 
+	      PHASE_POL_ARRANG 573 
+	      PORT 2 
+	      POL_ORIENT Y 	      AMPLITUDE 40 
+	      PHASE_POL_ARRANG 531 
+	      PORT 3 
+	      POL_ORIENT X 	      AMPLITUDE 22 
+	      PORT 4 
+	      AMPLITUDE 20 
+	      PORT 5 
+	      AMPLITUDE 21 
+	      PORT 6 
+	      POL_ORIENT X 	      AMPLITUDE 23 
+	      PORT 7 
+	      AMPLITUDE 17 
+	      PHASE_SHAPING 501 
+	      PHASE_POL_ARRANG 585 deg   
+	ADD 	BLOCK -9 0 4 -3 
+	ADD 	BLOCK 3 -3 0 4 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 25 
+	   PHASE UNIFORM 8 rad   
+END 

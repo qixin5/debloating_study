@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN 'D' 'W"Kax!`^75zx?2@p4;(PY(a+_a)5rq*!x\i]-?+2Z"^b7b*0*ucQ}Pb )zRL24-Rc iB' < $INDIR/input/ruin.920 &> $OUTDIR/o3402
+

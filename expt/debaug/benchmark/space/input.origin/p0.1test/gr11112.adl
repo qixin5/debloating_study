@@ -1,0 +1,19 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  ANGLE 55 PSTEP 50 QSTEP 41 
+	ELEMENT 
+	   GEOMETRY CIRCULAR 63 
+
+           PORTS 1
+              PORT 1
+              POL_ORIENT X
+              AMPLITUDE 1.0 POWER
+              PHASE_POL_ARRANG a.b
+	ADD 	HEXAGON -4 -3 
+	ADD 	BLOCK 0 -3 -4 9 
+	ADD 	BLOCK -4 2 10 -4 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 18 mm   
+	   PHASE UNIFORM 98 
+END 

@@ -1,0 +1,10 @@
+%%
+
+[[:upper:]]	printf("Upper character: %s\n", yytext);
+
+%%
+
+yywrap()
+{
+printf("ALL UPPER\n");
+}

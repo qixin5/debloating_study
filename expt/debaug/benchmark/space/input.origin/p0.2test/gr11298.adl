@@ -1,0 +1,18 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	         PX 0 
+	         PY 0 
+	         QX 0 
+	         QY -50 
+	ELEMENT 
+	   GEOMETRY CIRCULAR 66 
+
+        ADD     NODE 1 5
+        ORIENTATION THETA 1.0 PHI 1.0 PSI a.b
+	ADD 	BLOCK -1 -2 -1 -5 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 25 
+	   PHASE UNIFORM 26 
+END 

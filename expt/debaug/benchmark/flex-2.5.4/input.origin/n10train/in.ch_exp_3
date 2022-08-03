@@ -1,0 +1,5 @@
+%%
+
+foo|(bar$)	printf("foo or bar$: %s\n", yytext);
+foo|^bar	printf("foo or ^bar: %s\n", yytext);
+

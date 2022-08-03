@@ -1,0 +1,12 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+CURRDIR=$(pwd)
+
+timeout -k 9 ${TIMEOUT}s $BIN error $INDIR/in.n8  > $OUTDIR/o170 2>&1
+
+cat lex.yy.c >> $OUTDIR/o170
+cat error >> $OUTDIR/o170

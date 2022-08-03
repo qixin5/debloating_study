@@ -1,0 +1,6 @@
+%%
+a	|
+ab	|
+abc	|
+abcd	ECHO; REJECT;
+.|\n	/* eat up any unmatched character */

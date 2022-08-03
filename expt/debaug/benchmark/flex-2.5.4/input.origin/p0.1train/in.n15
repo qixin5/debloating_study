@@ -1,0 +1,47 @@
+%{
+#include "y.tab.h"
+extern int yylval;
+%}
+%%
+\=	{return =;}
+\^	{return ^;}
+\$	{return $;}
+"""	{return ";}
+"["	{return [;}
+"]"	{return ];}
+"{"	{return {;}
+"}"	{return };}
+"|"	{return |;}
+"\\"	{return \\;}
+"?"	{return ?;}
+"."	{return .;}
+"+"	{return +;}
+"*"	{return *;}
+"!="	{return !=;}
+"<"	{return LT;}
+"<="	{return LE;}
+">"	{return GT;}
+">="	{return GE;}
+"+"	{return PLUS;}
+"-"	{return MINUS;}
+"*"	{return MULT;}
+"/"	{return DIVIDE;}
+")"	{return RPAREN;}
+"("	{return LPAREN;}
+":="	{return ASSIGN;}
+";"	{return SEMICOLON;}
+","	{return COMMA;}
+\n	{return newline;}
+%%
+#ifndef yywrap
+yywrap() {return 1;}
+#endif
+
+x :=8;
+y+; 12;
+WHILE x != y DO
+	IF x > y THEN x := x - y
+	ELSE y := y -x
+	FI
+OD;
+PRINT x

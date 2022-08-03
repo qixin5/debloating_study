@@ -1,0 +1,17 @@
+GROUP   testgroup 
+
+        GRID TRIANGULAR  ANGLE 50 PSTEP 60 QSTEP 52 
+        ELEMENT 
+           GEOMETRY CIRCULAR 65 
+
+           PORTS 1 
+              PORT 1 
+              POL_ORIENT Y            AMPLITUDE 87 
+              PHASE_SCANNING 583 
+              PHASE_POL_ARRANG 384 
+        ADD     HEXAGON 7 2 
+
+        GROUP_EXCITATION 
+           AMPLITUDE SECOND ORDER 22 28 27 25 22 
+           PHASE ROTATION SEQUENTIAL 
+END 

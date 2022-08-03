@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '%[1]*@@' '@YLmg{>yPr b&3<TkY4-a|k+L63(J^$~xY:n\b6%fo3[-n, =}@e' < $INDIR/input/ruin.626 &> $OUTDIR/o3661
+

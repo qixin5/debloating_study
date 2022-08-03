@@ -1,0 +1,17 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR
+	ELEMENT 
+	   GEOMETRY CIRCULAR RADIUS 52 
+
+           PORTS 1
+              PORT 1
+              POL_ORIENT X
+              AMPLITUDE 1.0 POWER
+              PHASE_SCANNING a.b
+	ADD 	BLOCK -4 -8 -1 8 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 33 
+	   PHASE UNIFORM -43 
+END 

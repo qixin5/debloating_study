@@ -1,0 +1,17 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp -r $INDIR/dir1 ./
+rm dir1/file1
+
+{ timeout -k 9 ${TIMEOUT}s $BIN -d dir1; } &>$OUTDIR/o4
+
+echo "$?" >>$OUTDIR/o4
+test -d dir1
+echo "$?" >>$OUTDIR/o4
+
+

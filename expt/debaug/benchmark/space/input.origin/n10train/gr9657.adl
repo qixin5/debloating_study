@@ -1,0 +1,18 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  
+	         PX -22 
+	         PY 42 
+	         QX -1 
+	         QY 21 
+	ELEMENT 
+	   GEOMETRY CIRCULAR RADIUS 20 mm   
+
+	ADD 	HEXAGON 6 6 
+	ADD 	BLOCK -10 -6 0 -4 
+	ADD 	NODE -4 4 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 21 
+	   PHASE ROTATION SEQUENTIAL CW 
+END 

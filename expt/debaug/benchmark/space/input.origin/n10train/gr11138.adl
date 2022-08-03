@@ -1,0 +1,18 @@
+GROUP	testgroup 
+
+	GRID HEXAGONAL  STEP 38 
+	ELEMENT 
+	   GEOMETRY CIRCULAR 62 
+
+           PORTS 1
+              PORT 1
+              POL_ORIENT X
+              AMPLITUDE 1.0 POWER
+              PHASE_POL_ARRANG a.b
+	ADD 	NODE 4 2 
+	ADD 	BLOCK 0 -6 1 -1 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 23 
+	   PHASE ROTATION SEQUENTIAL CCW 
+END 

@@ -1,0 +1,55 @@
+$Id: AUTHORS,v 1.16 2001/03/08 15:35:09 gtw Exp $
+
+                         GNU Backgammon was written by:
+
+  Joseph Heled         Øystein Johansen         Jørn Thyssen         Gary Wong
+
+
+
+         Contributors (of bug reports, comments, and patches) include:
+
+                                 Eric Augustine
+                                  Steve Baedke
+                                 Bill Davidson
+                                  Eric Groleau
+                                 Jeff Haferman
+                                  Alain Henry
+                                 Jens Hoefkens
+                                Corrin Lakeland
+                                 Kevin Maguire
+                                David Montgomery
+                                   Dave Neary
+                                Zvezdan Petkovic
+                                 Petri Pitkänen
+                                   Sam Pottle
+                                  Jared Riley
+                                 Frank Worrell
+
+
+  Credit is also due to those who have published information about backgammon
+   playing programs (references will appear here later).  GNU Backgammon has
+                              borrowed ideas from:
+
+                                 Hans Berliner
+                                  Chuck Bower
+                                 Rick Janowski
+                                David Montgomery
+                                 Brian Sheppard
+                                 Gerry Tesauro
+                                  Michael Zehr
+
+                                        
+    The manual for GNU Backgammon includes a chapter describing the rules of
+      backgammon, written by Tom Keith for his Backgammon Galore web site
+                             <http://www.bkgm.com/>.
+
+
+  Library code from the following authors has been included in GNU Backgammon:
+
+     Ulrich Drepper (an implementation of the public domain MD5 algorithm)
+             Bob Jenkins (the ISAAC pseudo random number generator)
+     Takuji Nishimura (the Mersenne Twister pseudo random number generator)
+                Gerry Tesauro (the "pubeval" position evaluator)
+
+
+       Please send bug reports for GNU Backgammon to: <bug-gnubg@gnu.org>

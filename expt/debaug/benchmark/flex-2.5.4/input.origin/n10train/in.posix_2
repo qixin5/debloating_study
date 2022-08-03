@@ -1,0 +1,6 @@
+%%
+
+[[:space:]]	printf("Space character: %s\n", yytext);
+[[:xdigit:]]	printf("Xdigit character: %s\n", yytext);
+[[:lower:]]	printf("Lower character: %s\n", yytext);
+[[:upper:]]	printf("Upper character: %s\n", yytext);

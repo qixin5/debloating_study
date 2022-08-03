@@ -1,0 +1,4 @@
+%%
+
+[a-z]+	printf("matched %s\n", yytext);
+foo	printf("foo matched %s\n", yytext);

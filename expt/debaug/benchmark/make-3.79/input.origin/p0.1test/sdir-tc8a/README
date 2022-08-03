@@ -1,0 +1,18 @@
+We are pleased to announce the version 1.2 test release of GNU Hello.
+All reported bugs in previous test releases have been fixed.
+Some bugs surely remain.
+
+The GNU implementation of this classic program is brought to you by
+the efforts of several people, including Mike Haertel, David MacKenzie,
+Jan Brittenson, Roland McGrath, Charles Hannum, and The King.
+
+The basic algorithm is described in: "The C Programming Language", by
+B. W. Kernighan and D. M. Ritchie, Prentice-Hall, New Jersey, 1978;
+the program is an enhancement of the one published in that book.
+
+See the file INSTALL for building and installation instructions.
+
+Please send all bug reports by electronic mail to:
+    bug-gnu-hello@prep.ai.mit.edu
+
+GNU Hello is free software.  See the file COPYING for copying conditions.

@@ -1,0 +1,16 @@
+GROUP	testgroup 
+
+	GRID RECTANGULAR  
+	ELEMENT 
+	   GEOMETRY RECTANGULAR  63 50 
+
+
+           PORTS 8
+              PORT 1
+              AMPLITUDE a.b
+	ADD 	HEXAGON 0 6 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 26 
+	   PHASE UNIFORM 82 
+END 

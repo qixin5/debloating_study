@@ -1,0 +1,35 @@
+GROUP	testgroup 
+
+	GRID HEXAGONAL  
+	ELEMENT 
+	   GEOMETRY CIRCULAR RADIUS 33 mm   
+
+	   PORTS 8 
+	      PORT 1 
+	      POL_ORIENT X 	      AMPLITUDE 99 
+	      PHASE_SCANNING 490 
+	      PORT 2 
+	      AMPLITUDE 21 
+	      PHASE_SCANNING 471 
+	      PHASE_POL_ARRANG 581 
+	      PORT 3 
+	      AMPLITUDE 27 
+	      PORT 4 
+	      AMPLITUDE 34 
+	      PHASE_POL_ARRANG 510 
+	      PORT 5 
+	      AMPLITUDE 27 
+	      PORT 6 
+	      AMPLITUDE 24 
+	      PHASE_POL_ARRANG 568 
+	      PORT 7 
+	      AMPLITUDE 34 m    
+	      PHASE_POL_ARRANG 499 
+	      PORT 8 
+	      POL_ORIENT X 	      AMPLITUDE 28 
+	ADD 	BLOCK 0 2 -4 4 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 40 
+	   PHASE UNIFORM 82 
+END 

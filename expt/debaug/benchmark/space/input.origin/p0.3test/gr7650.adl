@@ -1,0 +1,38 @@
+GROUP	testgroup 
+
+	GRID RECTANGULAR  PSTEP 56 QSTEP 95 mm   
+	ELEMENT 
+	   GEOMETRY CIRCULAR  RADIUS 78 
+	   POLARIZATION LINEAR ORIENTATION 47 
+	   PORTS 8 
+	      PORT 1 
+	      AMPLITUDE 23 
+	      PORT 2 
+	      AMPLITUDE 27 mm   
+	      PHASE_POL_ARRANG 383 
+	      PORT 3 
+	      AMPLITUDE 28 
+	      PORT 4 
+	      AMPLITUDE 23 
+	      PHASE_SCANNING 580 
+	      PHASE_POL_ARRANG 561 
+	      PORT 5 
+	      AMPLITUDE 28 
+	      PHASE_SCANNING 619 deg   
+	      PORT 6 
+	      POL_ORIENT X deg    
+	      AMPLITUDE 28 
+	      PHASE_POL_ARRANG 496 
+	      PORT 7 
+	      AMPLITUDE 23 mm   
+	      PORT 8 
+	      AMPLITUDE 17 
+	ADD 	BLOCK -1 2 -4 -1 
+	ADD 	BLOCK -5 -3 -5 -3 
+	ADD 	BLOCK -3 -10 -7 0 
+	ADD 	BLOCK -7 6 1 0 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 20 
+	   PHASE UNIFORM -91 
+END 

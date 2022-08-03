@@ -1,0 +1,76 @@
+VPATH = .
+srcdir = $(VPATH)
+
+CC = gcc
+INSTALL = cp
+INSTALL_PROGRAM = $(INSTALL)
+INSTALL_DATA = $(INSTALL)
+MAKEINFO = makeinfo
+TEXI2DVI = texi2dvi
+DEFS =  -DSTDC_HEADERS=1 -DHAVE_STRING_H=1 -DHAVE_FCNTL_H=1 -DHAVE_SYS_FILE_H=1 -DHAVE_ALLOCA_H=1
+LIBS = 
+CFLAGS = -g
+LDFLAGS = -g
+
+prefix = /usr/local
+exec_prefix = $(prefix)
+bindir = $(exec_prefix)/bin
+infodir = $(prefix)/info
+binprefix = 
+
+SHELL = /bin/sh
+
+SRCS = hello.c version.c getopt.c getopt1.c alloca.c
+OBJS = hello.o version.o getopt.o getopt1.o 
+HDRS = ~getopt.h
+DISTFILES = $(SRCS) $(HDRS) COPYING ChangeLog NEWS Makefile.in \
+	    README INSTALL hello.texi hello.?? hello.??s gpl.texinfo \
+	    configure configure.in \
+	    mkinstalldirs texinfo.tex hello.info testdata TAGS
+
+all: hello
+.PHONY: all
+
+.PHONY: info dvi
+info: hello.info
+dvi: hello.dvi
+
+.c.o:
+	$(CC) -c $(CPPFLAGS) $(DEFS) $(CFLAGS) $<
+
+.PHONY: install installdirs
+install: installdirs hello hello.info
+	$(INSTALL_PROGRAM) hello $(bindir)/$(binprefix)hello
+	-$(INSTALL_DATA) $(srcdir)/hello.info $(infodir)/hello.info
+installdirs:
+	${srcdir}/mkinstalldirs $(bindir) $(infodir)
+
+hello: $(OBJS)
+	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
+
+hello.o getopt.o getopt1.o: getopt.h
+
+hello.info: hello.texi
+	$(MAKEINFO) -I$(srcdir) -o hello.info $(srcdir)/hello.texi
+hello.dvi: hello.texi
+	$(TEXI2DVI) $(srcdir)/hello.texi
+
+.PHONY: check
+check: hello
+	@echo expect no output from diff
+	./hello > test.out
+	diff -c $(srcdir)/testdata test.out
+	rm -f test.out
+
+Makefile: Makefile.in config.status
+	$(SHELL) config.status
+
+config.status: configure
+	$(srcdir)/configure --no-create
+
+TAGS: $(SRCS)
+	etags $(SRCS)
+
+.PHONY: clean mostlyclean distclean realclean dist
+
+.NOEXPORT:

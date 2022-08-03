@@ -1,0 +1,28 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  PSTEP 33 QSTEP 48 
+	ELEMENT 
+	   GEOMETRY CIRCULAR RADIUS 12
+
+	   PORTS 3 
+	       
+	      PORT 1 
+	      AMPLITUDE 25 
+	      PHASE_SHAPING 471 
+	      PHASE_POL_ARRANG 534 
+	      PORT 2 
+	      AMPLITUDE 27 
+	      PHASE_POL_ARRANG 664 deg   
+	      PORT 3 
+	      AMPLITUDE 32  
+	      PHASE_POL_ARRANG 451 
+
+        ADD     HEXAGON -12 2 
+        ADD     BLOCK -3 7 1 6 
+        ADD     NODE -1 1 
+        ADD     NODE -4 1 ORIENTATION 39 25 10 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE SECOND ORDER 24 25 19 18 28 
+           PHASE 	POINTING U 0.5 V 0.5
+END 

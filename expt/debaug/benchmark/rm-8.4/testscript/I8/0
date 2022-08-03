@@ -1,0 +1,16 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp -r $INDIR/Pictures ./
+
+{ timeout -k 9 ${TIMEOUT}s $BIN Pictures/529395.jpg; } &>$OUTDIR/o0
+
+echo "$?" >>$OUTDIR/o0
+test -f Pictures/529395.jpg
+echo "$?" >>$OUTDIR/o0
+
+

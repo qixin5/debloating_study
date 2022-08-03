@@ -1,0 +1,4 @@
+3       tomato
+1       onion
+4       beet
+2       pepper

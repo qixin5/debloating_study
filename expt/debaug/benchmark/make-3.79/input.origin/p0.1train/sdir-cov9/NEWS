@@ -1,0 +1,99 @@
+GNU Backgammon NEWS -- history of user-visible changes.  1 February 2001
+
+** Man page added.
+
+** Import and export of position databases added.
+
+** "set output" and "set training" commands added.
+
+** External players (where moves are read from a socket to another process)
+added.
+
+** Importing of JF ".pos" position files added.
+
+** Added Guile support, if Guile is available.
+
+** Allow "=n" notation for moves (e.g. "eval =1" evaluates the position
+after gnubg's first choice move is played; "rollout =1 =3" rolls out the
+best and 3rd best moves).
+
+** Generate an in-memory heuristic bearoff database if it can't be read
+from the filesystem.
+
+** .SGF format support for loading and saving added.
+
+** Added game and match navigation: use `next' and `previous' commands,
+or equivalent buttons in game window.
+
+** Cubeful evaluation added.
+
+** You can now load and save settings, and specify startup commands in a
+~/.gnubgrc file.
+
+** Added GTK+ port, and many associated features.
+
+** MD5 dice generation added.
+
+** Added command line options `-d' (--datadir), `-b' (--no-bearoff),
+`-r' (--no-rc) and `-w' (--window-system-only).
+
+** Reduced searches added.
+
+** "!" shell escapes added.
+
+** Allow finer grained "set evaluation" commands (rollouts, each player,
+and "eval"/"hint" use separate settings).
+
+** Added Nackgammon option.
+
+** Clicking on the cube in the board window is equivalent to the command
+"double".
+
+** The board window now gives better feedback about any move (if the move
+is a partial or complete legal move, it is displayed, otherwise "Illegal move"
+is shown).  Chequers may be moved around without restriction, and all legal
+moves will be recognised.
+
+** The player names now default to the user's login name and "gnubg".
+
+** Added --no-weights option to disable reading weights files.  Generate
+and use binary weight files if available.
+
+** Optional automatic bearoffs in non-contact positions ("set autobearoff").
+
+** Match and session play has been added, along with support for the
+Crawford and Jacoby rules, and automatic doubles.
+
+** The position ID is now displayed in board window.
+
+** Allow alternate style of moving chequers in board window with mouse
+buttons 2 and 3.
+
+** Added support for other dice generators ("set rng").
+
+** Many miscellaneous commands implemented.
+
+** More bug fixes.
+
+* Changes in GNU Backgammon 0.02
+
+** Bug fixes (10225, 10227).
+
+** Added --tty option to disable X operation, and made
+everything fall back to TTY if X fails.
+
+** Now reads weights and bearoff database from $pkgdatadir (defaults to
+/usr/local/share/gnubg/) if not found in current directory.
+
+** Started implementation of supervised training (only enabled if gdbm is
+available).  See "help database".
+
+* Changes in GNU Backgammon 0.01
+
+** Bug fixes (100110, 100113, 100114, 100115, 100118, 100122, 100150).
+
+** Rudimentary X window system support.
+
+* GNU Backgammon 0.0
+
+** Initial release.

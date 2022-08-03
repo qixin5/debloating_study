@@ -1,0 +1,17 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+uname=$(whoami)
+
+cp $INDIR/myfile.txt ./
+
+{ timeout -k 9 ${TIMEOUT}s $BIN ${uname}:sudo myfile.txt; } &>$OUTDIR/o1
+
+echo "$?" >>$OUTDIR/o1
+own0=`ls -al myfile.txt | tr -s ' ' | cut -d ' ' -f 3`
+own1=`ls -al myfile.txt | tr -s ' ' | cut -d ' ' -f 4`
+echo "${own0} ${own1}" >>$OUTDIR/o1

@@ -1,0 +1,3 @@
+
+temp:= $(join (bar.c), (foo.c))
+

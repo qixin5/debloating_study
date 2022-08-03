@@ -1,0 +1,18 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+mkdir stuff
+timeout -k 9 ${TIMEOUT}s $BIN -v stuff/morestuff stuff/extrastuff &>$OUTDIR/o1
+
+echo "$?" >>$OUTDIR/o1
+info=`ls -ald stuff | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o1
+info=`ls -ald stuff/morestuff | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o1
+info=`ls -ald stuff/extrastuff | tr -s ' ' | cut -d ' ' -f 1,2,3,4`
+echo ${info} >>$OUTDIR/o1
+

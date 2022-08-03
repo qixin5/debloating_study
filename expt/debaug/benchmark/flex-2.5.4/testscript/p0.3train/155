@@ -1,0 +1,11 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+CURRDIR=$(pwd)
+
+timeout -k 9 ${TIMEOUT}s $BIN error -dF -Crae -o${CURRDIR}/out2.n8 $INDIR/in.posix_4  > $OUTDIR/o155 2>&1
+
+cat error >> $OUTDIR/o155

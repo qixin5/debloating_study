@@ -1,0 +1,29 @@
+GROUP	testgroup 
+
+	GRID XX   
+	ELEMENT 
+	   GEOMETRY CIRCULAR  50 
+
+	   PORTS 6 
+	      PORT 1 
+	      AMPLITUDE 27 
+	      PORT 2 
+	      POL_ORIENT 34 	      AMPLITUDE 18 
+	      PHASE_SCANNING 660 
+	      PHASE_POL_ARRANG 399 
+	      PORT 3 
+	      AMPLITUDE 39 
+	      PHASE_POL_ARRANG 624 
+	      PORT 4 
+	      POL_ORIENT Y 	      AMPLITUDE 26 
+	      PORT 5 
+	      AMPLITUDE 25 
+	      PHASE_POL_ARRANG 568 
+	      PORT 6 
+	      AMPLITUDE 27 
+	ADD 	NODE 0 -3 ORIENTATION 25 20 24 deg   
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 26 
+	   PHASE UNIFORM -89 
+END 

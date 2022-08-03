@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '4' 'GC~b-h:p- 1}(N|2' < $INDIR/input/ruin.1096 &> $OUTDIR/o1392
+

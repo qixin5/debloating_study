@@ -1,0 +1,7 @@
+Alex Jason:200:Sales
+Alex Jason:200:Sales
+Emma Thomas:100:Marketing
+Emma Thomas:100:Marketing
+Madison Randy:300:Product Development
+Nisha Singh:500:Sales
+Sanjay Gupta:400:Support

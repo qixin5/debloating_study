@@ -1,0 +1,23 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+uname=$(whoami)
+uid=`id -u ${uname}`
+
+cp $INDIR/textfile ./
+ln -s textfile symblink
+
+{ timeout -k 9 ${TIMEOUT}s $BIN ${uname}: symblink; } &>$OUTDIR/o14
+
+echo "$?" >>$OUTDIR/o14
+own0=`ls -al symblink | tr -s ' ' | cut -d ' ' -f 3`
+own1=`ls -al symblink | tr -s ' ' | cut -d ' ' -f 4`
+echo "${own0} ${own1}" >>$OUTDIR/o14
+
+own0=`ls -al textfile | tr -s ' ' | cut -d ' ' -f 3`
+own1=`ls -al textfile | tr -s ' ' | cut -d ' ' -f 4`
+echo "${own0} ${own1}" >>$OUTDIR/o14

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp -r $INDIR/bigfile.tar ./
+
+{ timeout -k 9 ${TIMEOUT}s $BIN -xvf bigfile.tar; } &>$OUTDIR/o0
+
+echo "$?" >>$OUTDIR/o0
+diff bigfile $INDIR/bigfile
+echo "$?" >>$OUTDIR/o0
+
+

@@ -1,0 +1,17 @@
+GROUP   testgroup 
+
+        GRID TRIANGULAR  ANGLE 62 PSTEP 82 QSTEP 49 
+        ELEMENT 
+           GEOMETRY CIRCULAR 105 
+           POLARIZATION LINEAR 
+           PORTS 1 
+              PORT 1 
+              POL_ORIENT X            AMPLITUDE 32 
+              PHASE_POL_ARRANG 532 deg   
+
+        ADD     NODE 1 -7 ORIENTATION THETA 17 PHI 11 PSI -7 
+
+        GROUP_EXCITATION 
+           AMPLITUDE UNIFORM 25 
+           PHASE ROTATION SEQUENTIAL   
+END 

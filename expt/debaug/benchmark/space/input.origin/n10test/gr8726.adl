@@ -1,0 +1,41 @@
+GROUP	testgroup 
+
+	GRID SQUARE  
+	ELEMENT 
+	   GEOMETRY RECTANGULAR  74 80 
+
+
+	   PORTS 8 
+	      PORT 1 
+	      POL_ORIENT 25 	      AMPLITUDE 23 
+	      PHASE_SCANNING 462 deg   
+	      PHASE_POL_ARRANG 609 deg   
+	      PORT 2 
+	      POL_ORIENT 48 	      AMPLITUDE 37 mm   
+	      PORT 3 
+	      AMPLITUDE 20 
+	      PHASE_SHAPING 460 deg   
+	      PHASE_SCANNING 471 
+	      PHASE_POL_ARRANG 688 
+	      PORT 4 
+	      AMPLITUDE 20 
+	      PHASE_SCANNING 663 
+	      PHASE_POL_ARRANG 437 
+	      PORT 5 
+	      AMPLITUDE 21 
+	      PHASE_SCANNING 641 
+	      PHASE_POL_ARRANG 687 
+	      PORT 6 
+	      POL_ORIENT Y 	      AMPLITUDE 34 
+	      PORT 7 
+	      AMPLITUDE 22 
+	      PORT 8 
+	      AMPLITUDE 19 mm   
+	      PHASE_POL_ARRANG 572 
+	ADD 	BLOCK 9 0 1 6 
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 26 
+	   PHASE ROTATION SEQUENTIAL CCW ANGLE -46 -87 
+
+END 

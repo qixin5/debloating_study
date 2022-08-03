@@ -1,0 +1,15 @@
+GROUP	testgroup 
+
+	GRID TRIANGULAR  PSTEP 57 QSTEP 66 
+	ELEMENT 
+	   GEOMETRY CIRCULAR 50 
+
+        ADD     NODE 3 -2
+        ADD     BLOCK -1 2 -5 -10
+        ADD     BLOCK 0 1 3 -12
+        ADD     BLOCK -1 -8 -2 2
+
+	GROUP_EXCITATION 
+	   AMPLITUDE UNIFORM 19 
+	   PHASE UNIFORM -54 
+END 

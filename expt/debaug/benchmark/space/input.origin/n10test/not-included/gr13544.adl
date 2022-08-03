@@ -1,0 +1,17 @@
+GROUP   testgroup 
+
+        GRID RECTANGULAR  
+        ELEMENT 
+           GEOMETRY CIRCULAR  79 
+
+           PORTS 1 
+              PORT 1 
+              AMPLITUDE 74 
+              PHASE_SCANNING 558 
+              PHASE_POL_ARRANG 464 
+        ADD     BLOCK 7 -2 3 -5 
+
+        GROUP_EXCITATION 
+           AMPLITUDE UNIFORM 29 
+           PHASE ROTATION SEQUENTIAL
+END 

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+timeout -k 9 ${TIMEOUT}s $BIN '@n@@?' '09xj8*p{[Tk=E|P~H.Ge{Py<Z' < $INDIR/input/ruin.35 &> $OUTDIR/o1979
+

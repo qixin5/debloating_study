@@ -1,0 +1,14 @@
+#!/bin/bash
+
+BIN=$1
+OUTDIR=$2
+TIMEOUT=$3
+INDIR=$4
+
+cp $INDIR/datav1.txt ./
+
+{ timeout -k 9 ${TIMEOUT}s $BIN -o output.txt datav1.txt; } &>$OUTDIR/o2
+
+echo "$?" >>$OUTDIR/o2
+cat output.txt >>$OUTDIR/o2
+
