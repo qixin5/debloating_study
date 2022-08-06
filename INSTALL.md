@@ -44,6 +44,15 @@ int main(int argc , char **argv)
 }
 ```
 
+#### Troubleshooting
+
+If you see an error message like *"/debloating_study/tools/debaug/bin/startandendlineprinter: line 8:  546 Illegal instruction (core dump) $PRINTERBIN -g statement test.sh ${srcf}"*, please follow the steps below for a complete build of the tools and try again.
+```
+cd ${DEBSTUDY_DIR}/tools/debaug
+./setup_full.sh
+```
+**Note**: Running `./setup_full.sh` builds LLVM from source code and takes a few hours!
+
 
 ### Another Example
 
