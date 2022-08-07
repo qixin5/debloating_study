@@ -1,5 +1,7 @@
 #!/bin/bash
 
+pip3 install capstone
+
 mkdir tools && cd tools
 
 TOOLSDIR=$(pwd)
