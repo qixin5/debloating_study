@@ -24,9 +24,9 @@ cd debloating_study
 
 Here is a quick example to test whether the installation is OK.
 
-To run it, first make sure you are in `debloating_study`, and then do the following:
+To run it, do the following:
 ```
-cd expt/script/examples/toy
+cd ${DEBSTUDY_DIR}/expt/script/examples/toy
 ./run_cov.sh
 ```
 
@@ -61,7 +61,7 @@ In this example, you will run a total of six tools to debloat `tcas` (a program 
 To run the example, first make sure you are in `debloating_study`, and then do the following:
 
 ```
-cd expt/script
+cd ${DEBSTUDY_DIR}/expt/script
 examples/tcas/run_tcas.sh
 ```
 
