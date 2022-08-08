@@ -35,6 +35,10 @@ git clone https://github.com/aspire-project/chisel
 cd chisel && git checkout 3ba2826eb
 cp -r ../debaug/include/spdlog ./include/
 sed -i 's|include_directories(include)|include_directories(include)\ninclude_directories(../debaug/llvm-project/clang/include)\ninclude_directories(../debaug/llvm-project/build/tools/clang/include)|g' CMakeLists.txt
+for lno in 12 60 61 65 66 67 68; do  #Delete some time-recording code causing problems
+    line=`sed "${lno}q;d" src/utils/Profiler.cpp`
+    sed -i "s|${line}|\/\/${line}|g" src/utils/Profiler.cpp
+done
 mkdir build && cd build
 cmake ..
 make
