@@ -3,7 +3,7 @@ FROM ubuntu:bionic-20220531
 RUN apt-get update && apt-get -y install sudo && \
     sudo apt-get -y install build-essential \
     git zip unzip git-lfs cmake clang-9 \
-    openjdk-8-jdk python-pip python3-pip bc opt wget curl sed vim emacs && \
+    openjdk-8-jdk python-pip python3-pip bc opt wget curl sed vim emacs libncurses5-dev libncursesw5-dev && \
     sudo pip install pyelftools && \
     sudo pip install capstone && \
     sudo pip install gdown && \
