@@ -10,7 +10,7 @@ forwhat=$5       #augment or robust-testing
 MAXINPUTNUM=$6   #Select at most MAXINPUTNUM inputs for fuzzing
 
 fuzzor=${DEBAUG_DIR}/bin/radamsafuzz.sh
-bashfuzzscript=${DEBAUG_DIR}_expt/script/rdsfuzz_sirprog/fuzzscript_used_by_bash/fuzzscript.sh
+bashfuzzscript=${DEBSTUDY_DIR}/expt/script/rdsfuzz_sirprog/fuzzscript_used_by_bash/fuzzscript.sh
 
 
 if [ -z $BENCH ] || [ -z $PROGNAME ] || [ -z ${inputset} ] || [ -z ${fuzznum} ] || [ -z ${forwhat} ]; then
@@ -74,9 +74,9 @@ while IFS= read -r line; do
 
     #origin_input_dir contains all files to be fuzzed
     if [ $PROGNAME == "bash-2.05" ]; then
-	origin_input_dir=${DEBAUG_DIR}_expt/debaug/working/bash/testplans.alt/testplans.fine
+	origin_input_dir=${DEBSTUDY_DIR}/expt/debaug/working/bash/testplans.alt/testplans.fine
     elif [ $PROGNAME == "vim-5.8" ]; then
-	origin_input_dir=${DEBAUG_DIR}_expt/debaug/working/vim/testplans.alt/all_expect_files
+	origin_input_dir=${DEBSTUDY_DIR}/expt/debaug/working/vim/testplans.alt/all_expect_files
     fi
 
     for (( i=1; i<=${fuzznum}; i++ )); do

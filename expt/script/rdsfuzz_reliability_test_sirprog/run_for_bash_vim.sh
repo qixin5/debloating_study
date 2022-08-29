@@ -6,7 +6,7 @@ progpath=$3
 inputset=$4
 forwhat=$5
 TIMEOUT=10
-#TIMEOUT=3
+
 
 if [ -z $BENCH ] || [ -z $PROGNAME ] || [ -z ${progpath} ] || [ -z ${inputset} ]; then
     echo "Missing arguments."
@@ -30,8 +30,8 @@ fi
 
 
 CURRDIR=$(pwd)
-bash_test_script=${DEBAUG_DIR}_expt/script/rdsfuzz_sirprog/fuzzscript_used_by_bash/fuzzscript.sh
-vim_test_script=${DEBAUG_DIR}_expt/script/rdsfuzz_sirprog/fuzzscript_used_by_vim/fuzzscript.sh
+bash_test_script=${DEBSTUDY_DIR}/expt/script/rdsfuzz_sirprog/fuzzscript_used_by_bash/fuzzscript.sh
+vim_test_script=${DEBSTUDY_DIR}/expt/script/rdsfuzz_sirprog/fuzzscript_used_by_vim/fuzzscript.sh
 
 
 #Prepare bin

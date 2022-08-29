@@ -139,7 +139,12 @@ fi
 
 echo "Evaluate debloated program in terms of robustness-based generality"
 if [ ! -d $CURRDIR/../debaug/benchmark/${progname}/rdsfuzz/robust_testing/fuzzedtestscript/${inputset} ]; then
-    rdsfuzz_reliability_test_sirprog/create_fuzzed_testscript_main.sh benchmark ${progname} ${inputset} 50 100 robust-testing &> /dev/null
+
+    if [ ${progname} == "bash-2.05" ] || [ ${progname} == "vim-5.8" ]; then
+	rdsfuzz_sirprog/create_fuzzed_testscript_for_bash_vim.sh benchmark ${progname} ${inputset} 100 robust-testing 50 &> /dev/null
+    else
+       rdsfuzz_reliability_test_sirprog/create_fuzzed_testscript_main.sh benchmark ${progname} ${inputset} 50 100 robust-testing &> /dev/null
+    fi
 fi
 
 ROBUST_TEST_SCRIPT=rdsfuzz_reliability_test_sirprog/run.sh
