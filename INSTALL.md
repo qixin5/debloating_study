@@ -106,7 +106,7 @@ where PROGNAME is the name of the program to be debloated (one of *flex-2.5.4*, 
 
 For utility programs, you don't need to specify INPUTSET and TESTSET because debloating will be performed based on each of the ten sets of inputs we collected and the debloated program will be evaluated based on each set of testing inputs not used for debloating.
 
-Once done, if successful, you will see scores in the same format as what's shown in [expt/script/examples/tcas/rslt.txt](expt/script/examples/tcas/rslt.txt). You can check these against our result provided in [here](https://docs.google.com/spreadsheets/d/1uH8fzJLFjUsFHEur-fze1D0RmG22QWG_1RTAaWlAJXI/edit?usp=sharing). It is based on this result the scores in the paper was computed. For example, if you run `utilprog/main/run.sh uniq-8.16 cov`, you can check against Rows 12 and 28 in the Cov table.
+Once done, if successful, you will see scores in the same format as what's shown in [expt/script/examples/tcas/rslt.txt](expt/script/examples/tcas/rslt.txt). You can check these against our result provided in [here](https://github.com/qixin5/debloating_study/tree/main/expt/debaug/rslt). It is based on this result the scores in the paper was computed. For example, if you run `utilprog/main/run.sh uniq-8.16 cov`, you can check against Line 11 in [this file](https://github.com/qixin5/debloating_study/blob/main/expt/debaug/rslt/cov/cgen_related_scores_util.txt) and in [this file](https://github.com/qixin5/debloating_study/blob/main/expt/debaug/rslt/cov/rgen_related_scores.txt).
 
 **Note**
 1. Running `sirprog/main/run.sh` usually takes more than 30 minutes. And running `utilprog/main/run.sh` can be (much) longer because debloating and its evaluation are performed based on multiple sets of inputs.
