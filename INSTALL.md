@@ -17,8 +17,10 @@ Run the shell commands below to download the debloating study repo (within the c
 git clone https://github.com/qixin5/debloating_study.git
 cd debloating_study
 ./setup.sh
+sudo apt-get update
+sudo apt-get install expect
 ```
-
+Note that you will be prompted to provide time zone information when installing `expect`.
 
 ### Quick Example
 
