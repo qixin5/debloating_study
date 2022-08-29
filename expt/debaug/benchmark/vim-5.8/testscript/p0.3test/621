@@ -3,7 +3,7 @@
 use File::Basename;
 
 $scriptName = "edit_3.1.1.expect";
-$EXPROOT = "${DEBSTUDY_DIR}/expt/debaug/working/vim";
+$EXPROOT = "$ENV{'DEBSTUDY_DIR'}/expt/debaug/working/vim";
 $TEST_DIR = "$EXPROOT/testplans.alt";
 $IN_DIR = "$EXPROOT/inputs";
 $IN_DB = "$EXPROOT/inputs.alt";
