@@ -1,6 +1,6 @@
 # Installation
 
-We suggest users to try out the debloating tools and run tests in an isolated docker container so as to avoid contaminating the host system (because fuzzing is used). As a prerequisite, you need to have the Docker engine installed in your system. If you haven't done so, please refer to [Docker's installation page](https://docs.docker.com/engine/install/) and make sure the Docker engine is properly installed. Once you have done that, you may begin with the installation and the setup of the debloating tools and the testing environment.
+We suggest users to try out the debloating tools and run tests on a machine with at least 128 GB memory and do these in an isolated docker container so as to avoid contaminating the host system (because fuzzing is used). As a prerequisite, you need to have the Docker engine installed in your system. If you haven't done so, please refer to [Docker's installation page](https://docs.docker.com/engine/install/) and make sure the Docker engine is properly installed. Once you have done that, you may begin with the installation and the setup of the debloating tools and the testing environment.
 
 First make sure you are in the root directory of this repo (`debloating_study`), and then follow the steps below.
 
