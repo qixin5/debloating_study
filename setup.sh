@@ -132,4 +132,13 @@ rm -f *.zip
 cd ${DEBSTUDY_DIR}/expt/debaug/benchmark/space
 unzip reltest.zip
 
+
+#Set up directories and files for testing
+mkdir /TestUnix
+> /TestUnix/tmp.txt
+mkdir -p /foo/bar
+> /foo/file
+> /foo/bar/file1
+
+
 echo "Setup done"
