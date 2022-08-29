@@ -1,0 +1,5 @@
+send ":redir >> option_99.1.1.out\r"
+send ":set lz\r"
+send ":set lz?\r"
+send ":redir END\r"
+

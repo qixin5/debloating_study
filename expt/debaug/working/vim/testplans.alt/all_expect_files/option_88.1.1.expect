@@ -1,0 +1,5 @@
+send ":redir >> option_88.1.1.out\r"
+send ":set inf\r"
+send ":set inf?\r"
+send ":redir END\r"
+

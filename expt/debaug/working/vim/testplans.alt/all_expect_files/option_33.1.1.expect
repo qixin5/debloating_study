@@ -1,0 +1,5 @@
+send ":redir >> option_33.1.1.out\r"
+send ":set cpo\r"
+send ":set cpo?\r"
+send ":redir END\r"
+

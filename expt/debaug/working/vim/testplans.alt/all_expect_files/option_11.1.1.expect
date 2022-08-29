@@ -1,0 +1,5 @@
+send ":redir >> option_11.1.1.out\r"
+send ":set background=dark\r"
+send ":set background?\r"
+send ":redir END\r"
+

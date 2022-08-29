@@ -1,0 +1,5 @@
+send ":redir >> option_116.1.1.out\r"
+send ":set mm\r"
+send ":set mm?\r"
+send ":redir END\r"
+

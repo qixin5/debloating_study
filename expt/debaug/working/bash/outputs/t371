@@ -1,0 +1,7 @@
+hits	command
+   2	/bin/ln
+  12	/usr/bin/touch
+   8	/bin/rm
+  12	/bin/chmod
+   2	/bin/cat
+  15	/bin/mkdir

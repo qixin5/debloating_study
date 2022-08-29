@@ -1,0 +1,5 @@
+send ":redir >> option_226.1.1.out\r"
+send ":set writebackup\r"
+send ":set writebackup?\r"
+send ":redir END\r"
+

@@ -1,0 +1,7 @@
+send ":redir >> ex_10.1.1.out\r"
+send "5j"
+send ":-3  p 1\r"
+#expect "DSARITA"
+#send "\r"
+send ":redir END\r"
+

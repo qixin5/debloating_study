@@ -1,0 +1,5 @@
+send -- " "
+send -- "\017"
+send -- "h"
+send -- "\033"
+send -- "x"

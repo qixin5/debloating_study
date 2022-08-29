@@ -1,0 +1,4 @@
+expect /usr/homes/chet
+/usr/homes/chet
+expect /usr/homes/chet 7
+/usr/homes/chet

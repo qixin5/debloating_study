@@ -1,0 +1,12 @@
+send ":redir >> move_261.1.1.out\r"
+send "j"
+send "i"
+send " "
+send "\033"
+send "k"
+send "0"
+send "2H"
+send "\007"
+#expect "Modified"
+send ":redir END\r"
+

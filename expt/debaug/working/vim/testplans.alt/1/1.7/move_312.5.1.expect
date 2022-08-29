@@ -1,0 +1,5 @@
+send ":redir >> move_312.5.1.out\r"
+send ":ts f*\r"
+send "4\r"
+send ":3 tp\r"
+send ":redir END\r"

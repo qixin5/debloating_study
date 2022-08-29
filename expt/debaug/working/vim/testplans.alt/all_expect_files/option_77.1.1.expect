@@ -1,0 +1,5 @@
+send ":redir >> option_77.1.1.out\r"
+send ":set nohls\r"
+send ":set hls?\r"
+send ":redir END\r"
+

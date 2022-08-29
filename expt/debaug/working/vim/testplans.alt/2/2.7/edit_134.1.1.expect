@@ -1,0 +1,5 @@
+send -- "yw"
+send -- "2w"
+send -- "\[p"
+#send "\033"
+

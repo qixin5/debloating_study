@@ -1,0 +1,7 @@
+send -- ":redir >> edit_249.1.1.out\r"
+send -- ":These are the contents of the register :\r"
+expect "command"
+send -- ":\022:\r"
+expect "command"
+send -- ":redir END\r"
+                            

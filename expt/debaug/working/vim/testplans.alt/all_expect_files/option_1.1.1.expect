@@ -1,0 +1,4 @@
+send ":redir >> option_1.1.1.out\r"
+send ":set all\r"
+
+send ":redir END\r"

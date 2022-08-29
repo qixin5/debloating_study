@@ -1,0 +1,6 @@
+send -- ":.d a\r"
+send -- ":redir >> edit_86.1.1.out\r"
+send -- ":reg a\r"
+expect "continue"
+send -- ":redir END\r"
+

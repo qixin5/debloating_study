@@ -1,0 +1,5 @@
+send "i"
+send "newly inserted text"
+send "\033"
+send ":e!\r"
+

@@ -1,0 +1,10 @@
+send -- ":redir >> edit_264.1.1.out\r"
+send -- ":arg	\r"
+send -- ":reg :\r"
+expect "continue"
+send -- ":arg	\016\r"
+expect "continue"
+send -- ":reg :\r"
+expect "continue"
+send -- ":redir END\r"
+	

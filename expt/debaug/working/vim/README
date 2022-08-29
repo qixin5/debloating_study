@@ -1,0 +1,91 @@
+Updated: Thursday, 13 April 2006
+
+SUBJECT VIM
+-----------
+The subject we are testing is vim.  The test suite is based on a subset of the 
+functionality of vim, it is exempt the graphical functionality, scripting 
+functionality, syntax hightlight functionality, windows and buffers
+functionality, etc.  Also, the test suite is based on vim version 5.0 and there
+are many functionalities of the later versions that were not supported in
+version 5.0.
+
+VIM DIRECTORY SETUP
+-------------------
+The subject vim has been updated to follow the SIR handbook of subject
+preparation. This update converted the subject from the original ORST handbook
+of subject preparation; however, the setup doesn't follow exact ORST or SIR
+guidelines.
+
+docs         - currently unused and empty
+info         - contains the fault matrices and other test case information
+inputs       - contains the test case input during execution
+inputs.alt   - contains the test case inputs in a read-only fashion
+outputs      - stores the outputs from a given test run
+outputs.alt  - used for storing final outputs
+scripts      - contains the scripts necessary to run the test suite
+source       - an empty directory for storing and building a version of vim to
+               test
+testplans.alt- contains two layouts of the vim test suite
+versions.alt - stores versions.orig and versions.seeded
+
+BUILDING THE SUBJECT
+--------------------
+The vim subject can be built using the scripts in the scripts directory.
+To make a non-faulted version use the makevers command along with the
+version number wanted, e.g.
+makevers 2
+makes version 2 without faults inserted.
+
+To make a faulted version, the scripts provide in the scripts directory
+allow the building of the faulted versions to be performed within a
+shell loop.  Briefly, the steps that need to be performed are:
+clean
+copy_version
+compile
+The clean action removes the contents of the source directory.  The
+copy_version step (with the version number supplied as an argument)
+puts the correct version into the source directory.  The compile
+command build the faulted version inserting the command line argument
+specified fault.  An example of a shell script that automates the
+process of looping through all versions and inserting each fault into
+each version, saving the difference output into a file diff.vversion.Fault-Name
+
+for i in `1 2 3 4 5 6 7`  # for each version
+do
+    makevers $i
+    runall
+    cp -r ../outputs/* ../outputs.alt
+    clean
+    copy_vers $i
+    cp ../source/FaultSeeds.h ./FaultSeeds.orig
+    while read fault      # for each fault
+    do
+        active=`echo $fault | sed s%^//%% | cut -d" " -f 2`
+        compile $active
+        runall
+        diff -rq ../outputs ../outputs.alt > diff.v$i.$active
+    done < FaultSeeds.orig
+done
+
+HOW TO EXECUTE THE TEST SUITES
+------------------------------
+The requirements for running the test suite include: Solaris 8 OR SuSE Linux
+(other versions of Linux and Unix are most likely compatible).  The system
+must have the "expect" package installed in order for the tests to execute.
+The location of the expect executable is hardcoded (/usr/bin/expect)
+in the setup1 scripts within each testplans.alt/{version-number}/{version.subversion}
+directory.  If expect is not installed or is not located where the setup script
+specifies then you will not execute the tests but there will be output files
+generated.  Expect can be installed from your Linux distro repository or from
+http://expect.nist.gov .
+
+In the script directory, you will find the following scripts: 
+  runall, runall-diff:
+
+In order to run the script provided, the environment variable "experiment_root"
+needs to be set to the parent of the vim directory.
+
+The syntax for usage of the runall script is as follows:
+     ./runall OR ./runall-diff N (where N is the version to check the results
+       against)
+

@@ -1,0 +1,5 @@
+send ":redir >> option_31.1.1.out\r"
+send ":set cp\r"
+send ":set cp?\r"
+send ":redir END\r"
+

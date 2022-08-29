@@ -1,0 +1,3 @@
+${THIS_SH} ./dollar-star.sh a b > /tmp/xx 2>&1
+${THIS_SH} ./dollar-at.sh a b >>/tmp/xx 2>&1
+diff /tmp/xx dollar.right

@@ -1,0 +1,20 @@
+#!/usr/bin/expect -f
+spawn $env(SUBJECTS_SRC_DIR)/vim-5.8 -u $env(HOME)/.vimrc $env(TESTS_SRC)/copy1
+expect "copy1"
+sleep 1
+send ":se lines=24\r"
+send ":se columns=80\r"
+send ":set hf=\${vim_doc}/help.txt\r"
+sleep 1
+send ":redir >> other_36.1.1.out\r"
+send ":help \[a-z\]\r"
+
+#expect "help.txt"
+#expect "insert.txt"
+send ":redir END\r"
+send ":q!\r"
+send ":wq\r"
+expect
+exit -onexit {
+interact
+}

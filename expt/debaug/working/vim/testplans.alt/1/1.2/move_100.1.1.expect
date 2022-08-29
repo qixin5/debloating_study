@@ -1,0 +1,6 @@
+send ":redir >> move_100.1.1.out\r"
+send "\007"
+send "9gg"
+send "\007"
+send ":redir END\r"
+

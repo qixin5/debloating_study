@@ -1,0 +1,11 @@
+send ":redir >> move_41.1.1.out\r"
+send "j"
+send "$"
+send "\007"
+send "g0" 
+send "\007"
+send ":redir END\r"
+
+
+
+

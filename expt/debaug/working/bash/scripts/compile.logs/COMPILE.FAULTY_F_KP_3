@@ -1,0 +1,288 @@
+loading cache ./config.cache
+checking host system type... sparc-sun-solaris2.9
+Beginning configuration for bash-2.03 for sparc-sun-solaris2.9
+checking for gcc... (cached) gcc
+checking whether the C compiler (gcc  ) works... yes
+checking whether the C compiler (gcc  ) is a cross-compiler... no
+checking whether we are using GNU C... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking whether large file support needs explicit enabling... yes
+checking for POSIXized ISC... no
+checking how to run the C preprocessor... (cached) gcc -E
+checking for minix/config.h... (cached) no
+checking whether gcc needs -traditional... (cached) no
+checking for a BSD compatible install... (cached) /opt/csw/bin/ginstall -c
+checking for ar... (cached) ar
+checking for ranlib... (cached) ranlib
+checking for bison... (cached) bison -y
+checking whether make sets ${MAKE}... (cached) yes
+checking for working alloca.h... (cached) yes
+checking for alloca... (cached) yes
+checking whether getpgrp takes no argument... (cached) yes
+checking whether setvbuf arguments are reversed... (cached) no
+checking for vprintf... (cached) yes
+checking for wait3 that fills in rusage... (cached) no
+checking for working strcoll... (cached) yes
+checking return type of signal handlers... (cached) void
+checking for __setostype... (cached) no
+checking for wait3... (cached) yes
+checking for mkfifo... (cached) yes
+checking for dup2... (cached) yes
+checking for select... (cached) yes
+checking for getdtablesize... (cached) yes
+checking for getgroups... (cached) yes
+checking for gethostname... (cached) yes
+checking for setdtablesize... (cached) no
+checking for getpagesize... (cached) yes
+checking for killpg... (cached) yes
+checking for lstat... (cached) yes
+checking for getpeername... (cached) no
+checking for sbrk... (cached) yes
+checking for getrlimit... (cached) yes
+checking for getrusage... (cached) yes
+checking for gettimeofday... (cached) yes
+checking for waitpid... (cached) yes
+checking for tcgetpgrp... (cached) yes
+checking for rename... (cached) yes
+checking for bcopy... (cached) yes
+checking for bzero... (cached) yes
+checking for confstr... (cached) yes
+checking for getcwd... (cached) yes
+checking for strcasecmp... (cached) yes
+checking for setenv... (cached) no
+checking for putenv... (cached) yes
+checking for setlinebuf... (cached) yes
+checking for setlocale... (cached) yes
+checking for strchr... (cached) yes
+checking for strerror... (cached) yes
+checking for strtod... (cached) yes
+checking for strtol... (cached) yes
+checking for strtoul... (cached) yes
+checking for tcgetattr... (cached) yes
+checking for uname... (cached) yes
+checking for sysconf... (cached) yes
+checking for ulimit... (cached) yes
+checking for times... (cached) yes
+checking for tzset... (cached) yes
+checking for siginterrupt... (cached) yes
+checking for memmove... (cached) yes
+checking for libintl.h... (cached) yes
+checking for gettext... (cached) yes
+checking for textdomain... (cached) yes
+checking for bindtextdomain... (cached) yes
+checking for dlopen in -ldl... (cached) yes
+checking for dlopen... (cached) yes
+checking for dlclose... (cached) yes
+checking for dlsym... (cached) yes
+checking for sys_siglist declaration in signal.h or unistd.h... (cached) no
+checking for dirent.h that defines DIR... (cached) yes
+checking for opendir in -ldir... (cached) no
+checking whether time.h and sys/time.h may both be included... (cached) yes
+checking for unistd.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for stdarg.h... (cached) yes
+checking for varargs.h... (cached) no
+checking for limits.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for locale.h... (cached) yes
+checking for termcap.h... (cached) no
+checking for termio.h... (cached) yes
+checking for termios.h... (cached) yes
+checking for dlfcn.h... (cached) yes
+checking for stddef.h... (cached) yes
+checking for sys/ptem.h... (cached) yes
+checking for sys/pte.h... (cached) no
+checking for sys/stream.h... (cached) yes
+checking for sys/select.h... (cached) yes
+checking for sys/file.h... (cached) yes
+checking for sys/resource.h... (cached) yes
+checking for sys/param.h... (cached) yes
+checking for sys/socket.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for sys/times.h... (cached) yes
+checking for sys/wait.h... (cached) yes
+checking for socket library... (cached) yes
+checking for libnsl... (cached) yes
+checking for uid_t in sys/types.h... (cached) yes
+checking type of array argument to getgroups... (cached) gid_t
+checking for ANSI C header files... (cached) yes
+checking for off_t... (cached) yes
+checking for mode_t... (cached) yes
+checking for uid_t in sys/types.h... (cached) yes
+checking for pid_t... (cached) yes
+checking for size_t... (cached) yes
+checking for time_t... (cached) yes
+checking return type of signal handlers... (cached) void
+checking size of int... (cached) 4
+checking size of long... (cached) 4
+checking size of char *... (cached) 4
+checking size of double... (cached) 8
+checking for int32_t... (cached) yes
+checking for u_int32_t... (cached) no
+checking for ptrdiff_t... (cached) yes
+checking for bits64_t... (cached) no
+checking whether stat file-mode macros are broken... (cached) no
+checking whether byte ordering is bigendian... (cached) yes
+checking whether #! works in shell scripts... (cached) yes
+checking for restartable system calls... (cached) no
+checking if dup2 fails to clear the close-on-exec flag... (cached) no
+checking whether pgrps need synchronization... (cached) no
+checking for type of signal functions... (cached) posix
+checking for restartable system calls with posix sigaction... (cached) no
+checking for sys_errlist and sys_nerr... (cached) yes
+checking for sys_siglist in system C library... (cached) no
+checking for _sys_siglist in signal.h or unistd.h... (cached) yes
+checking for _sys_siglist in system C library... (cached) yes
+checking whether signal handlers are of type void... (cached) yes
+checking for clock_t... (cached) yes
+checking for sigset_t... (cached) yes
+checking for quad_t... (cached) yes
+checking for size and type of struct rlimit fields... (cached) long
+checking for a c_line member of struct termios... (cached) no
+checking for a c_line member of struct termio... (cached) yes
+checking if struct dirent has a d_ino member... (cached) yes
+checking if struct dirent has a d_fileno member... (cached) no
+checking for struct winsize in sys/ioctl.h and termios.h... (cached) termios.h
+checking for the existence of strsignal... (cached) yes
+checking if opendir() opens non-directories... (cached) no
+checking for declaration of printf in <stdio.h>... (cached) yes
+checking whether ulimit can substitute for getdtablesize... (cached) yes
+checking to see if getenv can be redefined... (cached) yes
+checking if getcwd() calls popen()... (cached) no
+checking for declaration of sbrk in <unistd.h>... (cached) yes
+checking for presence of POSIX-style sigsetjmp/siglongjmp... (cached) present
+checking whether or not strcoll and strcmp differ... (cached) no
+checking if signal handlers must be reinstalled when invoked... (cached) no
+checking for presence of necessary job control definitions... (cached) present
+checking for presence of named pipes... (cached) present
+checking for TIOCGWINSZ in sys/ioctl.h... (cached) no
+checking for TIOCSTAT in sys/ioctl.h... (cached) no
+checking for FIONREAD in sys/ioctl.h... (cached) no
+checking for speed_t in sys/types.h... (cached) no
+checking whether programs are able to redeclare getpw functions... (cached) yes
+checking which library has the termcap functions... (cached) using libtermcap
+checking whether /dev/fd is available... (cached) standard
+checking for default mail directory... (cached) /var/mail
+checking shared object configuration for loadable builtins... supported
+creating ./config.status
+creating Makefile
+creating builtins/Makefile
+creating lib/readline/Makefile
+creating lib/glob/Makefile
+creating lib/malloc/Makefile
+creating lib/sh/Makefile
+creating lib/termcap/Makefile
+creating lib/tilde/Makefile
+creating doc/Makefile
+creating support/Makefile
+creating examples/loadables/Makefile
+creating config.h
+config.h is unchanged
+/bin/sh ./support/mkversion.sh -b -s release -d 2.03 -p 0 -o newversion.h \
+	&& mv newversion.h version.h
+
+	  ***********************************************************
+	  *                                                         *
+	  * Making Bash-2.03.0-release for a sparc running solaris2.9
+	  *                                                         *
+	  ***********************************************************
+
+rm -f shell.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c shell.c
+rm -f eval.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c eval.c
+rm -f y.tab.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c y.tab.c
+rm -f general.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c general.c
+rm -f make_cmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c make_cmd.c
+rm -f print_cmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c print_cmd.c
+rm -f dispose_cmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c dispose_cmd.c
+rm -f execute_cmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c execute_cmd.c
+rm -f variables.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c variables.c
+rm -f copy_cmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c copy_cmd.c
+rm -f error.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c error.c
+rm -f expr.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c expr.c
+expr.c:137: warning: conflicting types for built-in function 'exp2'
+rm -f flags.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c flags.c
+rm -f jobs.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c jobs.c
+rm -f subst.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c subst.c
+rm -f hashcmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c hashcmd.c
+rm -f hashlib.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c hashlib.c
+rm -f mailcheck.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c mailcheck.c
+if cmp -s lsignames.h signames.h ; then :; else rm -f signames.h ; cp lsignames.h signames.h ; fi
+rm -f trap.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c trap.c
+rm -f input.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c input.c
+rm -f unwind_prot.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c unwind_prot.c
+rm -f pathexp.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c pathexp.c
+rm -f sig.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c sig.c
+rm -f test.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c test.c
+rm -f version.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c version.c
+rm -f alias.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c alias.c
+rm -f array.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c array.c
+rm -f braces.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c braces.c
+rm -f bracecomp.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c bracecomp.c
+rm -f bashhist.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c bashhist.c
+rm -f bashline.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c bashline.c
+rm -f siglist.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c siglist.c
+rm -f list.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c list.c
+rm -f stringlib.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c stringlib.c
+rm -f locale.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c locale.c
+rm -f findcmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c findcmd.c
+rm -f redir.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c redir.c
+rm -f xmalloc.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"sparc"' -DCONF_OSTYPE='"solaris2.9"' -DCONF_MACHTYPE='"sparc-sun-solaris2.9"' -DCONF_VENDOR='"sun"' -DSHELL  -DHAVE_CONFIG_H  -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -I.  -I. -I./lib -I/usr/local/include -g -O2 -c xmalloc.c
+rm -f bash
+gcc -L./builtins -L./lib/readline -L./lib/readline -L./lib/termcap  -L./lib/glob -L./lib/tilde -L./lib/malloc -L./lib/sh  -L/opt/csw/lib  -g -O2 -o bash shell.o eval.o y.tab.o general.o make_cmd.o print_cmd.o   dispose_cmd.o execute_cmd.o variables.o copy_cmd.o error.o  expr.o flags.o jobs.o subst.o hashcmd.o hashlib.o mailcheck.o  trap.o input.o unwind_prot.o pathexp.o sig.o test.o version.o  alias.o array.o braces.o bracecomp.o bashhist.o bashline.o  siglist.o list.o stringlib.o locale.o findcmd.o redir.o xmalloc.o -lbuiltins -lreadline -lhistory -ltermcap -lglob  -ltilde -lmalloc -lsh -lintl -lsocket -lnsl -ldl
+ls -l bash
+-rwx--x--x   1 wmotycka ugrad    1401956 Jul 24 08:49 bash
+size bash
+477395 + 21512 + 8428 = 507335
+/opt/csw/bin/ginstall -c -m 0755 bash /net/frost/export/u2/wmotycka/bash/source/bin/bash
+/opt/csw/bin/ginstall -c -m 0755 bashbug /net/frost/export/u2/wmotycka/bash/source/bin/bashbug
+( cd ./doc ; make  \
+	man1dir=/net/frost/export/u2/wmotycka/bash/source/man/man1 man1ext=1 \
+	man3dir=/net/frost/export/u2/wmotycka/bash/source/man/man3 man3ext=3 \
+	infodir=/net/frost/export/u2/wmotycka/bash/source/info install )
+test -d /net/frost/export/u2/wmotycka/bash/source/man/man1 || /bin/sh ../support/mkdirs /net/frost/export/u2/wmotycka/bash/source/man/man1
+test -d /net/frost/export/u2/wmotycka/bash/source/info || /bin/sh ../support/mkdirs /net/frost/export/u2/wmotycka/bash/source/info
+/opt/csw/bin/ginstall -c -m 644 ./bash.1 /net/frost/export/u2/wmotycka/bash/source/man/man1/bash.1
+/opt/csw/bin/ginstall -c -m 644 ./bashbug.1 /net/frost/export/u2/wmotycka/bash/source/man/man1/bashbug.1
+/opt/csw/bin/ginstall -c -m 644 ./bashref.info /net/frost/export/u2/wmotycka/bash/source/info/bash.info
+if /bin/sh -c 'install-info --version' >/dev/null 2>&1; then \
+	install-info --dir-file=/net/frost/export/u2/wmotycka/bash/source/info/dir /net/frost/export/u2/wmotycka/bash/source/info/bash.info; \
+else true; fi

@@ -1,0 +1,5 @@
+send ":redir >> option_209.1.1.out\r"
+send ":set notf\r"
+send ":set tf?\r"
+send ":redir END\r"
+

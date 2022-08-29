@@ -1,0 +1,5 @@
+send ":redir >> option_204.1.1.out\r"
+send ":set ttimeout\r"
+send ":set ttimeout?\r"
+send ":redir END\r"
+

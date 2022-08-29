@@ -1,0 +1,13 @@
+%: %[DIGITS | WORD] [&]
+    This is similar to the `fg' command.  Resume a stopped or background
+    job.  If you specifiy DIGITS, then that job is used.  If you specify
+    WORD, then the job whose name begins with WORD is used.  Following the
+    job specification with a `&' places the job in the background.
+.: . filename
+    Read and execute commands from FILENAME and return.  The pathnames
+    in $PATH are used to find the directory containing FILENAME.
+:: :
+    No effect; the command does nothing.  A zero exit code is returned.
+[: [ arg... ]
+    This is a synonym for the "test" builtin, but the last
+    argument must be a literal `]', to match the opening `['.

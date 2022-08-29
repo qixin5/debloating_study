@@ -1,0 +1,5 @@
+send ":redir >> option_75.1.1.out\r"
+send ":set hl\r"
+send ":set hl?\r"
+send ":redir END\r"
+

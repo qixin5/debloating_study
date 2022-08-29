@@ -1,0 +1,15 @@
+enable .
+enable :
+enable break
+enable continue
+enable eval
+enable exec
+enable exit
+enable export
+enable readonly
+enable return
+enable set
+enable shift
+enable source
+enable trap
+enable unset

@@ -1,0 +1,5 @@
+send ":redir >> ex_0.1.1.out\r"
+send ":1,3 p \r"
+#expect "RETURN"
+#send "\r"
+send ":redir END\r"

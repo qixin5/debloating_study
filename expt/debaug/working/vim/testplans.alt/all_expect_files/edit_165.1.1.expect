@@ -1,0 +1,6 @@
+send -- "iFIRST LINE\r"
+send -- "SECOND LINE\r"
+send -- "THIRD LINE"
+send -- "\033"
+send -- ":1\r"
+send -- "3gugu"

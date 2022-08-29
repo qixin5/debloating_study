@@ -1,0 +1,372 @@
+cd src && make config
+make[1]: Entering directory `/home/wmotycka/LINUX/vim/source/src'
+autoconf
+chmod 755 configure
+GUI_INC_LOC="" GUI_LIB_LOC="" \
+	CC="" CFLAGS="-O -DUNIX" \
+ ./configure --enable-gui=no --without-x \
+--disable-perlinterp --disable-pythoninterp  
+checking whether make sets $(MAKE)... yes
+checking for gcc... gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ANSI C... none needed
+checking how to run the C preprocessor... gcc -E
+checking for library containing strerror... none required
+checking for gawk... gawk
+checking for strip... strip
+configure: checking for buggy tools...
+- sh is	'GNU bash, version 3.1.16(1)-release (i586-suse-linux)
+Copyright (C) 2005 Free Software Foundation, Inc.' - probably OK.
+- sed is	'GNU sed version 4.1.4
+Copyright (C) 2003 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,
+to the extent permitted by law.'.
+checking if perlinterp option enabled... no
+checking if pythoninterp option enabled... no
+defaulting to: don't HAVE_X11
+checking --enable-gui option... no GUI support
+checking for sequent/ptx... checking for egrep... grep -E
+no
+checking --with-tlib argument... automatic terminal library selection
+checking for tgetent in -lncurses... yes
+checking whether we talk terminfo... yes -- terminfo spoken here
+checking quality of toupper... good
+checking whether __DATE__ and __TIME__ work... no
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking elf.h usability... yes
+checking elf.h presence... yes
+checking for elf.h... yes
+checking for main in -lelf... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking for ANSI C header files... (cached) yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking sys/utsname.h usability... yes
+checking sys/utsname.h presence... yes
+checking for sys/utsname.h... yes
+checking termcap.h usability... yes
+checking termcap.h presence... yes
+checking for termcap.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking sgtty.h usability... yes
+checking sgtty.h presence... yes
+checking for sgtty.h... yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking termio.h usability... yes
+checking termio.h presence... yes
+checking for termio.h... yes
+checking for unistd.h... (cached) yes
+checking stropts.h usability... yes
+checking stropts.h presence... yes
+checking for stropts.h... yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking for strings.h... (cached) yes
+checking sys/systeminfo.h usability... no
+checking sys/systeminfo.h presence... no
+checking for sys/systeminfo.h... no
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking sys/stream.h usability... no
+checking sys/stream.h presence... no
+checking for sys/stream.h... no
+checking sys/ptem.h usability... no
+checking sys/ptem.h presence... no
+checking for sys/ptem.h... no
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking libc.h usability... no
+checking libc.h presence... no
+checking for libc.h... no
+checking sys/statfs.h usability... yes
+checking sys/statfs.h presence... yes
+checking for sys/statfs.h... yes
+checking poll.h usability... yes
+checking poll.h presence... yes
+checking for poll.h... yes
+checking sys/poll.h usability... yes
+checking sys/poll.h presence... yes
+checking for sys/poll.h... yes
+checking pwd.h usability... yes
+checking pwd.h presence... yes
+checking for pwd.h... yes
+checking utime.h usability... yes
+checking utime.h presence... yes
+checking for utime.h... yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking whether gcc needs -traditional... no
+checking for an ANSI C-conforming const... yes
+checking for mode_t... yes
+checking for off_t... yes
+checking for pid_t... yes
+checking for size_t... yes
+checking for uid_t in sys/types.h... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking whether termcap.h contains ospeed... yes
+checking whether termcap.h contains UP, BC and PC... yes
+checking whether tputs() uses outfuntype... no
+checking whether sys/select.h and sys/time.h may both be included... yes
+checking return type of signal handlers... void
+checking getcwd implementation... it is usable
+checking for bcmp... yes
+checking for fchdir... yes
+checking for fchown... yes
+checking for fsync... yes
+checking for getcwd... yes
+checking for getpwnam... yes
+checking for getpwuid... yes
+checking for gettimeofday... yes
+checking for getwd... yes
+checking for lstat... yes
+checking for memcmp... yes
+checking for memset... yes
+checking for opendir... yes
+checking for putenv... yes
+checking for qsort... yes
+checking for select... yes
+checking for setenv... yes
+checking for setpgid... yes
+checking for setsid... yes
+checking for sigset... yes
+checking for strcasecmp... yes
+checking for strerror... yes
+checking for strftime... yes
+checking for stricmp... no
+checking for strncasecmp... yes
+checking for strnicmp... no
+checking for strpbrk... yes
+checking for strtol... yes
+checking for tgetent... yes
+checking for utime... yes
+checking for utimes... yes
+checking for st_blksize... yes
+checking for rename... yes
+checking for int... yes
+checking size of int... 4
+checking whether memmove/bcopy/memcpy handle overlaps... memmove does
+checking how to create tags... ctags
+checking for BeOS... no
+configure: creating ./config.status
+config.status: creating config.mk
+config.status: creating config.h
+make[1]: Leaving directory `/home/wmotycka/LINUX/vim/source/src'
+cd src && make install
+make[1]: Entering directory `/home/wmotycka/LINUX/vim/source/src'
+CC="gcc -Iproto -DHAVE_CONFIG_H    -O -DUNIX    " srcdir=. sh ./osdef.sh
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     buffer.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     charset.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     digraph.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     edit.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     eval.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     ex_cmds.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     ex_docmd.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     ex_getln.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     fileio.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     getchar.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     main.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     mark.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     memfile.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     memline.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     message.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     misc1.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     misc2.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     normal.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     ops.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     option.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     os_unix.c
+creating pathdef.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     pathdef.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     quickfix.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     regexp.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     screen.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     search.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     syntax.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     tag.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     term.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     ui.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     undo.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     window.c
+gcc -c -Iproto -DHAVE_CONFIG_H    -O -DUNIX     version.c
+  gcc  -o vim buffer.o charset.o digraph.o edit.o eval.o ex_cmds.o ex_docmd.o ex_getln.o fileio.o getchar.o main.o mark.o memfile.o memline.o message.o misc1.o misc2.o normal.o ops.o option.o os_unix.o pathdef.o quickfix.o regexp.o screen.o search.o syntax.o  tag.o term.o ui.o undo.o window.o     version.o         -lelf -lncurses   
+fileio.o: In function `vim_tempname':
+fileio.c:(.text+0x18bd): warning: the use of `mktemp' is dangerous, better use `mkstemp'
+link.sh: OK, linking works, let's try removing a few libraries...
+link.sh: Trying to remove the elf library...
+  gcc  -o vim buffer.o charset.o digraph.o edit.o eval.o ex_cmds.o ex_docmd.o ex_getln.o fileio.o getchar.o main.o mark.o memfile.o memline.o message.o misc1.o misc2.o normal.o ops.o option.o os_unix.o pathdef.o quickfix.o regexp.o screen.o search.o syntax.o  tag.o term.o ui.o undo.o window.o     version.o         -lncurses   
+fileio.o: In function `vim_tempname':
+fileio.c:(.text+0x18bd): warning: the use of `mktemp' is dangerous, better use `mkstemp'
+link.sh: We don't need the elf library!
+make[2]: Entering directory `/home/wmotycka/LINUX/vim/source/src'
+creating pathdef.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H    -O -DUNIX     pathdef.c
+make[2]: Leaving directory `/home/wmotycka/LINUX/vim/source/src'
+link.sh: Using link.sed file to remove a few libraries
+  gcc  -o vim buffer.o charset.o digraph.o edit.o eval.o ex_cmds.o ex_docmd.o ex_getln.o fileio.o getchar.o main.o mark.o memfile.o memline.o message.o misc1.o misc2.o normal.o ops.o option.o os_unix.o pathdef.o quickfix.o regexp.o screen.o search.o syntax.o  tag.o term.o ui.o undo.o window.o     version.o         -lncurses   
+fileio.o: In function `vim_tempname':
+fileio.c:(.text+0x18bd): warning: the use of `mktemp' is dangerous, better use `mkstemp'
+link.sh: Linked fine with a few libraries removed
+ctags/mkinstalldirs /home/wmotycka/LINUX/vim/source/bin
+mkdir /home/wmotycka/LINUX/vim/source/bin
+chmod 755 /home/wmotycka/LINUX/vim/source/bin
+mv -f /home/wmotycka/LINUX/vim/source/bin/vim /home/wmotycka/LINUX/vim/source/bin/vim.rm
+mv: cannot stat `/home/wmotycka/LINUX/vim/source/bin/vim': No such file or directory
+make[1]: [installvimbin] Error 1 (ignored)
+rm -f /home/wmotycka/LINUX/vim/source/bin/vim.rm
+cp vim /home/wmotycka/LINUX/vim/source/bin
+strip /home/wmotycka/LINUX/vim/source/bin/vim
+chmod 755 /home/wmotycka/LINUX/vim/source/bin/vim
+echo >/dev/null
+ctags/mkinstalldirs /home/wmotycka/LINUX/vim/source/man/man1
+mkdir /home/wmotycka/LINUX/vim/source/man
+mkdir /home/wmotycka/LINUX/vim/source/man/man1
+chmod 755 /home/wmotycka/LINUX/vim/source/man/man1
+ctags/mkinstalldirs /home/wmotycka/LINUX/vim/source/share/vim
+mkdir /home/wmotycka/LINUX/vim/source/share
+mkdir /home/wmotycka/LINUX/vim/source/share/vim
+chmod 755 /home/wmotycka/LINUX/vim/source/share/vim
+ctags/mkinstalldirs /home/wmotycka/LINUX/vim/source/share/vim/doc
+mkdir /home/wmotycka/LINUX/vim/source/share/vim/doc
+chmod 755 /home/wmotycka/LINUX/vim/source/share/vim/doc
+ctags/mkinstalldirs /home/wmotycka/LINUX/vim/source/share/vim/syntax
+mkdir /home/wmotycka/LINUX/vim/source/share/vim/syntax
+chmod 755 /home/wmotycka/LINUX/vim/source/share/vim/syntax
+sed -e s+/usr/local/lib/vim+/home/wmotycka/LINUX/vim/source/share/vim+ \
+-e s+/home/wmotycka/LINUX/vim/source/share/vim/doc+/home/wmotycka/LINUX/vim/source/share/vim/doc+ \
+-e s+/home/wmotycka/LINUX/vim/source/share/vim/syntax+/home/wmotycka/LINUX/vim/source/share/vim/syntax+ \
+-e s+/home/wmotycka/LINUX/vim/source/share/vim/vimrc+/home/wmotycka/LINUX/vim/source/share/vim/vimrc+ \
+-e s+/home/wmotycka/LINUX/vim/source/share/vim/gvimrc+/home/wmotycka/LINUX/vim/source/share/vim/gvimrc+ \
+-e s+/home/wmotycka/LINUX/vim/source/share/vim/menu.vim+/home/wmotycka/LINUX/vim/source/share/vim/menu.vim+ \
+-e s+/home/wmotycka/LINUX/vim/source/share/vim/bugreport.vim+/home/wmotycka/LINUX/vim/source/share/vim/bugreport.vim+ \
+../doc/vim.1 > /home/wmotycka/LINUX/vim/source/man/man1/vim.1
+chmod 644 /home/wmotycka/LINUX/vim/source/man/man1/vim.1
+cp ../doc/*.txt ../doc/tags /home/wmotycka/LINUX/vim/source/share/vim/doc
+chmod 644 /home/wmotycka/LINUX/vim/source/share/vim/doc/*.txt /home/wmotycka/LINUX/vim/source/share/vim/doc/tags
+cp ../menu.vim /home/wmotycka/LINUX/vim/source/share/vim/menu.vim
+chmod 644 /home/wmotycka/LINUX/vim/source/share/vim/menu.vim
+cp ../bugreport.vim /home/wmotycka/LINUX/vim/source/share/vim/bugreport.vim
+chmod 644 /home/wmotycka/LINUX/vim/source/share/vim/bugreport.vim
+cp ../syntax/*.vim /home/wmotycka/LINUX/vim/source/share/vim/syntax
+chmod 644 /home/wmotycka/LINUX/vim/source/share/vim/syntax/*.vim
+cd /home/wmotycka/LINUX/vim/source/bin; ln -s vim ex
+cd /home/wmotycka/LINUX/vim/source/bin; ln -s vim view
+cd /home/wmotycka/LINUX/vim/source/bin; ln -s vim rvim
+cd /home/wmotycka/LINUX/vim/source/bin; ln -s vim rview
+cd /home/wmotycka/LINUX/vim/source/man/man1; ln -s vim.1 ex.1
+cd /home/wmotycka/LINUX/vim/source/man/man1; ln -s vim.1 view.1
+cd /home/wmotycka/LINUX/vim/source/man/man1; ln -s vim.1 rvim.1
+cd /home/wmotycka/LINUX/vim/source/man/man1; ln -s vim.1 rview.1
+ctags/mkinstalldirs /home/wmotycka/LINUX/vim/source/share/vim/macros
+mkdir /home/wmotycka/LINUX/vim/source/share/vim/macros
+chmod 755 /home/wmotycka/LINUX/vim/source/share/vim/macros
+cp -r ../macros/* /home/wmotycka/LINUX/vim/source/share/vim/macros
+cd ctags; CC="gcc" CFLAGS="-O -DUNIX" ./configure --mandir="/home/wmotycka/LINUX/vim/source/man" --exec_prefix="/home/wmotycka/LINUX/vim/source"
+creating cache ./config.cache
+links for etags will be installed
+checking for sort... yes
+checking whether sort accepts our command line... yes
+checking for mawk... no
+checking for gawk... gawk
+using external sort utility
+checking for gcc... gcc
+checking whether the C compiler (gcc -O -DUNIX ) works... yes
+checking whether the C compiler (gcc -O -DUNIX ) is a cross-compiler... no
+checking whether we are using GNU C... yes
+checking whether gcc accepts -g... yes
+checking whether ln -s works... yes
+checking for strip... strip
+checking for working const... yes
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for size_t... yes
+checking for clock_t... yes
+checking for dirent.h... yes
+checking for stdlib.h... yes
+checking for time.h... yes
+checking for unistd.h... yes
+checking for sys/stat.h... yes
+checking for sys/times.h... yes
+checking for sys/types.h... yes
+checking if L_tmpnam is defined in stdio.h... yes
+checking if SEEK_SET is defined in stdio.h... yes
+checking if SEEK_END is defined in stdio.h... yes
+checking if INT_MAX is defined in limits.h... yes
+checking if PATH_MAX is defined in limits.h... yes
+checking for strstr... yes
+checking for strerror... yes
+checking for clock... yes
+checking for remove... yes
+checking for truncate... yes
+checking for missing prototypes
+updating cache ./config.cache
+creating ./config.status
+creating Makefile
+creating config.h
+cd ctags; CC="gcc" CFLAGS="-O -DUNIX" make -f Makefile
+make[2]: Entering directory `/home/wmotycka/LINUX/vim/source/src/ctags'
+gcc -I. -I. -DHAVE_CONFIG_H -O -DUNIX -c entry.c
+gcc -I. -I. -DHAVE_CONFIG_H -O -DUNIX -c get.c
+gcc -I. -I. -DHAVE_CONFIG_H -O -DUNIX -c main.c
+gcc -I. -I. -DHAVE_CONFIG_H -O -DUNIX -c options.c
+gcc -I. -I. -DHAVE_CONFIG_H -O -DUNIX -c parse.c
+gcc -I. -I. -DHAVE_CONFIG_H -O -DUNIX -c read.c
+gcc -I. -I. -DHAVE_CONFIG_H -O -DUNIX -c sort.c
+gcc  -o ctags entry.o get.o main.o options.o parse.o read.o sort.o 
+main.o: In function `createTagsWithFallback':
+main.c:(.text+0x27b): warning: the use of `tmpnam' is dangerous, better use `mkstemp'
+make[2]: Leaving directory `/home/wmotycka/LINUX/vim/source/src/ctags'
+cd xxd; CC="gcc" CFLAGS="-O -DUNIX" make -f Makefile.unix
+make[2]: Entering directory `/home/wmotycka/LINUX/vim/source/src/xxd'
+gcc -O -DUNIX -DUNIX -o xxd xxd.c
+make[2]: Leaving directory `/home/wmotycka/LINUX/vim/source/src/xxd'
+cd ctags; mandir="/home/wmotycka/LINUX/vim/source/man" exec_prefix="/home/wmotycka/LINUX/vim/source" \
+	bindir="/home/wmotycka/LINUX/vim/source/bin" make -e -f Makefile install
+make[2]: Entering directory `/home/wmotycka/LINUX/vim/source/src/ctags'
+cp ctags /home/wmotycka/LINUX/vim/source/bin/ctags  &&  chmod 755 /home/wmotycka/LINUX/vim/source/bin/ctags
+strip /home/wmotycka/LINUX/vim/source/bin/ctags
+cp ctags.1 /home/wmotycka/LINUX/vim/source/man/man1/ctags.1  &&  chmod 644 /home/wmotycka/LINUX/vim/source/man/man1/ctags.1
+cd /home/wmotycka/LINUX/vim/source/bin && ln -s ctags etags
+cd /home/wmotycka/LINUX/vim/source/man/man1 && ln -s ctags.1 etags.1
+make[2]: Leaving directory `/home/wmotycka/LINUX/vim/source/src/ctags'
+mv -f /home/wmotycka/LINUX/vim/source/bin/xxd /home/wmotycka/LINUX/vim/source/bin/xxd.rm
+mv: cannot stat `/home/wmotycka/LINUX/vim/source/bin/xxd': No such file or directory
+make[1]: [installtools] Error 1 (ignored)
+rm -f /home/wmotycka/LINUX/vim/source/bin/xxd.rm
+cp xxd/xxd /home/wmotycka/LINUX/vim/source/bin
+strip /home/wmotycka/LINUX/vim/source/bin/xxd
+chmod 755 /home/wmotycka/LINUX/vim/source/bin/xxd
+cp ../doc/xxd.1 /home/wmotycka/LINUX/vim/source/man/man1
+chmod 644 /home/wmotycka/LINUX/vim/source/man/man1/xxd.1
+make[1]: Leaving directory `/home/wmotycka/LINUX/vim/source/src'

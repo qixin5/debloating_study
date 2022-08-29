@@ -1,0 +1,6 @@
+send -- "R"
+send -- "replacing and changing text"
+send -- "\033"
+send -- "2j"
+send -- "."
+

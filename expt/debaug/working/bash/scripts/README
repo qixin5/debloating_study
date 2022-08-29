@@ -1,0 +1,100 @@
+July 21, 2008 - Wayne Motycka @ SIR
+
+Notes on building bash
+
+In order to get the bash packages to build on our system cse.unl.edu (running SunOS Solaris 2.9)
+I needed to add a case inside of each of the configure script files for each version.  This
+modification was needed for my gcc compiler to locate the libintl_gettext() function (along
+with several others in this library) in the locale.c source file of bash.  If you have problems
+similar to this when you build, the configure script uses the output of the support/config.guess
+command and parses out the last (- separated) field from this output to define the host-os
+type.  Once you have found the location of the libraries that your build is failing to locate
+you will probably need to add a line similar to the one I did in the configure script to
+define the location of the library for the link-loader step of gcc along with the definition
+of the library.  The exact line I needed in the configure script was:
+solaris2.9*)	LOCAL_LIBS="-lintl"; LOCAL_LDFLAGS="/opt/csw/lib";;
+the locations within the configure scripts (by version) that this line was added are:
+v1: line 6065
+v2: line 6106
+v3: line 6788
+v4: line 7060
+v5: line 8066
+v6: line 8131
+
+A helpful place to view on setting up the environment for solaris that I used was at:
+http://search.cpan.org/src/GUIDO/libintl-perl-1.16/README.solaris
+A more general discussion on installing bash comes from the official bash website:
+http://www.gnu.org/software/bash/manual/html_node/Installing-Bash.html#Installing-Bash
+
+Addendum to notes on building bash - Feb 20, 2009
+An additional problem with non-determinism was revealed when the bash object
+was compiled and the test suite run on a multi-core/grid computing system.
+The system is running Linux version 2.6.25.20-0.1-debug with an x86_64 clustered
+processors core.  We have chosen to not attempt to fix this artifact to address
+the non-determinism in this configuration but any users of this object should
+keep this in mind when selecting a processing platform for experimentation.
+
+Running the test suite of bash
+
+Once bash has been built, the real objective of running the tests and applying the faults
+is done using the scripts described in the CONTENTS file.  As an aid to anyone trying
+to repeat the experiments the following is a brief summary of the process/actions that
+facilitate testing and fault insertion.
+
+To build bash use the "makevers" command found in the scripts directory.  Makevers accepts
+a single command-line option, the version number to be install into the source directory.
+As with all SIR objects, setting the value of "experiment_root" in your shell enviroment
+is critical to getting any of these scripts to work.  Using csh/tcsh I use the "setenv"
+operation to setup this variable and make it available to all processes (in a bash/bsh
+world you may need to use the tried and true "export" function to get this variable
+set globally for all sub-shells).
+
+Once the experiment_root is set and makevers executed the source directory is populated
+with the .o files and a bin subdirectory under source should have the bash executable.
+If the bash executable isn't created, examine the COMPILE file in the scripts directory
+for the output of the make process.  Errors from the make compilation are saved in
+that file by the makevers script.  Assuming that the compile succeeds running the test
+suite is as simple as executing the "runall" command.  Runall has no command line
+options and outputs progress information with each test executed.
+
+Once the test suite has completed, a manual step is required to copy the test results
+into a backup location for comparison to the test output when the faults are inserted.
+In this copy step do the following: create a sub-directory under the outputs.alt
+directory called vN where N is the version number, 1 through 6 (i.e. for version 1 do
+a "mkdir outputs.alt/v1").  Once a directory exists either copy or move the tests from
+the outputs directory into this new directory (for v1 do a "cp outputs/* outputs.alt/v1")
+
+Fault Insertion and Testing
+
+Once test results of a "good" bash is done, you can perform the tests on the fault
+inserted version.  The valid faults for each release are in the source/FaultSeeds.h
+file (which is a copy of the versions.alt/versions.seeded/v*/FaultSeeds.h for each
+version) but are commented out.  The script to execute the building/make of the
+fault inserted version is the "compile" script found in the scripts directory.  The
+compile script has a single command line option which is the name of the fault to
+be inserted.  An example is the FaultSeeds.h for version 1 of bash.  In that file
+there are 4 faults listed, the content of this file looks like this:
+
+//#define FAULTY_F_KP_4
+//#define FAULTY_F_KP_5
+//#define FAULTY_F_SK_1
+//#define FAULTY_F_SK_3
+//#define FAULTY_F_SK_6
+//#define FAULTY_F_SPK_4
+
+The fault names in the file are FAULTY_F_KP_4, FAULTY_F_KP_5, etc.  To run the
+compile script to insert the first of these faults the command would be:
+compile FAULTY_F_KP_4
+This command will create a new FaultSeeds.h in the source directory containing
+only one line,
+#define FAULTY_F_KP_4
+which will cause the compilation of the C source file subst.c to be compiled
+with the coding mistake/fault.  Once compile is finished, a new version of bash
+should have been created in the source/bin directory.  You can now run the script
+that executes the test suite and compares the test outputs to the "good" test
+outputs.  The script to do this is "runall-diff" and it has a single command line
+option, the version number to compare with.  For version 1 the command would be:
+runall-diff 1
+
+To insert a different fault, use the compile FAULTY_*_*_* command with the next
+fault and run runall-diff N again.

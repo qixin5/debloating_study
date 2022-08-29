@@ -1,0 +1,13 @@
+send "G"
+send "$"
+send ":"
+send "redir >> move_172.1.1.out\r"
+send "\007"
+send "30(" 
+send "\007"
+send ":"
+send "redir END\r"
+
+
+
+

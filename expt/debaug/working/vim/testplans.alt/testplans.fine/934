@@ -1,0 +1,18 @@
+#!/usr/bin/expect -f
+spawn $env(SUBJECTS_SRC_DIR)/vim-5.8 -u $env(HOME)/.vimrc $env(TESTS_SRC)/copy1
+expect "copy1"
+sleep 1
+send ":se lines=24\r"
+send ":se columns=80\r"
+send ":redir >> starting_5.1.1.out\r"
+send ":pwd\r"
+send ":cd ..\r"
+send ":pwd\r"
+send ":redir END\r"
+send ":cd 7.2\r" 
+
+send ":wq\r"
+expect
+exit -onexit {
+interact
+}

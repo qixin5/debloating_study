@@ -1,0 +1,4 @@
+send -- ":redir >> edit_256.1.1.out\r"
+send -- ":removes the word before the cursor\027\r"
+expect "editor*before the"
+send -- ":redir END\r"

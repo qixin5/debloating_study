@@ -1,0 +1,5 @@
+send ":redir >> option_85.1.1.out\r"
+send ":set inc\r"
+send ":set inc?\r"
+send ":redir END\r"
+

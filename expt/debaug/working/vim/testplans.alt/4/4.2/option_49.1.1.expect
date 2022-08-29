@@ -1,0 +1,7 @@
+send ":redir >> option_49.1.1.out\r"
+send ":set ei=WinEnter,WinLeave\r"
+ 
+
+send ":set ei?\r"
+send ":redir END\r"
+

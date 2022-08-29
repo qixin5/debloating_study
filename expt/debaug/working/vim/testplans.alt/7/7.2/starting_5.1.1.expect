@@ -1,0 +1,7 @@
+send ":redir >> starting_5.1.1.out\r"
+send ":pwd\r"
+send ":cd ..\r"
+send ":pwd\r"
+send ":redir END\r"
+send ":cd 7.2\r" 
+

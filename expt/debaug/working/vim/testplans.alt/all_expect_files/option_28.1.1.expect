@@ -1,0 +1,5 @@
+send ":redir >> option_28.1.1.out\r"
+send ":set ch=2\r"
+send ":set ch?\r"
+send ":redir END\r"
+

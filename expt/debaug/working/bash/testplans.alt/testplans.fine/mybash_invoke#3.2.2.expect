@@ -1,0 +1,5 @@
+#bash -s
+
+send "$env(BASH_SRC_DIR)/bash-2.05 -s\n"
+send "echo This is only for the purpose of testing \n"
+send "exit\n"

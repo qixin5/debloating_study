@@ -1,0 +1,7 @@
+send ":redir >> option_157.1.1.out\r"
+send ":set sw\r"
+
+send ":set sw?\r"
+
+send ":redir END\r"
+

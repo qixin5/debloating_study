@@ -1,0 +1,2 @@
+t /tmp/abc -nt /tmp/def
+1

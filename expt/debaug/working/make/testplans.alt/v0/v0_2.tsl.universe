@@ -1,0 +1,1 @@
+-C [Test Case 796; ]  -P [-v -f/dev/null]  -s [startup-other3.sh]  -x [exit.sh]  -O [t796.out]

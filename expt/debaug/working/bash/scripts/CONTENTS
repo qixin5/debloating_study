@@ -1,0 +1,41 @@
+clean
+-----
+Running ./clean will remove any contents of the "source" directory.
+
+compile
+-------
+Running ./compile <fault name> will compile the version of bash in 
+the "source" directory with the indicated fault.
+
+makevers
+--------
+running makevers <version number> will copy the source of the appropriate
+seeded version into the source directory and execute a make (build) of
+the bash object, installing it into the source/bin directory where the
+runall and runall-diff scripts expect to find it.  Use this in lieu of
+the copy_version in most cases.
+
+copy_version
+------------
+Running ./copy_version <version number> will copy the souce code of the appropriate
+seeded version to the "source" directory.
+
+get_script_name
+---------------
+Running ./get_script_name <test number> will report back with the 
+indicated test's file name.
+
+runall
+------
+Running ./runall <version number> will run the specified test set on the 
+version compiled in the "source" directory.  Note: runall is unaware 
+of which version is compiled in the "source" directory.  Therefore, a 
+proper test set must be specified.
+
+runall-diff
+-----------
+Running ./runall-diff <version number> runs the specified test set on bash 
+and then compares the output to the associated ".right" file included with 
+the bash test set.  Final diff output is sent to the outputs directory and 
+the intermediate test outputs are discarded.
+

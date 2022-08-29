@@ -1,0 +1,17 @@
+#!/usr/bin/perl
+
+$EXPROOT = "$ENV{experiment_root}/bash";
+
+#Directories
+$VERS_DIR = "$EXPROOT/versions.alt/versions.seeded";
+$SRC_DIR = "$EXPROOT/source";
+
+#Commands
+$COPY_CMD = "cp -r -p * $SRC_DIR";
+
+$i = $ARGV[0];
+
+#COPY SOURCE
+	print("Copying:      ".$VERS_DIR."/v".$i."\n");
+	print("     To:      ".$SRC_DIR."\n");
+	`cd $VERS_DIR/v$i && $COPY_CMD`;

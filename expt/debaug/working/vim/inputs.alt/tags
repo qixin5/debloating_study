@@ -1,0 +1,7 @@
+f1	cprogram.c	/^void f1() {$/
+f2	cprogram.c	/^void f2() {$/
+f3	cprogram.c	/^void f3() {$/
+f4	cprogram.c	/^void f4() {$/
+f5	cprogram.c	/^void f5() {$/
+f6	cprogram.c	/^void f6() {$/
+main	cprogram.c	/^main() {$/

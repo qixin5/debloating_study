@@ -1,0 +1,4 @@
+send -- "dd"
+send -- "g~~"
+send -- "2u"
+

@@ -1,0 +1,5 @@
+send ":redir >> option_34.1.1.out\r"
+send ":set def\r"
+send ":set def?\r"
+send ":redir END\r"
+

@@ -1,0 +1,7 @@
+
+ script for the disown feature
+	Jobs at the start1\
+
+disown %13
+jobs after disowning 13
+cleaning up background jobs

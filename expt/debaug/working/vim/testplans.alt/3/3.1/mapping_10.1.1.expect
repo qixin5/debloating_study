@@ -1,0 +1,8 @@
+send ":redir >> mapping_10.1.1.out\r"
+send ":map!\r"
+#expect "More"
+#send " "
+#expect "Press"
+#send "\r"
+send ":redir END\r"
+

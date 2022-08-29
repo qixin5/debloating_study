@@ -1,0 +1,4 @@
+send ":redir >> move_285.1.1.out\r"
+send "ma"
+send ":marks\r\r"
+send ":redir END\r"

@@ -1,0 +1,8 @@
+send ":redir >> mapping_13.1.1.out\r"
+send ":cmap\r"
+#expect "More"
+#send " "
+#expect "Press"
+#send "\r"
+send ":redir END\r"
+

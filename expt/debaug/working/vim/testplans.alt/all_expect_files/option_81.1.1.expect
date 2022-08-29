@@ -1,0 +1,5 @@
+send ":redir >> option_81.1.1.out\r"
+send ":set noicon\r"
+send ":set icon?\r"
+send ":redir END\r"
+

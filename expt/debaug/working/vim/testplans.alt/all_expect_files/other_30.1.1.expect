@@ -1,0 +1,1 @@
+send ":wviminfo $env(TESTS_SRC)/infofile\r"

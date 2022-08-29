@@ -1,0 +1,5 @@
+send ":redir >> option_5.1.1.out\r"
+send ":set allowrevins\r"
+send ":set allowrevins?\r"
+send ":redir END\r"
+

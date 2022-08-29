@@ -1,0 +1,5 @@
+send ":redir >> option_98.1.1.out\r"
+send ":set ls=2\r"
+send ":set ls?\r"
+send ":redir END\r"
+

@@ -1,0 +1,7 @@
+send ":redir >> option_57.1.1.out\r"
+send ":set ffs\r"
+ 
+
+send ":set ffs?\r"
+send ":redir END\r"
+

@@ -1,0 +1,5 @@
+send ":redir >> option_224.1.1.out\r"
+send ":set ws\r"
+send ":set ws?\r"
+send ":redir END\r"
+

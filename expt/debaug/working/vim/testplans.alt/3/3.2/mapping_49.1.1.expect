@@ -1,0 +1,8 @@
+send ":redir >> mapping_49.1.1.out\r"
+send ":iab a abbreviate\r"
+send ":iab abb abbreviation\r"
+send ":iab m mappings\r"
+send ":iab\r"
+send ":iabc\r"
+send ":iab\r"
+send ":redir END\r"

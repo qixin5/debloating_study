@@ -1,0 +1,3 @@
+send -- "!)head -n 0\r"
+expect "continue"
+

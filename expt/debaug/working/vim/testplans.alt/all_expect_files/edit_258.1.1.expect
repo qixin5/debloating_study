@@ -1,0 +1,9 @@
+send -- ":redir >> edit_258.1.1.out\r"
+send -- ":abcde\r"
+expect "Not an editor command: abcde"
+send -- ":red\033OA\r"
+send -- "\033"
+send -- ":reg :\r"
+expect "continue"
+send -- ":redir END\r"
+

@@ -1,0 +1,7 @@
+send "i"
+send "  "
+send "\033"
+send "0"
+send ":redir >> other_40.1.1.out\r"
+send "ga"
+send ":redir END\r"

@@ -1,0 +1,2 @@
+send -- "3=)"
+expect "lines indented"

@@ -1,0 +1,5 @@
+DEBUG trap set
+DEBUG trap set
+trap -- 'echo CHILD MARA' SIGCHLD
+DEBUG trap set
+DEBUG trap set

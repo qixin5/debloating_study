@@ -1,0 +1,7 @@
+send -- "\"aD"
+send -- ":redir >> edit_101.1.1.out\r"
+#sleep 1
+send -- ":reg a\r"
+expect "continue"
+#send "\r"
+send -- ":redir END\r"

@@ -1,0 +1,5 @@
+send -- ":redir >> edit_266.1.1.out\r"
+send -- ":\026"
+#send "\033\r"
+send -- ":redir END\r"
+                            

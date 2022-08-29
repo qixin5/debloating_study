@@ -1,0 +1,6 @@
+send ":redir >> mapping_30.1.1.out\r"
+send ":mapc\r"
+send ":map\r"
+send ":redir END\r"
+
+

@@ -1,0 +1,7 @@
+send ":redir >> mapping_16.1.1.out\r"
+send ":imap b l"
+send "\r"
+send ":imap b"
+send "\r"
+send ":redir END\r"
+

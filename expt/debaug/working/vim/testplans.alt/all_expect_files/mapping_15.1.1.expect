@@ -1,0 +1,11 @@
+send ":redir >> mapping_15.1.1.out\r"
+send ":cnoremap b l\r"
+send "$"
+send "\007"
+send "bb"
+send "\007"
+send ":cmap b\r"
+send ":cmap \026"
+send "b\r"
+send ":redir END\r"
+

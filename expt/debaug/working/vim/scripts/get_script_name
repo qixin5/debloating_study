@@ -1,0 +1,65 @@
+#!/usr/bin/perl
+
+$EXPROOT = "$ENV{experiment_root}/vim";
+
+#Directories
+$TEST_DIR = "$EXPROOT/inputs.alt";
+
+@IGNORED_DIRECTORIES = 
+(
+#   "$TEST_DIR/1",
+#   "$TEST_DIR/2",
+#   "$TEST_DIR/3",
+#   "$TEST_DIR/4",
+#   "$TEST_DIR/5",
+#   "$TEST_DIR/6",
+#   "$TEST_DIR/7"
+);
+
+#Commands
+$DIRECTORY_LIST_CMD = "ls -1";
+$SCRIPT_LIST_CMD = "ls -1 *.expect";
+
+close(STDERR);
+
+$runallflag = !@ARGV;
+$test = $ARGV[0];
+      
+$scriptCounter = 0;
+@testDirList = `cd $TEST_DIR && $DIRECTORY_LIST_CMD -F`;
+foreach $level1(@testDirList)
+{
+	chop($level1);
+	$isDirectory = (chop($level1) =~ '/');
+	$ignored = grep (/^($TEST_DIR\/$level1)$/, @IGNORED_DIRECTORIES);
+	if($isDirectory == 1 && $ignored == 0)
+	{
+		@list = `cd $TEST_DIR/$level1 && $DIRECTORY_LIST_CMD -F`;
+		@list = sort{$a cmp $b} @list;
+		@list = sort{length($a) cmp length($b)} @list;
+		foreach $level2(@list)
+		{
+			chop($level2);
+		
+			$isDirectory = (chop($level2) =~ '/');
+			$ignored = grep (/^($TEST_DIR\/$level1\/$level2)$/, @IGNORED_DIRECTORIES);
+			if($isDirectory == 1 && $ignored == 0)
+			{
+				@list2 = `cd $TEST_DIR/$level1/$level2 && $SCRIPT_LIST_CMD`;
+				@list2 = sort{$a cmp $b} @list2;
+				@list2 = sort{length($a) cmp length($b)} @list2;
+				foreach $scriptName(@list2)
+				{
+					if($runallflag || $test == $scriptCounter)
+					{
+						chop($scriptName);
+						printf("Test %3d(%3d):          %s/%s/%s\n", $scriptCounter+1,$scriptCounter,$level1,$level2,$scriptName);
+					}
+					$scriptCounter = $scriptCounter + 1;
+				}
+			}
+		}
+	}
+}
+
+exit();

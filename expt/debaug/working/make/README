@@ -1,0 +1,18 @@
+IMPORTANT NOTES
+===============
+* Before attempting to run this subject, set the environment variable
+  'experiment_root' to point to the directory containing the make
+  infrastructure directory (e.g. the directory containing the 'make'
+  directory).
+
+* When using MakeTestScript (mts) to generate scripts for this subject, always
+  use a value for the '--experiment-dir' parameter that resolves to an
+  absolute path. Using the 'experiment_root' environment variable is suggested. 
+  Using a relative path will cause certain test cases to fail.
+
+* An example, if mts (and you, the user) is in your subject/scripts directory:
+
+# mts ${experiment_root}/make ${experiment_root}/make/source/make.exe ${experiment_root}/make/testplans.alt/v0/v0_3.tsl.universe R runall NULL NULL
+
+  This will create a runall script called "runall" in your scripts directory.
+

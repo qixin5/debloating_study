@@ -1,0 +1,8 @@
+#sleep 1
+send -- "\024"
+expect "tag stack empty"
+send -- "\024"
+send -- "^"
+send -- "\004"
+#  ^ctrl+d
+

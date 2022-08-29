@@ -1,0 +1,8 @@
+send ":redir >> move_68.1.1.out\r"
+send "G"
+send "$"
+send "3tr"
+send "\007"
+send ";"
+send "\007"
+send ":redir END\r"

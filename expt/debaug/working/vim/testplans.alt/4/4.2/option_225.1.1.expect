@@ -1,0 +1,5 @@
+send ":redir >> option_225.1.1.out\r"
+send ":set writeany\r"
+send ":set writeany?\r"
+send ":redir END\r"
+

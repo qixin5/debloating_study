@@ -1,0 +1,8 @@
+send -- ":redir >> edit_257.1.1.out\r"
+send -- ":This removes all the characters\025"
+#expect "continue"
+#send "\r"
+send -- "reg :\r"
+expect "continue"
+#send "\r"
+send -- ":redir END\r"

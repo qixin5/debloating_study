@@ -1,0 +1,8 @@
+send -- ":The delete command\002"
+expect ":"
+send -- "abcd"
+send -- "\177"
+send -- "abcd"
+send -- "\177"
+send -- "\r"
+expect "characters"

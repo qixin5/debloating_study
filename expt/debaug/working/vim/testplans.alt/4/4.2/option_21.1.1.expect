@@ -1,0 +1,5 @@
+send ":redir >> option_21.1.1.out\r"
+send ":set nobin\r"
+send ":set bin?\r"
+send ":redir END\r"
+

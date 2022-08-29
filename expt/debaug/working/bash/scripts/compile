@@ -1,0 +1,26 @@
+#!/usr/bin/perl
+
+$EXPROOT = "$ENV{experiment_root}/bash";
+
+#Directories
+$SRC_DIR = "$EXPROOT/source";
+$BIN_DIR = "$EXPROOT/source";
+
+
+#Files
+$COMPILE_OUTPUT_FILE = "$EXPROOT/scripts/compile.logs/COMPILE.$ARGV[0]";
+
+#Commands
+$INSTALL_CMD = "configure --exec_prefix=$SRC_DIR --bindir=$SRC_DIR/bin --mandir=$SRC_DIR/man --infodir=$SRC_DIR/info > $
+COMPILE_OUTPUT_FILE 2>&1 && make install >> $COMPILE_OUTPUT_FILE 2>&1";
+#$INSTALL_CMD = "./configure > $COMPILE_OUTPUT_FILE 2>&1 && make bash >> $COMPILE_OUTPUT_FILE 2>&1 && make printenv >> $COMPILE_OUTPUT_FILE 2>&1 && make recho >> $COMPILE_OUTPUT_FILE 2>&1 && make zecho >> $COMPILE_OUTPUT_FILE 2>&1";
+
+#MAKE VERSION
+	print("Installing:   ".$SRC_DIR."\n");
+	print("        To:   ".$BIN_DIR."\n");
+	print("      With:   ".$ARGV[0]."\n");
+	open(FAULTS, ">$SRC_DIR/FaultSeeds.h");
+	if(@ARGV == 1)
+	{	print FAULTS ("#define $ARGV[0]\n");	}
+        `rm -rf $SRC_DIR/*.o`;
+	`cd $SRC_DIR && $INSTALL_CMD`;

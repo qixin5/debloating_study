@@ -1,0 +1,3502 @@
+	6 listversions
+	250 listtests
+-C [Test Case 797; test bad option]  -P [-a -f ../../inputs/makefile-2a]  -s [startup-cov1.sh]  -x [exit.sh]  -O [t797.out]
+-C [Test Case 798; test option without dash]  -P [a -f ../../inputs/makefile-2a]  -s [startup-cov1.sh]  -x [exit.sh]  -O [t798.out]
+-C [Test Case 799; test an ignored option]  -P [-b]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t799.out]
+-C [Test Case 800; test an ignored option]  -P [-b -f ../../inputs/makefile-2a]  -s [startup-cov1.sh]  -x [exit.sh]  -O [t800.out]
+-C [Test Case 801; test an ignored option]  -P [-m]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t801.out]
+-C [Test Case 802; test an ignored option]  -P [-m -f ../../inputs/makefile-2a]  -s [startup-cov1.sh]  -x [exit.sh]  -O [t802.out]
+-C [Test Case 803; test a empty string for -f]  -P [-f]  -s [startup-cov1.sh]  -x [exit.sh]  -O [t803.out]
+-C [Test Case 804; test no option but dash]  -P [-]  -s [startup-cov1.sh]  -x [exit.sh]  -O [t804.out]
+-C [Test Case 805; test multiple slashes in arg]  -P [-f ..///../////inputs//makefile-2a]  -s [startup-cov1.sh]  -x [exit.sh]  -O [t805.out]
+-C [Test Case 806; test arg starting with ~]  -P [-f ~ruthruff/research/subjects/make/inputs/makefile-2a]  -s [startup-cov1.sh] -x [exit.sh]  -O [t806.out]
+-C [Test Case 807; test arg starting with /]  -P [-f /nfs/spectre/u6/ruthruff/research/subjects/make/inputs/makefile-2a]  -s [startup-cov1.sh]  -x [exit.sh]  -O [t807.out]
+-C [Test Case 808; test arg ending with /]  -P [-f ../../inputs/makefile-2a/]  -s [startup-cov1.sh]  -x [exit.sh]  -O [t808.out]
+-C [Test Case 809; test no option]  -P []  -s [startup-cov1.sh]  -x [exit.sh]  -O [t809.out]
+-C [Test Case 810; test good variable expansion]  -P [-f $MAKEFILE]  -s [startup-cov2.sh]  -x [exit.sh]  -O [t810.out]
+-C [Test Case 811;]  -P []  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov1]
+-C [Test Case 812;]  -P [foo=bar]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov3]
+-C [Test Case 813;]  -P [--no-print-directory]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov4]
+-C [Test Case 814;]  -P [-f ../../inputs/makefile-1a clean]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov5]
+-C [Test Case 815;]  -P [--file=- < Makefile]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov6]
+-C [Test Case 816;]  -P [-f ../../inputs/makefile-3a]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov7]
+-C [Test Case 817;]  -P [-f ../../inputs/makefile-3b]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov8]
+-C [Test Case 818;]  -P [-f ../../inputs/makefile-3b -d]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov9]
+-C [Test Case 819;]  -P [--file ../../inputs/makefile-3a --file ../../inputs/makefile-3b]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov10]
+-C [Test Case 820;]  -P []  -s [startup0a.sh]  -x [exit.sh]  -F [sdir/hello|cov11]
+-C [Test Case 821;]  -P [VPATH=..]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov12]
+-C [Test Case 822;]  -P [-f ../../inputs/makefile-1c]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov13]
+-C [Test Case 823;]  -P [-f ../../inputs/makefile-1d]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov14]
+-C [Test Case 824;]  -P [-f ../../inputs/makefile-1e]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov15]
+-C [Test Case 825;]  -P [-f ../../inputs/makefile-1e]  -s [startup0b.sh]  -x [exit3.sh]  -F [sdir/hello|cov16]
+-C [Test Case 826;]  -P [cl_var=nothing -f ../../inputs/makefile-5a]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov17]
+-C [Test Case 827;]  -P [-f ../../inputs/makefile-5b]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov18]
+-C [Test Case 828;]  -P [-f ../../inputs/makefile-5b2]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov19]
+-C [Test Case 829;]  -P [-f ../../inputs/makefile-5c]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov20]
+-C [Test Case 830;]  -P [-f ../../inputs/makefile-5c2]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov21]
+-C [Test Case 831;]  -P [-f ../../inputs/makefile-5d]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov22]
+-C [Test Case 832;]  -P [-f ../../inputs/makefile-5d2]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov23]
+-C [Test Case 833;]  -P [-f ../../inputs/makefile-5e]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov24]
+-C [Test Case 834;]  -P [-f ../../inputs/makefile-5e2]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov25]
+-C [Test Case 835;]  -P [-f ../../inputs/makefile-5f]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov26]
+-C [Test Case 836;]  -P [-f ../../inputs/makefile-5f2]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov27]
+-C [Test Case 837;]  -P [-f ../../inputs/makefile-5g]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov28]
+-C [Test Case 838;]  -P [-f ../../inputs/makefile-5g2]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov29]
+-C [Test Case 839;]  -P [-f ../../inputs/makefile-5g3]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov30]
+-C [Test Case 840;]  -P [-f ../../inputs/makefile-5h]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov31]
+-C [Test Case 841;]  -P [-f ../../inputs/makefile-5i]  -s [startup0.sh]  -x [exit.sh]  -F [sdir/hello|cov32]
+-C [Test Case 842;]  -P []  -s [startup-cov5.sh]  -x [exit.sh]  -O [t842.out]
+-C [Test Case 843;]  -P [--directory=~/research/subjects/make/scripts/sdir]  -s [startup-cov4.sh]  -x [exit2.sh]  -O [t843.out]
+-C [Test Case 844;]  -P [--directory=~sdir]  -s [startup-cov3a.sh]  -x [exit2a.sh]  -O [t844.out]
+-C [Test Case 845;]  -P [clean]  -s [startup-cov6.sh]  -x [exit.sh]  -O [t845.out]
+-C [Test Case 846;]  -P [clean --file=- < Makefile]  -s [startup-cov6.sh]  -x [exit.sh]  -O [t846.out]
+-C [Test Case 847;]  -P [clean < Makefile]  -s [startup-cov6.sh]  -x [exit.sh]  -O [t847.out]
+-C [Test Case 848;]  -P [distclean]  -s [startup-cov6.sh]  -x [exit.sh]  -O [t848.out]
+-C [Test Case 849;]  -P [realclean]  -s [startup-cov6.sh]  -x [exit.sh]  -O [t849.out]
+-C [Test Case 850;]  -P []  -s [startup-cov7a.sh]  -x [exit.sh]  -O [t850.out]
+-C [Test Case 851;]  -P []  -s [startup-cov8a.sh]  -x [exit.sh]  -O [t851.out]
+-C [Test Case 852;]  -P [--file=Makefile --file=../sdir-cov8a/Makefile]  -s [startup-cov7a.sh]  -x [exit.sh]  -O [t852.out]
+-C [Test Case 853;]  -P []  -s [startup-cov7.sh]  -x [exit.sh]  -O [t853.out]
+-C [Test Case 854;]  -P [-d]  -s [startup-cov7.sh]  -x [exit.sh]  -O [t854.out]
+-C [Test Case 855;]  -P []  -s [startup-cov8.sh]  -x [exit.sh]  -O [t855.out]
+-C [Test Case 856;]  -P [-d]  -s [startup-cov8.sh]  -x [exit.sh]  -O [t856.out]
+-C [Test Case 857;]  -P [--file=Makefile --file=../sdir-cov8a/Makefile]  -s [startup-cov7a.sh]  -x [exit.sh]  -O [t857.out]
+-C [Test Case 858;]  -P [--file=Makefile --file=../sdir-cov8/Makefile]  -s [startup-cov7.sh]  -x [exit.sh]  -O [t858.out]
+-C [Test Case 859;]  -P []  -s [startup-cov9.sh]  -x [exit.sh]  -O [t859.out]
+-C [Test Case 860;]  -P [-C]  -s [startup-cov4.sh]  -x [exit2.sh]  -O [t860.out]
+-C [Test Case 861;]  -P []  -s [startup-cov1.sh]  -x [exit.sh]  -O [t861.out]
+-C [Test Case 862;]  -P [-C /nfs/spectre/u6/ruthruff/research/subjects/make/scripts/sdir]  -s [startup-cov4.sh]  -x [exit2.sh]  -O [t862.out]
+-C [Test Case 863;]  -P [-C ~ruthruff/research/subjects/make/scripts/sdir]  -s [startup-cov4.sh]  -x [exit2.sh]  -O [t863.out]
+-C [Test Case 864;]  -P [-C ~/research/subjects/make/scripts/sdir]  -s [startup-cov4.sh]  -x [exit2.sh]  -O [t864.out]
+-C [Test Case 865;]  -P [--directory=/nfs/spectre/u6/ruthruff/research/subjects/make/scripts/sdir]  -s [startup-cov4.sh]  -x [exit2.sh]  -O [t865.out]
+-C [Test Case 866;]  -P [--directory=~ruthruff/research/subjects/make/scripts/sdir]  -s [startup-cov4.sh]  -x [exit2.sh]  -O [t866.out]
+-C [Test Case 867;]  -P [--directory=~/research/subjects/make/scripts/sdir]  -s [startup-cov4.sh]  -x [exit2.sh]  -O [t867.out]
+-C [Test Case 868;]  -P [--directory=sdir --directory=baddirectory]  -s [startup-tc3.sh]  -x [exit2.sh]  -O [t868.out]
+-C [Test Case 869;]  -P [--directory]  -s [startup-cov4.sh]  -x [exit2.sh]  -O [t869.out]
+-C [Test Case 870;]  -P [--directory=]  -s [startup-cov4.sh]  -x [exit2.sh]  -O [t870.out]
+-C [Test Case 871;]  -P [--directory ./sdir]  -s [startup-cov4.sh]  -x [exit2.sh]  -O [t871.out]
+-C [Test Case 872;]  -P [--directory=sdir -C sdir]  -s [startup-tc3.sh]  -x [exit2.sh]  -O [t872.out]
+-C [Test Case 873;]  -P [--directory =./sdir]  -s [startup-cov4.sh]  -x [exit2.sh]  -O [t873.out]
+-C [Test Case 874;]  -P [--directory = ./sdir]  -s [startup-cov4.sh]  -x [exit2.sh]  -O [t874.out]
+-C [Test Case 875;]  -P [--directory= ./sdir]  -s [startup-cov4.sh]  -x [exit2.sh]  -O [t875.out]
+-C [Test Case 876;]  -P [--debug]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t876.out]
+-C [Test Case 877;]  -P [--environment-overrides]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t877.out]
+-C [Test Case 878;]  -P [--file=../../inputs/makefilenoexist]  -s [startup3.sh]  -x [exit.sh]  -O [t878.out]
+-C [Test Case 879;]  -P [--file=../../inputs/makefile-bad]  -s [startup3.sh]  -x [exit.sh]  -O [t879.out]
+-C [Test Case 880;]  -P [--makefile=../../inputs/makefilenoexist]  -s [startup3.sh]  -x [exit.sh]  -O [t880.out]
+-C [Test Case 881;]  -P [--makefile=../../inputs/makefile-bad]  -s [startup3.sh]  -x [exit.sh]  -O [t881.out]
+-C [Test Case 882;]  -P [--file ../../inputs/makefile-1a]  -s [startup0.sh]  -x [exit.sh]  -O [t882.out]
+-C [Test Case 883;]  -P [--makefile ../../inputs/makefile-1a]  -s [startup0.sh]  -x [exit.sh]  -O [t883.out]
+-C [Test Case 884;]  -P [--file]  -s [startup0.sh]  -x [exit.sh]  -O [t884.out]
+-C [Test Case 885;]  -P [--makefile]  -s [startup0.sh]  -x [exit.sh]  -O [t885.out]
+-C [Test Case 886;]  -P [--file=]  -s [startup0.sh]  -x [exit.sh]  -O [t886.out]
+-C [Test Case 887;]  -P [--makefile=]  -s [startup0.sh]  -x [exit.sh]  -O [t887.out]
+-C [Test Case 888;]  -P [-h]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t888.out]
+-C [Test Case 889;]  -P [--help]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t889.out]
+-C [Test Case 890;]  -P [--ignore-errors]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t890.out]
+-C [Test Case 891;]  -P [-I]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t891.out]
+-C [Test Case 892;]  -P [--include-dir=./baddirectory]  -s [startup-tc8.sh]  -x [exit.sh]    -O [t892.out]
+-C [Test Case 893;]  -P [--include-dir=./headers]  -s [startup-tc8.sh]  -x [exit.sh]  -O [t893.out]
+-C [Test Case 894;]  -P [--include-dir=]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t894.out]
+-C [Test Case 895;]  -P [--include-dir]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t895.out]
+-C [Test Case 896;]  -P [--include-dir ./headers]  -s [startup-tc8.sh]  -x [exit.sh]  -O [t896.out]
+-C [Test Case 897;]  -P [-k]  -s [startup-cov10.sh]  -x [exit.sh]  -O [t897.out]
+-C [Test Case 898;]  -P [--keep-going]  -s [startup-cov10.sh]  -x [exit.sh]  -O [t898.out]
+-C [Test Case 899;]  -P [-n]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t899.out]
+-C [Test Case 900;]  -P [--just-print]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t900.out]
+-C [Test Case 901;]  -P [--dry-run]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t901.out]
+-C [Test Case 902;]  -P [--recon]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t902.out]
+-C [Test Case 903;]  -P [-o badfile.c]  -s [startup-other3.sh]  -x [exit.sh]  -O [t903.out]
+-C [Test Case 904;]  -P [--old-file=hello.c]  -s [startup-other3.sh]  -x [exit.sh]  -O [t904.out]
+-C [Test Case 905;]  -P [--assume-old=hello.c]  -s [startup-other3.sh]  -x [exit.sh]  -O [t905.out]
+-C [Test Case 906;]  -P [-o]  -s [startup-other3.sh]  -x [exit.sh]  -O [t906.out]
+-C [Test Case 907;]  -P [--old-file]  -s [startup-other3.sh]  -x [exit.sh]  -O [t907.out]
+-C [Test Case 908;]  -P [--assume-old]  -s [startup-other3.sh]  -x [exit.sh]  -O [t908.out]
+-C [Test Case 909;]  -P [--old-file=]  -s [startup-other3.sh]  -x [exit.sh]  -O [t909.out]
+-C [Test Case 910;]  -P [--assume-old=]  -s [startup-other3.sh]  -x [exit.sh]  -O [t910.out]
+-C [Test Case 911;]  -P [--print-data-base -f/dev/null]  -s [startup-other3.sh]  -x [exit.sh]  -X [rm-makestuff -p ../outputs/t911.out]  -O [t911.out]
+-C [Test Case 912;]  -P [--print-data-base --file=/dev/null]  -s [startup-other3.sh]  -x [exit.sh]  -X [rm-makestuff -p ../outputs/t912.out]  -O [t912.out]
+-C [Test Case 913;]  -P [--print-data-base]  -s [startup0.sh]  -x [exit.sh]  -X [rm-makestuff -p ../outputs/t913.out]  -O [t913.out]
+-C [Test Case 914;]  -P [--question]  -s [startup-other3.sh]  -x [exit.sh]  -O [t914.out]
+-C [Test Case 915;]  -P [--no-builtin-rules]  -s [startup-other3.sh]  -x [exit.sh]  -O [t915.out]
+-C [Test Case 916;]  -P [-S]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t916.out]
+-C [Test Case 917;]  -P [-S -k]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t917.out]
+-C [Test Case 918;]  -P [--no-keep-going]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t918.out]
+-C [Test Case 919;]  -P [--stop]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t919.out]
+-C [Test Case 920;]  -P [--keep-going --no-keep-going]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t920.out]
+-C [Test Case 921;]  -P [-k --stop]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t921.out]
+-C [Test Case 922;]  -P [--version]  -s [startup-other3.sh]  -x [exit.sh]  -O [t922.out]
+-C [Test Case 923;]  -P [--version -f/dev/null]  -s [startup-other3.sh]  -x [exit.sh]  -O [t923.out]
+-C [Test Case 924;]  -P [--print-directory]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t924.out]
+-C [Test Case 925;]  -P [--keep-going -w]  -s [startup-cov10.sh]  -x [exit.sh]  -O [t925.out]
+-C [Test Case 926;]  -P [--touch]  -s [startup-other3.sh]  -x [exit.sh]  -O [t926.out]
+-C [Test Case 927;]  -P [-f ../../inputs/makefile-1a --silent]  -s [startup0.sh]  -x [exit.sh]  -O [t927.out]
+-C [Test Case 928;]  -P [-f ../../inputs/makefile-1a --quiet]  -s [startup0.sh]  -x [exit.sh]  -O [t928.out]
+-C [Test Case 929;]  -P [-silent]  -s [startup0.sh]  -x [exit.sh]  -O [t929.out]
+-C [Test Case 930;]  -P [--silent]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t930.out]
+-C [Test Case 931;]  -P [--warn-undefined-variables]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t931.out]
+-C [Test Case 932;]  -P [--what-if=hello.c -n]  -s [startup-other0.sh]  -x [exit.sh]  -O [t932.out]
+-C [Test Case 933;]  -P [--what-if=badfile.c]  -s [startup-other0.sh]  -x [exit.sh]  -O [t933.out]
+-C [Test Case 934;]  -P [--what-if=hello.c]  -s [startup-other0.sh]  -x [exit.sh]  -O [t934.out]
+-C [Test Case 935;]  -P [--new-file=hello.c -n]  -s [startup-other0.sh]  -x [exit.sh]  -O [t935.out]
+-C [Test Case 936;]  -P [--new-file=badfile.c]  -s [startup-other0.sh]  -x [exit.sh]  -O [t936.out]
+-C [Test Case 937;]  -P [--new-file=hello.c]  -s [startup-other0.sh]  -x [exit.sh]  -O [t937.out]
+-C [Test Case 938;]  -P [--assume-new=hello.c -n]  -s [startup-other0.sh]  -x [exit.sh]  -O [t938.out]
+-C [Test Case 939;]  -P [--assume-new=badfile.c]  -s [startup-other0.sh]  -x [exit.sh]  -O [t939.out]
+-C [Test Case 940;]  -P [--assume-new=hello.c]  -s [startup-other0.sh]  -x [exit.sh]  -O [t940.out]
+-C [Test Case 941;]  -P [--what-if]  -s [startup-other0.sh]  -x [exit.sh]  -O [t941.out]
+-C [Test Case 942;]  -P [--new-file]  -s [startup-other0.sh]  -x [exit.sh]  -O [t942.out]
+-C [Test Case 943;]  -P [--assume-new -n]  -s [startup-other0.sh]  -x [exit.sh]  -O [t943.out]
+-C [Test Case 944;]  -P [--what-if=]  -s [startup-other0.sh]  -x [exit.sh]  -O [t944.out]
+-C [Test Case 945;]  -P [--new-file=]  -s [startup-other0.sh]  -x [exit.sh]  -O [t945.out]
+-C [Test Case 946;]  -P [--assume-new= -n]  -s [startup-other0.sh]  -x [exit.sh]  -O [t946.out]
+-C [Test Case 947;]  -P [all]  -s [startup-cov11.sh]  -x [exit.sh]  -O [t947.out]
+-C [Test Case 948;]  -P [clean]  -s [startup-cov11.sh]  -x [exit.sh]  -O [t948.out]
+-C [Test Case 949;]  -P [mostlyclean]  -s [startup-cov11.sh]  -x [exit.sh]  -O [t949.out]
+-C [Test Case 950;]  -P [distclean]  -s [startup-cov11.sh]  -x [exit.sh]  -O [t950.out]
+-C [Test Case 951;]  -P [maintainer-clean]  -s [startup-cov11.sh]  -x [exit.sh]  -O [t951.out]
+-C [Test Case 952;]  -P [extraclean]  -s [startup-cov11.sh]  -x [exit.sh]  -O [t952.out]
+-C [Test Case 953;]  -P [-k]  -s [startup-cov12.sh]  -x [exit.sh]  -O [t953.out]
+-C [Test Case 954;]  -P [-k]  -s [startup-cov13.sh]  -x [exit.sh]  -O [t954.out]
+-C [Test Case 955;]  -P [-k]  -s [startup-cov14.sh]  -x [exit.sh]  -O [t955.out]
+-C [Test Case 956;]  -P []  -s [startup-cov2a.sh]  -x [exit.sh]  -O [t956.out]
+-C [Test Case 957;]  -P [-f $MAKEFILES]  -s [startup-cov2a.sh]  -x [exit.sh]  -O [t957.out]
+-C [Test Case 958;]  -P []  -s [startup-cov2b-1.sh]  -x [exit-cov2b.sh]  -O [t958.out]
+-C [Test Case 959;]  -P []  -s [startup-cov2b-2.sh]  -x [exit-cov2b.sh]  -O [t959.out]
+-C [Test Case 960;]  -P [-C sdir]  -s [startup-tc956.sh]  -x [exit2.sh]  -O [t960.out]
+-C [Test Case 961; ]  -P []  -s [startup-cov17.sh]  -x [exit.sh]  -O [t961.out]
+-C [Test Case 962;]  -P [-f ~ruthruff/research/subjects/make/inputs/Makefile-cov3a]  -s [startup-sdir-cov3a.sh]  -x [exit.sh]  -O [t962.out]
+-C [Test Case 963;]  -P [-f ~ruthruff/research/subjects/make/inputs/Makefile-cov3b]  -s [startup-sdir-cov3a.sh]  -x [exit.sh]  -O [t963.out]
+-C [Test Case 964;]  -P [-f ~ruthruff/research/subjects/make/inputs/Makefile-cov3c]  -s [startup-sdir-cov3a.sh]  -x [exit.sh]  -O [t964.out]
+-C [Test Case 965;]  -P [-f ~ruthruff/research/subjects/make/inputs/Makefile-cov3d]  -s [startup-sdir-cov3a.sh]  -x [exit.sh]  -O [t965.out]
+-C [Test Case 966;]  -P [-f ~ruthruff/research/subjects/make/inputs/Makefile-cov3l -f ~ruthruff/research/subjects/make/inputs/Makefile-cov3ll]  -s [startup-sdir-cov3a.sh]  -x [exit.sh]  -O [t966.out]
+-C [Test Case 967; ]  -P [-I ~ruthruff/nosuchdirectory/include]  -s [startup-tc8.sh]  -x [exit.sh]  -F [sdir/hello|hello967]  -O [t967.out]
+-C [Test Case 968; ]  -P [-I ~ruthruff/research/subjects/make/scripts/sdir/include/]  -s [startup-tc8.sh]  -x [exit.sh]  -F [sdir/hello|hello968]  -O [t968.out]
+-C [Test Case 969; ]  -P [-I /nfs/spectre/u6/ruthruff/research/subjects/make/scripts/sdir/include]  -s [startup-tc8.sh]  -x [exit.sh]  -F [sdir/hello|hello969]  -O [t969.out]
+-C [Test Case 970; ]  -P [-I/nfs/nosuch/directory/include]  -s [startup-tc8.sh]  -x [exit.sh]  -F [sdir/hello|hello970]  -O [t970.out]
+-C [Test Case 971; ]  -P [-I ~ruthruff///research//subjects///make/scripts/sdir/include///]  -s [startup-tc8.sh]  -x [exit.sh]  -F [sdir/hello|hello971]  -O [t971.out]
+-C [Test Case 972; ]  -P [-I~ruthruff/research/subjects/make/scripts/sdir/include/]  -s [startup-tc8.sh]  -x [exit.sh]  -F [sdir/hello|hello972]  -O [t972.out]
+-C [Test Case 973; ]  -P [-I ./include]  -s [startup-tc8a.sh]  -x [exit.sh]  -F [sdir/hello|hello973]  -O [t973.out]
+-C [Test Case 974; ]  -P []  -s [startup-tc8c.sh]  -x [exit.sh]  -F [sdir/hello|hello974]  -O [t974.out]
+-C [Test Case 975; ]  -P [-I ./headers]  -s [startup-tc8b.sh]  -x [exit.sh]  -F [sdir/hello|hello975]  -O [t975.out]
+-C [Test Case 976;]  -P [-f ~ruthruff/research/subjects/make/inputs/Makefile-cov3m]  -s [startup-sdir-cov3a.sh]  -x [exit.sh]  -F [sdir/make|make976] -O [t976.out]
+-C [Test Case 977;]  -P []  -s [startup-cov15.sh]  -x [exit.sh]  -F [sdir/make|make977]  -O [t977.out]
+-C [Test Case 978; ]  -P []  -s [startup-cov16.sh]  -x [exit.sh]  -F [sdir/make|make978]  -O [t978.out]
+-C [Test Case 979; ]  -P []  -s [startup-cov16a.sh]  -x [exit.sh]  -O [t979.out]
+-C [Test Case 980; ]  -P []  -s [startup-cov16b.sh]  -x [exit.sh]  -F [sdir/make|make980]  -O [t980.out]
+-C [Test Case 981; ]  -P []  -s [startup-cov16c.sh]  -x [exit.sh]  -F [sdir/make|make981]  -O [t981.out]
+-C [Test Case 982; ]  -P []  -s [startup-cov16d.sh]  -x [exit.sh]  -F [sdir/make|make982]  -O [t982.out]
+-C [Test Case 983; ]  -P []  -s [startup-cov16e.sh]  -x [exit.sh]  -F [sdir/make|make983]  -O [t983.out]
+-C [Test Case 984; ]  -P []  -s [startup-cov16f.sh]  -x [exit.sh]  -F [sdir/make|make984]  -O [t984.out]
+-C [Test Case 985; ]  -P []  -s [startup-cov16g.sh]  -x [exit.sh]  -F [sdir/make|make985]  -O [t985.out]
+-C [Test Case 986; ]  -P []  -s [startup-cov16h.sh]  -x [exit.sh]  -F [sdir/make|make986]  -O [t986.out]
+-C [Test Case 987; ]  -P []  -s [startup-cov16i.sh]  -x [exit.sh]  -O [t987.out]
+-C [Test Case 988; ]  -P []  -s [startup-cov16j.sh]  -x [exit.sh]  -F [sdir/make|make988]  -O [t988.out]
+-C [Test Case 989; ]  -P []  -s [startup-cov16k.sh]  -x [exit.sh]  -O [t989.out]
+-C [Test Case 990; ]  -P []  -s [startup-cov16l.sh]  -x [exit.sh]  -F [sdir/make|make990]  -O [t990.out]
+-C [Test Case 991; ]  -P []  -s [startup-cov16m.sh]  -x [exit.sh]  -F [sdir/make|make991]  -O [t991.out]
+-C [Test Case 992; test bad option]  -P [-a]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t992.out]
+-C [Test Case 993; test option without dash]  -P [a]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t993.out]
+-C [Test Case 994; these next few tests hit the vpath & print_database functions more]  -P []  -s [startup-cov16n.sh]  -x [exit.sh]  -F [sdir/make|make994]  -O [t994.out]
+-C [Test Case 995; ]  -P []  -s [startup-cov16o.sh]  -x [exit.sh]  -O [t995.out]
+-C [Test Case 996; ]  -P [-p]  -s [startup-cov16.sh]  -x [exit.sh]  -X [rm-makestuff -p ../outputs/t996.out]  -F [sdir/make|make996]  -O [t996.out]
+-C [Test Case 997; ]  -P [-p]  -s [startup-cov16a.sh]  -x [exit.sh]  -X [rm-makestuff -p ../outputs/t997.out]  -O [t997.out]
+-C [Test Case 998; ]  -P [-p]  -s [startup-cov16b.sh]  -x [exit.sh]  -X [rm-makestuff -p ../outputs/t998.out]  -F [sdir/make|make998]  -O [t998.out]
+-C [Test Case 999; ]  -P [-p]  -s [startup-cov16c.sh]  -x [exit.sh]  -X [rm-makestuff -p ../outputs/t999.out]  -F [sdir/make|make999]  -O [t999.out]
+-C [Test Case 1000; ]  -P [-p]  -s [startup-cov16d.sh]  -x [exit.sh]  -X [rm-makestuff -p ../outputs/t1000.out]  -F [sdir/make|make1000]  -O [t1000.out]
+-C [Test Case 1001; ]  -P [-p]  -s [startup-cov16e.sh]  -x [exit.sh]  -X [rm-makestuff -p ../outputs/t1001.out]  -F [sdir/make|make1001]  -O [t1001.out]
+-C [Test Case 1002; ]  -P [-p]  -s [startup-cov16f.sh]  -x [exit.sh]  -X [rm-makestuff -p ../outputs/t1002.out]  -F [sdir/make|make1002]  -O [t1002.out]
+-C [Test Case 1003; ]  -P [-p]  -s [startup-cov16g.sh]  -x [exit.sh]  -X [rm-makestuff -p ../outputs/t1003.out]  -F [sdir/make|make1003]  -O [t1003.out]
+-C [Test Case 1004; ]  -P [-p]  -s [startup-cov16h.sh]  -x [exit.sh]  -X [rm-makestuff -p ../outputs/t1004.out]  -F [sdir/make|make1004]  -O [t1004.out]
+-C [Test Case 1005; ]  -P [-p]  -s [startup-cov16i.sh]  -x [exit.sh]  -X [rm-makestuff -p ../outputs/t1005.out]  -O [t1005.out]
+-C [Test Case 1006; ]  -P [-p]  -s [startup-cov16j.sh]  -x [exit.sh]  -X [rm-makestuff -p ../outputs/t1006.out]  -F [sdir/make|make1006]  -O [t1006.out]
+-C [Test Case 1007; ]  -P [-p]  -s [startup-cov16k.sh]  -x [exit.sh]  -X [rm-makestuff -p ../outputs/t1007.out]  -O [t1007.out]
+-C [Test Case 1008; ]  -P [-p]  -s [startup-cov16l.sh]  -x [exit.sh]  -X [rm-makestuff -p ../outputs/t1008.out]  -F [sdir/make|make1008]  -O [t1008.out]
+-C [Test Case 1009; ]  -P [-p]  -s [startup-cov16m.sh]  -x [exit.sh]  -X [rm-makestuff -p ../outputs/t1009.out]  -F [sdir/make|make1009]  -O [t1009.out]
+-C [Test Case 1010; test null variable expansion]  -P [-f $MAKEFILE]  -s [startup-cov2c.sh]  -x [exit.sh]  -O [t1010.out]
+-C [Test Case 1011; test no option but double dash]  -P [--]  -s [startup-cov1.sh]  -x [exit.sh]  -O [t1011.out]
+-C [Test Case 1012; try .PHONY as a target]  -P [.PHONY]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t1012.out]
+-C [Test Case 1013; try different unique targets]  -P [.SUFFIXES]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t1013.out]
+-C [Test Case 1014; try different unique targets]  -P [info]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t1014.out]
+-C [Test Case 1015; try different unique targets]  -P [dvi]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t1015.out]
+-C [Test Case 1016; try different unique targets]  -P [make.info]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t1016.out]
+-C [Test Case 1017; try different unique targets]  -P [make.dvi]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t1017.out]
+-C [Test Case 1018; try different unique targets]  -P [make.ps]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t1018.out]
+-C [Test Case 1019; try different unique targets]  -P [make]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t1019.out]
+-C [Test Case 1020; try mixing up command-line to hit exchange; also try to hit some of find_char_unquote by putting extra backslashes]  -P [-C -f sdir ~ruthruff/make/inputs/Makefile-cov4]  -s [startup-other2a.sh]  -x [exit2.sh]  -O [t1020.out]
+-C [Test Case 1021; try having just a colon as a dependency]  -P [-f ~ruthruff/make/inputs/Makefile-cov5]  -s [startup-other2b.sh]  -x [exit.sh]  -F [sdir/hello|hello1021]  -O [t1021.out]
+-C [Test Case 1022; try space-colon as a dependency]  -P [-f ~ruthruff/make/inputs/Makefile-cov5a]  -s [startup-other2b.sh]  -x [exit.sh]  -F [sdir/hello|hello1022]  -O [t1022.out]
+-C [Test Case 1023; try space-colon as a dependency, but nothing after it]  -P [-f ~ruthruff/make/inputs/Makefile-cov5b]  -s [startup-other2b.sh]  -x [exit.sh]  -F [sdir/hello|hello1023]  -O [t1023.out]
+-C [Test Case 1024; try to get 10547,F of touch_file]  -P [-t -s]  -s [startup-other3.sh]  -x [exit.sh]  -O [t1024.out]
+-C [Test Case 1025; try to get 10547,F of touch_file]  -P [-t -s]  -s [startup-other4.sh]  -x [exit.sh]  -O [t1025.out]
+-C [Test Case 1026; try to touch 0 byte file to hit a branch]  -P [-t]  -s [startup-cov18.sh]  -x [exit.sh]  -O [t1026.out]
+-C [Test Case 1027; ]  -P []  -s [startup-cov16p.sh]  -x [exit.sh]  -O [t1027.out]
+-C [Test Case 1028; ]  -P [-p]  -s [startup-cov16p.sh]  -x [exit.sh]  -X [rm-makestuff -p ../outputs/t1028.out]  -O [t1028.out]
+-C [Test Case 1029; ]  -P []  -s [startup-cov16q.sh]  -x [exit.sh]  -O [t1029.out]
+-C [Test Case 1030; ]  -P [-p]  -s [startup-cov16q.sh]  -x [exit.sh]  -X [rm-makestuff -p ../outputs/t1028.out]  -O [t1030.out]
+-C [Test Case 1031; ]  -P []  -s [startup-cov4-1.sh]  -x [exit.sh]  -O [t1031.out]
+-C [Test Case 1032; ]  -P []  -s [startup-cov4a.sh]  -x [exit.sh]  -O [t1032.out]
+-C [Test Case 1033; ]  -P []  -s [startup-cov4b.sh]  -x [exit.sh]  -O [t1033.out]
+-C [Test Case 1034; ]  -P []  -s [startup-cov4c.sh]  -x [exit.sh]  -O [t1034.out]
+-C [Test Case 1035; ]  -P []  -s [startup-cov4d.sh]  -x [exit.sh]  -O [t1035.out]
+-C [Test Case 1036; ]  -P []  -s [startup-cov4e.sh]  -x [exit.sh]  -O [t1036.out]
+-C [Test Case 1037; ]  -P []  -s [startup-cov4f.sh]  -x [exit.sh]  -O [t1037.out]
+-C [Test Case 1038; ]  -P []  -s [startup-cov4g.sh]  -x [exit.sh]  -O [t1038.out]
+-C [Test Case 1039; ]  -P []  -s [startup-cov4h.sh]  -x [exit.sh]  -O [t1039.out]
+-C [Test Case 1040; ]  -P [-o /nfs/badfile.c]  -s [startup-other3.sh]  -x [exit.sh]  -O [t1040.out]
+-C [Test Case 1041; ]  -P [-o ~ruthruff/make/scripts/sdir/hello.c]  -s [startup-other3.sh]  -x [exit.sh]  -F [sdir/hello|hello1041]  -O [t1041.out]
+-C [Test Case 1042; ]  -P [-o ./hello.c]  -s [startup-other3.sh]  -x [exit.sh]  -F [sdir/hello|hello1042]  -O [t1042.out]
+-C [Test Case 1043; ]  -P [-o ~hello.c]  -s [startup-other3a.sh]  -x [exit.sh]  -O [t1043.out]
+-C [Test Case 1044; ]  -P [-o ./////////////]  -s [startup-other3.sh]  -x [exit.sh]  -F [sdir/hello|hello1044]  -O [t1044.out]
+-C [Test Case 1045; test bad option with version flag]  -P [-v -a]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t1045.out]
+-C [Test Case 1046; test bad option with version flag]  -P [- v - a]  -s [startup-cov3.sh]  -x [exit.sh]  -O [t1046.out]
+unitest0:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest1:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest2:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest3:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest4:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest5:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest6:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest7:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest8:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest9:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest10:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest11:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest12:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest13:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest14:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest15:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest16:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest17:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest18:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest19:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest20:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest21:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest22:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest23:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest24:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest25:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest26:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest27:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest28:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest29:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest30:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest31:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest32:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest33:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest34:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest35:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest36:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest37:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest38:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest39:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest40:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest41:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest42:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest43:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest44:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest45:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest46:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest47:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest48:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest49:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest50:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest51:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest52:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest53:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest54:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest55:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest56:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest57:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest58:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest59:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest60:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest61:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest62:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest63:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest64:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest65:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest66:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest67:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest68:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest69:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest70:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest71:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest72:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest73:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest74:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest75:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest76:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest77:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest78:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest79:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest80:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest81:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest82:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest83:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest84:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest85:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest86:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest87:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest88:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest89:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest90:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest91:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest92:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest93:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest94:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest95:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest96:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest97:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest98:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest99:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest100:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest101:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest102:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest103:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest104:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest105:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest106:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest107:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest108:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest109:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest110:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest111:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest112:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest113:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest114:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest115:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest116:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest117:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest118:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest119:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest120:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest121:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest122:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest123:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest124:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest125:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest126:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest127:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest128:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest129:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest130:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest131:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest132:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest133:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest134:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest135:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest136:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest137:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest138:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest139:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest140:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest141:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest142:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest143:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest144:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest145:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest146:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest147:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest148:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest149:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest150:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest151:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest152:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest153:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest154:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest155:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest156:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest157:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest158:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest159:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest160:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest161:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest162:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest163:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest164:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest165:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest166:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest167:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest168:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest169:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest170:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest171:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest172:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest173:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest174:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest175:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest176:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest177:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest178:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest179:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest180:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest181:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest182:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest183:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest184:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest185:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest186:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest187:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest188:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest189:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest190:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest191:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest192:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest193:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest194:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest195:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest196:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest197:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest198:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest199:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest200:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest201:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest202:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest203:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest204:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest205:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest206:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest207:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest208:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest209:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest210:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest211:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest212:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest213:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest214:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest215:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest216:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest217:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest218:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest219:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest220:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest221:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest222:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest223:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest224:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest225:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest226:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest227:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest228:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest229:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest230:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest231:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest232:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	1
+v5:
+	0
+v6:
+	0
+unitest233:
+v1:
+	1
+v2:
+	1
+v3:
+	1
+v4:
+	1
+v5:
+	1
+v6:
+	1
+unitest234:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest235:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest236:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest237:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest238:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest239:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest240:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest241:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest242:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest243:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest244:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest245:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest246:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest247:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest248:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0
+unitest249:
+v1:
+	0
+v2:
+	0
+v3:
+	0
+v4:
+	0
+v5:
+	0
+v6:
+	0

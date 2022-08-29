@@ -1,0 +1,4 @@
+send -- ":redir >> edit_252.1.1.out\r"
+send -- ":This is command line editing.\002begin:\r"
+expect "editor*editing."
+send -- ":redir END\r"

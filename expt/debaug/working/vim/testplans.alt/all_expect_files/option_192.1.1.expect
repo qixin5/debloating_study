@@ -1,0 +1,5 @@
+send ":redir >> option_192.1.1.out\r"
+send ":set tx\r"
+send ":set tx?\r"
+send ":redir END\r"
+

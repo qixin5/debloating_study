@@ -1,0 +1,8 @@
+send -- "\033"
+send -- "A"
+expect "INSERT"
+send -- "\030"
+expect "mode"
+send -- "\013"
+expect "empty"
+expect "mode"

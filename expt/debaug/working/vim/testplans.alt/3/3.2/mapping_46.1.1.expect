@@ -1,0 +1,4 @@
+send ":redir >> mapping_46.1.1.out\r"
+send ":cnoreab  a abbreviate\r"
+send ":cab  \026a\r"
+send ":redir END\r"

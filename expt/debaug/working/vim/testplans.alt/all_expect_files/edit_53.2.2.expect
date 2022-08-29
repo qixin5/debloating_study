@@ -1,0 +1,8 @@
+expect "INSERT"
+send -- "\033"
+send -- "A"
+expect "INSERT"
+send -- "\030"
+expect "mode"
+send -- "\035"
+expect "The only match"

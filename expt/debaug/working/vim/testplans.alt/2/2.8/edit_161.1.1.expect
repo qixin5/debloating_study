@@ -1,0 +1,5 @@
+send -- "iTHIS  WILL BE CHANGED TO LOWER CASE"
+send -- "\033"
+send -- "0"
+send -- "g~$"
+

@@ -1,0 +1,1 @@
+send ":rv! $env(TESTS_SRC)/infofile\r"

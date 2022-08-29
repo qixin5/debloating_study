@@ -1,0 +1,37 @@
+#!/usr/bin/expect -f
+set force_conservative 1;
+if {$force_conservative} {
+        set send_slow {1 .1}
+        proc send {ignore arg} {
+                sleep .1
+                exp_send -s -- $arg
+        }
+}
+spawn $env(SUBJECTS_SRC_DIR)/vim-5.8 -u $env(HOME)/.vimrc $env(TESTS_SRC)/copy1
+expect "copy1"
+#expect "wonderful"
+#expect "regA"
+#expect "main"
+#expect "\}"
+send -- ":set makeef=/tmp/vim99.err\r"
+send -- ":se lines=24\r"
+send -- ":se columns=80\r"
+send --  ":redir >> other_11.1.4.out\r"
+send --  ":make -C $env(TESTS_SRC)\r"
+expect "make"
+expect "warning"
+expect "continue"
+#sleep 1
+send --  "\r"
+expect "pointer type"
+send --  ":3cn\r"
+expect "too"
+expect "fprintf"
+send --  ":3cprevious!\r"
+expect "pointer type"
+send --  ":redir END\r"
+send -- ":q!\r"
+expect
+exit -onexit {
+interact
+}

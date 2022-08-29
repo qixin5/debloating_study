@@ -1,0 +1,5 @@
+send ":redir >> option_103.1.1.out\r"
+send ":set lines\r"
+send ":set lines?\r"
+send ":redir END\r"
+

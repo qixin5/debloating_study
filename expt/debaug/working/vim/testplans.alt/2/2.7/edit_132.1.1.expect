@@ -1,0 +1,5 @@
+send -- "iwhite"
+send -- "\033"
+send -- "0"
+send -- "yw"
+send -- "2]p"

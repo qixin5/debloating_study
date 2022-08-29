@@ -1,0 +1,12 @@
+send --  ":redir >> other_6.1.4.out\r"
+send --  ":make -C $env(TESTS_SRC)\r"
+expect "make"
+expect "warning"
+expect "continue"
+#sleep 1
+send --  "\r"
+expect "pointer type"
+send --  ":3cn\r"
+expect "too"
+expect "fprintf"
+send --  ":redir END\r"

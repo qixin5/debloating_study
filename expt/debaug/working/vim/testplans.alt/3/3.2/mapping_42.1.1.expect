@@ -1,0 +1,6 @@
+send ":redir >> mapping_42.1.1.out\r"
+send ":iab abbr abbreviate\r"
+send ":iab abbr\r"
+send ":iunab abbr\r"
+send ":iab abbr\r"
+send ":redir END\r"

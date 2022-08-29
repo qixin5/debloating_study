@@ -1,0 +1,6 @@
+send ":redir >> starting_17.3.1.out\r"
+send ":ar\r"
+send ":q\r"
+send ":wq\r"
+send ":redir END\r"
+

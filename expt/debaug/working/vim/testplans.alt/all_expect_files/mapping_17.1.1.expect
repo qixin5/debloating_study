@@ -1,0 +1,7 @@
+send ":redir >> mapping_17.1.1.out\r"
+send ":imap b l\r"
+send ":imap b\r"
+send ":iunmap b\r"
+send ":imap b\r"
+send ":redir END\r"
+

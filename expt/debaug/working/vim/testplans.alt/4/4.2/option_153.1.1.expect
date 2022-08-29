@@ -1,0 +1,6 @@
+send ":redir >> option_153.1.1.out\r"
+send ":set st\r"
+send ":set st?\r"
+
+send ":redir END\r"
+

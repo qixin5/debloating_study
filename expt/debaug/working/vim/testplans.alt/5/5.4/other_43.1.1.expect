@@ -1,0 +1,3 @@
+send ":redir >> other_43.1.1.out\r"
+send ":norm ga\r"
+send ":redir END\r"

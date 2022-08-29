@@ -1,0 +1,18 @@
+testScripts - contains mts startup and exit scripts for use with the mts 
+              program
+v0: make-3.75 tsl specs and universe files
+v1: make-3.76.1 tsl specs and universe files
+v2: make-3.77 tsl specs and universe files
+v3: make-3.78.1 tsl specs and universe files
+v4: make-3.79 tsl specs and universe files
+
+-J. Ruthruff
+11:50p, 2/19/2001
+
+
+v0_3.tsl.universe is the new default UNIVERSE FILE for this subject.
+It was added by Kyle R. Murphy (October, 2006) to address issues and
+bugs with the original universe files.
+
+-K. Murphy
+12:31p, 10/18/2006

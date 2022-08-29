@@ -1,0 +1,4 @@
+send ":redir >> move_307.5.1.out\r"
+send ":tselect! f*\r"
+send "3\r"
+send ":redir END\r"

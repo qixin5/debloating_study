@@ -1,0 +1,5 @@
+send -- "ithis\033"
+send -- "4~"
+send -- "0iTHIS\033"
+send -- "4~"
+ 

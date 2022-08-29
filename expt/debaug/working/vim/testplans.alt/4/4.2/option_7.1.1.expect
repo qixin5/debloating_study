@@ -1,0 +1,5 @@
+send ":redir >> option_7.1.1.out\r"
+send ":set noautoindent\r"
+send ":set autoindent?\r"
+send ":redir END\r"
+

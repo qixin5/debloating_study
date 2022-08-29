@@ -1,0 +1,3 @@
+send ":redir >> other_37.1.1.out\r"
+send "\007"
+send ":redir END\r"

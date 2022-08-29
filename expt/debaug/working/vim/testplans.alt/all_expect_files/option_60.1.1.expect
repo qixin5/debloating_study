@@ -1,0 +1,7 @@
+send ":redir >> option_60.1.1.out\r"
+send ":set ea\r"
+ 
+
+send ":set ea?\r"
+send ":redir END\r"
+

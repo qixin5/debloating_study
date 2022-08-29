@@ -1,0 +1,38 @@
+CONTENTS <scripts>
+
+The scripts directory contains 4 scripts for general use, and one sub-directory.
+Other scripts are dependencies of the main scripts, and need not be used
+directly. The four scripts are as follows:
+
+  runall:  The runall script is the primary script for running the testcases for
+  vim. For instructions on using this script see the README file.  In function
+  this, script runs the entire testsuite on the version stored in the source
+  directory. The script can run this process on any of the versions included
+  with vim.
+
+  runall-diff:  The runall-diff script runs on the currently compiled script.
+  This means that you will need to inject the fault to be analyzed after running
+  a clean runall. 
+
+  clean:  The clean script to uninstall vim, deletes contents of the source
+  directory.
+
+  makevers:  The makevers script copies, compiles, and installs one version of
+  vim to the active source directory.  Note that this script must be manually
+  modified to install the original versions since it is hardcoded to install
+  the seeded version.
+
+  copy_version: simply copies the seeded version (hardcoded) into the source
+  directory but does not perform the compile step.  This is useful if you
+  automate the task of inserting faults by using this script first then doing
+  the fault seed step and compile.
+
+  compile: a script that performs the compile on the object.  When used with
+  the copy_version script a wrapping script to automate the fault seeding
+  and fault matrix creation activities.
+
+  get_script_name: a perl script that searches for tests within a given
+  directory heirarchy.  This script is the basis for the runall scripts.
+
+  COMPILE: the output file of the compilation step.
+

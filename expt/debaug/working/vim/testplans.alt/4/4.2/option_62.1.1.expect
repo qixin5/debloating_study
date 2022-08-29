@@ -1,0 +1,7 @@
+send ":redir >> option_62.1.1.out\r"
+send ":set ep\r"
+ 
+
+send ":set ep?\r"
+send ":redir END\r"
+

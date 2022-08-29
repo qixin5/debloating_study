@@ -1,0 +1,27 @@
+# this is a common setup file created by combining the setup
+# files for bash tests created by satya, praveen and srikanth
+# this file should be prepended to a bash test before it can be executed
+
+# created by praveen kallakuri
+# 07/24/2001
+
+# Note: all modifications made to the original content of the setup
+#       in this file is marked with KPMOD string. 
+
+# SETUP CREATED BY PRAVEEN
+
+checkx ()
+{
+	target=$1;
+	if [ -e ${target} ]; then
+		if [ ! -x ${target} ]; then
+			chmod +x ${target};
+		fi;
+	else
+		echo "setup1: error: cannot find ${target} required by job tests"
+		exit 1;
+	fi;
+}
+
+checkx ${TESTS_SRC}/bgs.setup
+

@@ -1,0 +1,8 @@
+send ":redir >> mapping_14.1.1.out\r"
+send ":map! b l\r"
+send ":map! \026b\r"
+send ":cunmap \026"
+send "b\r"
+send ":cmap b\r"
+send ":redir END\r"
+

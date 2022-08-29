@@ -1,0 +1,7 @@
+send -- "iinsert string"
+send -- "\033"
+
+
+
+
+

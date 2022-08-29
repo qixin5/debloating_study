@@ -1,0 +1,1080 @@
+creating cache ./config.cache
+checking host system type... Invalid configuration `x86_64-unknown-linux-gnu': machine `x86_64-unknown' not recognized
+
+Beginning configuration for bash-2.05 for --
+checking for gcc... gcc
+checking whether the C compiler (gcc  ) works... yes
+checking whether the C compiler (gcc  ) is a cross-compiler... no
+checking whether we are using GNU C... yes
+checking whether gcc accepts -g... yes
+checking whether large file support needs explicit enabling... yes
+checking for POSIXized ISC... no
+checking how to run the C preprocessor... gcc -E
+checking for minix/config.h... no
+checking for Cygwin environment... no
+checking for mingw32 environment... no
+checking for executable suffix... no
+checking whether gcc needs -traditional... no
+checking for a BSD compatible install... /usr/bin/install -c
+checking for ar... ar
+checking for ranlib... ranlib
+checking for bison... bison -y
+checking whether make sets ${MAKE}... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking whether getpgrp takes no argument... yes
+checking whether setvbuf arguments are reversed... no
+checking for vprintf... yes
+checking for wait3 that fills in rusage... yes
+checking for working strcoll... yes
+checking return type of signal handlers... void
+checking for __setostype... no
+checking for wait3... yes
+checking for mkfifo... yes
+checking for dup2... yes
+checking for select... yes
+checking for getdtablesize... yes
+checking for getgroups... yes
+checking for gethostname... yes
+checking for setdtablesize... no
+checking for getpagesize... yes
+checking for killpg... yes
+checking for lstat... yes
+checking for getpeername... yes
+checking for sbrk... yes
+checking for getrlimit... yes
+checking for getrusage... yes
+checking for gettimeofday... yes
+checking for waitpid... yes
+checking for tcgetpgrp... yes
+checking for readlink... yes
+checking for rename... yes
+checking for bcopy... yes
+checking for bzero... yes
+checking for confstr... yes
+checking for getcwd... yes
+checking for strcasecmp... yes
+checking for setenv... yes
+checking for putenv... yes
+checking for setlinebuf... yes
+checking for setlocale... yes
+checking for strchr... yes
+checking for strerror... yes
+checking for strtod... yes
+checking for strtol... yes
+checking for strtoul... yes
+checking for tcgetattr... yes
+checking for uname... yes
+checking for sysconf... yes
+checking for ulimit... yes
+checking for times... yes
+checking for tzset... yes
+checking for siginterrupt... yes
+checking for memmove... yes
+checking for ttyname... yes
+checking for gethostbyname... yes
+checking for getservbyname... yes
+checking for inet_aton... yes
+checking for strpbrk... yes
+checking for setvbuf... yes
+checking for pathconf... yes
+checking for libintl.h... yes
+checking for gettext... yes
+checking for textdomain... yes
+checking for bindtextdomain... yes
+checking for dlopen in -ldl... yes
+checking for dlopen... yes
+checking for dlclose... yes
+checking for dlsym... yes
+checking for sys_siglist declaration in signal.h or unistd.h... yes
+checking for dirent.h that defines DIR... yes
+checking for opendir in -ldir... no
+checking whether time.h and sys/time.h may both be included... yes
+checking for unistd.h... yes
+checking for stdlib.h... yes
+checking for stdarg.h... yes
+checking for varargs.h... no
+checking for limits.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for locale.h... yes
+checking for termcap.h... yes
+checking for termio.h... yes
+checking for termios.h... yes
+checking for dlfcn.h... yes
+checking for stddef.h... yes
+checking for netdb.h... yes
+checking for sys/ptem.h... no
+checking for sys/pte.h... no
+checking for sys/stream.h... no
+checking for sys/select.h... yes
+checking for sys/file.h... yes
+checking for sys/resource.h... yes
+checking for sys/param.h... yes
+checking for sys/socket.h... yes
+checking for sys/time.h... yes
+checking for sys/times.h... yes
+checking for sys/wait.h... yes
+checking for netinet/in.h... yes
+checking for arpa/inet.h... yes
+checking for uid_t in sys/types.h... yes
+checking type of array argument to getgroups... gid_t
+checking for ANSI C header files... yes
+checking for off_t... yes
+checking for mode_t... yes
+checking for uid_t in sys/types.h... (cached) yes
+checking for pid_t... yes
+checking for size_t... yes
+checking for time_t... yes
+checking return type of signal handlers... (cached) void
+checking size of char... 1
+checking size of short... 2
+checking size of int... 4
+checking size of long... 8
+checking size of char *... 8
+checking size of double... 8
+checking for u_int... yes
+checking for u_long... yes
+checking for bits16_t... no
+checking for u_bits16_t... no
+checking for bits32_t... no
+checking for u_bits32_t... no
+checking for bits64_t... no
+checking for ptrdiff_t... yes
+checking whether stat file-mode macros are broken... no
+checking whether byte ordering is bigendian... no
+checking whether #! works in shell scripts... yes
+checking for restartable system calls... yes
+checking if dup2 fails to clear the close-on-exec flag... no
+checking whether pgrps need synchronization... no
+checking for type of signal functions... posix
+checking for sys_errlist and sys_nerr... yes
+checking for sys_siglist in system C library... yes
+checking for _sys_siglist in signal.h or unistd.h... yes
+checking for _sys_siglist in system C library... yes
+checking whether signal handlers are of type void... yes
+checking for clock_t... yes
+checking for sigset_t... yes
+checking for quad_t... yes
+checking for size and type of struct rlimit fields... rlim_t
+checking for a c_line member of struct termios... yes
+checking for a c_line member of struct termio... yes
+checking if struct dirent has a d_ino member... yes
+checking if struct dirent has a d_fileno member... yes
+checking for struct winsize in sys/ioctl.h and termios.h... sys/ioctl.h
+checking for struct timeval in sys/time.h and time.h... yes
+checking for the existence of strsignal... yes
+checking if opendir() opens non-directories... no
+checking for declaration of printf in <stdio.h>... yes
+checking whether ulimit can substitute for getdtablesize... yes
+checking to see if getenv can be redefined... yes
+checking if getcwd() calls popen()... no
+checking for declaration of sbrk in <unistd.h>... yes
+checking for presence of POSIX-style sigsetjmp/siglongjmp... present
+checking whether or not strcoll and strcmp differ... no
+checking if signal handlers must be reinstalled when invoked... no
+checking for presence of necessary job control definitions... present
+checking for presence of named pipes... present
+checking for TIOCGWINSZ in sys/ioctl.h... yes
+checking for TIOCSTAT in sys/ioctl.h... no
+checking for FIONREAD in sys/ioctl.h... yes
+checking for speed_t in sys/types.h... no
+checking whether getpw functions are declared in pwd.h... yes
+checking for unusable real-time signals due to large values... no
+checking for tgetent in -ltermcap... yes
+checking which library has the termcap functions... using libtermcap
+checking whether /dev/fd is available... standard
+checking whether /dev/stdin stdout stderr are available... present
+checking for default mail directory... /var/mail
+checking shared object configuration for loadable builtins... supported
+updating cache ./config.cache
+creating ./config.status
+creating Makefile
+creating builtins/Makefile
+creating lib/readline/Makefile
+creating lib/glob/Makefile
+creating lib/malloc/Makefile
+creating lib/sh/Makefile
+creating lib/termcap/Makefile
+creating lib/tilde/Makefile
+creating doc/Makefile
+creating support/Makefile
+mkdir: cannot create directory 'examples/loadables': No such file or directory
+creating examples/loadables/Makefile
+./config.status: 201: ./config.status: cannot create examples/loadables/Makefile: Directory nonexistent
+sed: can't read ./examples/loadables/Makefile.in: No such file or directory
+mkdir: cannot create directory 'examples/loadables/perl': No such file or directory
+creating examples/loadables/perl/Makefile
+./config.status: 201: ./config.status: cannot create examples/loadables/perl/Makefile: Directory nonexistent
+sed: can't read ./examples/loadables/perl/Makefile.in: No such file or directory
+creating config.h
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -D_LARGEFILE64_SOURCE -o mksyntax ./mksyntax.c
+./mksyntax.c:276:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
+ main(argc, argv)
+ ^~~~
+./mksyntax.c: In function ‘main’:
+./mksyntax.c:292:17: warning: implicit declaration of function ‘getopt’ [-Wimplicit-function-declaration]
+   while ((opt = getopt (argc, argv, "do:")) != EOF)
+                 ^~~~~~
+rm -f syntax.c
+./mksyntax -o syntax.c
+/bin/sh ./support/mkversion.sh -b -s release -d 2.05 -p 0 -o newversion.h \
+	&& mv newversion.h version.h
+
+	  ***********************************************************
+	  *                                                         *
+	  * Making Bash-2.05.0-release for a  running 
+	  *                                                         *
+	  ***********************************************************
+
+rm -f shell.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c shell.c
+In file included from shell.h:27:0,
+                 from shell.c:45:
+shell.c: In function ‘main’:
+general.h:175:23: warning: implicit declaration of function ‘time’ [-Wimplicit-function-declaration]
+ #define NOW ((time_t) time ((time_t *) 0))
+                       ^
+shell.c:365:22: note: in expansion of macro ‘NOW’
+   shell_start_time = NOW; /* NOW now defined in general.h */
+                      ^~~
+shell.c: In function ‘shell_initialize’:
+shell.c:1459:7: warning: implicit declaration of function ‘sh_setlinebuf’ [-Wimplicit-function-declaration]
+       sh_setlinebuf (stderr);
+       ^~~~~~~~~~~~~
+shell.c: In function ‘disable_priv_mode’:
+shell.c:1050:3: warning: ignoring return value of ‘setuid’, declared with attribute warn_unused_result [-Wunused-result]
+   setuid (current_user.uid);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~
+shell.c:1051:3: warning: ignoring return value of ‘setgid’, declared with attribute warn_unused_result [-Wunused-result]
+   setgid (current_user.gid);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~
+rm -f eval.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c eval.c
+make[1]: Entering directory '/home/qxin6/debaug_expt/debaug/working/bash/source/builtins'
+rm -f mkbuiltins.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 mkbuiltins.c
+gcc   -g -O2 -o mkbuiltins mkbuiltins.o -ldl  
+./mkbuiltins -externfile builtext.h -structfile builtins.c \
+    -noproduction -D . ./alias.def ./bind.def ./break.def ./builtin.def ./cd.def ./colon.def ./command.def ./declare.def ./echo.def ./enable.def ./eval.def ./getopts.def ./exec.def ./exit.def ./fc.def ./fg_bg.def ./hash.def ./help.def ./history.def ./jobs.def ./kill.def ./let.def ./read.def ./return.def ./set.def ./setattr.def ./shift.def ./source.def ./suspend.def ./test.def ./times.def ./trap.def ./type.def ./ulimit.def ./umask.def ./wait.def ./reserved.def ./pushd.def ./shopt.def ./printf.def ./complete.def
+make[1]: Leaving directory '/home/qxin6/debaug_expt/debaug/working/bash/source/builtins'
+rm -f y.tab.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c y.tab.c
+/usr/homes/chet/src/bash/src/parse.y: In function ‘cond_term’:
+/usr/homes/chet/src/bash/src/parse.y:2766:27: warning: implicit declaration of function ‘test_unop’ [-Wimplicit-function-declaration]
+/usr/homes/chet/src/bash/src/parse.y:2791:26: warning: implicit declaration of function ‘test_binop’ [-Wimplicit-function-declaration]
+rm -f general.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c general.c
+rm -f make_cmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c make_cmd.c
+rm -f print_cmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c print_cmd.c
+print_cmd.c: In function ‘xprintf’:
+print_cmd.c:1180:1: warning: type of ‘arg1’ defaults to ‘int’ [-Wimplicit-int]
+ xprintf (format, arg1, arg2, arg3, arg4, arg5)
+ ^~~~~~~
+print_cmd.c:1180:1: warning: type of ‘arg2’ defaults to ‘int’ [-Wimplicit-int]
+print_cmd.c:1180:1: warning: type of ‘arg3’ defaults to ‘int’ [-Wimplicit-int]
+print_cmd.c:1180:1: warning: type of ‘arg4’ defaults to ‘int’ [-Wimplicit-int]
+print_cmd.c:1180:1: warning: type of ‘arg5’ defaults to ‘int’ [-Wimplicit-int]
+rm -f dispose_cmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c dispose_cmd.c
+rm -f execute_cmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c execute_cmd.c
+execute_cmd.c: In function ‘execute_command_internal’:
+execute_cmd.c:527:19: warning: implicit declaration of function ‘stdin_redirects’ [-Wimplicit-function-declaration]
+     stdin_redir = stdin_redirects (command->redirects);
+                   ^~~~~~~~~~~~~~~
+rm -f variables.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c variables.c
+variables.c: In function ‘initialize_shell_variables’:
+variables.c:310:3: warning: implicit declaration of function ‘getopts_reset’ [-Wimplicit-function-declaration]
+   getopts_reset (0);
+   ^~~~~~~~~~~~~
+In file included from shell.h:27:0,
+                 from variables.c:39:
+variables.c: In function ‘assign_seconds’:
+general.h:175:23: warning: implicit declaration of function ‘time’ [-Wimplicit-function-declaration]
+ #define NOW ((time_t) time ((time_t *) 0))
+                       ^
+variables.c:993:22: note: in expansion of macro ‘NOW’
+   shell_start_time = NOW;
+                      ^~~
+variables.c: In function ‘sv_path’:
+variables.c:3237:3: warning: implicit declaration of function ‘flush_hashed_filenames’ [-Wimplicit-function-declaration]
+   flush_hashed_filenames ();
+   ^~~~~~~~~~~~~~~~~~~~~~
+variables.c: In function ‘sv_globignore’:
+variables.c:3265:3: warning: implicit declaration of function ‘setup_glob_ignore’ [-Wimplicit-function-declaration]
+   setup_glob_ignore (name);
+   ^~~~~~~~~~~~~~~~~
+variables.c: In function ‘sv_tz’:
+variables.c:3396:3: warning: implicit declaration of function ‘tzset’ [-Wimplicit-function-declaration]
+   tzset ();
+   ^~~~~
+variables.c: In function ‘sv_ignoreeof’:
+variables.c:3417:3: warning: implicit declaration of function ‘set_shellopts’ [-Wimplicit-function-declaration]
+   set_shellopts (); /* make sure `ignoreeof' is/is not in $SHELLOPTS */
+   ^~~~~~~~~~~~~
+rm -f copy_cmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c copy_cmd.c
+rm -f error.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c error.c
+rm -f expr.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c expr.c
+expr.c:150:57: warning: conflicting types for built-in function ‘exp2’
+ static long subexpr (), expassign (), exp0 (), exp1 (), exp2 (), exp3 (),
+                                                         ^~~~
+rm -f flags.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c flags.c
+flags.c: In function ‘change_flag’:
+flags.c:259:2: warning: implicit declaration of function ‘bash_initialize_history’ [-Wimplicit-function-declaration]
+  bash_initialize_history ();
+  ^~~~~~~~~~~~~~~~~~~~~~~
+rm -f jobs.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c jobs.c
+jobs.c: In function ‘raw_job_exit_status’:
+jobs.c:1619:1: warning: type of ‘job’ defaults to ‘int’ [-Wimplicit-int]
+ raw_job_exit_status (job)
+ ^~~~~~~~~~~~~~~~~~~
+rm -f subst.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c subst.c
+subst.c: In function ‘valid_brace_expansion_word’:
+subst.c:3843:7: warning: implicit declaration of function ‘isdigit’ [-Wimplicit-function-declaration]
+   if (isdigit (*name) && all_digits (name))
+       ^~~~~~~
+In file included from shell.h:27:0,
+                 from subst.c:40:
+subst.c: In function ‘parameter_brace_expand’:
+general.h:86:22: warning: implicit declaration of function ‘isalpha’ [-Wimplicit-function-declaration]
+ #define isletter(c) (isalpha(c))
+                      ^
+general.h:98:36: note: in expansion of macro ‘isletter’
+ #define legal_variable_starter(c) (isletter(c) || (c == '_'))
+                                    ^~~~~~~~
+subst.c:4708:6: note: in expansion of macro ‘legal_variable_starter’
+     (legal_variable_starter (name[1]) || isdigit (name[1])
+      ^~~~~~~~~~~~~~~~~~~~~~
+rm -f hashcmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c hashcmd.c
+rm -f hashlib.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c hashlib.c
+rm -f mailcheck.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c mailcheck.c
+In file included from shell.h:27:0,
+                 from mailcheck.c:34:
+mailcheck.c: In function ‘time_to_check_mail’:
+general.h:175:23: warning: implicit declaration of function ‘time’ [-Wimplicit-function-declaration]
+ #define NOW ((time_t) time ((time_t *) 0))
+                       ^
+mailcheck.c:89:9: note: in expansion of macro ‘NOW’
+   now = NOW;
+         ^~~
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -D_LARGEFILE64_SOURCE -o mksignames ./support/mksignames.c
+In file included from ./support/mksignames.c:28:0:
+./include/ansi_stdlib.h:34:14: warning: conflicting types for built-in function ‘malloc’
+ extern char *malloc ();
+              ^~~~~~
+./include/ansi_stdlib.h:35:14: warning: conflicting types for built-in function ‘realloc’
+ extern char *realloc ();
+              ^~~~~~~
+rm -f lsignames.h
+./mksignames lsignames.h
+if cmp -s lsignames.h signames.h ; then :; else rm -f signames.h ; cp lsignames.h signames.h ; fi
+rm -f trap.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c trap.c
+trap.c: In function ‘run_pending_traps’:
+trap.c:264:10: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     sig, (int)trap_list[sig]);
+          ^
+rm -f input.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c input.c
+rm -f unwind_prot.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c unwind_prot.c
+unwind_prot.c: In function ‘clear_unwind_protect_list’:
+unwind_prot.c:150:40: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+       (clear_unwind_protects_internal, (char *)flags, (char *)NULL);
+                                        ^
+unwind_prot.c: In function ‘clear_unwind_protects_internal’:
+unwind_prot.c:215:19: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   int free_elts = (int)flag;
+                   ^
+unwind_prot.c: In function ‘restore_variable’:
+unwind_prot.c:302:23: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     *(sv->variable) = (int)sv->desired_setting;
+                       ^
+rm -f pathexp.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c pathexp.c
+rm -f sig.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c sig.c
+rm -f test.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c test.c
+rm -f version.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c version.c
+rm -f alias.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c alias.c
+In file included from alias.c:36:0:
+alias.c: In function ‘skipws’:
+general.h:86:22: warning: implicit declaration of function ‘isalpha’ [-Wimplicit-function-declaration]
+ #define isletter(c) (isalpha(c))
+                      ^
+alias.c:354:8: note: in expansion of macro ‘isletter’
+    if (isletter (peekc))
+        ^~~~~~~~
+rm -f array.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c array.c
+rm -f braces.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c braces.c
+rm -f bracecomp.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c bracecomp.c
+rm -f bashhist.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c bashhist.c
+rm -f bashline.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c bashline.c
+rm -f siglist.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c siglist.c
+rm -f list.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c list.c
+rm -f stringlib.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c stringlib.c
+stringlib.c: In function ‘strcreplace’:
+stringlib.c:198:24: warning: implicit declaration of function ‘glob_pattern_p’ [-Wimplicit-function-declaration]
+        if (do_glob && (glob_pattern_p (text) || strchr (text, '\\')))
+                        ^~~~~~~~~~~~~~
+rm -f locale.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c locale.c
+rm -f findcmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c findcmd.c
+rm -f redir.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c redir.c
+rm -f pcomplete.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c pcomplete.c
+pcomplete.c: In function ‘gen_shell_function_matches’:
+pcomplete.c:962:10: warning: implicit declaration of function ‘execute_shell_function’ [-Wimplicit-function-declaration]
+   fval = execute_shell_function (f, cmdlist);
+          ^~~~~~~~~~~~~~~~~~~~~~
+pcomplete.c: In function ‘gen_compspec_completions’:
+pcomplete.c:1111:62: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   debug_printf ("programmable_completions: %s -> 0x%x", cmd, (int)cs);
+                                                              ^
+pcomplete.c:1115:62: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+       debug_printf ("gen_action_completions (0x%x, %s) -->", (int)cs, word);
+                                                              ^
+pcomplete.c:1128:60: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+        debug_printf ("gen_globpat_matches (0x%x, %s) -->", (int)cs, word);
+                                                            ^
+pcomplete.c:1145:61: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+        debug_printf ("gen_wordlist_matches (0x%x, %s) -->", (int)cs, word);
+                                                             ^
+pcomplete.c:1187:81: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+        debug_printf ("gen_shell_function_matches (0x%x, %s, 0x%x, %d, %d) -->", (int)cs, word, lwords, nw, cw);
+                                                                                 ^
+pcomplete.c:1203:74: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+        debug_printf ("gen_command_matches (0x%x, %s, 0x%x, %d, %d) -->", (int)cs, word, lwords, nw, cw);
+                                                                          ^
+rm -f pcomplib.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c pcomplib.c
+rm -f syntax.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c syntax.c
+rm -f xmalloc.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='""' -DCONF_OSTYPE='""' -DCONF_MACHTYPE='""' -DCONF_VENDOR='""' -DSHELL -DHAVE_CONFIG_H  -D_LARGEFILE64_SOURCE -I.  -I. -I./include -I./lib -I/usr/local/include -g -O2 -c xmalloc.c
+make[1]: Entering directory '/home/qxin6/debaug_expt/debaug/working/bash/source/builtins'
+rm -f builtins.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 builtins.c
+rm -f alias.o
+./mkbuiltins -D . alias.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 alias.c || ( rm -f alias.c ; exit 1 )
+rm -f alias.c
+rm -f bind.o
+./mkbuiltins -D . bind.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 bind.c || ( rm -f bind.c ; exit 1 )
+rm -f bind.c
+rm -f break.o
+./mkbuiltins -D . break.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 break.c || ( rm -f break.c ; exit 1 )
+rm -f break.c
+rm -f builtin.o
+./mkbuiltins -D . builtin.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 builtin.c || ( rm -f builtin.c ; exit 1 )
+rm -f builtin.c
+rm -f cd.o
+./mkbuiltins -D . cd.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 cd.c || ( rm -f cd.c ; exit 1 )
+rm -f cd.c
+rm -f colon.o
+./mkbuiltins -D . colon.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 colon.c || ( rm -f colon.c ; exit 1 )
+rm -f colon.c
+rm -f command.o
+./mkbuiltins -D . command.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 command.c || ( rm -f command.c ; exit 1 )
+rm -f command.c
+rm -f common.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 common.c
+In file included from ../shell.h:27:0,
+                 from common.c:45:
+common.c: In function ‘get_job_spec’:
+../general.h:82:20: warning: implicit declaration of function ‘isdigit’ [-Wimplicit-function-declaration]
+ #define digit(c)  (isdigit(c))
+                    ^
+common.c:465:7: note: in expansion of macro ‘digit’
+   if (digit (*word) && all_digits (word))
+       ^~~~~
+rm -f declare.o
+./mkbuiltins -D . declare.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 declare.c || ( rm -f declare.c ; exit 1 )
+rm -f declare.c
+rm -f echo.o
+./mkbuiltins -D . echo.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 echo.c || ( rm -f echo.c ; exit 1 )
+rm -f echo.c
+rm -f enable.o
+./mkbuiltins -D . enable.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 enable.c || ( rm -f enable.c ; exit 1 )
+rm -f enable.c
+rm -f eval.o
+./mkbuiltins -D . eval.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 eval.c || ( rm -f eval.c ; exit 1 )
+rm -f eval.c
+rm -f evalfile.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 evalfile.c
+rm -f evalstring.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 evalstring.c
+rm -f exec.o
+./mkbuiltins -D . exec.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 exec.c || ( rm -f exec.c ; exit 1 )
+rm -f exec.c
+rm -f exit.o
+./mkbuiltins -D . exit.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 exit.c || ( rm -f exit.c ; exit 1 )
+rm -f exit.c
+rm -f fc.o
+./mkbuiltins -D . fc.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 fc.c || ( rm -f fc.c ; exit 1 )
+In file included from ../shell.h:27:0,
+                 from ./fc.def:70:
+./fc.def: In function ‘fc_gethnum’:
+../general.h:82:20: warning: implicit declaration of function ‘isdigit’ [-Wimplicit-function-declaration]
+ #define digit(c)  (isdigit(c))
+                    ^
+./fc.def:448:12: note: in expansion of macro ‘digit’
+   if (s && digit(*s))
+            ^~~~~
+rm -f fc.c
+rm -f fg_bg.o
+./mkbuiltins -D . fg_bg.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 fg_bg.c || ( rm -f fg_bg.c ; exit 1 )
+rm -f fg_bg.c
+rm -f hash.o
+./mkbuiltins -D . hash.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 hash.c || ( rm -f hash.c ; exit 1 )
+rm -f hash.c
+rm -f help.o
+./mkbuiltins -D . help.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 help.c || ( rm -f help.c ; exit 1 )
+rm -f help.c
+rm -f history.o
+./mkbuiltins -D . history.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 history.c || ( rm -f history.c ; exit 1 )
+rm -f history.c
+rm -f jobs.o
+./mkbuiltins -D . jobs.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 jobs.c || ( rm -f jobs.c ; exit 1 )
+rm -f jobs.c
+rm -f kill.o
+./mkbuiltins -D . kill.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 kill.c || ( rm -f kill.c ; exit 1 )
+rm -f kill.c
+rm -f let.o
+./mkbuiltins -D . let.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 let.c || ( rm -f let.c ; exit 1 )
+rm -f let.c
+rm -f pushd.o
+./mkbuiltins -D . pushd.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 pushd.c || ( rm -f pushd.c ; exit 1 )
+rm -f pushd.c
+rm -f read.o
+./mkbuiltins -D . read.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 read.c || ( rm -f read.c ; exit 1 )
+./read.def: In function ‘read_builtin’:
+./read.def:477:4: warning: implicit declaration of function ‘free’ [-Wimplicit-function-declaration]
+    free (t);
+    ^~~~
+./read.def:477:4: warning: incompatible implicit declaration of built-in function ‘free’
+./read.def:477:4: note: include ‘<stdlib.h>’ or provide a declaration of ‘free’
+./read.def:483:7: warning: incompatible implicit declaration of built-in function ‘free’
+       free (input_string);
+       ^~~~
+./read.def:483:7: note: include ‘<stdlib.h>’ or provide a declaration of ‘free’
+./read.def:507:4: warning: incompatible implicit declaration of built-in function ‘free’
+    free (orig_input_string);
+    ^~~~
+./read.def:507:4: note: include ‘<stdlib.h>’ or provide a declaration of ‘free’
+./read.def:525:8: warning: incompatible implicit declaration of built-in function ‘free’
+        free (t1);
+        ^~~~
+./read.def:525:8: note: include ‘<stdlib.h>’ or provide a declaration of ‘free’
+In file included from ../shell.h:27:0,
+                 from ./read.def:66:
+../general.h:145:30: warning: incompatible implicit declaration of built-in function ‘free’
+ #define FREE(s)  do { if (s) free (s); } while (0)
+                              ^
+./read.def:536:7: note: in expansion of macro ‘FREE’
+       FREE (t);
+       ^~~~
+../general.h:145:30: note: include ‘<stdlib.h>’ or provide a declaration of ‘free’
+ #define FREE(s)  do { if (s) free (s); } while (0)
+                              ^
+./read.def:536:7: note: in expansion of macro ‘FREE’
+       FREE (t);
+       ^~~~
+./read.def:539:4: warning: incompatible implicit declaration of built-in function ‘free’
+    free (orig_input_string);
+    ^~~~
+./read.def:539:4: note: include ‘<stdlib.h>’ or provide a declaration of ‘free’
+./read.def:555:7: warning: incompatible implicit declaration of built-in function ‘free’
+       free (orig_input_string);
+       ^~~~
+./read.def:555:7: note: include ‘<stdlib.h>’ or provide a declaration of ‘free’
+./read.def:568:7: warning: incompatible implicit declaration of built-in function ‘free’
+       free (t);
+       ^~~~
+./read.def:568:7: note: include ‘<stdlib.h>’ or provide a declaration of ‘free’
+./read.def:575:3: warning: incompatible implicit declaration of built-in function ‘free’
+   free (orig_input_string);
+   ^~~~
+./read.def:575:3: note: include ‘<stdlib.h>’ or provide a declaration of ‘free’
+rm -f read.c
+rm -f return.o
+./mkbuiltins -D . return.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 return.c || ( rm -f return.c ; exit 1 )
+rm -f return.c
+rm -f set.o
+./mkbuiltins -D . set.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 set.c || ( rm -f set.c ; exit 1 )
+rm -f set.c
+rm -f setattr.o
+./mkbuiltins -D . setattr.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 setattr.c || ( rm -f setattr.c ; exit 1 )
+rm -f setattr.c
+rm -f shift.o
+./mkbuiltins -D . shift.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 shift.c || ( rm -f shift.c ; exit 1 )
+rm -f shift.c
+rm -f source.o
+./mkbuiltins -D . source.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 source.c || ( rm -f source.c ; exit 1 )
+rm -f source.c
+rm -f suspend.o
+./mkbuiltins -D . suspend.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 suspend.c || ( rm -f suspend.c ; exit 1 )
+rm -f suspend.c
+rm -f test.o
+./mkbuiltins -D . test.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 test.c || ( rm -f test.c ; exit 1 )
+rm -f test.c
+rm -f times.o
+./mkbuiltins -D . times.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 times.c || ( rm -f times.c ; exit 1 )
+rm -f times.c
+rm -f trap.o
+./mkbuiltins -D . trap.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 trap.c || ( rm -f trap.c ; exit 1 )
+rm -f trap.c
+rm -f type.o
+./mkbuiltins -D . type.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 type.c || ( rm -f type.c ; exit 1 )
+rm -f type.c
+gcc  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 -o psize.aux ./psize.c
+./psize.c: In function ‘sigpipe’:
+./psize.c:52:3: warning: implicit declaration of function ‘exit’ [-Wimplicit-function-declaration]
+   exit (0);
+   ^~~~
+./psize.c:52:3: warning: incompatible implicit declaration of built-in function ‘exit’
+./psize.c:52:3: note: include ‘<stdlib.h>’ or provide a declaration of ‘exit’
+/bin/sh ./psize.sh > pipesize.h
+rm -f ulimit.o
+./mkbuiltins -D . ulimit.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 ulimit.c || ( rm -f ulimit.c ; exit 1 )
+rm -f ulimit.c
+rm -f umask.o
+./mkbuiltins -D . umask.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 umask.c || ( rm -f umask.c ; exit 1 )
+In file included from ../shell.h:27:0,
+                 from ./umask.def:50:
+./umask.def: In function ‘umask_builtin’:
+../general.h:82:20: warning: implicit declaration of function ‘isdigit’ [-Wimplicit-function-declaration]
+ #define digit(c)  (isdigit(c))
+                    ^
+./umask.def:95:11: note: in expansion of macro ‘digit’
+       if (digit (*list->word->word))
+           ^~~~~
+rm -f umask.c
+rm -f wait.o
+./mkbuiltins -D . wait.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 wait.c || ( rm -f wait.c ; exit 1 )
+In file included from ../shell.h:27:0,
+                 from ./wait.def:55:
+./wait.def: In function ‘wait_builtin’:
+../general.h:82:20: warning: implicit declaration of function ‘isdigit’ [-Wimplicit-function-declaration]
+ #define digit(c)  (isdigit(c))
+                    ^
+./wait.def:125:11: note: in expansion of macro ‘digit’
+       if (digit (*w))
+           ^~~~~
+rm -f wait.c
+rm -f getopts.o
+./mkbuiltins -D . getopts.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 getopts.c || ( rm -f getopts.c ; exit 1 )
+rm -f getopts.c
+rm -f shopt.o
+./mkbuiltins -D . shopt.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 shopt.c || ( rm -f shopt.c ; exit 1 )
+rm -f shopt.c
+rm -f printf.o
+./mkbuiltins -D . printf.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 printf.c || ( rm -f printf.c ; exit 1 )
+./printf.def: In function ‘printf_builtin’:
+./printf.def:114:4: warning: implicit declaration of function ‘builtin_usage’ [-Wimplicit-function-declaration]
+    builtin_usage();
+    ^~~~~~~~~~~~~
+./printf.def:204:8: warning: implicit declaration of function ‘builtin_error’ [-Wimplicit-function-declaration]
+        builtin_error ("`%s': missing format character", start);
+        ^~~~~~~~~~~~~
+rm -f printf.c
+rm -f getopt.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 getopt.c
+rm -f bashgetopt.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 bashgetopt.c
+In file included from ../shell.h:27:0,
+                 from bashgetopt.c:30:
+bashgetopt.c: In function ‘internal_getopt’:
+../general.h:82:20: warning: implicit declaration of function ‘isdigit’ [-Wimplicit-function-declaration]
+ #define digit(c)  (isdigit(c))
+                    ^
+bashgetopt.c:127:8: note: in expansion of macro ‘digit’
+    if (digit(lcurrent->word->word[sp+1])) {
+        ^~~~~
+rm -f complete.o
+./mkbuiltins -D . complete.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I..  -I.. -I../include -I../lib -I.  -g -O2 complete.c || ( rm -f complete.c ; exit 1 )
+rm -f complete.c
+rm -f libbuiltins.a
+ar cr libbuiltins.a builtins.o alias.o bind.o break.o builtin.o cd.o colon.o command.o common.o declare.o echo.o enable.o eval.o evalfile.o evalstring.o exec.o exit.o fc.o fg_bg.o hash.o help.o history.o jobs.o kill.o let.o pushd.o read.o return.o set.o setattr.o shift.o source.o suspend.o test.o times.o trap.o type.o ulimit.o umask.o wait.o getopts.o shopt.o printf.o getopt.o bashgetopt.o complete.o
+ranlib libbuiltins.a
+make[1]: Leaving directory '/home/qxin6/debaug_expt/debaug/working/bash/source/builtins'
+making lib/sh/libsh.a in ./lib/sh
+make[1]: Entering directory '/home/qxin6/debaug_expt/debaug/working/bash/source/lib/sh'
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  clktck.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  clock.c
+clock.c: In function ‘clock_t_to_secs’:
+clock.c:43:15: warning: implicit declaration of function ‘get_clk_tck’ [-Wimplicit-function-declaration]
+     clk_tck = get_clk_tck ();
+               ^~~~~~~~~~~
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  getcwd.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  getenv.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  oslib.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  setlinebuf.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  strcasecmp.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  strerror.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  strtod.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  strtol.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  strtoul.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  vprint.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  itos.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  rename.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  zread.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  zwrite.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  shtty.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  inet_aton.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  netopen.c
+netopen.c: In function ‘_getserv’:
+netopen.c:108:7: warning: implicit declaration of function ‘legal_number’ [-Wimplicit-function-declaration]
+   if (legal_number (serv, &l))
+       ^~~~~~~~~~~~
+netopen.c: In function ‘_netopen’:
+netopen.c:148:7: warning: implicit declaration of function ‘internal_error’ [-Wimplicit-function-declaration]
+       internal_error ("%s: host unknown", host);
+       ^~~~~~~~~~~~~~
+netopen.c:168:7: warning: implicit declaration of function ‘sys_error’ [-Wimplicit-function-declaration]
+       sys_error ("socket");
+       ^~~~~~~~~
+netopen.c:176:7: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+       close(s);
+       ^~~~~
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  strpbrk.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  timeval.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  makepath.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  pathcanon.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  pathphys.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  tmpfile.c
+tmpfile.c: In function ‘sh_mktmpname’:
+tmpfile.c:121:23: warning: implicit declaration of function ‘time’ [-Wimplicit-function-declaration]
+       filenum *= (int)time ((time_t *)0) * dollar_dollar_pid *
+                       ^~~~
+tmpfile.c: In function ‘sh_mktmpfd’:
+tmpfile.c:168:5: warning: implicit declaration of function ‘free’ [-Wimplicit-function-declaration]
+     free (filename);
+     ^~~~
+tmpfile.c:168:5: warning: incompatible implicit declaration of built-in function ‘free’
+tmpfile.c:168:5: note: include ‘<stdlib.h>’ or provide a declaration of ‘free’
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  stringlist.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  stringvec.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  spell.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  shquote.c
+shquote.c: In function ‘sh_single_quote’:
+shquote.c:49:30: warning: implicit declaration of function ‘strlen’ [-Wimplicit-function-declaration]
+   result = xmalloc (3 + (4 * strlen (string)));
+                              ^~~~~~
+shquote.c:49:30: warning: incompatible implicit declaration of built-in function ‘strlen’
+shquote.c:49:30: note: include ‘<string.h>’ or provide a declaration of ‘strlen’
+shquote.c: In function ‘sh_double_quote’:
+shquote.c:79:30: warning: incompatible implicit declaration of built-in function ‘strlen’
+   result = xmalloc (3 + (2 * strlen (string)));
+                              ^~~~~~
+shquote.c:79:30: note: include ‘<string.h>’ or provide a declaration of ‘strlen’
+shquote.c: In function ‘sh_un_double_quote’:
+shquote.c:106:25: warning: incompatible implicit declaration of built-in function ‘strlen’
+   r = result = xmalloc (strlen (string) + 1);
+                         ^~~~~~
+shquote.c:106:25: note: include ‘<string.h>’ or provide a declaration of ‘strlen’
+shquote.c: In function ‘sh_backslash_quote’:
+shquote.c:137:25: warning: incompatible implicit declaration of built-in function ‘strlen’
+   result = xmalloc (2 * strlen (string) + 1);
+                         ^~~~~~
+shquote.c:137:25: note: include ‘<string.h>’ or provide a declaration of ‘strlen’
+shquote.c: In function ‘sh_backslash_quote_for_double_quotes’:
+shquote.c:185:25: warning: incompatible implicit declaration of built-in function ‘strlen’
+   result = xmalloc (2 * strlen (string) + 1);
+                         ^~~~~~
+shquote.c:185:25: note: include ‘<string.h>’ or provide a declaration of ‘strlen’
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  strtrans.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -DHAVE_CONFIG_H -DSHELL  -g -O2 -D_LARGEFILE64_SOURCE  strindex.c
+rm -f libsh.a
+ar cr libsh.a clktck.o clock.o getcwd.o getenv.o oslib.o setlinebuf.o strcasecmp.o strerror.o strtod.o strtol.o strtoul.o vprint.o itos.o rename.o zread.o zwrite.o shtty.o inet_aton.o netopen.o strpbrk.o timeval.o makepath.o pathcanon.o pathphys.o tmpfile.o stringlist.o stringvec.o spell.o shquote.o strtrans.o strindex.o
+test -n "ranlib" && ranlib libsh.a
+make[1]: Leaving directory '/home/qxin6/debaug_expt/debaug/working/bash/source/lib/sh'
+making lib/readline/libreadline.a in ./lib/readline
+make[1]: Entering directory '/home/qxin6/debaug_expt/debaug/working/bash/source/lib/readline'
+rm -f readline.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 readline.c
+rm -f vi_mode.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 vi_mode.c
+rm -f funmap.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 funmap.c
+rm -f keymaps.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 keymaps.c
+rm -f parens.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 parens.c
+rm -f search.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 search.c
+rm -f rltty.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 rltty.c
+rm -f complete.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 complete.c
+rm -f bind.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 bind.c
+rm -f isearch.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 isearch.c
+rm -f display.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 display.c
+rm -f signals.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 signals.c
+rm -f util.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 util.c
+rm -f kill.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 kill.c
+rm -f undo.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 undo.c
+rm -f macro.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 macro.c
+rm -f input.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 input.c
+rm -f callback.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 callback.c
+callback.c: In function ‘rl_callback_read_char’:
+callback.c:99:7: warning: implicit declaration of function ‘abort’ [-Wimplicit-function-declaration]
+       abort ();
+       ^~~~~
+callback.c:99:7: warning: incompatible implicit declaration of built-in function ‘abort’
+callback.c:99:7: note: include ‘<stdlib.h>’ or provide a declaration of ‘abort’
+rm -f terminal.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 terminal.c
+rm -f nls.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 nls.c
+rm -f history.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 history.c
+rm -f histexpand.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 histexpand.c
+rm -f histfile.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 histfile.c
+histfile.c: In function ‘history_truncate_file’:
+histfile.c:313:7: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
+       write (file, buffer + i, chars_read - i);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+rm -f histsearch.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 histsearch.c
+rm -f shell.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 shell.c
+rm -f savestring.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 savestring.c
+savestring.c: In function ‘savestring’:
+savestring.c:32:45: warning: implicit declaration of function ‘strlen’ [-Wimplicit-function-declaration]
+   return ((char *)strcpy (xmalloc (1 + (int)strlen (s)), (s)));
+                                             ^~~~~~
+savestring.c:32:45: warning: incompatible implicit declaration of built-in function ‘strlen’
+savestring.c:32:45: note: include ‘<string.h>’ or provide a declaration of ‘strlen’
+rm -f tilde.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 tilde.c
+rm -f xmalloc.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 xmalloc.c
+rm -f compat.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_LARGEFILE64_SOURCE -I. -I/home/qxin6/debaug_expt/debaug/working/bash/source -I../.. -I../../lib  -g -O2 compat.c
+rm -f libreadline.a
+ar cr libreadline.a readline.o vi_mode.o funmap.o keymaps.o parens.o search.o rltty.o complete.o bind.o isearch.o display.o signals.o util.o kill.o undo.o macro.o input.o callback.o terminal.o nls.o history.o histexpand.o histfile.o histsearch.o shell.o savestring.o tilde.o xmalloc.o compat.o
+test -n "ranlib" && ranlib libreadline.a
+make[1]: Leaving directory '/home/qxin6/debaug_expt/debaug/working/bash/source/lib/readline'
+making lib/readline/libhistory.a in ./lib/readline
+make[1]: Entering directory '/home/qxin6/debaug_expt/debaug/working/bash/source/lib/readline'
+rm -f libhistory.a
+ar cr libhistory.a history.o histexpand.o histfile.o histsearch.o shell.o savestring.o xmalloc.o
+test -n "ranlib" && ranlib libhistory.a
+make[1]: Leaving directory '/home/qxin6/debaug_expt/debaug/working/bash/source/lib/readline'
+making lib/termcap/libtermcap.a in ./lib/termcap
+make[1]: Entering directory '/home/qxin6/debaug_expt/debaug/working/bash/source/lib/termcap'
+gcc -c -g -O2 -DHAVE_CONFIG_H -D_LARGEFILE64_SOURCE -I. -I../.. -I../.. -I../../lib -I. termcap.c
+termcap.c: In function ‘memory_out’:
+termcap.c:98:3: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+   write (2, "virtual memory exhausted\n", 25);
+   ^~~~~
+termcap.c: In function ‘tgetent’:
+termcap.c:490:34: warning: implicit declaration of function ‘strcmp’ [-Wimplicit-function-declaration]
+   if (termcap_name && !filep && !strcmp (name, getenv ("TERM")))
+                                  ^~~~~~
+termcap.c:498:6: warning: implicit declaration of function ‘strcpy’ [-Wimplicit-function-declaration]
+      strcpy (bp, termcap_name);
+      ^~~~~~
+termcap.c:498:6: warning: incompatible implicit declaration of built-in function ‘strcpy’
+termcap.c:498:6: note: include ‘<string.h>’ or provide a declaration of ‘strcpy’
+termcap.c:528:32: warning: implicit declaration of function ‘strlen’ [-Wimplicit-function-declaration]
+       malloc_size = indirect ? strlen (tcenv) + 1 : buf.size;
+                                ^~~~~~
+termcap.c:528:32: warning: incompatible implicit declaration of built-in function ‘strlen’
+termcap.c:528:32: note: include ‘<string.h>’ or provide a declaration of ‘strlen’
+termcap.c:536:7: warning: incompatible implicit declaration of built-in function ‘strcpy’
+       strcpy (bp, tcenv);
+       ^~~~~~
+termcap.c:536:7: note: include ‘<string.h>’ or provide a declaration of ‘strcpy’
+termcap.c:537:14: warning: incompatible implicit declaration of built-in function ‘strlen’
+       bp1 += strlen (tcenv);
+              ^~~~~~
+termcap.c:537:14: note: include ‘<string.h>’ or provide a declaration of ‘strlen’
+termcap.c:545:4: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+    close (fd);
+    ^~~~~
+termcap.c: In function ‘scan_file’:
+termcap.c:613:3: warning: implicit declaration of function ‘lseek’ [-Wimplicit-function-declaration]
+   lseek (fd, 0L, 0);
+   ^~~~~
+termcap.c: In function ‘gobble_line’:
+termcap.c:734:4: warning: implicit declaration of function ‘bcopy’ [-Wimplicit-function-declaration]
+    bcopy (bufp->ptr, buf, bufp->full -= bufp->ptr - buf);
+    ^~~~~
+termcap.c:734:4: warning: incompatible implicit declaration of built-in function ‘bcopy’
+termcap.c:737:21: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+       if (!(nread = read (fd, buf + bufp->full, bufp->size - bufp->full)))
+                     ^~~~
+gcc -c -g -O2 -DHAVE_CONFIG_H -D_LARGEFILE64_SOURCE -I. -I../.. -I../.. -I../../lib -I. tparam.c
+tparam.c: In function ‘memory_out’:
+tparam.c:56:3: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+   write (2, "virtual memory exhausted\n", 25);
+   ^~~~~
+tparam.c: In function ‘tparam1’:
+tparam.c:166:8: warning: implicit declaration of function ‘bcopy’ [-Wimplicit-function-declaration]
+        bcopy (outstring, new, op - outstring);
+        ^~~~~
+tparam.c:166:8: warning: incompatible implicit declaration of built-in function ‘bcopy’
+tparam.c:227:22: warning: implicit declaration of function ‘strlen’ [-Wimplicit-function-declaration]
+    doup++, outend -= strlen (up);
+                      ^~~~~~
+tparam.c:227:22: warning: incompatible implicit declaration of built-in function ‘strlen’
+tparam.c:227:22: note: include ‘<string.h>’ or provide a declaration of ‘strlen’
+tparam.c:229:24: warning: incompatible implicit declaration of built-in function ‘strlen’
+    doleft++, outend -= strlen (left);
+                        ^~~~~~
+tparam.c:229:24: note: include ‘<string.h>’ or provide a declaration of ‘strlen’
+tparam.c:312:5: warning: implicit declaration of function ‘strcat’ [-Wimplicit-function-declaration]
+     strcat (op, up);
+     ^~~~~~
+tparam.c:312:5: warning: incompatible implicit declaration of built-in function ‘strcat’
+tparam.c:312:5: note: include ‘<string.h>’ or provide a declaration of ‘strcat’
+tparam.c:314:5: warning: incompatible implicit declaration of built-in function ‘strcat’
+     strcat (op, left);
+     ^~~~~~
+tparam.c:314:5: note: include ‘<string.h>’ or provide a declaration of ‘strcat’
+rm -f -f libtermcap.a
+ar cr libtermcap.a termcap.o tparam.o
+test -n "ranlib" && ranlib libtermcap.a
+make[1]: Leaving directory '/home/qxin6/debaug_expt/debaug/working/bash/source/lib/termcap'
+making lib/glob/libglob.a in ./lib/glob
+make[1]: Entering directory '/home/qxin6/debaug_expt/debaug/working/bash/source/lib/glob'
+gcc -c -DHAVE_CONFIG_H -DSHELL -D_LARGEFILE64_SOURCE -I. -I../.. -I../.. -I../../include -I../../lib  -g -O2 glob.c
+gcc -c -DHAVE_CONFIG_H -DSHELL -D_LARGEFILE64_SOURCE -I. -I../.. -I../.. -I../../include -I../../lib  -g -O2 fnmatch.c
+rm -f libglob.a
+ar cr libglob.a glob.o fnmatch.o
+test -n "ranlib" && ranlib libglob.a
+make[1]: Leaving directory '/home/qxin6/debaug_expt/debaug/working/bash/source/lib/glob'
+making lib/tilde/libtilde.a in ./lib/tilde
+make[1]: Entering directory '/home/qxin6/debaug_expt/debaug/working/bash/source/lib/tilde'
+gcc -c -DHAVE_CONFIG_H -DSHELL -D_LARGEFILE64_SOURCE -I. -I../.. -I../.. -I../../include -I../../lib  -g -O2 tilde.c
+rm -f libtilde.a
+ar cr libtilde.a tilde.o
+test -n "ranlib" && ranlib libtilde.a
+make[1]: Leaving directory '/home/qxin6/debaug_expt/debaug/working/bash/source/lib/tilde'
+make[1]: Entering directory '/home/qxin6/debaug_expt/debaug/working/bash/source/lib/malloc'
+gcc  -I. -I../.. -I../.. -I../../include -I../../lib -DHAVE_CONFIG_H -DSHELL  -g -O2 -DRCHECK -Dbotch=programming_error -D_LARGEFILE64_SOURCE -c malloc.c
+malloc.c: In function ‘memalign’:
+malloc.c:824:8: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   if (((int) ptr & (alignment - 1)) == 0)
+        ^
+malloc.c:827:24: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   aligned = (char *) (((int) ptr + alignment - 1) & -alignment);
+                        ^
+malloc.c:827:13: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   aligned = (char *) (((int) ptr + alignment - 1) & -alignment);
+             ^
+malloc.c: In function ‘_print_malloc_stats’:
+malloc.c:936:25: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 3 has type ‘unsigned int’ [-Wformat=]
+       fprintf (fp, "%12lu\t%4d\t%6d\t%5d\t%8d\t%5d\n", v.blocksize, v.nfree, v.nused, v.nmal, v.nmorecore, v.nsplit);
+                         ^
+gcc  -I. -I../.. -I../.. -I../../include -I../../lib -DHAVE_CONFIG_H -DSHELL  -g -O2 -DRCHECK -Dbotch=programming_error -D_LARGEFILE64_SOURCE -c stub.c
+rm -f libmalloc.a
+ar cr libmalloc.a malloc.o  stub.o
+test -n "ranlib" && ranlib libmalloc.a
+make[1]: Leaving directory '/home/qxin6/debaug_expt/debaug/working/bash/source/lib/malloc'
+rm -f bash
+gcc -L./builtins -L./lib/readline -L./lib/readline -L./lib/termcap -L./lib/glob -L./lib/tilde -L./lib/malloc -L./lib/sh    -g -O2 -o bash shell.o eval.o y.tab.o general.o make_cmd.o print_cmd.o  dispose_cmd.o execute_cmd.o variables.o copy_cmd.o error.o expr.o flags.o jobs.o subst.o hashcmd.o hashlib.o mailcheck.o trap.o input.o unwind_prot.o pathexp.o sig.o test.o version.o alias.o array.o braces.o bracecomp.o bashhist.o bashline.o siglist.o list.o stringlib.o locale.o findcmd.o redir.o pcomplete.o pcomplib.o syntax.o xmalloc.o -lbuiltins -lsh -lreadline -lhistory -ltermcap -lglob -ltilde -lmalloc  -ldl  
+ls -l bash
+-rwxrwxr-x 1 qxin6 qxin6 2878920 Dec 22 15:52 bash
+size bash
+   text	   data	    bss	    dec	    hex	filename
+ 618093	  43952	  20672	 682717	  a6add	bash
+mkdir /home/qxin6/debaug_expt/debaug/working/bash/source/bin
+mkdir /home/qxin6/debaug_expt/debaug/working/bash/source/man
+mkdir /home/qxin6/debaug_expt/debaug/working/bash/source/man/man1
+mkdir /home/qxin6/debaug_expt/debaug/working/bash/source/man/man3
+mkdir /home/qxin6/debaug_expt/debaug/working/bash/source/info
+/usr/bin/install -c -m 0755 bash /home/qxin6/debaug_expt/debaug/working/bash/source/bin/bash
+/usr/bin/install -c -m 0555 bashbug /home/qxin6/debaug_expt/debaug/working/bash/source/bin/bashbug
+( cd ./doc ; make  \
+	man1dir=/home/qxin6/debaug_expt/debaug/working/bash/source/man/man1 man1ext=1 \
+	man3dir=/home/qxin6/debaug_expt/debaug/working/bash/source/man/man3 man3ext=3 \
+	infodir=/home/qxin6/debaug_expt/debaug/working/bash/source/info htmldir= install )
+make[1]: Entering directory '/home/qxin6/debaug_expt/debaug/working/bash/source/doc'
+makeinfo --no-split -I../lib/readline/doc ./bashref.texi
+make[1]: makeinfo: Command not found
+Makefile:134: recipe for target 'bashref.info' failed
+make[1]: *** [bashref.info] Error 127
+make[1]: Leaving directory '/home/qxin6/debaug_expt/debaug/working/bash/source/doc'
+Makefile:602: recipe for target 'install' failed
+make: [install] Error 2 (ignored)

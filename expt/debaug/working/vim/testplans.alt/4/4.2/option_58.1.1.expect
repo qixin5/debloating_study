@@ -1,0 +1,7 @@
+send ":redir >> option_58.1.1.out\r"
+send ":set eol\r"
+ 
+
+send ":set eol?\r"
+send ":redir END\r"
+

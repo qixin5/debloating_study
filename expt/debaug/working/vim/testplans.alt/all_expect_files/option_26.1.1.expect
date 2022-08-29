@@ -1,0 +1,5 @@
+send ":redir >> option_26.1.1.out\r"
+send ":set cino=>2s\r"
+send ":set cino?\r"
+send ":redir END\r"
+

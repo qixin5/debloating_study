@@ -1,0 +1,7 @@
+send -- ":redir >> edit_115.1.1.out\r"
+send -- "yw"
+#sleep 1
+send -- ":reg 0\r"
+expect "continue"
+send -- ":redir END\r"
+

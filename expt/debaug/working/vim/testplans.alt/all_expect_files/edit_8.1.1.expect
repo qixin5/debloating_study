@@ -1,0 +1,9 @@
+send -- "5I"
+
+send -- "test nI"
+send -- "\033"
+sleep 1
+
+
+
+

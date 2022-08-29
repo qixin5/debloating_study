@@ -1,0 +1,574 @@
+cd src && make config
+make[1]: Entering directory '/home/qxin6/debaug_expt/debaug/working/vim/source/src'
+autoconf
+chmod 755 configure
+GUI_INC_LOC="" GUI_LIB_LOC="" \
+	CC="" CPPFLAGS="" CFLAGS="-O" \
+	LDFLAGS=""  \
+	./configure --disable-gui --without-x \
+	   \
+	   \
+	 --disable-gpm \
+	   
+checking whether make sets $(MAKE)... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... gcc -E
+checking for library containing strerror... none required
+checking for gawk... gawk
+checking for strip... strip
+configure: checking for buggy tools...
+checking for BeOS... no
+checking --enable-max-features argument... no
+checking --enable-min-features argument... no
+checking --enable-perlinterp argument... no
+checking --enable-pythoninterp argument... no
+checking --enable-tclinterp argument... no
+checking --enable-cscope argument... no
+checking --enable-multibyte argument... no
+checking --enable-hangulinput argument... no
+checking --enable-xim argument... no
+checking --enable-fontset argument... no
+checking --enable-broken-locale argument... no
+defaulting to: don't HAVE_X11
+checking --enable-gui argument... no GUI support
+checking quality of toupper... good
+checking whether __DATE__ and __TIME__ work... yes
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking elf.h usability... yes
+checking elf.h presence... yes
+checking for elf.h... yes
+checking for main in -lelf... no
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking for ANSI C header files... (cached) yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking sys/utsname.h usability... yes
+checking sys/utsname.h presence... yes
+checking for sys/utsname.h... yes
+checking termcap.h usability... yes
+checking termcap.h presence... yes
+checking for termcap.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking sgtty.h usability... yes
+checking sgtty.h presence... yes
+checking for sgtty.h... yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking termio.h usability... yes
+checking termio.h presence... yes
+checking for termio.h... yes
+checking for unistd.h... (cached) yes
+checking stropts.h usability... yes
+checking stropts.h presence... yes
+checking for stropts.h... yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking for strings.h... (cached) yes
+checking sys/systeminfo.h usability... no
+checking sys/systeminfo.h presence... no
+checking for sys/systeminfo.h... no
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking sys/stream.h usability... no
+checking sys/stream.h presence... no
+checking for sys/stream.h... no
+checking sys/ptem.h usability... no
+checking sys/ptem.h presence... no
+checking for sys/ptem.h... no
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking libc.h usability... no
+checking libc.h presence... no
+checking for libc.h... no
+checking sys/statfs.h usability... yes
+checking sys/statfs.h presence... yes
+checking for sys/statfs.h... yes
+checking poll.h usability... yes
+checking poll.h presence... yes
+checking for poll.h... yes
+checking sys/poll.h usability... yes
+checking sys/poll.h presence... yes
+checking for sys/poll.h... yes
+checking pwd.h usability... yes
+checking pwd.h presence... yes
+checking for pwd.h... yes
+checking utime.h usability... yes
+checking utime.h presence... yes
+checking for utime.h... yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking Xm/Xm.h usability... no
+checking Xm/Xm.h presence... no
+checking for Xm/Xm.h... no
+checking if strings.h can be included after string.h... yes
+checking whether gcc needs -traditional... no
+checking for an ANSI C-conforming const... yes
+checking for mode_t... yes
+checking for off_t... yes
+checking for pid_t... yes
+checking for size_t... yes
+checking for uid_t in sys/types.h... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking for ino_t... yes
+checking --with-tlib argument... automatic terminal library selection
+checking for tgetent in -lncurses... yes
+checking whether we talk terminfo... yes -- terminfo spoken here
+checking whether termcap.h contains ospeed... yes
+checking whether termcap.h contains UP, BC and PC... yes
+checking whether tputs() uses outfuntype... no
+checking whether sys/select.h and sys/time.h may both be included... yes
+checking return type of signal handlers... void
+checking for struct sigcontext... yes
+checking getcwd implementation... it is usable
+checking for bcmp... yes
+checking for fchdir... yes
+checking for fchown... yes
+checking for fseeko... yes
+checking for fsync... yes
+checking for ftello... yes
+checking for getcwd... yes
+checking for getpwnam... yes
+checking for getpwuid... yes
+checking for gettimeofday... yes
+checking for getwd... yes
+checking for lstat... yes
+checking for memcmp... yes
+checking for memset... yes
+checking for nanosleep... yes
+checking for opendir... yes
+checking for putenv... yes
+checking for qsort... yes
+checking for select... yes
+checking for setenv... yes
+checking for setpgid... yes
+checking for setsid... yes
+checking for sigset... yes
+checking for strcasecmp... yes
+checking for strerror... yes
+checking for strftime... yes
+checking for stricmp... no
+checking for strncasecmp... yes
+checking for strnicmp... no
+checking for strpbrk... yes
+checking for strtol... yes
+checking for tgetent... yes
+checking for usleep... yes
+checking for utime... yes
+checking for utimes... yes
+checking for st_blksize... yes
+checking --enable-gpm argument... no
+checking for rename... yes
+checking size of int... 4
+checking whether memmove/bcopy/memcpy handle overlaps... memmove does
+checking for _xpg4_setrunelocale in -lxpg4... no
+checking how to create tags... ctags -t
+checking how to run man with a section nr... man -s
+configure: creating ./config.status
+config.status: creating config.mk
+config.status: WARNING:  'config.mk.in' seems to ignore the --datarootdir setting
+config.status: creating config.h
+GUI_INC_LOC="" GUI_LIB_LOC="" \
+	CC="gcc" CPPFLAGS="" CFLAGS="-O" \
+	LDFLAGS=""  \
+	./configure --disable-gui --without-x \
+	   \
+	   \
+	 --disable-gpm \
+	   
+checking whether make sets $(MAKE)... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... gcc -E
+checking for library containing strerror... none required
+checking for gawk... gawk
+checking for strip... strip
+configure: checking for buggy tools...
+checking for BeOS... no
+checking --enable-max-features argument... no
+checking --enable-min-features argument... no
+checking --enable-perlinterp argument... no
+checking --enable-pythoninterp argument... no
+checking --enable-tclinterp argument... no
+checking --enable-cscope argument... no
+checking --enable-multibyte argument... no
+checking --enable-hangulinput argument... no
+checking --enable-xim argument... no
+checking --enable-fontset argument... no
+checking --enable-broken-locale argument... no
+defaulting to: don't HAVE_X11
+checking --enable-gui argument... no GUI support
+checking quality of toupper... good
+checking whether __DATE__ and __TIME__ work... yes
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking elf.h usability... yes
+checking elf.h presence... yes
+checking for elf.h... yes
+checking for main in -lelf... no
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking for ANSI C header files... (cached) yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking sys/utsname.h usability... yes
+checking sys/utsname.h presence... yes
+checking for sys/utsname.h... yes
+checking termcap.h usability... yes
+checking termcap.h presence... yes
+checking for termcap.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking sgtty.h usability... yes
+checking sgtty.h presence... yes
+checking for sgtty.h... yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking termio.h usability... yes
+checking termio.h presence... yes
+checking for termio.h... yes
+checking for unistd.h... (cached) yes
+checking stropts.h usability... yes
+checking stropts.h presence... yes
+checking for stropts.h... yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking for strings.h... (cached) yes
+checking sys/systeminfo.h usability... no
+checking sys/systeminfo.h presence... no
+checking for sys/systeminfo.h... no
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking sys/stream.h usability... no
+checking sys/stream.h presence... no
+checking for sys/stream.h... no
+checking sys/ptem.h usability... no
+checking sys/ptem.h presence... no
+checking for sys/ptem.h... no
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking libc.h usability... no
+checking libc.h presence... no
+checking for libc.h... no
+checking sys/statfs.h usability... yes
+checking sys/statfs.h presence... yes
+checking for sys/statfs.h... yes
+checking poll.h usability... yes
+checking poll.h presence... yes
+checking for poll.h... yes
+checking sys/poll.h usability... yes
+checking sys/poll.h presence... yes
+checking for sys/poll.h... yes
+checking pwd.h usability... yes
+checking pwd.h presence... yes
+checking for pwd.h... yes
+checking utime.h usability... yes
+checking utime.h presence... yes
+checking for utime.h... yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking Xm/Xm.h usability... no
+checking Xm/Xm.h presence... no
+checking for Xm/Xm.h... no
+checking if strings.h can be included after string.h... yes
+checking whether gcc needs -traditional... no
+checking for an ANSI C-conforming const... yes
+checking for mode_t... yes
+checking for off_t... yes
+checking for pid_t... yes
+checking for size_t... yes
+checking for uid_t in sys/types.h... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking for ino_t... yes
+checking --with-tlib argument... automatic terminal library selection
+checking for tgetent in -lncurses... yes
+checking whether we talk terminfo... yes -- terminfo spoken here
+checking whether termcap.h contains ospeed... yes
+checking whether termcap.h contains UP, BC and PC... yes
+checking whether tputs() uses outfuntype... no
+checking whether sys/select.h and sys/time.h may both be included... yes
+checking return type of signal handlers... void
+checking for struct sigcontext... yes
+checking getcwd implementation... it is usable
+checking for bcmp... yes
+checking for fchdir... yes
+checking for fchown... yes
+checking for fseeko... yes
+checking for fsync... yes
+checking for ftello... yes
+checking for getcwd... yes
+checking for getpwnam... yes
+checking for getpwuid... yes
+checking for gettimeofday... yes
+checking for getwd... yes
+checking for lstat... yes
+checking for memcmp... yes
+checking for memset... yes
+checking for nanosleep... yes
+checking for opendir... yes
+checking for putenv... yes
+checking for qsort... yes
+checking for select... yes
+checking for setenv... yes
+checking for setpgid... yes
+checking for setsid... yes
+checking for sigset... yes
+checking for strcasecmp... yes
+checking for strerror... yes
+checking for strftime... yes
+checking for stricmp... no
+checking for strncasecmp... yes
+checking for strnicmp... no
+checking for strpbrk... yes
+checking for strtol... yes
+checking for tgetent... yes
+checking for usleep... yes
+checking for utime... yes
+checking for utimes... yes
+checking for st_blksize... yes
+checking --enable-gpm argument... no
+checking for rename... yes
+checking size of int... 4
+checking whether memmove/bcopy/memcpy handle overlaps... memmove does
+checking for _xpg4_setrunelocale in -lxpg4... no
+checking how to create tags... ctags -t
+checking how to run man with a section nr... man -s
+configure: creating ./config.status
+config.status: creating config.mk
+config.status: WARNING:  'config.mk.in' seems to ignore the --datarootdir setting
+config.status: creating config.h
+config.status: config.h is unchanged
+make[1]: Leaving directory '/home/qxin6/debaug_expt/debaug/working/vim/source/src'
+cd src && make install
+make[1]: Entering directory '/home/qxin6/debaug_expt/debaug/working/vim/source/src'
+CC="gcc -Iproto -DHAVE_CONFIG_H     -O     " srcdir=. sh ./osdef.sh
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      buffer.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      charset.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      digraph.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      edit.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      eval.c
+eval.c: In function ‘set_var’:
+eval.c:4600:20: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   vimvars[i].val = (char_u *)varp->var_val.var_number;
+                    ^
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      ex_cmds.c
+ex_cmds.c: In function ‘write_viminfo’:
+ex_cmds.c:1471:7: warning: ignoring return value of ‘chown’, declared with attribute warn_unused_result [-Wunused-result]
+       (void)chown((char *)tempname, st_old.st_uid, st_old.st_gid);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      ex_docmd.c
+ex_docmd.c: In function ‘do_mkrc’:
+ex_docmd.c:6945:3: warning: ignoring return value of ‘chdir’, declared with attribute warn_unused_result [-Wunused-result]
+   (void)mch_chdir((char *)dirnow);
+    
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      ex_getln.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      fileio.c
+fileio.c: In function ‘vim_fgets’:
+fileio.c:2761:6: warning: ignoring return value of ‘fgets’, declared with attribute warn_unused_result [-Wunused-result]
+      fgets((char *)tbuf, FGETS_SIZE, fp);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      getchar.c
+getchar.c: In function ‘makemap’:
+getchar.c:2892:7: warning: format not a string literal and no format arguments [-Wformat-security]
+       if (fprintf(fd, cmd) < 0)
+       ^~
+getchar.c: In function ‘putescstr’:
+getchar.c:2961:3: warning: format not a string literal and no format arguments [-Wformat-security]
+   fprintf(fd, (char *)get_special_key_name(c, modifiers));
+   ^~~~~~~
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      if_cscope.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      main.c
+main.c: In function ‘main’:
+main.c:1233:2: warning: ignoring return value of ‘dup’, declared with attribute warn_unused_result [-Wunused-result]
+  dup(2);
+  ^~~~~~
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      mark.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      memfile.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      memline.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      menu.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      message.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      misc1.c
+In file included from vim.h:89:0,
+                 from misc1.c:13:
+misc1.c: In function ‘init_homedir’:
+os_unix.h:333:22: warning: ignoring return value of ‘chdir’, declared with attribute warn_unused_result [-Wunused-result]
+ #define mch_chdir(s) chdir(s)
+                      ^~~~~~~~
+misc1.c:2258:6: note: in expansion of macro ‘mch_chdir’
+      mch_chdir((char *)NameBuff);
+      ^~~~~~~~~
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      misc2.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      multbyte.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      normal.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      ops.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      option.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      os_unix.c
+os_unix.c: In function ‘mch_write’:
+os_unix.c:279:5: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
+     write(1, (char *)s, len);
+     ^~~~~~~~~~~~~~~~~~~~~~~~
+os_unix.c: In function ‘mch_FullName’:
+os_unix.c:1599:3: warning: ignoring return value of ‘fchdir’, declared with attribute warn_unused_result [-Wunused-result]
+   fchdir(fd);
+   ^~~~~~~~~~
+In file included from vim.h:89:0,
+                 from os_unix.c:26:
+os_unix.h:333:22: warning: ignoring return value of ‘chdir’, declared with attribute warn_unused_result [-Wunused-result]
+ #define mch_chdir(s) chdir(s)
+                      ^~~~~~~~
+os_unix.c:1604:3: note: in expansion of macro ‘mch_chdir’
+   mch_chdir((char *)olddir);
+   ^~~~~~~~~
+os_unix.c: In function ‘mch_call_shell’:
+os_unix.c:2370:7: warning: ignoring return value of ‘dup’, declared with attribute warn_unused_result [-Wunused-result]
+       dup(fd); /* To replace stdin  (file descriptor 0) */
+       ^~~~~~~
+os_unix.c:2371:7: warning: ignoring return value of ‘dup’, declared with attribute warn_unused_result [-Wunused-result]
+       dup(fd); /* To replace stdout (file descriptor 1) */
+       ^~~~~~~
+os_unix.c:2372:7: warning: ignoring return value of ‘dup’, declared with attribute warn_unused_result [-Wunused-result]
+       dup(fd); /* To replace stderr (file descriptor 2) */
+       ^~~~~~~
+creating pathdef.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      pathdef.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      quickfix.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      regexp.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      screen.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      search.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      syntax.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      tag.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      term.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      ui.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      undo.c
+gcc -c -I. -Iproto -DHAVE_CONFIG_H     -O      window.c
+gcc -c -Iproto -DHAVE_CONFIG_H     -O      version.c
+link.sh: The file 'link.sed' exists, which is going to be used now.
+link.sh: If linking fails, try deleting the link.sed file.
+link.sh: If this fails too, try creating an empty link.sed file.
+link.sh: Using unmodified link command
+  gcc  -o vim 	buffer.o charset.o digraph.o edit.o eval.o ex_cmds.o ex_docmd.o ex_getln.o fileio.o getchar.o  if_cscope.o main.o mark.o memfile.o memline.o menu.o message.o misc1.o misc2.o multbyte.o normal.o ops.o option.o os_unix.o pathdef.o quickfix.o regexp.o screen.o search.o syntax.o  tag.o term.o ui.o undo.o window.o      version.o         -lncurses     
+link.sh: Linked OK
+if test -f /home/qxin6/debaug_expt/debaug/working/vim/source/bin/vim; then \
+  mv -f /home/qxin6/debaug_expt/debaug/working/vim/source/bin/vim /home/qxin6/debaug_expt/debaug/working/vim/source/bin/vim.rm; \
+  rm -f /home/qxin6/debaug_expt/debaug/working/vim/source/bin/vim.rm; \
+fi
+cp vim /home/qxin6/debaug_expt/debaug/working/vim/source/bin
+strip /home/qxin6/debaug_expt/debaug/working/vim/source/bin/vim
+chmod 755 /home/qxin6/debaug_expt/debaug/working/vim/source/bin/vim
+/bin/sh mkinstalldirs /home/qxin6/debaug_expt/debaug/working/vim/source/share/man/man1
+mkdir /home/qxin6/debaug_expt/debaug/working/vim/source/share/man
+mkdir /home/qxin6/debaug_expt/debaug/working/vim/source/share/man/man1
+chmod 755 /home/qxin6/debaug_expt/debaug/working/vim/source/share/man/man1
+generating /home/qxin6/debaug_expt/debaug/working/vim/source/share/man/man1/vim.1
+chmod 644 /home/qxin6/debaug_expt/debaug/working/vim/source/share/man/man1/vim.1
+generating /home/qxin6/debaug_expt/debaug/working/vim/source/share/man/man1/vimtutor.1
+chmod 644 /home/qxin6/debaug_expt/debaug/working/vim/source/share/man/man1/vimtutor.1
+cd ../runtime/doc; cp *.txt tags /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/doc
+cd /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/doc; chmod 644 *.txt tags
+cp  ../runtime/doc/*.pl /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/doc
+chmod 755 /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/doc/*.pl
+cp ../runtime/menu.vim /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/menu.vim
+chmod 644 /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/menu.vim
+cp ../runtime/bugreport.vim /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/bugreport.vim
+chmod 644 /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/bugreport.vim
+cp ../runtime/vimrc_example.vim /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58
+chmod 644 /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/vimrc_example.vim
+cp ../runtime/gvimrc_example.vim /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58
+chmod 644 /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/gvimrc_example.vim
+cp ../runtime/filetype.vim /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/filetype.vim
+chmod 644 /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/filetype.vim
+cp ../runtime/ftoff.vim /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/ftoff.vim
+chmod 644 /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/ftoff.vim
+cp ../runtime/scripts.vim /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/scripts.vim
+chmod 644 /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/scripts.vim
+cp ../runtime/optwin.vim /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/optwin.vim
+chmod 644 /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/optwin.vim
+cd ../runtime/syntax; cp *.vim /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/syntax
+cd /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/syntax; chmod 644 *.vim
+cd /home/qxin6/debaug_expt/debaug/working/vim/source/share/man/man1; ln -s vim.1 ex.1
+cd /home/qxin6/debaug_expt/debaug/working/vim/source/share/man/man1; ln -s vim.1 view.1
+cd /home/qxin6/debaug_expt/debaug/working/vim/source/share/man/man1; ln -s vim.1 rvim.1
+cd /home/qxin6/debaug_expt/debaug/working/vim/source/share/man/man1; ln -s vim.1 rview.1
+cp -r ../runtime/macros/* /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/macros
+chmod 755 `find /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/macros -type d -print`
+chmod 644 `find /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/macros -type f -print`
+cp vimtutor /home/qxin6/debaug_expt/debaug/working/vim/source/bin
+chmod 755 /home/qxin6/debaug_expt/debaug/working/vim/source/bin/vimtutor
+cp ../runtime/tutor/* /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/tutor
+chmod 644 /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/tutor/*
+if test -f /home/qxin6/debaug_expt/debaug/working/vim/source/bin/xxd; then \
+  mv -f /home/qxin6/debaug_expt/debaug/working/vim/source/bin/xxd /home/qxin6/debaug_expt/debaug/working/vim/source/bin/xxd.rm; \
+  rm -f /home/qxin6/debaug_expt/debaug/working/vim/source/bin/xxd.rm; \
+fi
+cp xxd/xxd /home/qxin6/debaug_expt/debaug/working/vim/source/bin
+strip /home/qxin6/debaug_expt/debaug/working/vim/source/bin/xxd
+chmod 755 /home/qxin6/debaug_expt/debaug/working/vim/source/bin/xxd
+cp ../runtime/doc/xxd.1 /home/qxin6/debaug_expt/debaug/working/vim/source/share/man/man1
+chmod 644 /home/qxin6/debaug_expt/debaug/working/vim/source/share/man/man1/xxd.1
+cp -r ../runtime/tools/* /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/tools
+chmod 644 /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/tools/*
+chmod 755 `grep -l "^#!" /home/qxin6/debaug_expt/debaug/working/vim/source/share/vim/vim58/tools/*`
+make[1]: Leaving directory '/home/qxin6/debaug_expt/debaug/working/vim/source/src'

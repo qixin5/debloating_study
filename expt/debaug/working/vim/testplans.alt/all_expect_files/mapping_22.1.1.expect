@@ -1,0 +1,10 @@
+send ":redir >> mapping_22.1.1.out\r"
+send ":vmap b l\r"
+send ":vmap b\r"
+send ":vunmap b\r"
+send ":vmap b\r"
+send ":redir END\r"
+
+
+
+

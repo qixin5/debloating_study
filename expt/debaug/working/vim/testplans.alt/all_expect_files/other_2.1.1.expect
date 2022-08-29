@@ -1,0 +1,4 @@
+send ":redir >> other_2.1.1.out\r"
+send "K"
+send ":redir END\r"
+

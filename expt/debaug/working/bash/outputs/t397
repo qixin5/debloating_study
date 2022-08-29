@@ -1,0 +1,5 @@
+trap -- 'echo kp' SIGINT
+trap -- 'echo THIS IS GOOD' SIGCHLD
+after unsetting traps
+trap
+cleaning up background jobs

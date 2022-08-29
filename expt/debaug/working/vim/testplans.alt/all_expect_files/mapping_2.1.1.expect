@@ -1,0 +1,9 @@
+send ":map! , <left>\r"
+send "$"
+send "\007"
+send "i"
+send ",,,"
+send "moved three characters left"
+send "\033"
+
+

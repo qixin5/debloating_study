@@ -1,0 +1,1254 @@
+                                 Subject Report                                 
+--------------------------------------------------------------------------------
+Subject: bash
+Version: v2
+Number of faults: 3
+Number of tests: 1061
+
+Number of tests detecting each fault (howmanyfind):
+Fault 0(F_KP_5): 2
+Fault 1(F_SK_4): 3
+Fault 2(F_SK_8): 1
+
+Number of faults detected by each test (howmanyfound):
+Test 85: 1
+Test 88: 1
+Test 541: 1
+Test 542: 1
+Test 885: 1
+Test 887: 1
+
+Percent of tests detecting each fault (percenttests):
+Fault 0(F_KP_5): %0.18
+Fault 1(F_SK_4): %0.28
+Fault 2(F_SK_8): %0.09
+
+Percent of faults detected by each test (percentfaults):
+Test 85: %33.3
+Test 88: %33.3
+Test 541: %33.3
+Test 542: %33.3
+Test 885: %33.3
+Test 887: %33.3
+
+Tests including potential false positives (alwaysfind):
+
+"Too Easy" faults (tooeasy):
+
+"Too Hard" faults (toohard):
+
+Matrix listed by fault number (pfault):
+Fault 0(F_KP_5): 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+Fault 1(F_SK_4): 00000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+Fault 2(F_SK_8): 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+Matrix listed by test number (ptest):
+Test 0: 000
+Test 1: 000
+Test 2: 000
+Test 3: 000
+Test 4: 000
+Test 5: 000
+Test 6: 000
+Test 7: 000
+Test 8: 000
+Test 9: 000
+Test 10: 000
+Test 11: 000
+Test 12: 000
+Test 13: 000
+Test 14: 000
+Test 15: 000
+Test 16: 000
+Test 17: 000
+Test 18: 000
+Test 19: 000
+Test 20: 000
+Test 21: 000
+Test 22: 000
+Test 23: 000
+Test 24: 000
+Test 25: 000
+Test 26: 000
+Test 27: 000
+Test 28: 000
+Test 29: 000
+Test 30: 000
+Test 31: 000
+Test 32: 000
+Test 33: 000
+Test 34: 000
+Test 35: 000
+Test 36: 000
+Test 37: 000
+Test 38: 000
+Test 39: 000
+Test 40: 000
+Test 41: 000
+Test 42: 000
+Test 43: 000
+Test 44: 000
+Test 45: 000
+Test 46: 000
+Test 47: 000
+Test 48: 000
+Test 49: 000
+Test 50: 000
+Test 51: 000
+Test 52: 000
+Test 53: 000
+Test 54: 000
+Test 55: 000
+Test 56: 000
+Test 57: 000
+Test 58: 000
+Test 59: 000
+Test 60: 000
+Test 61: 000
+Test 62: 000
+Test 63: 000
+Test 64: 000
+Test 65: 000
+Test 66: 000
+Test 67: 000
+Test 68: 000
+Test 69: 000
+Test 70: 000
+Test 71: 000
+Test 72: 000
+Test 73: 000
+Test 74: 000
+Test 75: 000
+Test 76: 000
+Test 77: 000
+Test 78: 000
+Test 79: 000
+Test 80: 000
+Test 81: 000
+Test 82: 000
+Test 83: 000
+Test 84: 000
+Test 85: 010
+Test 86: 000
+Test 87: 000
+Test 88: 001
+Test 89: 000
+Test 90: 000
+Test 91: 000
+Test 92: 000
+Test 93: 000
+Test 94: 000
+Test 95: 000
+Test 96: 000
+Test 97: 000
+Test 98: 000
+Test 99: 000
+Test 100: 000
+Test 101: 000
+Test 102: 000
+Test 103: 000
+Test 104: 000
+Test 105: 000
+Test 106: 000
+Test 107: 000
+Test 108: 000
+Test 109: 000
+Test 110: 000
+Test 111: 000
+Test 112: 000
+Test 113: 000
+Test 114: 000
+Test 115: 000
+Test 116: 000
+Test 117: 000
+Test 118: 000
+Test 119: 000
+Test 120: 000
+Test 121: 000
+Test 122: 000
+Test 123: 000
+Test 124: 000
+Test 125: 000
+Test 126: 000
+Test 127: 000
+Test 128: 000
+Test 129: 000
+Test 130: 000
+Test 131: 000
+Test 132: 000
+Test 133: 000
+Test 134: 000
+Test 135: 000
+Test 136: 000
+Test 137: 000
+Test 138: 000
+Test 139: 000
+Test 140: 000
+Test 141: 000
+Test 142: 000
+Test 143: 000
+Test 144: 000
+Test 145: 000
+Test 146: 000
+Test 147: 000
+Test 148: 000
+Test 149: 000
+Test 150: 000
+Test 151: 000
+Test 152: 000
+Test 153: 000
+Test 154: 000
+Test 155: 000
+Test 156: 000
+Test 157: 000
+Test 158: 000
+Test 159: 000
+Test 160: 000
+Test 161: 000
+Test 162: 000
+Test 163: 000
+Test 164: 000
+Test 165: 000
+Test 166: 000
+Test 167: 000
+Test 168: 000
+Test 169: 000
+Test 170: 000
+Test 171: 000
+Test 172: 000
+Test 173: 000
+Test 174: 000
+Test 175: 000
+Test 176: 000
+Test 177: 000
+Test 178: 000
+Test 179: 000
+Test 180: 000
+Test 181: 000
+Test 182: 000
+Test 183: 000
+Test 184: 000
+Test 185: 000
+Test 186: 000
+Test 187: 000
+Test 188: 000
+Test 189: 000
+Test 190: 000
+Test 191: 000
+Test 192: 000
+Test 193: 000
+Test 194: 000
+Test 195: 000
+Test 196: 000
+Test 197: 000
+Test 198: 000
+Test 199: 000
+Test 200: 000
+Test 201: 000
+Test 202: 000
+Test 203: 000
+Test 204: 000
+Test 205: 000
+Test 206: 000
+Test 207: 000
+Test 208: 000
+Test 209: 000
+Test 210: 000
+Test 211: 000
+Test 212: 000
+Test 213: 000
+Test 214: 000
+Test 215: 000
+Test 216: 000
+Test 217: 000
+Test 218: 000
+Test 219: 000
+Test 220: 000
+Test 221: 000
+Test 222: 000
+Test 223: 000
+Test 224: 000
+Test 225: 000
+Test 226: 000
+Test 227: 000
+Test 228: 000
+Test 229: 000
+Test 230: 000
+Test 231: 000
+Test 232: 000
+Test 233: 000
+Test 234: 000
+Test 235: 000
+Test 236: 000
+Test 237: 000
+Test 238: 000
+Test 239: 000
+Test 240: 000
+Test 241: 000
+Test 242: 000
+Test 243: 000
+Test 244: 000
+Test 245: 000
+Test 246: 000
+Test 247: 000
+Test 248: 000
+Test 249: 000
+Test 250: 000
+Test 251: 000
+Test 252: 000
+Test 253: 000
+Test 254: 000
+Test 255: 000
+Test 256: 000
+Test 257: 000
+Test 258: 000
+Test 259: 000
+Test 260: 000
+Test 261: 000
+Test 262: 000
+Test 263: 000
+Test 264: 000
+Test 265: 000
+Test 266: 000
+Test 267: 000
+Test 268: 000
+Test 269: 000
+Test 270: 000
+Test 271: 000
+Test 272: 000
+Test 273: 000
+Test 274: 000
+Test 275: 000
+Test 276: 000
+Test 277: 000
+Test 278: 000
+Test 279: 000
+Test 280: 000
+Test 281: 000
+Test 282: 000
+Test 283: 000
+Test 284: 000
+Test 285: 000
+Test 286: 000
+Test 287: 000
+Test 288: 000
+Test 289: 000
+Test 290: 000
+Test 291: 000
+Test 292: 000
+Test 293: 000
+Test 294: 000
+Test 295: 000
+Test 296: 000
+Test 297: 000
+Test 298: 000
+Test 299: 000
+Test 300: 000
+Test 301: 000
+Test 302: 000
+Test 303: 000
+Test 304: 000
+Test 305: 000
+Test 306: 000
+Test 307: 000
+Test 308: 000
+Test 309: 000
+Test 310: 000
+Test 311: 000
+Test 312: 000
+Test 313: 000
+Test 314: 000
+Test 315: 000
+Test 316: 000
+Test 317: 000
+Test 318: 000
+Test 319: 000
+Test 320: 000
+Test 321: 000
+Test 322: 000
+Test 323: 000
+Test 324: 000
+Test 325: 000
+Test 326: 000
+Test 327: 000
+Test 328: 000
+Test 329: 000
+Test 330: 000
+Test 331: 000
+Test 332: 000
+Test 333: 000
+Test 334: 000
+Test 335: 000
+Test 336: 000
+Test 337: 000
+Test 338: 000
+Test 339: 000
+Test 340: 000
+Test 341: 000
+Test 342: 000
+Test 343: 000
+Test 344: 000
+Test 345: 000
+Test 346: 000
+Test 347: 000
+Test 348: 000
+Test 349: 000
+Test 350: 000
+Test 351: 000
+Test 352: 000
+Test 353: 000
+Test 354: 000
+Test 355: 000
+Test 356: 000
+Test 357: 000
+Test 358: 000
+Test 359: 000
+Test 360: 000
+Test 361: 000
+Test 362: 000
+Test 363: 000
+Test 364: 000
+Test 365: 000
+Test 366: 000
+Test 367: 000
+Test 368: 000
+Test 369: 000
+Test 370: 000
+Test 371: 000
+Test 372: 000
+Test 373: 000
+Test 374: 000
+Test 375: 000
+Test 376: 000
+Test 377: 000
+Test 378: 000
+Test 379: 000
+Test 380: 000
+Test 381: 000
+Test 382: 000
+Test 383: 000
+Test 384: 000
+Test 385: 000
+Test 386: 000
+Test 387: 000
+Test 388: 000
+Test 389: 000
+Test 390: 000
+Test 391: 000
+Test 392: 000
+Test 393: 000
+Test 394: 000
+Test 395: 000
+Test 396: 000
+Test 397: 000
+Test 398: 000
+Test 399: 000
+Test 400: 000
+Test 401: 000
+Test 402: 000
+Test 403: 000
+Test 404: 000
+Test 405: 000
+Test 406: 000
+Test 407: 000
+Test 408: 000
+Test 409: 000
+Test 410: 000
+Test 411: 000
+Test 412: 000
+Test 413: 000
+Test 414: 000
+Test 415: 000
+Test 416: 000
+Test 417: 000
+Test 418: 000
+Test 419: 000
+Test 420: 000
+Test 421: 000
+Test 422: 000
+Test 423: 000
+Test 424: 000
+Test 425: 000
+Test 426: 000
+Test 427: 000
+Test 428: 000
+Test 429: 000
+Test 430: 000
+Test 431: 000
+Test 432: 000
+Test 433: 000
+Test 434: 000
+Test 435: 000
+Test 436: 000
+Test 437: 000
+Test 438: 000
+Test 439: 000
+Test 440: 000
+Test 441: 000
+Test 442: 000
+Test 443: 000
+Test 444: 000
+Test 445: 000
+Test 446: 000
+Test 447: 000
+Test 448: 000
+Test 449: 000
+Test 450: 000
+Test 451: 000
+Test 452: 000
+Test 453: 000
+Test 454: 000
+Test 455: 000
+Test 456: 000
+Test 457: 000
+Test 458: 000
+Test 459: 000
+Test 460: 000
+Test 461: 000
+Test 462: 000
+Test 463: 000
+Test 464: 000
+Test 465: 000
+Test 466: 000
+Test 467: 000
+Test 468: 000
+Test 469: 000
+Test 470: 000
+Test 471: 000
+Test 472: 000
+Test 473: 000
+Test 474: 000
+Test 475: 000
+Test 476: 000
+Test 477: 000
+Test 478: 000
+Test 479: 000
+Test 480: 000
+Test 481: 000
+Test 482: 000
+Test 483: 000
+Test 484: 000
+Test 485: 000
+Test 486: 000
+Test 487: 000
+Test 488: 000
+Test 489: 000
+Test 490: 000
+Test 491: 000
+Test 492: 000
+Test 493: 000
+Test 494: 000
+Test 495: 000
+Test 496: 000
+Test 497: 000
+Test 498: 000
+Test 499: 000
+Test 500: 000
+Test 501: 000
+Test 502: 000
+Test 503: 000
+Test 504: 000
+Test 505: 000
+Test 506: 000
+Test 507: 000
+Test 508: 000
+Test 509: 000
+Test 510: 000
+Test 511: 000
+Test 512: 000
+Test 513: 000
+Test 514: 000
+Test 515: 000
+Test 516: 000
+Test 517: 000
+Test 518: 000
+Test 519: 000
+Test 520: 000
+Test 521: 000
+Test 522: 000
+Test 523: 000
+Test 524: 000
+Test 525: 000
+Test 526: 000
+Test 527: 000
+Test 528: 000
+Test 529: 000
+Test 530: 000
+Test 531: 000
+Test 532: 000
+Test 533: 000
+Test 534: 000
+Test 535: 000
+Test 536: 000
+Test 537: 000
+Test 538: 000
+Test 539: 000
+Test 540: 000
+Test 541: 100
+Test 542: 100
+Test 543: 000
+Test 544: 000
+Test 545: 000
+Test 546: 000
+Test 547: 000
+Test 548: 000
+Test 549: 000
+Test 550: 000
+Test 551: 000
+Test 552: 000
+Test 553: 000
+Test 554: 000
+Test 555: 000
+Test 556: 000
+Test 557: 000
+Test 558: 000
+Test 559: 000
+Test 560: 000
+Test 561: 000
+Test 562: 000
+Test 563: 000
+Test 564: 000
+Test 565: 000
+Test 566: 000
+Test 567: 000
+Test 568: 000
+Test 569: 000
+Test 570: 000
+Test 571: 000
+Test 572: 000
+Test 573: 000
+Test 574: 000
+Test 575: 000
+Test 576: 000
+Test 577: 000
+Test 578: 000
+Test 579: 000
+Test 580: 000
+Test 581: 000
+Test 582: 000
+Test 583: 000
+Test 584: 000
+Test 585: 000
+Test 586: 000
+Test 587: 000
+Test 588: 000
+Test 589: 000
+Test 590: 000
+Test 591: 000
+Test 592: 000
+Test 593: 000
+Test 594: 000
+Test 595: 000
+Test 596: 000
+Test 597: 000
+Test 598: 000
+Test 599: 000
+Test 600: 000
+Test 601: 000
+Test 602: 000
+Test 603: 000
+Test 604: 000
+Test 605: 000
+Test 606: 000
+Test 607: 000
+Test 608: 000
+Test 609: 000
+Test 610: 000
+Test 611: 000
+Test 612: 000
+Test 613: 000
+Test 614: 000
+Test 615: 000
+Test 616: 000
+Test 617: 000
+Test 618: 000
+Test 619: 000
+Test 620: 000
+Test 621: 000
+Test 622: 000
+Test 623: 000
+Test 624: 000
+Test 625: 000
+Test 626: 000
+Test 627: 000
+Test 628: 000
+Test 629: 000
+Test 630: 000
+Test 631: 000
+Test 632: 000
+Test 633: 000
+Test 634: 000
+Test 635: 000
+Test 636: 000
+Test 637: 000
+Test 638: 000
+Test 639: 000
+Test 640: 000
+Test 641: 000
+Test 642: 000
+Test 643: 000
+Test 644: 000
+Test 645: 000
+Test 646: 000
+Test 647: 000
+Test 648: 000
+Test 649: 000
+Test 650: 000
+Test 651: 000
+Test 652: 000
+Test 653: 000
+Test 654: 000
+Test 655: 000
+Test 656: 000
+Test 657: 000
+Test 658: 000
+Test 659: 000
+Test 660: 000
+Test 661: 000
+Test 662: 000
+Test 663: 000
+Test 664: 000
+Test 665: 000
+Test 666: 000
+Test 667: 000
+Test 668: 000
+Test 669: 000
+Test 670: 000
+Test 671: 000
+Test 672: 000
+Test 673: 000
+Test 674: 000
+Test 675: 000
+Test 676: 000
+Test 677: 000
+Test 678: 000
+Test 679: 000
+Test 680: 000
+Test 681: 000
+Test 682: 000
+Test 683: 000
+Test 684: 000
+Test 685: 000
+Test 686: 000
+Test 687: 000
+Test 688: 000
+Test 689: 000
+Test 690: 000
+Test 691: 000
+Test 692: 000
+Test 693: 000
+Test 694: 000
+Test 695: 000
+Test 696: 000
+Test 697: 000
+Test 698: 000
+Test 699: 000
+Test 700: 000
+Test 701: 000
+Test 702: 000
+Test 703: 000
+Test 704: 000
+Test 705: 000
+Test 706: 000
+Test 707: 000
+Test 708: 000
+Test 709: 000
+Test 710: 000
+Test 711: 000
+Test 712: 000
+Test 713: 000
+Test 714: 000
+Test 715: 000
+Test 716: 000
+Test 717: 000
+Test 718: 000
+Test 719: 000
+Test 720: 000
+Test 721: 000
+Test 722: 000
+Test 723: 000
+Test 724: 000
+Test 725: 000
+Test 726: 000
+Test 727: 000
+Test 728: 000
+Test 729: 000
+Test 730: 000
+Test 731: 000
+Test 732: 000
+Test 733: 000
+Test 734: 000
+Test 735: 000
+Test 736: 000
+Test 737: 000
+Test 738: 000
+Test 739: 000
+Test 740: 000
+Test 741: 000
+Test 742: 000
+Test 743: 000
+Test 744: 000
+Test 745: 000
+Test 746: 000
+Test 747: 000
+Test 748: 000
+Test 749: 000
+Test 750: 000
+Test 751: 000
+Test 752: 000
+Test 753: 000
+Test 754: 000
+Test 755: 000
+Test 756: 000
+Test 757: 000
+Test 758: 000
+Test 759: 000
+Test 760: 000
+Test 761: 000
+Test 762: 000
+Test 763: 000
+Test 764: 000
+Test 765: 000
+Test 766: 000
+Test 767: 000
+Test 768: 000
+Test 769: 000
+Test 770: 000
+Test 771: 000
+Test 772: 000
+Test 773: 000
+Test 774: 000
+Test 775: 000
+Test 776: 000
+Test 777: 000
+Test 778: 000
+Test 779: 000
+Test 780: 000
+Test 781: 000
+Test 782: 000
+Test 783: 000
+Test 784: 000
+Test 785: 000
+Test 786: 000
+Test 787: 000
+Test 788: 000
+Test 789: 000
+Test 790: 000
+Test 791: 000
+Test 792: 000
+Test 793: 000
+Test 794: 000
+Test 795: 000
+Test 796: 000
+Test 797: 000
+Test 798: 000
+Test 799: 000
+Test 800: 000
+Test 801: 000
+Test 802: 000
+Test 803: 000
+Test 804: 000
+Test 805: 000
+Test 806: 000
+Test 807: 000
+Test 808: 000
+Test 809: 000
+Test 810: 000
+Test 811: 000
+Test 812: 000
+Test 813: 000
+Test 814: 000
+Test 815: 000
+Test 816: 000
+Test 817: 000
+Test 818: 000
+Test 819: 000
+Test 820: 000
+Test 821: 000
+Test 822: 000
+Test 823: 000
+Test 824: 000
+Test 825: 000
+Test 826: 000
+Test 827: 000
+Test 828: 000
+Test 829: 000
+Test 830: 000
+Test 831: 000
+Test 832: 000
+Test 833: 000
+Test 834: 000
+Test 835: 000
+Test 836: 000
+Test 837: 000
+Test 838: 000
+Test 839: 000
+Test 840: 000
+Test 841: 000
+Test 842: 000
+Test 843: 000
+Test 844: 000
+Test 845: 000
+Test 846: 000
+Test 847: 000
+Test 848: 000
+Test 849: 000
+Test 850: 000
+Test 851: 000
+Test 852: 000
+Test 853: 000
+Test 854: 000
+Test 855: 000
+Test 856: 000
+Test 857: 000
+Test 858: 000
+Test 859: 000
+Test 860: 000
+Test 861: 000
+Test 862: 000
+Test 863: 000
+Test 864: 000
+Test 865: 000
+Test 866: 000
+Test 867: 000
+Test 868: 000
+Test 869: 000
+Test 870: 000
+Test 871: 000
+Test 872: 000
+Test 873: 000
+Test 874: 000
+Test 875: 000
+Test 876: 000
+Test 877: 000
+Test 878: 000
+Test 879: 000
+Test 880: 000
+Test 881: 000
+Test 882: 000
+Test 883: 000
+Test 884: 000
+Test 885: 010
+Test 886: 000
+Test 887: 010
+Test 888: 000
+Test 889: 000
+Test 890: 000
+Test 891: 000
+Test 892: 000
+Test 893: 000
+Test 894: 000
+Test 895: 000
+Test 896: 000
+Test 897: 000
+Test 898: 000
+Test 899: 000
+Test 900: 000
+Test 901: 000
+Test 902: 000
+Test 903: 000
+Test 904: 000
+Test 905: 000
+Test 906: 000
+Test 907: 000
+Test 908: 000
+Test 909: 000
+Test 910: 000
+Test 911: 000
+Test 912: 000
+Test 913: 000
+Test 914: 000
+Test 915: 000
+Test 916: 000
+Test 917: 000
+Test 918: 000
+Test 919: 000
+Test 920: 000
+Test 921: 000
+Test 922: 000
+Test 923: 000
+Test 924: 000
+Test 925: 000
+Test 926: 000
+Test 927: 000
+Test 928: 000
+Test 929: 000
+Test 930: 000
+Test 931: 000
+Test 932: 000
+Test 933: 000
+Test 934: 000
+Test 935: 000
+Test 936: 000
+Test 937: 000
+Test 938: 000
+Test 939: 000
+Test 940: 000
+Test 941: 000
+Test 942: 000
+Test 943: 000
+Test 944: 000
+Test 945: 000
+Test 946: 000
+Test 947: 000
+Test 948: 000
+Test 949: 000
+Test 950: 000
+Test 951: 000
+Test 952: 000
+Test 953: 000
+Test 954: 000
+Test 955: 000
+Test 956: 000
+Test 957: 000
+Test 958: 000
+Test 959: 000
+Test 960: 000
+Test 961: 000
+Test 962: 000
+Test 963: 000
+Test 964: 000
+Test 965: 000
+Test 966: 000
+Test 967: 000
+Test 968: 000
+Test 969: 000
+Test 970: 000
+Test 971: 000
+Test 972: 000
+Test 973: 000
+Test 974: 000
+Test 975: 000
+Test 976: 000
+Test 977: 000
+Test 978: 000
+Test 979: 000
+Test 980: 000
+Test 981: 000
+Test 982: 000
+Test 983: 000
+Test 984: 000
+Test 985: 000
+Test 986: 000
+Test 987: 000
+Test 988: 000
+Test 989: 000
+Test 990: 000
+Test 991: 000
+Test 992: 000
+Test 993: 000
+Test 994: 000
+Test 995: 000
+Test 996: 000
+Test 997: 000
+Test 998: 000
+Test 999: 000
+Test 1000: 000
+Test 1001: 000
+Test 1002: 000
+Test 1003: 000
+Test 1004: 000
+Test 1005: 000
+Test 1006: 000
+Test 1007: 000
+Test 1008: 000
+Test 1009: 000
+Test 1010: 000
+Test 1011: 000
+Test 1012: 000
+Test 1013: 000
+Test 1014: 000
+Test 1015: 000
+Test 1016: 000
+Test 1017: 000
+Test 1018: 000
+Test 1019: 000
+Test 1020: 000
+Test 1021: 000
+Test 1022: 000
+Test 1023: 000
+Test 1024: 000
+Test 1025: 000
+Test 1026: 000
+Test 1027: 000
+Test 1028: 000
+Test 1029: 000
+Test 1030: 000
+Test 1031: 000
+Test 1032: 000
+Test 1033: 000
+Test 1034: 000
+Test 1035: 000
+Test 1036: 000
+Test 1037: 000
+Test 1038: 000
+Test 1039: 000
+Test 1040: 000
+Test 1041: 000
+Test 1042: 000
+Test 1043: 000
+Test 1044: 000
+Test 1045: 000
+Test 1046: 000
+Test 1047: 000
+Test 1048: 000
+Test 1049: 000
+Test 1050: 000
+Test 1051: 000
+Test 1052: 000
+Test 1053: 000
+Test 1054: 000
+Test 1055: 000
+Test 1056: 000
+Test 1057: 000
+Test 1058: 000
+Test 1059: 000
+Test 1060: 000
+
+Fault Record:
+  	    Fault ID: F_KP_5
+    Baseline Version: v1
+       Source File #: execute_cmd.c
+	 Source Func: select_query
+           Diff ID #: 1783
+   Fault Description: continues loop on legal_number
+Fault Classification: B
+
+HARD  	    Fault ID: F_KP_6
+    Baseline Version: v1
+       Source File #: y.tab.c
+	 Source Func: decode_prompt_string
+           Diff ID #: 4291
+   Fault Description: copies into temp instead of t_string
+Fault Classification: A
+
+HARD  	    Fault ID: F_KP_7
+    Baseline Version: v1
+       Source File #: locale.c
+	 Source Func: set_locale_var
+           Diff ID #: 130
+   Fault Description: removes default/error processing
+Fault Classification: A, B
+
+HARD  	    Fault ID: F_KP_8
+    Baseline Version: v1
+       Source File #: builtins/evalstring.c
+	 Source Func: set_locale_var
+           Diff ID #: 199
+   Fault Description: replaces AND condition with OR condition
+Fault Classification: B
+
+HARD  	    Fault ID: F_KP_9
+    Baseline Version: v1
+       Source File #: version.c
+	 Source Func: show_shell_version
+           Diff ID #: 199
+   Fault Description: prints the incorrect copyright date
+Fault Classification: A
+
+HARD  	    Fault ID: F_KP_10
+    Baseline Version: v1
+       Source File #: general.c
+	 Source Func: polite_directory_format
+           Diff ID #: 848
+   Fault Description: attempts to copy too much material
+Fault Classification: A
+
+HARD  	    Fault ID: F_SK_1
+    Baseline Version: v1
+       Source File #: jobs.c
+	 Source Func: wait_for
+           Diff ID #: 1702
+   Fault Description: if the window  size is checked get_new_window_size is always called
+Fault Classification: B
+
+HARD  	    Fault ID: F_SK_2
+    Baseline Version: v1
+       Source File #: subst.c
+	 Source Func: verify_substring_values
+           Diff ID #: 3553
+   Fault Description: returns the incorrect value (-1 instead of 1)
+Fault Classification: A
+
+HARD  	    Fault ID: F_SK_3
+    Baseline Version: v1
+       Source File #: trap.c
+	 Source Func: trap_to_sighandler
+           Diff ID #: 317
+   Fault Description: traps ignored signals and does not trap signals signal that are not 
+   ignored.
+Fault Classification: A
+
+  	    Fault ID: F_SK_4
+    Baseline Version: v1
+       Source File #: subst.c
+	 Source Func: parameter_brace_substring
+           Diff ID #: 3695
+   Fault Description: always return error condition
+Fault Classification: B
+
+HARD  	    Fault ID: F_SK_7
+    Baseline Version: v1
+       Source File #: mailcheck.c
+	 Source Func: add_mail_file
+           Diff ID #: 154
+   Fault Description: uses the truncated filename not the full pathname
+Fault Classification: A
+
+  	    Fault ID: F_SK_8
+    Baseline Version: v1
+       Source File #: variables.c
+	 Source Func: assign_array_var_from_string
+           Diff ID #: 1531
+   Fault Description: try to empty an array that is not ready
+Fault Classification: B
+
+HARD  	    Fault ID: F_SK_9
+    Baseline Version: v1
+       Source File #: bashline.c
+	 Source Func: attempt_shell_completion
+           Diff ID #: 704
+   Fault Description: flag command on '\' instead of '`'
+Fault Classification: A, B
+
+HARD  	    Fault ID: F_SK_10
+    Baseline Version: v1
+       Source File #: lib/readline/histfile.c
+	 Source Func: history_do_write
+           Diff ID #: 283
+   Fault Description: ignore file error
+Fault Classification: A, B
+
+HARD  	    Fault ID: F_SPK_1
+    Baseline Version: v1
+       Source File #: variables.c
+	 Source Func: assign_array_from_string
+           Diff ID #: 1475
+   Fault Description: remove #if 0 restriction on code segment
+Fault Classification: B
+
+HARD  	    Fault ID: F_SPK_2
+    Baseline Version: v1
+       Source File #: execute_cmd.c
+	 Source Func: execute_command_internal
+           Diff ID #: 596
+   Fault Description: & is replaced with |
+Fault Classification: B
+
+HARD  	    Fault ID: F_SPK_3
+    Baseline Version: v1
+       Source File #: subst.c
+	 Source Func: expand_word_internal
+           Diff ID #: 4522
+   Fault Description: index on the wrong temp variable
+Fault Classification: A
+
+HARD  	    Fault ID: F_SPK_5
+    Baseline Version: v1
+       Source File #: variables.c
+	 Source Func: brand
+           Diff ID #: 914
+   Fault Description: modulus on the wrong base (100 instead of 32768)
+Fault Classification: A
+
+

@@ -1,0 +1,5 @@
+send ":redir >> option_186.1.1.out\r"
+send ":set tag\r"
+send ":set tag?\r"
+send ":redir END\r"
+

@@ -1,0 +1,5 @@
+shell_execve--./execute_cmd.c	FAULTY_F_KP_1	1
+do_redirection_internal--./redir.c	FAULTY_F_KP_2	2
+end_job_control--./jobs.c	FAULTY_F_KP_3	3
+maybe_add_history--./bashhist.c	FAULTY_F_KP_4	4
+rl_read_key--./lib/readline/input.c	FAULTY_F_KP_5	5

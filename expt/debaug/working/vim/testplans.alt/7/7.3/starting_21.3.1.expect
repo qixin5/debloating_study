@@ -1,0 +1,5 @@
+send ":redir >> starting_21.3.1.out\r"
+send ":n $env(TESTS_SRC)/newfile2\r"
+send ":f\r"
+send ":redir END\r"
+

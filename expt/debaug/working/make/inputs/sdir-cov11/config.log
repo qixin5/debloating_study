@@ -1,0 +1,461 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:661: checking host system type
+configure:1617: checking for gcc
+configure:1730: checking whether the C compiler (gcc  ) works
+configure:1746: gcc -o conftest    conftest.c  1>&5
+configure:1772: checking whether the C compiler (gcc  ) is a cross-compiler
+configure:1777: checking whether we are using GNU C
+configure:1786: gcc -E conftest.c
+configure:1805: checking whether gcc accepts -g
+configure:1885: checking whether ln -s works
+configure:1906: checking how to run the C preprocessor
+configure:1927: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1997: checking for a BSD compatible install
+configure:2054: checking for bison
+configure:2086: checking for AIX
+configure:2114: checking for sys/select.h
+configure:2124: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2114: checking for sys/timeb.h
+configure:2124: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2114: checking for sys/time.h
+configure:2124: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2114: checking for unistd.h
+configure:2124: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2114: checking for utime.h
+configure:2124: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2114: checking for linux/version.h
+configure:2124: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2120: linux/version.h: No such file or directory
+configure: failed program was:
+#line 2119 "configure"
+#include "confdefs.h"
+#include <linux/version.h>
+configure:2114: checking for sys/systeminfo.h
+configure:2124: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2114: checking for termios.h
+configure:2124: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2114: checking for limits.h
+configure:2124: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2114: checking for string.h
+configure:2124: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2151: checking for ANSI C header files
+configure:2164: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2231: gcc -o conftest -g -O2   conftest.c  1>&5
+configure:2255: checking whether time.h and sys/time.h may both be included
+configure:2269: gcc -c -g -O2  conftest.c 1>&5
+configure:2290: checking for sys_siglist declaration in signal.h or unistd.h
+configure:2307: gcc -c -g -O2  conftest.c 1>&5
+configure: In function `main':
+configure:2303: `sys_siglist' undeclared (first use in this function)
+configure:2303: (Each undeclared identifier is reported only once
+configure:2303: for each function it appears in.)
+configure: failed program was:
+#line 2295 "configure"
+#include "confdefs.h"
+#include <sys/types.h>
+#include <signal.h>
+/* NetBSD declares sys_siglist in unistd.h.  */
+#ifdef HAVE_UNISTD_H
+#include <unistd.h>
+#endif
+int main() {
+char *msg = *(sys_siglist + 1);
+; return 0; }
+configure:2329: checking for struct utimbuf
+configure:2353: gcc -c -g -O2  conftest.c 1>&5
+configure:2374: checking return type of signal handlers
+configure:2396: gcc -c -g -O2  conftest.c 1>&5
+configure:2416: checking for struct timeval
+configure:2437: gcc -c -g -O2  conftest.c 1>&5
+configure:2459: checking whether struct tm is in sys/time.h or time.h
+configure:2472: gcc -c -g -O2  conftest.c 1>&5
+configure:2493: checking for tm_zone in struct tm
+configure:2506: gcc -c -g -O2  conftest.c 1>&5
+configure: In function `main':
+configure:2502: structure has no member named `tm_zone'
+configure: failed program was:
+#line 2498 "configure"
+#include "confdefs.h"
+#include <sys/types.h>
+#include <time.h>
+int main() {
+struct tm tm; tm.tm_zone;
+; return 0; }
+configure:2526: checking for tzname
+configure:2541: gcc -o conftest -g -O2   conftest.c  1>&5
+configure:2564: checking for working const
+configure:2618: gcc -c -g -O2  conftest.c 1>&5
+configure:2640: checking whether make sets ${MAKE}
+configure:2668: checking for long file names
+configure:2719: checking for X
+configure:3037: checking the machine- and system-dependent files to find out
+ - which libraries the lib-src programs will want, and
+ - whether the GNU malloc routines are usable
+configure:3167: checking for malloc_get_state
+configure:3195: gcc -o conftest  -g -O    conftest.c  1>&5 
+Undefined			first referenced
+ symbol  			    in file
+malloc_get_state                    /var/tmp/ccV9Jose.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 3172 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char malloc_get_state(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char malloc_get_state();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_malloc_get_state) || defined (__stub___malloc_get_state)
+choke me
+#else
+malloc_get_state();
+#endif
+
+; return 0; }
+configure:3216: checking for malloc_set_state
+configure:3244: gcc -o conftest  -g -O    conftest.c  1>&5 
+Undefined			first referenced
+ symbol  			    in file
+malloc_set_state                    /var/tmp/ccYJRgRd.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 3221 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char malloc_set_state(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char malloc_set_state();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_malloc_set_state) || defined (__stub___malloc_set_state)
+choke me
+#else
+malloc_set_state();
+#endif
+
+; return 0; }
+configure:3265: checking whether __after_morecore_hook exists
+configure:3277: gcc -o conftest  -g -O    conftest.c  1>&5 
+Undefined			first referenced
+ symbol  			    in file
+__after_morecore_hook               /var/tmp/ccbRBKad.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 3270 "configure"
+#include "confdefs.h"
+extern void (* __after_morecore_hook)();
+int main() {
+__after_morecore_hook = 0
+; return 0; }
+configure:3327: checking for dnet_ntoa in -ldnet
+configure:3346: gcc -o conftest  -g -O        conftest.c -ldnet   -lsocket -lnsl -lkstat   1>&5 
+ld: fatal: library -ldnet: not found
+ld: fatal: File processing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 3335 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char dnet_ntoa();
+
+int main() {
+dnet_ntoa()
+; return 0; }
+configure:3375: checking for main in -lXbsd
+configure:3390: gcc -o conftest  -g -O        conftest.c -lXbsd   -lsocket -lnsl -lkstat   1>&5 
+ld: fatal: library -lXbsd: not found
+ld: fatal: File processing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 3383 "configure"
+#include "confdefs.h"
+
+int main() {
+main()
+; return 0; }
+configure:3412: checking for cma_open in -lpthreads
+configure:3431: gcc -o conftest  -g -O        conftest.c -lpthreads   -lsocket -lnsl -lkstat   1>&5 
+ld: fatal: library -lpthreads: not found
+ld: fatal: File processing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 3420 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char cma_open();
+
+int main() {
+cma_open()
+; return 0; }
+configure:3460: checking for XFree86 in /usr/X386
+configure:3555: checking for XrmSetDatabase
+configure:3583: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:3555: checking for XScreenResourceString
+configure:3583: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:3555: checking for XScreenNumberOfScreen
+configure:3583: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:3555: checking for XSetWMProtocols
+configure:3583: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:3611: checking X11 version 6
+configure:3626: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:3651: checking X11 version 5
+configure:3666: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:3694: checking X11 version 5 with Xaw
+configure:3708: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:3736: checking X11 toolkit version
+configure:3751: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:3781: checking for XmuConvertStandardSelection in -lXmu
+configure:3800: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lXmu  -lXt -lSM -lICE  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:3919: checking whether netdb declares h_errno
+configure:3931: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:3954: checking for working alloca.h
+configure:3966: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:3987: checking for alloca
+configure:4020: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4189: checking for sqrt in -lm
+configure:4208: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm   -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4201: warning: conflicting types for built-in function `sqrt'
+configure:4238: checking for maillock in -lmail
+configure:4257: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lmail  -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4279: checking for touchlock
+configure:4307: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+Undefined			first referenced
+ symbol  			    in file
+touchlock                           /var/tmp/cc0CBfra.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4284 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char touchlock(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char touchlock();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_touchlock) || defined (__stub___touchlock)
+choke me
+#else
+touchlock();
+#endif
+
+; return 0; }
+configure:4335: checking for maillock.h
+configure:4345: gcc -E      conftest.c >/dev/null 2>conftest.out
+configure:4383: checking for gettimeofday
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for gethostname
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for getdomainname
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for dup2
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for rename
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for closedir
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for mkdir
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for rmdir
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for sysinfo
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for random
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for lrand48
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for bcopy
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for bcmp
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for logb
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for frexp
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for fmod
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for rint
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for cbrt
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for ftime
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for res_init
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+Undefined			first referenced
+ symbol  			    in file
+res_init                            /var/tmp/ccyIBirb.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4388 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char res_init(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char res_init();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_res_init) || defined (__stub___res_init)
+choke me
+#else
+res_init();
+#endif
+
+; return 0; }
+configure:4383: checking for setsid
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for strerror
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for fpathconf
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for select
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for mktime
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for euidaccess
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+Undefined			first referenced
+ symbol  			    in file
+euidaccess                          /var/tmp/ccEufaNc.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4388 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char euidaccess(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char euidaccess();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_euidaccess) || defined (__stub___euidaccess)
+choke me
+#else
+euidaccess();
+#endif
+
+; return 0; }
+configure:4383: checking for getpagesize
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for tzset
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for setlocale
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for utimes
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for setrlimit
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for setpgid
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for getcwd
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for shutdown
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4383: checking for strftime
+configure:4411: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4440: checking for grantpt
+configure:4468: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4497: checking for getpt
+configure:4525: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+Undefined			first referenced
+ symbol  			    in file
+getpt                               /var/tmp/ccu4F4Rc.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4502 "configure"
+#include "confdefs.h"
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char getpt(); below.  */
+#include <assert.h>
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char getpt();
+
+int main() {
+
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_getpt) || defined (__stub___getpt)
+choke me
+#else
+getpt();
+#endif
+
+; return 0; }
+configure:4555: checking for tparm in -lncurses
+configure:4574: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lncurses  -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+ld: fatal: library -lncurses: not found
+ld: fatal: File processing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 4563 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char tparm();
+
+int main() {
+tparm()
+; return 0; }
+configure:4605: checking for dgettext in -lintl
+configure:4624: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lintl  -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4653: checking whether localtime caches TZ
+configure:4698: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lintl -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4726: checking whether gettimeofday can accept two arguments
+configure:4753: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lintl -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4776: checking for socket
+configure:4804: gcc -o conftest -I/usr/openwin/include  -g -O        -L/usr/openwin/lib conftest.c -lintl -lm  -lX11   -lsocket -lnsl -lkstat   1>&5 
+configure:4827: checking for netinet/in.h
+configure:4837: gcc -E      conftest.c >/dev/null 2>conftest.out
+configure:4863: checking for arpa/inet.h
+configure:4873: gcc -E      conftest.c >/dev/null 2>conftest.out

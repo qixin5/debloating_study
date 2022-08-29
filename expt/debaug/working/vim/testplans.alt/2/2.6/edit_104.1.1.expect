@@ -1,0 +1,3 @@
+send -- ":j!\r"
+send -- "iThis is the last line\r"
+send -- "\033"

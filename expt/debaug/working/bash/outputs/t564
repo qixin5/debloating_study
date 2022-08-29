@@ -1,0 +1,9 @@
+a_myexpr=8
+b_myexpr=16
+bor=24
+band=0
+bnot_c bnot_a=1
+bnot_d bnot_a=0
+xbor=24
+8>>1 4
+16<<2 64

@@ -1,0 +1,5 @@
+# bash -D
+
+send "$env(BASH_SRC_DIR)/bash-2.05 -D\n"
+send "pwd\n"
+send "\004"

@@ -1,0 +1,13 @@
+9600
+speed 9600 baud; line = 0;
+eol = M-^?; eol2 = M-^?;
+-brkint ixany
+-echok
+speed 4800 baud; line = 0;
+eol = M-^?; eol2 = M-^?;
+-brkint ixany
+-echok
+speed 9600 baud; line = 0;
+eol = M-^?; eol2 = M-^?;
+-brkint ixany
+-echok

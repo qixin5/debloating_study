@@ -1,0 +1,4 @@
+send -- "v"
+send -- "8l"
+send -- "cThis is visual change"
+

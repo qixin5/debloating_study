@@ -1,0 +1,6 @@
+send ":redir >> mapping_40.1.1.out\r"
+send ":norea abbr abbreviate\r"
+send ":ab abbr\r"
+send ":ab abbreviate abbreviation\r"
+send ":ab abbr\r"
+send ":redir END\r"

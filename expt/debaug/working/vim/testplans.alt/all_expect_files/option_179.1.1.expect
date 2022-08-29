@@ -1,0 +1,5 @@
+send ":redir >> option_179.1.1.out\r"
+send ":set sws\r"
+send ":set sws?\r"
+send ":redir END\r"
+

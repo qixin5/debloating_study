@@ -1,0 +1,5 @@
+send ":redir >> option_92.1.1.out\r"
+send ":set isf\r"
+send ":set isf\r"
+send ":redir END\r"
+

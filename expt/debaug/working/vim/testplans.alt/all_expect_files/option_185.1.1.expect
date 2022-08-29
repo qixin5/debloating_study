@@ -1,0 +1,5 @@
+send ":redir >> option_185.1.1.out\r"
+send ":set notr\r"
+send ":set tr?\r"
+send ":redir END\r"
+

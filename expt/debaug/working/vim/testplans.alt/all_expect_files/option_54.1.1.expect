@@ -1,0 +1,7 @@
+send ":redir >> option_54.1.1.out\r"
+send ":set exrc\r"
+ 
+
+send ":set exrc?\r"
+send ":redir END\r"
+

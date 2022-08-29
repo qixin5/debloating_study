@@ -1,0 +1,11 @@
+#send ":sh\r"
+#send "echo Hello"
+#expect "$"
+#send ":!echo \\\$SHLVL >> shell_312.1.1.out\r"
+#send ":!SHLVL=4"
+send ":!echo \"\$SHLVL\" >> other_0.1.1.out\r"
+#expect "$"
+#send "exit\r"
+send "\033"
+#expect "+ Stopped"
+

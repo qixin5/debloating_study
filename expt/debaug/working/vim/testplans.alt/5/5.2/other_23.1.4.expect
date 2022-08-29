@@ -1,0 +1,12 @@
+send --  ":redir >> other_23.1.4.out\r"
+send --  ":make -C $env(TESTS_SRC)\r"
+expect "make"
+expect "warning"
+expect "continue"
+#sleep 1
+send --  "\r"
+expect "pointer type"
+send --  ":clast! 3\r"
+expect "cprogram"
+expect "main"
+send --  ":redir END\r"

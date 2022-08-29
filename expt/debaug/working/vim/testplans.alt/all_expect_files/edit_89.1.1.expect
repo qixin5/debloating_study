@@ -1,0 +1,7 @@
+send -- ":redir >> edit_89.1.1.out\r"
+send -- "2j"
+send -- "\"ax"
+send -- ":reg a\r"
+expect "continue"
+send -- ":redir END\r"
+

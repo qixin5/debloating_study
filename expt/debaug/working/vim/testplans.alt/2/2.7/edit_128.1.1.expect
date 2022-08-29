@@ -1,0 +1,6 @@
+send -- "2yy"
+send -- ":redir >> edit_128.1.1.out\r"
+send -- "P"
+send -- ":redir END\r"
+
+

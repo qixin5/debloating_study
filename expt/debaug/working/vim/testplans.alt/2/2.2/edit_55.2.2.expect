@@ -1,0 +1,4 @@
+send -- "\177"
+send -- "bbbbbbb"
+send -- "\033"
+sleep 1

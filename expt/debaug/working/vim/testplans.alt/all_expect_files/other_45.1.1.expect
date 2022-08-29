@@ -1,0 +1,7 @@
+send ":redir >> other_45.1.1.out\r"
+send "Q"
+expect "visual"
+#expect "out"
+#expect ":"
+send "visual"
+send ":redir END\r"

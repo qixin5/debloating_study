@@ -1,0 +1,7 @@
+send -- "\017"
+send -- "j"
+send -- "\017"
+send -- "5w"
+send -- "\[OD"
+send -- "Pradeep"
+

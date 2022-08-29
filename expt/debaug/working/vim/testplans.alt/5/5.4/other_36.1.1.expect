@@ -1,0 +1,9 @@
+send ":set hf=\${vim_doc}/help.txt\r"
+sleep 1
+send ":redir >> other_36.1.1.out\r"
+send ":help \[a-z\]\r"
+
+#expect "help.txt"
+#expect "insert.txt"
+send ":redir END\r"
+send ":q!\r"

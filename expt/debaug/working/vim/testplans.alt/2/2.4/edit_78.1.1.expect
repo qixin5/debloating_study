@@ -1,0 +1,8 @@
+send -- ":dig a^ 290 b^ 299\r"
+send -- "i"
+send -- "\013"
+send -- "a^\r"
+send -- "\013"
+send -- "b^\r"
+send -- "\033"
+

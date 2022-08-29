@@ -1,0 +1,6 @@
+send -- "iTHIS WILL BE CONVERTED TO LOWER CASE"
+
+send -- "\033"
+send -- "0"
+send -- "gugu"
+

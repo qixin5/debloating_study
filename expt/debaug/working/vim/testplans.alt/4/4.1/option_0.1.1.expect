@@ -1,0 +1,4 @@
+send ":redir >> option_0.1.1.out\r"
+send ":set\r"
+send ":redir END\r"
+

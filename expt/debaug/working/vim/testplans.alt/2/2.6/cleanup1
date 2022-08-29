@@ -1,0 +1,5 @@
+send -- ":wq\r"
+expect
+exit -onexit {
+interact
+}

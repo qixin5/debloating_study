@@ -1,0 +1,6 @@
+send ":redir >> option_47.1.1.out\r"
+send ":set noek\r"
+
+send ":set ek?\r"
+send ":redir END\r"
+

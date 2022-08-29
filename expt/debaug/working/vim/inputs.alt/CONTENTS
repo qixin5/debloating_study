@@ -1,0 +1,10 @@
+CONTENTS <inputs.alt>
+
+Files:
+ "copy1"      -- primary test file
+ "cprogram.c" -- a c-format input file
+ "hello.c"    -- another c-format input file
+ "infofile"   -- a file
+ "searchfile" -- a simple file for searching
+ "tags"       -- tags identifying functions in cprogram.c
+

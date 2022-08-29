@@ -1,0 +1,5 @@
+stty
+speed 9600 baud; line = 0;
+eol = M-^?; eol2 = M-^?;
+-brkint ixany
+-echok

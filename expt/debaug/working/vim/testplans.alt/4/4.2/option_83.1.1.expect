@@ -1,0 +1,5 @@
+send ":redir >> option_83.1.1.out\r"
+send ":set ic\r"
+send ":set ic?\r"
+send ":redir END\r"
+

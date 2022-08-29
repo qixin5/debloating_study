@@ -1,0 +1,5 @@
+send ":redir >> option_167.1.1.out\r"
+send ":set scs\r"
+send ":set scs?\r"
+send ":redir END\r"
+

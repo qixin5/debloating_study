@@ -1,0 +1,21 @@
+#!/usr/bin/expect -f
+spawn $env(SUBJECTS_SRC_DIR)/vim-5.8 -u $env(HOME)/.vimrc $env(TESTS_SRC)/copy1
+expect "copy1"
+sleep 1
+send ":se lines=24\r"
+send ":se columns=80\r"
+#send ":sh\r"
+#send "echo Hello"
+#expect "$"
+#send ":!echo \\\$SHLVL >> shell_312.1.1.out\r"
+send ":!echo \"\$SHLVL\" >> other_0.1.1.out\r"
+#expect "$"
+#send "exit\r"
+send "\033"
+#expect "+ Stopped"
+
+send ":wq\r"
+expect
+exit -onexit {
+interact
+}

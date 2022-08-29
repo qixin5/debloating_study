@@ -1,0 +1,4 @@
+send -- "\"g2yy"
+send -- ":redir >> edit_127.1.1.out\r"
+send -- "\"gp"
+send -- ":redir END\r"

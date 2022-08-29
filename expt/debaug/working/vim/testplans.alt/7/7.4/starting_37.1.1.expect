@@ -1,0 +1,8 @@
+send ":redir >> starting_37.1.1.out\r"
+send "i"
+send "This file is being modified"
+send "\033"
+send ":qa\r"
+#expect "RETURN"
+#send "\r"
+send ":redir END\r"

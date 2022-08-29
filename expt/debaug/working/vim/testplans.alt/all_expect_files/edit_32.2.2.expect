@@ -1,0 +1,3 @@
+send -- "\005"
+send -- "hello there"
+

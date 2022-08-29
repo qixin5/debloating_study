@@ -1,0 +1,6 @@
+send -- ":dig a 290\r"
+send -- "i"
+send -- "\013"
+send -- "a\r"
+send -- "\033"
+# dig name should be two chars

@@ -1,0 +1,5 @@
+send ":redir >> starting_22.3.1.out\r"
+send ":n\r"
+send ":N\r"
+send ":redir END\r"
+send ":q\r"

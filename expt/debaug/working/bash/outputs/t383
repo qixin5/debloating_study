@@ -1,0 +1,276 @@
+find: ‘/home/qxin6/tmp/test’: Permission denied
+hi
+there
+
+##****************END OF TEST**END OF TEST****END OF TEST*********##
+##************CLEANUP BEGINS HERE AND CONTINUES TO EOF************##
+
+
+# this is a common cleanup file that has to be appended to every
+# bash test found in this directory (only .test files, not .expect)
+# it is a combination of cleanup files created by satya, praveen 
+# and srikanth while preparing the 1174 fine-grain test scripts for bash
+# whereever changes have been necessitated due to conflicts while
+# combining the cleanups, a 'KPMOD' is comments can be found. 
+
+# created by praveen Kallakuri
+# 07/24/2001
+
+#****************start of cleanup******************
+# cleanup prepared by PRAVEEN
+
+#general cleanup
+
+# first come back to the original directory set in setup1
+# cd /home/qxin6/debaug_expt/debaug/working/bash/testplans.alt/testplans.fine
+# get back this line after all tests are verified 
+
+# restoring ps1
+export PS1=
+
+# unset functions defined for the purpose of setup
+unset checkx
+
+# move all tran files in testdir to currdir
+for file in 
+do
+    mv  . 2>/dev/null
+done
+
+# removing dodo
+rm -rf dodo
+
+#cleanup for basic1
+rm -rf /home/qxin6/tmp/basic1 2> /dev/null
+
+#cleanup for basic 2,3,4
+rm -f /home/qxin6/tmp/*tmprani >/dev/null
+
+#cleanup for basic 8
+#the original cleanup included a moving all tranfiles from the testdir
+#to the current dir. this is no longer needed since we have that being
+#done in the general cleanup
+rm -rf /home/qxin6/tmp/basic8 >/dev/null
+
+#cleanup for basic 9
+rm -f /home/qxin6/tmp/basicnine.test >/dev/null
+
+#cleanup for builtin1
+unset count; unset continuer;
+
+#cleanup for enable tests
+rm -rf /home/qxin6/tmp/type >/dev/null
+
+#cleanup for getopts
+unset dodosays;
+
+# cleanup for cd 4 onwards
+#KPMOD: had to rename this dir to avoid conflict
+rm -rf /home/qxin6/tmp/dodokp >/dev/null
+
+#cleanup for special 2
+unset spec2
+
+#cleanup for string tests
+unset dodo1
+rm -rf /home/qxin6/tmp/dodo2 >/dev/null
+unset dodo4
+unset comp comp1
+
+# cleanup for glob-tests
+unset expect
+rm -rf /home/qxin6/tmp/glob-test
+
+# cleanup for command tests
+rm -rf /home/qxin6/tmp/commandtests
+
+# cleanup for ifs tests
+IFS=" 	
+"
+
+# cleanup for function tests
+unset dodo5
+unset bobo
+unset sisi
+
+# cleanup for loop tests
+unset loopvar;
+unset loop;
+unset -f fool;
+unset -f koo;
+
+#cleanup for more-exp tests
+unset tool_var KPA KPB eto_prepend fook kpaa var somevar 
+if [ ! -z  ]; then
+	HOME=
+fi;
+
+unset PP s1 s2 first last UNAME_RELEASE RELEASE REL_LEVEL REL_SUBLEVEL
+unset b1 b2 yyy arg z z1 zz jkpa
+
+# ***********************start of cleanup*********************
+# CLEANUP PREPARED BY SATYA
+
+#cleanup for new-exp.tests
+
+export HOME=/home/qxin6
+unset HOME_BAK
+unset _ENV
+unset P
+unset foo2
+unset a b c d e
+unset foo
+unset z
+unset v
+unset av
+\rm -f /home/qxin6/tmp/x
+unset y
+unset z1
+unset AB
+unset z2
+unset xx
+unset yy
+unset expect
+
+#cleanup for nquote.tests
+
+unset z3
+unset ZIFS
+unset D
+unset world
+
+#cleanup for perf-script.tests
+
+unset m2 m1 M n2 n1 N m n
+unset MM NN
+unset EMPTYLINE
+
+#cleanup for precedence.tests
+
+unset Say
+unset Truth
+unset False
+unset cmd1
+unset cmd2
+unset grouping_sh
+unset grouping_C
+unset test3
+
+#cleanup for posix2.tests
+
+unset TESTSHELL
+unset TMPDIR
+unset exitval
+unset numtests
+unset newtest
+unset testfail
+unset empty
+unset names
+unset a
+\rm -f /home/qxin6/tmp/conftest /home/qxin6/tmp/conftest1 /home/qxin6/tmp/conftest2
+
+#cleanup for read.tests
+
+\rm -f /home/qxin6/tmp/IN
+
+#setup for rhs-exp.tests
+
+unset selvecs
+
+#cleanup for prompt.tests
+
+#KPMOD: PS1 already restored. 
+# export PS1=""
+export PS2=""
+export PS3=""
+export PS4=""
+\rm -fr /home/qxin6/tmp/spk
+
+#cleanup for tilde-tests
+
+unset SHELL1
+unset path
+unset XPATH
+
+#cleanup for type.tests
+
+unset dodo
+\rm -f dodo
+
+#cleanup for heredoc.tests
+unset a1
+
+#cleanup for env.tests
+
+\rm -f /home/qxin6/tmp/something.tmp
+unset dodo1
+
+#cleanup for exit_status.test
+
+unset cd1
+
+#cleanup for myexpr.tests
+
+unset a1_myexpr a2_myexpr
+
+#cleanup for test-tests
+
+unset t
+\rm -f /home/qxin6/tmp/test.setgid
+\rm -f /home/qxin6/tmp/test.noread
+\rm -f /home/qxin6/tmp/test.setuid
+\rm -f /home/qxin6/tmp/test.nowrite
+\rm -f /home/qxin6/tmp/test.exec
+\rm -f /home/qxin6/tmp/test.noexec
+\rm -f /home/qxin6/tmp/test.owner
+\rm -f /home/qxin6/tmp/abc
+\rm -f /home/qxin6/tmp/def
+\rm -f /home/qxin6/tmp/ghi
+
+#cleanup for exp-tests
+
+unset xxx
+unset yyy
+unset FOO
+unset FOO1
+unset POSIX
+unset x
+unset x1
+unset x2
+unset x3
+unset foo3
+unset bar
+unset x4
+unset y1
+unset y2
+unset x5
+unset a1
+unset b1
+
+#cleanup for varenv.sh
+unset a_varenv b_varenv c_varenv d_varenv e_varenv f_varenv g_varenv h_varenv
+
+#cleanup for array.tests
+unset a_array b_array d_array e_array f_array x_array z ARGV rv ps1_array
+#**************start of cleanup****************
+# cleanup prepared by SKARRE for bash scripts
+
+# KPMOD: no need of this
+#echo "USING CLEAN-UP FILE 0"
+unalias quit e p rmi
+
+unset look
+
+umask 002
+unset umask_orig
+
+rm -r /home/qxin6/tmp/file_attrib /home/qxin6/tmp/myalias
+
+ulimit -n 1024
+ulimit -s 8192
+
+unset myfiles mystack
+
+unset sk_a sk_b sk_c
+
+unset sk_funct

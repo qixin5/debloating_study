@@ -1,0 +1,25 @@
+abcde
+abcde  bdef
+abcde  bdef
+declare -a DIRSTACK='()'
+declare -a GROUPS='()'
+declare -a a_array='([0]="abcde" [1]="" [2]="bdef")'
+declare -a av='([0]="abcd" [1]="efgh" [2]="ijkl" [3]="mnop" [4]="qrst" [5]="uvwx")'
+declare -a b_array='()'
+declare -ar c_array='()'
+declare -a d_array='([1]="" [2]="bdef" [5]="hello world" [6]="test")'
+abcde  bdef
+abcde  bdef
+abcde
+abcde
+abcde
+
+ bdef
+hello world
+11
+3
+ bdef hello world test expression
+declare -ar a_array='([1]="" [2]="bdef" [5]="hello world" [6]="test expression")'
+declare -ar c_array='()'
+declare -ar a_array='([1]="" [2]="bdef" [5]="hello world" [6]="test expression")'
+declare -ar c_array='()'

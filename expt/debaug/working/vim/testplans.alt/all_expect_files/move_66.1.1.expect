@@ -1,0 +1,6 @@
+send ":redir >> move_66.1.1.out\r"
+send "tI"
+send "\007"
+send ";"
+send "\007"
+send ":redir END\r"

@@ -1,0 +1,5 @@
+send ":redir >> option_73.1.1.out\r"
+send ":set hid\r"
+send ":set hid?\r"
+send ":redir END\r"
+

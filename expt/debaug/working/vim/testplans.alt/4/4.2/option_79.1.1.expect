@@ -1,0 +1,5 @@
+send ":redir >> option_79.1.1.out\r"
+send ":set hi=40\r"
+send ":set hi?\r"
+send ":redir END\r"
+

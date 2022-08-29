@@ -1,0 +1,6 @@
+send -- ":dig aa 290\r"
+send -- "i"
+send -- "\013"
+send -- "aa\r"
+send -- "\033"
+

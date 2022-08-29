@@ -1,0 +1,37 @@
+#!/usr/bin/perl
+
+$EXPROOT = "$ENV{experiment_root}/bash";
+
+#Directories
+$TEST_DIR = "$EXPROOT/testplans/testplans.fine";
+@IGNORED_SCRIPTS = 
+(
+
+);
+
+#Commands
+$SCRIPT_LIST_CMD = "ls -1 *.test";
+
+close(STDERR);
+
+$runallflag = !(@ARGV);
+$test = $ARGV[0];
+
+$scriptCounter = 0;
+@scriptList = `cd $TEST_DIR && $SCRIPT_LIST_CMD -F`;
+@scriptList = sort{$a cmp $b} @scriptList;
+foreach $scriptName(@scriptList)
+{
+	chop($scriptName);
+	chop($scriptName);
+	$ignored = grep (/^($scriptName)$/, @IGNORED_SCRIPTS);
+	if($ignored == 0)
+	{
+		if($runallflag || $test == $scriptCounter)
+		{
+			printf("Test %4d(%4d):          testplans.fine/%s\n", 
+$scriptCounter+1,$scriptCounter,$scriptName);
+		}
+		$scriptCounter = $scriptCounter + 1;
+	}
+}

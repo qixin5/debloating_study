@@ -1,0 +1,5 @@
+send ":redir >> option_109.1.1.out\r"
+send ":set magic\r"
+send ":set magic?\r"
+send ":redir END\r"
+

@@ -1,0 +1,10 @@
+send -- "5l"
+send -- "o"
+
+send -- "test o"
+send -- "\033"
+
+
+
+
+

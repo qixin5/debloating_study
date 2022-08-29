@@ -1,0 +1,5 @@
+alias dodo='echo "Hello there, hope you are having a nice time with this test."'
+alias e='exit'
+alias p='pine'
+alias quit='exit'
+alias rmi='rm -i'

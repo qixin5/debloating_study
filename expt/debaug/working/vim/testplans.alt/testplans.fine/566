@@ -1,0 +1,20 @@
+#!/usr/bin/expect -f
+spawn $env(SUBJECTS_SRC_DIR)/vim-5.8 -u $env(HOME)/.vimrc $env(TESTS_SRC)/copy1
+expect "copy1"
+sleep 1
+send ":se lines=24\r"
+send ":se columns=80\r"
+send ":map! , <left>\r"
+send "$"
+send "\007"
+send "i"
+send ",,,"
+send "moved three characters left"
+send "\033"
+
+
+send ":wq\r"
+expect
+exit -onexit {
+interact
+}

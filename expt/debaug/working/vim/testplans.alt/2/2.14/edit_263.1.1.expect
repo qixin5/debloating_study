@@ -1,0 +1,7 @@
+send -- ":redir >> edit_263.1.1.out\r"
+send -- ":re\001\r"
+expect "Only*allowed"
+send -- ":reg :\r"
+expect "continue"
+send -- ":redir END\r"
+

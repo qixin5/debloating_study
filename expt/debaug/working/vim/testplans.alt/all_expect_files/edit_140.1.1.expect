@@ -1,0 +1,9 @@
+send -- ":redir >> edit_140.1.1.out\r"
+send -- "o"
+send -- "\033"
+send -- "\"aY"
+send -- ":reg a\r"
+expect "continue"
+send -- ":redir END\r"
+
+

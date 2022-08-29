@@ -1,0 +1,4 @@
+send ":redir >> move_293.1.1.out\r"
+send ":ju\r\r"
+send ":redir END\r"
+

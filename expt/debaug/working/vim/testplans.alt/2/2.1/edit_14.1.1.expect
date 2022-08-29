@@ -1,0 +1,10 @@
+send -- "4O"
+
+send -- "test nO"
+send -- "\033"
+sleep 1
+
+
+
+
+

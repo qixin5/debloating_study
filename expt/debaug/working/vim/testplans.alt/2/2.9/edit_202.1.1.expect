@@ -1,0 +1,4 @@
+send -- "V3j"
+send -- "!head -n 0\r"
+expect "continue"
+

@@ -1,0 +1,6 @@
+send "3j"
+send ":redir >> other_51.1.1.out\r"
+send ":.p 1\r"
+#expect "RETURN"
+#send "\r"
+send ":redir END\r"

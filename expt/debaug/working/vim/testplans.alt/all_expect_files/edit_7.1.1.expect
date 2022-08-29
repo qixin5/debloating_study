@@ -1,0 +1,8 @@
+send -- "I"
+
+send -- "test I"
+send -- "\033"
+
+
+
+

@@ -1,0 +1,3 @@
+send ":redir >> other_54.1.1.out\r"
+send ":-3 print 1\r"
+send ":redir END\r"

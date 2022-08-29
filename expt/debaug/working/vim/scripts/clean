@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+$EXPROOT = "$ENV{experiment_root}/vim";
+
+#Directories
+$SRC_DIR = "$EXPROOT/source";
+$BIN_DIR = "$EXPROOT/source/bin";
+
+#Commands
+$UNINSTALL_CMD = "make distclean";
+$BIN_RM_CMD = "rm -r -f $BIN_DIR";
+$SRC_RM_CMD = "rm -r -f *";
+
+#CLEAN VERSION
+	print("Uninstalling: ".$SRC_DIR."\n");
+	print("        From: ".$BIN_DIR."\n");
+	`$BIN_RM_CMD`;
+	`cd $SRC_DIR && $UNINSTALL_CMD ; cd $SRC_DIR && $SRC_RM_CMD`;

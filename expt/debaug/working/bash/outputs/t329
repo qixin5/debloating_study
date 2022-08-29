@@ -1,0 +1,2 @@
+see if null glob expansion works
+expect <kpa> <kpabc> <kpabd> <kpabe>

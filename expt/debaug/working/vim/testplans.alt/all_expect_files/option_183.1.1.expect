@@ -1,0 +1,5 @@
+send ":redir >> option_183.1.1.out\r"
+send ":set tl\r"
+send ":set tl?\r"
+send ":redir END\r"
+

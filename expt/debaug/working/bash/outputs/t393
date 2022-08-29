@@ -1,0 +1,7 @@
+ifs orig  	
+, current : 	
+
+a b c
+resetting IFS
+1
+a:b:c

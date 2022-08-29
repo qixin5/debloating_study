@@ -1,0 +1,9 @@
+send -- ":redir >> edit_260.1.1.out\r"
+send -- ":abcde\r"
+expect "Not*abcde"
+send -- ":red OA\r"
+#expect "Trailing characters"
+send -- ":reg :\r"
+#expect "continue"
+send -- ":redir END\r"
+

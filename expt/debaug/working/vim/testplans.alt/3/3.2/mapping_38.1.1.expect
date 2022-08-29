@@ -1,0 +1,6 @@
+send ":redir >> mapping_38.1.1.out\r"
+send ":ab abbr abbreviate\r"
+send ":ab ma mappings\r"
+send ":ab di digraphs\r"
+send ":ab \r"
+send ":redir END\r"

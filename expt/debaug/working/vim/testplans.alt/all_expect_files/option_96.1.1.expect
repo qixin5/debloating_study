@@ -1,0 +1,5 @@
+send ":redir >> option_96.1.1.out\r"
+send ":set kp\r"
+send ":set kp?\r"
+send ":redir END\r"
+

@@ -1,0 +1,8 @@
+send ":redir >> move_299.5.1.out\r"
+send ":ta f1\r"
+send ":ta f2\r"
+send ":ta f3\r"
+send ":ta f4\r"
+send ":3 po\r"
+send ":2 tag\r"
+send ":redir END\r"

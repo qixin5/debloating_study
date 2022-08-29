@@ -1,0 +1,5 @@
+send ":redir >> option_18.1.1.out\r"
+send ":set bex=bak\r"
+send ":set bex?\r"
+send ":redir END\r"
+

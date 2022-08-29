@@ -1,0 +1,3 @@
+send ":redir >> other_42.1.1.out\r"
+send ":mode C80"
+send ":redir END\r"

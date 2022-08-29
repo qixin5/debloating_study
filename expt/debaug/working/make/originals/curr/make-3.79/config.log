@@ -1,0 +1,124 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:669: checking for a BSD compatible install
+configure:722: checking whether build environment is sane
+configure:779: checking whether make sets ${MAKE}
+configure:825: checking for working aclocal
+configure:838: checking for working autoconf
+configure:851: checking for working automake
+configure:864: checking for working autoheader
+configure:877: checking for working makeinfo
+configure:902: checking host system type
+configure:923: checking whether make sets ${MAKE}
+configure:952: checking for gcc
+configure:1065: checking whether the C compiler (gcc  ) works
+configure:1081: gcc -o conftest    conftest.c  1>&5
+configure:1078:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ main(){return(0);}
+ ^~~~
+configure:1107: checking whether the C compiler (gcc  ) is a cross-compiler
+configure:1112: checking whether we are using GNU C
+configure:1140: checking whether gcc accepts -g
+configure:1183: checking for a BSD compatible install
+configure:1238: checking for ar
+configure:1268: checking for ranlib
+configure:1296: checking how to run the C preprocessor
+configure:1375: checking for AIX
+configure:1399: checking for POSIXized ISC
+configure:1421: checking for minix/config.h
+configure:1472: checking for perl
+configure:1500: checking build system type
+configure:1534: checking for x86_64-unknown-linux-gnu-getconf
+configure:1564: checking for CFLAGS value to request large file support
+configure:1614: checking for LDFLAGS value to request large file support
+configure:1630: checking for LIBS value to request large file support
+configure:1689: checking for _FILE_OFFSET_BITS
+configure:1718: checking for _LARGEFILE_SOURCE
+configure:1747: checking for _LARGE_FILES
+configure:1779: checking for ANSI C header files
+configure:1887: checking for dirent.h that defines DIR
+configure:1925: checking for opendir in -ldir
+configure:2008: checking for uid_t in sys/types.h
+configure:2041: checking for pid_t
+configure:2074: checking return type of signal handlers
+configure:2119: checking for stdlib.h
+configure:2119: checking for unistd.h
+configure:2119: checking for limits.h
+configure:2119: checking for sys/param.h
+configure:2119: checking for fcntl.h
+configure:2119: checking for string.h
+configure:2119: checking for memory.h
+configure:2119: checking for sys/timeb.h
+configure:2157: checking whether gcc and cc understand -c and -o together
+configure:2211: checking for gcc option to accept ANSI C
+configure:2288: checking for working const
+configure:2362: checking for inline
+configure:2401: checking whether stat file-mode macros are broken
+configure:2458: checking for nanoseconds member of struct stat.st_mtim
+configure:2561: checking for inttypes.h
+configure:2644: checking for clock_gettime in -lposix4
+configure:2697: checking for memmove
+configure:2697: checking for strchr
+configure:2697: checking for memcpy
+configure:2697: checking for strdup
+configure:2697: checking for psignal
+configure:2697: checking for mkstemp
+configure:2697: checking for mktemp
+configure:2697: checking for fdopen
+configure:2697: checking for clock_gettime
+configure:2697: checking for dup2
+configure:2697: checking for getcwd
+configure:2697: checking for sigsetmask
+configure:2697: checking for sigaction
+configure:2697: checking for getgroups
+configure:2697: checking for setlinebuf
+configure:2697: checking for seteuid
+configure:2697: checking for setegid
+configure:2697: checking for setreuid
+configure:2697: checking for setregid
+configure:2697: checking for pipe
+configure:2697: checking for strerror
+configure:2697: checking for strsignal
+configure:2750: checking for sys_siglist
+configure:2785: checking for working alloca.h
+configure:2818: checking for alloca
+configure:3018: checking for vfork.h
+configure:3053: checking for working vfork
+configure:3227: checking for vprintf
+configure:3332: checking for working strcoll
+configure:3373: checking whether closedir returns void
+configure:3410: checking whether setvbuf arguments are reversed
+configure:3458: checking for select
+configure:3515: checking for unistd.h
+configure:3515: checking for sys/types.h
+configure:3515: checking for sys/time.h
+configure:3515: checking for sys/select.h
+configure:3515: checking for sys/socket.h
+configure:3552: checking argument types of select()
+configure:3667: checking for kstat_open in -lkstat
+configure:3715: checking for pstat_getdynamic
+configure:3772: checking for elf_begin in -lelf
+configure:3812: checking for kvm_open in -lkvm
+configure:3853: checking for getloadavg in -lutil
+configure:3944: checking for getloadavg
+configure:4299: checking whether getloadavg requires setgid
+configure:4335: checking group of /dev/kmem
+configure:4360: checking for sys/wait.h
+configure:4399: checking for waitpid
+configure:4399: checking for wait3
+configure:4452: checking for union wait
+configure:4501: checking for sys_siglist declaration in signal.h or unistd.h
+configure:4544: checking whether NLS is wanted
+configure:4581: checking for gettext
+configure:4634: checking for gettext in -lintl
+configure:4675: checking whether the included gettext is preferred
+configure:4803: checking for locale.h
+configure:4842: checking for getcwd
+configure:4842: checking for setlocale
+configure:4842: checking for stpcpy
+configure:4896: checking for LC_MESSAGES
+configure:4943: checking which translations to install
+configure:4981: checking for getpwnam in -lsun
+configure:5817: checking for location of SCCS get command
+configure:5864: checking if system libc has GNU glob

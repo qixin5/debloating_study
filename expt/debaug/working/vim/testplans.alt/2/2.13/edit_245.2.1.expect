@@ -1,0 +1,5 @@
+send -- "this line is changed now."
+send -- "\033"
+send -- "j"
+send -- "U"
+

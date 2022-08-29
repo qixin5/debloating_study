@@ -1,0 +1,5 @@
+send ":redir >> option_195.1.1.out\r"
+send ":set top\r"
+send ":set top?\r"
+send ":redir END\r"
+

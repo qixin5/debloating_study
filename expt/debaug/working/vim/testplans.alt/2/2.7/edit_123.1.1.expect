@@ -1,0 +1,6 @@
+send -- "\"cyy"
+send -- ":redir >> edit_123.1.1.out\r"
+send -- ":reg c\r"
+expect "continue"
+send -- ":redir END\r"
+

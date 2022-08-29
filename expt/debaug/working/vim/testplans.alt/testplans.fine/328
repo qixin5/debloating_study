@@ -1,0 +1,28 @@
+#!/usr/bin/expect -f
+set force_conservative 1;
+if {$force_conservative} {
+        set send_slow {1 .1}
+        proc send {ignore arg} {
+                sleep .1
+                exp_send -s -- $arg
+        }
+}
+spawn $env(SUBJECTS_SRC_DIR)/vim-5.8 -u $env(HOME)/.vimrc $env(TESTS_SRC)/copy1
+expect "copy1"
+sleep 1
+send -- ":se lines=24\r"
+send -- ":se columns=80\r"
+send -- ":redir >> edit_216.1.1.out\r"
+send -- "v"
+send -- "2ip"
+send -- "\"ay"
+expect "lines yanked"
+send -- ":reg a\r"
+expect "continue"
+send -- ":redir END\r"
+
+send -- ":wq\r"
+expect
+exit -onexit {
+interact
+}

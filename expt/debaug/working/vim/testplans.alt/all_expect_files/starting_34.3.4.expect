@@ -1,0 +1,8 @@
+send ":redir >> starting_34.3.4.out\r"
+send ":n\r"
+send ":sN\r"
+send ":q!\r"
+send ":q\r"
+#expect "RETURN"
+#send "\r"
+

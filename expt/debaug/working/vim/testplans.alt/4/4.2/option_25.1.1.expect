@@ -1,0 +1,5 @@
+send ":redir >> option_25.1.1.out\r"
+send ":set cink\r"
+send ":set cink?\r"
+send ":redir END\r"
+

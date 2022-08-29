@@ -1,0 +1,2 @@
+see if regular globbing works right
+expect <kpa> <kpabc> <kpabd> <kpabe> <kpX*>

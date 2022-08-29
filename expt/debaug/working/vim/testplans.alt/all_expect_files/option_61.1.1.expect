@@ -1,0 +1,7 @@
+send ":redir >> option_61.1.1.out\r"
+send ":set noea\r"
+ 
+
+send ":set ea?\r"
+send ":redir END\r"
+

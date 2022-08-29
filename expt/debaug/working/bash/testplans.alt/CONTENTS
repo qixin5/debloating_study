@@ -1,0 +1,13 @@
+testplans.fine
+--------------
+Contains the fine level test inputs for the default test suite.  Includes 1189
+files of which 1175 are test cases.  These are the tests run by the included
+runall and runall-diff scripts.
+
+testplans.orig
+--------------
+Contains the original test sets and individual scripts meant to test each
+associated version of bash. Each set includes it's own run-all script that may
+be used in place of the runall script in the scripts directory to run these
+tests.
+

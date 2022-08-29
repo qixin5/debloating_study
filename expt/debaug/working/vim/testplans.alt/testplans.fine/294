@@ -1,0 +1,19 @@
+#!/usr/bin/expect -f
+spawn $env(SUBJECTS_SRC_DIR)/vim-5.8 -u $env(HOME)/.vimrc $env(TESTS_SRC)/copy1
+expect "copy1*1364C"
+sleep 1
+send ":se lines=24\r"
+send ":se columns=80\r"
+send ":redir >> move_321.5.1.out\r"
+send ":ta f1\r"
+send ":ta f2\r"
+send ":ta f3\r"
+send ":ta f4\r"
+send ":ta f5\r"
+send ":3 pop\r"
+send ":redir END\r"
+send ":wq\r"
+expect
+exit -onexit {
+interact
+}

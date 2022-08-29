@@ -1,0 +1,6 @@
+send ":redir >> option_46.1.1.out\r"
+send ":set ek\r"
+
+send ":set ek?\r"
+send ":redir END\r"
+

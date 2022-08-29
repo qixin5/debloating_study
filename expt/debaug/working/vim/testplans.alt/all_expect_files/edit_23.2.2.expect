@@ -1,0 +1,8 @@
+send -- "tata"
+send -- "\033"
+send -- "19h"
+send -- "i"
+send -- "\001"
+send -- "insertion after the command"
+
+

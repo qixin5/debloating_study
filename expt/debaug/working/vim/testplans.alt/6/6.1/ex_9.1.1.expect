@@ -1,0 +1,6 @@
+send ":redir >> ex_9.1.1.out\r"
+send ":+4  p 1\r"
+#expect "DSARITA"
+#send "\r"
+send ":redir END\r"
+

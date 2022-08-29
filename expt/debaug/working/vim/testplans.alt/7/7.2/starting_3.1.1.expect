@@ -1,0 +1,8 @@
+send ":redir >> starting_3.1.1.out\r"
+send "Q"
+expect "Ex"
+send "view\r"
+send "\007"
+send ":redir END\r"
+ 
+

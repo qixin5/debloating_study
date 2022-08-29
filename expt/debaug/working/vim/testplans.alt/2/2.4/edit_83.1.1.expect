@@ -1,0 +1,10 @@
+send -- ":set digraph\r"
+#expect "option"
+send -- "i"
+send -- "p"
+#send ""
+send -- "\010"
+send -- "a"
+send -- "\033"
+
+# inserting dig(set digraph on)

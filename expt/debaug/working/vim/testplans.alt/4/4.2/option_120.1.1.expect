@@ -1,0 +1,5 @@
+send ":redir >> option_120.1.1.out\r"
+send ":set mod\r"
+send ":set mod?\r"
+send ":redir END\r"
+

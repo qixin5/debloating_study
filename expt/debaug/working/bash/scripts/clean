@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+
+$EXPROOT = "$ENV{experiment_root}/bash";
+
+#Directories
+$SRC_DIR = "$EXPROOT/source";
+$BIN_DIR = "$EXPROOT/source";
+
+#Commands
+$UNINSTALL_CMD = "make distclean";
+$SRC_RM_CMD = "rm -r -f *";
+
+#CLEAN VERSION
+	print("Uninstalling: ".$VERS_DIR."/v".$i."\n");
+	print("        From: ".$BIN_DIR."\n");
+	`cd $SRC_DIR && $UNINSTALL_CMD ; $SRC_RM_CMD`;

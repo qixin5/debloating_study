@@ -1,0 +1,8 @@
+send -- "\033"
+send -- "6j"
+send -- "A"
+expect "INSERT"
+send -- "\030"
+expect "mode"
+send -- "\006"
+expect "completion*match"

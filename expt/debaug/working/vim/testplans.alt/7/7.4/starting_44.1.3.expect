@@ -1,0 +1,4 @@
+send "i"
+send "This file is being modified"
+send "\033"
+send "ZQ\r"

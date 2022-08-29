@@ -1,0 +1,3 @@
+processing getopts
+usage: dodosays [-a] [-b barg] -c args...
+there were 2 options given

@@ -1,0 +1,31 @@
+read: read [-ers] [-t timeout] [-p prompt] [-a array] [-n nchars] [-d delim] [name ...]
+    One line is read from the standard input, and the first word is
+    assigned to the first NAME, the second word to the second NAME, and so
+    on, with leftover words assigned to the last NAME.  Only the characters
+    found in $IFS are recognized as word delimiters.  If no NAMEs are supplied,
+    the line read is stored in the REPLY variable.  If the -r option is given,
+    this signifies `raw' input, and backslash escaping is disabled.  The
+    -d option causes read to continue until the first character of DELIM is
+    read, rather than newline.  If the `-p' option is supplied, the string
+    PROMPT is output without a trailing newline before attempting to read.
+    If -a is supplied, the words read are assigned to sequential indices of
+    ARRAY, starting at zero.  If -e is supplied and the shell is interactive,
+    readline is used to obtain the line.  If -n is supplied with a non-zero
+    NCHARS argument, read returns after NCHARS characters have been read.
+    The -s option causes input coming from a terminal to not be echoed.
+    
+    The -t option causes read to time out and return failure if a complete line
+    of input is not read within TIMEOUT seconds.  The return code is zero,
+    unless end-of-file is encountered or read times out.
+readonly: readonly [-anf] [name ...] or readonly -p
+    The given NAMEs are marked readonly and the values of these NAMEs may
+    not be changed by subsequent assignment.  If the -f option is given,
+    then functions corresponding to the NAMEs are so marked.  If no
+    arguments are given, or if `-p' is given, a list of all readonly names
+    is printed.  An argument of `-n' says to remove the readonly property
+    from subsequent NAMEs.  The `-a' option means to treat each NAME as
+    an array variable.  An argument of `--' disables further option
+    processing.
+return: return [n]
+    Causes a function to exit with the return value specified by N.  If N
+    is omitted, the return status is that of the last command.

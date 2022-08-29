@@ -1,0 +1,5 @@
+send ":redir >> option_210.1.1.out\r"
+send ":set tsl\r"
+send ":set tsl?\r"
+send ":redir END\r"
+

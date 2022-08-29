@@ -1,0 +1,5 @@
+${THIS_SH} ./dstack.tests > /tmp/xx 2>&1
+diff /tmp/xx dstack.right
+
+${THIS_SH} ./dstack2.tests > /tmp/xx 2>&1
+diff /tmp/xx dstack2.right

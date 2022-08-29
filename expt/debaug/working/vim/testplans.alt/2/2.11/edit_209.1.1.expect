@@ -1,0 +1,9 @@
+send -- ":redir >> edit_209.1.1.out\r"
+send -- "v"
+send -- "as"
+send -- "\"ay"
+expect "lines yanked"
+send -- ":reg a\r"
+expect "continue"
+send -- ":redir END\r"
+

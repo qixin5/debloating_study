@@ -1,0 +1,6 @@
+send ":redir >> option_141.1.1.out\r"
+send ":set scr=12\r"
+send ":set scr?\r"
+
+send ":redir END\r"
+

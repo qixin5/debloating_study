@@ -1,0 +1,18 @@
+#!/usr/bin/expect -f
+spawn $env(SUBJECTS_SRC_DIR)/vim-5.8 -u $env(HOME)/.vimrc $env(TESTS_SRC)/copy1 $env(TESTS_SRC)/cprogram.c $env(TESTS_SRC)/searchfile
+expect "copy1"
+sleep 1
+send ":se lines=24\r"
+send ":se columns=80\r"
+send ":redir >> starting_16.3.1.out\r"
+send ":sar 3\r"
+send ":q\r"
+send ":wq\r"
+#expect "RETURN"
+#send "\r"
+
+send ":wq\r"
+expect
+exit -onexit {
+interact
+}

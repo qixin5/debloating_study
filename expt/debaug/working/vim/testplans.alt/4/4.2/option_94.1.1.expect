@@ -1,0 +1,5 @@
+send ":redir >> option_94.1.1.out\r"
+send ":set isp\r"
+send ":set isp\r"
+send ":redir END\r"
+

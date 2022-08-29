@@ -1,0 +1,7 @@
+send ":redir >> mapping_7.1.1.out\r"
+send ":map <F5> <Left>\r"
+send ":map <F5>\r"
+send ":unmap <F5>\r"
+send ":map <F5>\r"
+send ":redir END\r"
+

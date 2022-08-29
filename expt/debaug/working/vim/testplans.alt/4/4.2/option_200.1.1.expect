@@ -1,0 +1,5 @@
+send ":redir >> option_200.1.1.out\r"
+send ":set title\r"
+send ":set title?\r"
+send ":redir END\r"
+

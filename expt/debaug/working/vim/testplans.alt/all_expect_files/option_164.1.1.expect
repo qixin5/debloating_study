@@ -1,0 +1,5 @@
+send ":redir >> option_164.1.1.out\r"
+send ":set smd\r"
+send ":set smd?\r"
+send ":redir END\r"
+

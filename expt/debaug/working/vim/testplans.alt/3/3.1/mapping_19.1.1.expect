@@ -1,0 +1,10 @@
+send ":redir >> mapping_19.1.1.out\r"
+send ":nmap b l\r"
+send ":map b\r"
+send ":nunmap b\r"
+send ":map b\r"
+send ":redir END\r"
+
+
+
+

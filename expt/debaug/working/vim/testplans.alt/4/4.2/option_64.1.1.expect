@@ -1,0 +1,7 @@
+send ":redir >> option_64.1.1.out\r"
+send ":set ef=sarita\r"
+ 
+
+send ":set ef?\r"
+send ":redir END\r"
+

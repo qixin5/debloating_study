@@ -1,0 +1,78 @@
+#!/usr/bin/perl
+
+$EXPROOT = "$ENV{experiment_root}/bash";
+
+#Directories
+$BIN_DIR = "$EXPROOT/source";
+$TEST_DIR = "$EXPROOT/testplans.alt/testplans.fine";
+$OUT_DIR = "$EXPROOT/outputs";
+$DIFF_DIR = "$EXPROOT/outputs.alt";
+@IGNORED_SCRIPTS = 
+(
+
+);
+
+$SCRIPT_FILE = "testfile";
+
+#Commands
+$SCRIPT_LIST_CMD = "ls -1 *.test";
+
+$ENV{BASH_SRC_DIR} = $BIN_DIR;
+$ENV{TESTS_SRC} = $TEST_DIR;
+$ENV{SHLVL} = 4;
+
+close(STDERR);
+
+$runallflag = !(@ARGV-1) || !(@ARGV);
+$i = $ARGV[0];
+$test = $ARGV[1];
+
+$scriptCounter = 0;
+@scriptList = `cd $TEST_DIR && $SCRIPT_LIST_CMD -F`;
+@scriptList = sort{$a cmp $b} @scriptList;
+`mkdir $OUT_DIR`;
+foreach $scriptName(@scriptList)
+{
+#	chop($scriptName); # the orig had 2 chops, don't know why
+	chop($scriptName); # but it didn't work -wdm 7/23/08
+	$ignored = grep (/^($scriptName)$/, @IGNORED_SCRIPTS);
+	if($ignored == 0)
+	{
+		if($runallflag || $test == $scriptCounter)
+		{
+			if($scriptCounter == 544)
+			{
+				$SIG{ALRM} = sub{die()};
+				eval
+				{
+					alarm(30);
+					print(">>>>>>>>running test ".($scriptCounter+1)."\n");
+					@fileParts = split(/\./, $scriptName);
+					`cd $TEST_DIR && cat setup$fileParts[1] $scriptName cleanup$fileParts[2] > $TEST_DIR/$SCRIPT_FILE && chmod 700 $TEST_DIR/$SCRIPT_FILE`;
+
+					$outfile = "$OUT_DIR/t$scriptCounter";
+					$difffile = "$DIFF_DIR/v$i/t$scriptCounter";
+		
+					`cd $TEST_DIR && $BIN_DIR/bash $TEST_DIR/$SCRIPT_FILE > $outfile`;
+					alarm(0);
+
+				};
+			}
+			else
+			{
+				print(">>>>>>>>running test ".($scriptCounter+1)."\n");
+	
+				@fileParts = split(/\./, $scriptName);
+				`cd $TEST_DIR && cat setup$fileParts[1] $scriptName cleanup$fileParts[2] > $TEST_DIR/$SCRIPT_FILE && chmod 700 $TEST_DIR/$SCRIPT_FILE`;
+
+				$outfile = "$OUT_DIR/t$scriptCounter";
+				$difffile = "$DIFF_DIR/v$i/t$scriptCounter";
+	
+				`cd $TEST_DIR && $BIN_DIR/bash $TEST_DIR/$SCRIPT_FILE > $outfile`;
+			}
+			print(`diff -r $outfile $difffile > /dev/null || echo different results`);
+
+		}
+		$scriptCounter = $scriptCounter + 1;
+	}
+}

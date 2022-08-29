@@ -1,0 +1,6 @@
+dodo is aliased to `echo "Hello there, hope you are having a nice time with this test."'
+dodo is a function
+dodo () 
+{ 
+    echo "This hello is coming from dodo."
+}

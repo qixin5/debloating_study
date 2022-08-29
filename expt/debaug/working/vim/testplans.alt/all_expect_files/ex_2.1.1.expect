@@ -1,0 +1,5 @@
+send ":redir >> ex_2.1.1.out\r"
+send ":5 p \r"
+#expect "DSARITA"
+send ":redir END\r"
+

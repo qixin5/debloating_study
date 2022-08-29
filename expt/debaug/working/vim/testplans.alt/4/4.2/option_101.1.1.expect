@@ -1,0 +1,5 @@
+send ":redir >> option_101.1.1.out\r"
+send ":set lbr\r"
+send ":set lbr?\r"
+send ":redir END\r"
+

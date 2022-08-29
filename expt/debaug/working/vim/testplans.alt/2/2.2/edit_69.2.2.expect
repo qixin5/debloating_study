@@ -1,0 +1,7 @@
+send -- "\024"
+send -- "\024"
+sleep 1
+send -- "0"
+send -- "\004"
+# 0 ctrl+d
+

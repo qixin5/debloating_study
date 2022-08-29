@@ -1,0 +1,5 @@
+send ":redir >> option_207.1.1.out\r"
+send ":set notbi\r"
+send ":set tbi?\r"
+send ":redir END\r"
+

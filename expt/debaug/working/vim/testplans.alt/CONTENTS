@@ -1,0 +1,14 @@
+CONTENTS <testplans.alt>
+
+Directories:
+ 1 - 7: contain the subsets of test cases in the i/i.j/<scripts>
+  1: "Move"     -- test cases employing in-file cursor movement
+  2: "Edit"     -- test cases employing file editing
+  3: "Mapping"  -- test cases involving mapping
+  4: "Option"   -- test cases involving option selection
+  5: "Other"    -- the etcetera category of tests
+  6: "Ex"       -- test cases involving execution of cmds
+  7: "Starting" -- test cases involving program startup
+
+ testplans.fine: -- fine level test cases renamed as ORST standard.
+

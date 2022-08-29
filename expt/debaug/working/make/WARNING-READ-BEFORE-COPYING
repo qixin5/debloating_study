@@ -1,0 +1,8 @@
+While copying the input directory of make, please make sure that you copy with
+"-p" flag. This will preserve the time stams which are neccessary for CORRECT
+DATA.
+
+The command will look like:
+
+cp -r -p inputs ~/subjects/make/inputs
+

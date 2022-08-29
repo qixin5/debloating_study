@@ -1,0 +1,5 @@
+send ":redir >> option_122.1.1.out\r"
+send ":set mouse\r"
+send ":set mouse?\r"
+send ":redir END\r"
+

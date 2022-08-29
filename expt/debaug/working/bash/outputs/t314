@@ -1,0 +1,3 @@
+BEFORE
+before [a-y]
+expect <kpabd> <kpabe> <kpbb> <kpbcd> <kpbdir> <kpca> <kpcb> <kpdd> <kpde>

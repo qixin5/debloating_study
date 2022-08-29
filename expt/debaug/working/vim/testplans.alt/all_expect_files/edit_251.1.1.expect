@@ -1,0 +1,6 @@
+send -- ":redir >> edit_251.1.1.out\r"
+send -- ":map! b <right>\r"
+send -- ":This is command line editingbbbbb.right\r"
+expect "editor*right"
+send -- ":redir END\r"
+                      

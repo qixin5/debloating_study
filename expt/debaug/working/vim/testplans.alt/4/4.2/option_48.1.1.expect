@@ -1,0 +1,6 @@
+send ":redir >> option_48.1.1.out\r"
+send ":set ei\r"
+
+send ":set ei?\r"
+send ":redir END\r"
+

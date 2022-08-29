@@ -1,0 +1,7 @@
+send "i"
+send "New text"
+send "\033"
+send ":wall\r"
+expect "copy1*written"
+#send "\r"
+

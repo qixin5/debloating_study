@@ -1,0 +1,10 @@
+send -- ":redir >> edit_145.1.2.out\r"
+send -- "cw"
+send -- "insert"
+send -- "\033"
+send -- ":reg \"x\r"
+expect "continue"
+send -- ":redir END\r"
+
+
+

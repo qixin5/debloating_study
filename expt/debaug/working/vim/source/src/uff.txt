@@ -1,0 +1,4 @@
+do_addsub FAULTY_F_KL_8
+swapchar FAULTY_F_KL_9
+readfile FAULTY_F_KL_14
+vim_tempname FAULTY_F_KL_17

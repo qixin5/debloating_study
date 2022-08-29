@@ -1,0 +1,5 @@
+send -- "\r"
+send -- "\177"
+send -- "k"
+send -- "\024"
+send -- "a"

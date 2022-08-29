@@ -1,0 +1,38 @@
+#!/usr/bin/perl
+
+# this is a modified makevers script, the orig is from the Vim object
+# of the SIR artifacts - wdm 7/21/08
+
+$EXPROOT = "$ENV{experiment_root}/bash";
+
+#Directories
+$VERS_DIR = "$EXPROOT/versions.alt/versions.seeded";
+$SRC_DIR = "$EXPROOT/source";
+$BIN_DIR = "$EXPROOT/source/bin";
+
+#Files
+$COMPILE_OUTPUT_FILE = "$EXPROOT/scripts/COMPILE";
+
+#
+# the following hack is made in the configure script in each versions source dir, the following is added in the
+# section that parses out what OS type you have, in my case its solaris2.9 so here is what is added: (w/o the #)
+# solaris2.9*)    LOCAL_LIBS="-lintl"; LOCAL_LDFLAGS="-L/opt/csw/lib";;
+# -wdm 7/18/08
+#
+#Commands
+$COPY_CMD = "cp -r -p * $SRC_DIR";
+$INSTALL_CMD = "./configure --exec_prefix=$SRC_DIR --bindir=$SRC_DIR/bin --mandir=$SRC_DIR/man --infodir=$SRC_DIR/info > $COMPILE_OUTPUT_FILE 2>&1 && make install >> $COMPILE_OUTPUT_FILE 2>&1";
+#$INSTALL_CMD = "configure --exec_prefix=$SRC_DIR > $COMPILE_OUTPUT_FILE 2>&1 && make && make install >> $COMPILE_OUTPUT_FILE 2>&1";
+
+$i = $ARGV[0];
+
+#COPY SOURCE
+	print("Copying:      ".$VERS_DIR."/v".$i."\n");
+	print("     To:      ".$SRC_DIR."\n");
+        `rm $SRC_DIR/*.o`;         # wdm patch to override quirks of cp cmd
+	`cd $VERS_DIR/v$i && $COPY_CMD`;
+
+#MAKE VERSION
+	print("\nInstalling:   ".$SRC_DIR."\n");
+	print("        To:   ".$BIN_DIR."\n");
+	`cd $SRC_DIR && $INSTALL_CMD`;

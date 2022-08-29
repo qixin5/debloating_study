@@ -1,0 +1,6 @@
+send ":redir >> option_130.1.1.out\r"
+send ":set paste\r"
+send ":set paste?\r"
+
+send ":redir END\r"
+

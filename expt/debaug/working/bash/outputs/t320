@@ -1,0 +1,3 @@
+Make sure that filenames with embedded globbing characters are handled
+properly
+expect <a*b/ooo>

@@ -1,0 +1,6 @@
+#!/usr/bin/expect -f
+spawn $env(SUBJECTS_SRC_DIR)/vim-5.8 -u $env(HOME)/.vimrc $env(TESTS_SRC)/searchfile
+expect "copy1"
+sleep 1
+send ":se lines=24\r"
+send ":se columns=80\r"

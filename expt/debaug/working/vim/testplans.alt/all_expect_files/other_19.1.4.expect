@@ -1,0 +1,11 @@
+send --  ":redir >> other_19.1.4.out\r"
+send --  ":make -C $env(TESTS_SRC)\r"
+expect "make"
+expect "warning"
+expect "continue"
+#sleep 1
+send --  "\r"
+expect "pointer type"
+send --  ":cr\r"
+expect "inputs"
+send --  ":redir END\r"

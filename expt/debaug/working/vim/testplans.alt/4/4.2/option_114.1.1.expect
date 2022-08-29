@@ -1,0 +1,5 @@
+send ":redir >> option_114.1.1.out\r"
+send ":set mat\r"
+send ":set mat?\r"
+send ":redir END\r"
+

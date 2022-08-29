@@ -1,0 +1,361 @@
+AB=abcdefghijklmnopqrstuvwxyz
+BASH=/home/qxin6/debaug_expt/debaug/working/bash/source/bash
+BASH_SRC_DIR=/home/qxin6/debaug_expt/debaug/working/bash/source
+BASH_VERSINFO=([0]="2" [1]="05" [2]="0" [3]="29" [4]="release" [5]="")
+BASH_VERSION=$'2.05.0(29)-release'
+CAML_LD_LIBRARY_PATH=/home/qxin6/.opam/system/lib/stublibs:/usr/lib/ocaml/stublibs
+CURRDIR=/home/qxin6/debaug_expt/debaug/working/bash/testplans.alt/testplans.fine
+CURRPS1=
+D=$'hello, world'
+DIRSTACK=()
+EMPTYLINE=:
+EUID=1002
+FOO=$'a\nb'
+FOO1=$'^A\n^B'
+GROUPS=()
+HOME=/usr/homes/chet
+HOME_BAK=/home/qxin6
+HOSTNAME=qx-debloat
+HOSTTYPE=
+IFS=$': \t\n'
+JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+JUNIT_HOME=/home/qxin6/junit
+KPA=$'aaa bbb ccc'
+LANG=C.UTF-8
+LESSCLOSE=$'/usr/bin/lesspipe %s %s'
+LESSOPEN=$'| /usr/bin/lesspipe %s'
+LOGNAME=qxin6
+LS_COLORS=$'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+M=
+MACHTYPE=
+MAIL=/var/mail/qxin6
+MANPATH=:/home/qxin6/.opam/system/man
+MM=5
+N=
+NL=$'\\\n'
+NN=5
+NNL=$'+\\\n+'
+OCAML_TOPLEVEL_PATH=/home/qxin6/.opam/system/lib/toplevel
+OIFS=$' \t\n'
+OLDPWD=/home/qxin6/tmp/commandtests
+OPTERR=1
+OPTIND=1
+OSTYPE=
+P=$'*@*'
+PATH=/home/qxin6/.opam/system/bin:/home/qxin6/junit:/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin:/home/qxin6/.local/bin:/home/qxin6/chisel/build/bin:/home/qxin6/llvm-project/build/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/qxin6/.dotnet/tools
+PERL5LIB=/home/qxin6/.opam/system/lib/perl5:
+PIPESTATUS=([0]="0")
+POSIX=/usr/posix
+PP=$'*@*'
+PS1=$'$'
+PS4=$'+ '
+PWD=/home/qxin6/debaug_expt/debaug/working/bash/testplans.alt/testplans.fine
+RELEASE=4
+REL_LEVEL=2
+REL_SUBLEVEL=
+SHELL=/bin/bash
+SHELL1=/usr/homes/chet/bash
+SHELLOPTS=braceexpand:hashall:interactive-comments
+SHLVL=5
+SK_TESTDIR=/home/qxin6/tmp
+SP_TESTDIR=/home/qxin6/tmp
+SSH_CLIENT=$'10.202.127.1 59910 22'
+SSH_CONNECTION=$'10.202.127.1 59910 10.202.127.11 22'
+SSH_TTY=/dev/pts/0
+TERM=xterm-256color
+TESTDIR=/home/qxin6/tmp
+TESTSHELL=/home/qxin6/debaug_expt/debaug/working/bash/source/bash
+TESTS_SRC=/home/qxin6/debaug_expt/debaug/working/bash/testplans.alt/testplans.fine
+TMPDIR=/home/qxin6/tmp
+UID=1002
+UNAME_RELEASE=4.2MP
+USER=qxin6
+XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop
+XDG_RUNTIME_DIR=/run/user/1002
+XDG_SESSION_ID=88072
+XPATH=/bin:/usr/bin:.
+ZIFS=$'\n\t '
+_=sk_k=2
+_ENV=/bin/true
+_hB=0
+a=abc_def_ghi
+a1=$'a b c d e'
+a1_myexpr=100
+a2=foo
+a2_myexpr=200
+a_array=([0]="abcde" [1]="" [2]="bdef")
+a_varenv=1
+arg=a,b,c,d,e,f
+av=([0]="abcd" [1]="efgh" [2]="ijkl" [3]="mnop" [4]="qrst" [5]="uvwx")
+b1=$'a b c d e'
+b_array=()
+b_varenv=2
+bar=def
+c_array=()
+c_varenv=3
+cmd1=$'$open $test1 && $test2 $close || $test3'
+cmd2=$'$test1 || $open $test2 && $test3 $close'
+continuer=1
+count=1
+d_array=([1]="" [2]="bdef" [5]="hello world" [6]="test")
+d_varenv=4
+dodo1=$'I am a good boy'
+dodo4=WheneverDodoWentToSchoolDodoFoughtWithTheBullyGotABlackEye
+dodofkp=thisisaverybigword
+e_varenv=5
+empty=
+exitval=0
+experiment_root=/home/qxin6/debaug_expt/debaug/working
+f_varenv=6
+first=abcd
+foo=bar
+foo2=$'abcd   '
+foo3=abc
+foo4=10
+fook=baz:bar
+fred=$'many spaces between these                  words'
+g_varenv=7
+grouping_C=$'( )'
+grouping_sh=
+h_varenv=8
+jkpa=$'a b c d e'
+kpaa=$'aaa bbb ccc'
+last=efghijkl
+loopvar=0
+m=
+m1=
+m2=
+myfiles=1024
+mystack=8192
+n=
+n1=
+n2=
+names=one/good/three
+numtests=0
+orig_path=/home/qxin6/.opam/system/bin:/home/qxin6/junit:/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin:/home/qxin6/.local/bin:/home/qxin6/chisel/build/bin:/home/qxin6/llvm-project/build/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/qxin6/.dotnet/tools
+pass_array=/etc/passwd
+path=/usr/ucb:/bin:/usr/homes/chet/bin:/usr/homes/chet/tmp/bin:/usr/bin
+ps1_array=hello
+s1=abcdefghijkl
+s2=efgh
+selvecs=$'&m68kcoff_vec'
+sk_a=23
+sk_b=56
+sk_c=60
+sk_i=1
+sk_iv=163
+sk_j=1
+sk_jv=2
+sk_k=2
+sk_x=2
+somevar=
+spec2=
+target=/home/qxin6/debaug_expt/debaug/working/bash/testplans.alt/testplans.fine/dollar-star.sh
+test3=$'Say 3'
+umask_orig=002
+v=abcde
+var=abcde
+world=chet
+x=file.c
+x1=posix/src/std
+x2=/usr/homes/chet/src/cmd
+x3=/one/two/three
+x4=foo4
+x5=$'ab\ncd'
+x_array=
+xx=one/two/two
+xxx=abc
+y=abcdef
+y1=$'$foo4'
+y2=10
+yy=oneonetwo
+yyy=def
+yyykp=
+z=abcdefghijklmnop
+z1=$'abc def'
+z2=123456
+z3=
+zkp=a,b,c,d,e,f
+zkp1=a,b,c,d,e,f
+zz=$'a b c d e'
+False () 
+{ 
+    Say $1;
+    return 1
+}
+Say () 
+{ 
+    echo -n "$*"
+}
+Truth () 
+{ 
+    Say $1;
+    return 0
+}
+bobo () 
+{ 
+    echo "now bobo is saying hello"
+}
+cd1 () 
+{ 
+    builtin cd "$@" 2>/dev/null;
+    es=$?;
+    return $es
+}
+checkx () 
+{ 
+    target=$1;
+    if [ -e ${target} ]; then
+        if [ ! -x ${target} ]; then
+            chmod +x ${target};
+        fi;
+    else
+        echo "setup1: error: cannot find ${target} required by job tests";
+        exit 1;
+    fi
+}
+comp () 
+{ 
+    if [ first $1 second ]; then
+        echo first $2 second is true;
+    else
+        echo first $2 second is false;
+    fi
+}
+comp1 () 
+{ 
+    if [ $1 $3 ]; then
+        echo "'$3' $2 is true";
+    else
+        echo "'$3' $2 is false";
+    fi
+}
+dodo () 
+{ 
+    echo "This hello is coming from dodo."
+}
+dodo5 () 
+{ 
+    echo "dodo5 says hello again"
+}
+dodosays () 
+{ 
+    echo processing getopts;
+    while getopts ":ab:c" opt; do
+        case $opt in 
+            a)
+                echo dodo would process option -a with arg $OPTARG
+            ;;
+            b)
+                echo dodo would process option -b with arg $OPTARG
+            ;;
+            c)
+                echo dodo would process option -c with arg $OPTATG
+            ;;
+            *)
+                echo "usage: dodosays [-a] [-b barg] -c args..."
+            ;;
+        esac;
+    done;
+    echo "there were $OPTIND options given"
+}
+eto_prepend () 
+{ 
+    eval $1=\'$2\''${'$1':+":"${'$1'}}';
+    export $1
+}
+expect () 
+{ 
+    echo expect "$@"
+}
+fool () 
+{ 
+    case $@ in 
+        sisi)
+            echo sisi
+        ;;
+        gaga | gigi)
+            echo gaga or gigi
+        ;;
+        dodo)
+            echo dodo
+        ;;
+        *)
+            echo none of these
+        ;;
+    esac
+}
+koo () 
+{ 
+    case $@ in 
+        sisi)
+            echo sisi
+        ;;
+        gaga | gigi)
+            echo gaga or gigi
+        ;;
+        dodo)
+            echo dodo
+        ;;
+        dodo)
+            echo dodo again
+        ;;
+        *)
+            echo none of these
+        ;;
+    esac
+}
+kpb1 () 
+{ 
+    kpb2 ${1+"$@"}
+}
+kpb2 () 
+{ 
+    recho $*;
+    recho $#
+}
+look () 
+{ 
+    echo $3;
+    if [ $1 $2 ]; then
+        echo "dodo says yes";
+    else
+        echo "dodo says no";
+    fi
+}
+more-exp-error () 
+{ 
+    echo "something went wrong with more-exp setup, exiting this test";
+    exit 1
+}
+newtest () 
+{ 
+    numtests=$(($numtests + 1))
+}
+sisi () 
+{ 
+    echo "$@"
+}
+sk_funct () 
+{ 
+    local k="srikanth";
+    echo hello , this is sk_funct;
+    echo before sri inside;
+    echo $k;
+    echo after sri inside
+}
+t () 
+{ 
+    test "$@";
+    echo $?
+}
+testfail () 
+{ 
+    echo "$1 test failed";
+    exitval=$(($exitval + 1))
+}
+tool_var () 
+{ 
+    eval $1=\"\${$1:-$2}\";
+    export $1
+}

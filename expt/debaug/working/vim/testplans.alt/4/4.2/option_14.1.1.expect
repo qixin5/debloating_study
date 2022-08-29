@@ -1,0 +1,5 @@
+send ":redir >> option_14.1.1.out\r"
+send ":set backspace=2\r"
+send ":set backspace?\r"
+send ":redir END\r"
+

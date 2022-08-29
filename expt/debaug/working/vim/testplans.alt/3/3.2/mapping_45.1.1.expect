@@ -1,0 +1,6 @@
+send ":redir >> mapping_45.1.1.out\r"
+send ":cab  a abbreviate\r"
+send ":cab  \026a\r"
+send ":cunab \026a\r"
+send ":cab a\r"
+send ":redir END\r"

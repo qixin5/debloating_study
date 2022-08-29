@@ -1,0 +1,5 @@
+send ":redir >> option_24.1.1.out\r"
+send ":set nocindent\r"
+send ":set cindent?\r"
+send ":redir END\r"
+

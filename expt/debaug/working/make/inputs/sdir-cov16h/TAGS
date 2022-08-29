@@ -1,0 +1,565 @@
+
+commands.c,246
+set_file_variables 35,1079
+#define	DEFINE_VARIABLE(DEFINE_VARIABLE109,2884
+chop_commands 232,5627
+execute_file_commands 330,7877
+fatal_error_signal 369,8804
+delete_target 455,11018
+delete_child_targets 499,12088
+print_commands 520,12545
+
+job.c,1236
+#define	WAIT_NOHANG(WAIT_NOHANG89,2120
+#define	WAIT_NOHANG(WAIT_NOHANG95,2273
+#define	WAIT_T 105,2496
+#define WTERMSIG(WTERMSIG108,2533
+#define WCOREDUMP(WCOREDUMP111,2591
+#define WEXITSTATUS(WEXITSTATUS114,2652
+#define WIFSIGNALED(WIFSIGNALED117,2722
+#define WIFEXITED(WIFEXITED120,2790
+#define WAIT_T 125,2872
+#define WTERMSIG(WTERMSIG127,2915
+#define WCOREDUMP(WCOREDUMP130,2976
+#define WEXITSTATUS(WEXITSTATUS133,3041
+#define	WIFSIGNALED(WIFSIGNALED136,3107
+#define	WIFEXITED(WIFEXITED139,3174
+int w32_kill(199,4792
+child_error 210,5097
+vmsWaitForChildren(238,5793
+child_handler 258,6078
+reap_children 276,6630
+free_child 619,16043
+block_sigs 646,16575
+unblock_sigs 660,16794
+unblock_sigs 666,16835
+start_job_command 683,17316
+#define FD_CLOEXEC 831,21166
+start_waiting_job 1006,25253
+new_job 1065,26858
+job_next_command 1219,31386
+load_too_high 1239,31886
+start_waiting_jobs 1274,32645
+int vmsHandleChildTerm(1306,33326
+#define MAXCMDLEN 1400,35781
+child_execute_job 1403,35808
+child_execute_job 1518,38134
+exec_command 1543,38722
+void exec_command 1606,39917
+void clean_tmp 1612,39987
+construct_command_argv_internal 1634,40773
+construct_command_argv 2080,52597
+dup2 2119,53476
+
+dir.c,950
+# define NAMLEN(NAMLEN23,861
+# define dirent 25,916
+# define NAMLEN(NAMLEN26,939
+#define NAMLEN(NAMLEN44,1312
+#define REAL_DIR_ENTRY(REAL_DIR_ENTRY50,1523
+#define FAKE_DIR_ENTRY(FAKE_DIR_ENTRY51,1552
+#define REAL_DIR_ENTRY(REAL_DIR_ENTRY53,1585
+#define FAKE_DIR_ENTRY(FAKE_DIR_ENTRY54,1629
+dosify 65,1816
+amigafy 117,2858
+vms_hash 145,3237
+vmsstat_dir 166,3497
+#define DIRECTORY_BUCKETS 201,4047
+struct directory_contentsdirectory_contents204,4085
+struct directorydirectory234,5060
+#define MAX_OPEN_DIRECTORIES 252,5586
+struct dirfiledirfile259,5710
+#define DIRFILE_BUCKETS 267,5882
+find_directory 276,6179
+dir_contents_file_exists_p 427,10016
+dir_file_exists_p 573,13308
+file_exists_p 584,13556
+file_impossible 627,14585
+file_impossible_p 706,16709
+dir_name 770,18157
+print_dir_data_base 779,18280
+struct dirstreamdirstream872,20787
+open_dirstream 885,21154
+read_dirstream 910,21916
+dir_setup_glob 956,22958
+
+file.c,283
+#define FILE_BUCKETS	31,1032
+lookup_file 46,1432
+enter_file 99,2464
+rename_file 170,3849
+file_hash_enter 191,4262
+#define MERGE(MERGE314,7559
+remove_intermediates 334,8061
+snap_deps 400,9468
+set_command_state 504,12299
+print_file 519,12562
+print_file_data_base 616,15042
+
+getloadavg.c,2205
+#define LDAV_CVT(LDAV_CVT107,3598
+#define BSD112,3733
+#define hpux133,4284
+#define MORE_BSD137,4342
+#define decstation141,4404
+#define SUNOS_5145,4489
+#define OSF_ALPHA149,4581
+#define OSF_MIPS154,4694
+#define tek4300	162,5096
+#define LOAD_AVE_TYPE 170,5285
+#define LOAD_AVE_TYPE 174,5331
+#define LOAD_AVE_TYPE 178,5384
+#define LOAD_AVE_TYPE 182,5436
+#define LOAD_AVE_TYPE 186,5482
+#define LOAD_AVE_TYPE 190,5529
+#define LOAD_AVE_TYPE 194,5581
+#define LOAD_AVE_TYPE 198,5631
+#define LOAD_AVE_TYPE 202,5683
+#define LOAD_AVE_TYPE 206,5758
+#define LOAD_AVE_TYPE 210,5808
+#define LOAD_AVE_TYPE 214,5903
+#define LOAD_AVE_TYPE 218,5950
+#define LOAD_AVE_TYPE 222,5999
+#define LDAV_CVT(LDAV_CVT224,6045
+#define FSCALE 234,6262
+#define FSCALE 241,6502
+#define FSCALE 250,6624
+#define FSCALE 254,6712
+#define	FSCALE 261,6923
+#define FSCALE 265,6993
+#define FSCALE 269,7039
+#define FSCALE 273,7080
+#define	LDAV_CVT(LDAV_CVT279,7182
+#define NLIST_STRUCT286,7354
+#define NLIST_STRUCT290,7394
+#define NLIST_STRUCT294,7441
+#define NLIST_STRUCT298,7482
+#define NLIST_STRUCT302,7556
+#define NLIST_STRUCT306,7596
+#define NLIST_STRUCT310,7637
+#define NLIST_STRUCT314,7683
+#define NLIST_STRUCT318,7729
+#define NLIST_STRUCT322,7798
+#define NLIST_STRUCT326,7842
+#define NLIST_STRUCT330,7888
+#define NLIST_STRUCT334,7977
+#define NLIST_STRUCT338,8018
+#define FIXUP_KERNEL_SYMBOL_ADDR(FIXUP_KERNEL_SYMBOL_ADDR345,8138
+#define KERNEL_FILE 350,8264
+#define KERNEL_FILE 354,8346
+#define KERNEL_FILE 358,8558
+#define LDAV_SYMBOL 363,8643
+#define LDAV_SYMBOL 367,8883
+#define LOAD_AVE_TYPE 379,9193
+#define KERNEL_FILE 397,9454
+#define LDAV_SYMBOL 401,9530
+#define LDAV_CVT(LDAV_CVT415,9756
+getloadavg 505,11720
+#define LDAV_DONE512,11852
+#define LDAV_DONE520,12085
+#define LINUX_LDAV_FILE 524,12149
+#define LDAV_DONE552,12724
+#define NETBSD_LDAV_FILE 556,12789
+#define LDAV_DONE581,13319
+#define LDAV_DONE616,14237
+#define LDAV_DONE686,15955
+#define LDAV_DONE703,16510
+#define LDAV_DONE728,17326
+#define LDAV_DONE739,17674
+#define LDAV_DONE749,17909
+#define LDAV_PRIVILEGED	804,19347
+#define FD_CLOEXEC 861,20725
+#define LDAV_DONE915,22110
+main 932,22427
+
+misc.c,699
+alpha_compare 28,997
+collapse_continuations 41,1315
+remove_comments 123,3026
+print_spaces 138,3280
+concat 150,3469
+message 176,4040
+fatal 202,4474
+error 222,4899
+makefile_error 237,5218
+makefile_fatal 251,5526
+strerror 270,5882
+perror_with_name 290,6236
+pfatal_with_name 299,6401
+xmalloc 313,6615
+xrealloc 324,6784
+savestring 335,6980
+sindex 351,7382
+lindex 378,8033
+end_of_token 392,8258
+end_of_token_w32 405,8444
+next_token 434,8984
+find_next_token 448,9234
+copy_dep_chain 468,9603
+dep_name 497,10195
+#define	access_inited	550,11643
+log_access 557,11801
+init_access 574,12204
+user_access 598,12712
+make_access 674,15048
+child_access 722,16077
+get_path_max 755,16781
+
+main.c,761
+struct command_switchcommand_switch72,2334
+struct stringliststringlist104,3398
+#define	DESCRIPTION_COLUMN	347,10921
+struct command_variablecommand_variable356,11122
+enter_command_line_file 407,12318
+debug_signal_handler 447,13289
+main 455,13383
+#define	ADD_SIG(ADD_SIG484,13953
+#define	ADD_SIG(ADD_SIG488,14063
+#define	ADD_SIG(ADD_SIG490,14125
+#define	FATAL_SIG(FATAL_SIG494,14161
+#define BOGUS_UPDATE_STATUS 1179,33782
+init_switches 1419,39175
+handle_non_switch_argument 1476,40429
+decode_switches 1524,41710
+decode_env_switches 1769,47818
+quote_as_word 1843,49999
+define_makeflags 1868,50614
+#define	ADD_FLAG(ADD_FLAG1892,51307
+print_version 2125,57586
+print_data_base 2158,58592
+die 2178,59019
+log_working_directory 2222,59997
+
+read.c,618
+struct linebufferlinebuffer47,1411
+#define initbuffer(initbuffer56,1653
+#define freebuffer(freebuffer57,1727
+struct conditionalsconditionals68,2130
+#define INCLUDEDIR 89,2806
+read_all_makefiles 132,4173
+read_makefile 260,7466
+#define record_waiting_files(record_waiting_files290,8213
+#define	word1eq(word1eq455,12974
+do_define 873,24565
+conditional_line 957,26753
+uniquize_deps 1169,32090
+record_files 1215,33321
+find_char_unquote 1516,41996
+find_percent 1565,43145
+parse_file_seq 1585,43803
+readline 1833,49724
+construct_include_path 1929,52173
+tilde_expand 2006,54132
+multi_glob 2088,56137
+
+remake.c,339
+update_goal_chain 68,2340
+#define	MTIME(MTIME76,2544
+update_file 264,7769
+update_file_1 303,8540
+notice_finished_file 612,16584
+check_dep 698,19281
+#define TOUCH_ERROR(TOUCH_ERROR805,22025
+touch_file 808,22111
+remake_file 867,23420
+f_mtime 934,25160
+name_mtime 1071,28654
+library_search 1092,29037
+#define LIBDIR 1107,29334
+
+rule.c,259
+count_implicit_rule_limits 68,1998
+convert_suffix_rule 172,4503
+convert_to_pattern 230,6013
+new_pattern_rule 299,8278
+install_pattern_rule 374,10036
+freerule 426,11644
+create_pattern_rule 475,13439
+print_rule 525,14870
+print_rule_data_base 551,15318
+
+implicit.c,84
+try_implicit_rule 34,1279
+#define DEBUGP2(DEBUGP262,2059
+pattern_search 83,2870
+
+default.c,180
+#define GCC_IS_NATIVE30,1091
+set_default_suffixes 427,11452
+install_default_suffix_rules 449,12128
+install_default_implicit_rules 474,12646
+define_default_variables 489,12939
+
+variable.c,664
+#define VARIABLE_BUCKETS	32,1046
+#define	PERFILE_VARIABLE_BUCKETS	35,1116
+#define	SMALL_SCOPE_VARIABLE_BUCKETS	38,1196
+define_variable_in_set 62,2142
+define_variable 126,3844
+define_variable_for_file 140,4200
+lookup_variable 158,4786
+initialize_file_variables 192,5694
+pop_variable_scope 223,6565
+push_new_variable_scope 251,7180
+merge_variable_sets 272,7854
+merge_variable_set_lists 323,8966
+define_automatic_variables 355,9676
+target_environment 420,12102
+try_variable_definition 594,17152
+print_variable 748,20811
+print_variable_set 819,22319
+print_variable_data_base 869,23405
+print_file_variables 880,23569
+sync_Path_environment(889,23725
+
+expand.c,285
+variable_buffer_output 42,1658
+initialize_variable_output 66,2323
+recursively_expand 83,2699
+warn_undefined 114,3331
+reference_variable 135,3817
+variable_expand 162,4561
+expand_argument 388,10265
+variable_expand_for_file 409,10699
+allocated_variable_expand_for_file 435,11350
+
+function.c,252
+subst_expand 49,1603
+patsubst_expand 119,3740
+enum functionfunction225,7282
+#define MAXFUNCTIONLEN 252,7832
+pattern_matches 290,8956
+#define BADARGS(BADARGS323,9908
+expand_function 332,10237
+handle_function 1355,34187
+string_glob 1428,36060
+
+vpath.c,174
+struct vpathvpath29,1007
+build_vpath_lists 54,1857
+construct_vpath_list 122,4075
+vpath_search 280,8051
+selective_vpath_search 317,9024
+print_vpath_data_base 466,13256
+
+version.c,0
+
+remote-stub.c,209
+remote_setup 30,1001
+remote_cleanup 37,1055
+start_remote_job_p 44,1147
+start_remote_job 57,1609
+remote_status 74,2179
+block_remote_children 86,2516
+unblock_remote_children 95,2716
+remote_kill 102,2834
+
+ar.c,369
+ar_name 39,1431
+ar_parse_name 59,1934
+#define uppercasify(uppercasify81,2388
+#define LBR$_KEYNOTFND 83,2485
+ar_member_date 86,2598
+ar_member_date 181,4958
+ar_member_date_1 224,6019
+ar_touch 241,6401
+ar_touch 249,6521
+struct ar_glob_statear_glob_state304,7691
+ar_glob_match 317,7952
+ar_glob_alphacompare 343,8618
+glob_pattern_p 352,8840
+ar_glob 388,9358
+
+arscan.c,241
+#define PORTAR 44,1558
+#define PORTAR 46,1581
+#define	AR_HDR_SIZE	54,1696
+ar_scan 85,2595
+#define	AR_MEMHDR	189,4626
+ar_name_equal 388,9498
+ar_member_pos 455,10872
+ar_member_touch 477,11471
+describe_member 539,12948
+main 558,13442
+
+signame.c,221
+#define	NSIG	41,1278
+#define	NSIG	43,1303
+#define const48,1348
+  } num_abbrev;num_abbrev75,1960
+init_sig 83,2176
+signame_init 96,2439
+sig_abbrev 239,6367
+sig_number 257,6702
+psignal 281,7250
+strsignal 296,7583
+
+signame.h,0
+
+getopt.c,311
+#define _NO_PROTO27,1121
+#define const38,1338
+#define getpid(getpid74,2468
+# define _(_82,2696
+# define _(_84,2736
+#define	my_index	190,6697
+my_index 199,6847
+exchange 255,8572
+_getopt_initialize 316,10191
+_getopt_internal 421,14192
+#define NONOPTION_P 440,14767
+getopt 743,22561
+main 762,22943
+
+getopt1.c,105
+#define const30,1068
+#define NULL 56,1859
+getopt_long 60,1886
+getopt_long_only 76,2389
+main 94,2745
+
+getopt.h,154
+#define _GETOPT_H 20,823
+struct optionoption78,2898
+#define	no_argument	94,3247
+#define required_argument	95,3270
+#define optional_argument	96,3298
+
+commands.h,133
+struct commandscommands22,942
+#define	COMMANDS_RECURSE	35,1455
+#define	COMMANDS_SILENT	36,1513
+#define	COMMANDS_NOERROR	37,1558
+
+dep.h,239
+struct depdep25,1037
+struct nameseqnameseq36,1206
+#define dep_name(dep_name56,1727
+#define RM_NO_DEFAULT_GOAL	67,2121
+#define RM_INCLUDED	68,2189
+#define RM_DONTCARE	69,2255
+#define RM_NO_TILDE	70,2322
+#define RM_NOFLAG	71,2388
+
+filedef.h,241
+struct filefile23,967
+#define file_mtime(file_mtime97,3936
+#define file_mtime_no_search(file_mtime_no_search102,4185
+#define file_mtime_1(file_mtime_1104,4265
+#define NEW_MTIME	116,4961
+#define check_renamed(check_renamed119,5003
+
+job.h,138
+#define SEEN_JOB_H20,822
+struct childchild24,904
+#define	unblock_sigs(unblock_sigs75,2541
+#define	unblock_sigs(unblock_sigs77,2585
+
+make.h,1602
+#define HAVE_CONFIG_H29,1202
+#define PARAMS(PARAMS35,1339
+#define PARAMS(PARAMS38,1417
+#define	signal	45,1585
+#define _GNU_SOURCE48,1618
+#define	isblank(isblank68,2110
+#define	POSIX76,2399
+#define POSIX86,2720
+#define	NSIG	100,2945
+#define	NSIG	102,2970
+#define	RETSIGTYPE	107,3020
+#define	sigmask(sigmask111,3068
+#define	PATH_MAX	123,3250
+#define MAXPATHLEN 127,3349
+#define	GET_PATH_MAX	131,3419
+#define	PATH_VAR(PATH_VAR132,3449
+#define	NEED_GET_PATH_MAX134,3496
+#define	GET_PATH_MAX	136,3572
+#define	PATH_VAR(PATH_VAR137,3611
+#define	S_ISREG(S_ISREG150,3835
+#define	S_ISDIR(S_ISDIR153,3911
+#define	ANSI_STRING168,4223
+#define	ANSI_STRING173,4319
+#define	index(index193,4676
+#define	rindex(rindex196,4735
+#define bcmp(bcmp200,4795
+#define bzero(bzero203,4865
+#define bcopy(bcopy206,4927
+#define	alloca(alloca234,5394
+#define streq(streq246,5653
+#define strieq(strieq250,5775
+#define strieq(strieq254,5909
+#define streq(streq260,6072
+#define strieq(strieq261,6117
+#define	HASH(HASH265,6238
+#define HASHI(HASHI268,6361
+#define HASHI(HASHI271,6455
+#define	ENUM_BITFIELD(ENUM_BITFIELD275,6546
+#define	ENUM_BITFIELD(ENUM_BITFIELD277,6586
+#define PATH_SEPARATOR_CHAR 281,6663
+#define PATH_SEPARATOR_CHAR 283,6701
+#define pipe(pipe289,6793
+#define kill(kill290,6833
+#define	getcwd(getcwd383,9241
+#define DEBUGPR(DEBUGPR414,10029
+#  define EXIT_FAILURE 420,10197
+#  define EXIT_SUCCESS 423,10252
+#  define EXIT_TROUBLE 426,10307
+#  define EXIT_FAILURE 430,10368
+#  define EXIT_SUCCESS 433,10423
+#  define EXIT_TROUBLE 436,10478
+
+rule.h,51
+struct rulerule21,855
+struct pspecpspec34,1341
+
+variable.h,238
+enum variable_originvariable_origin21,953
+struct variablevariable37,1544
+struct variable_setvariable_set57,2226
+struct variable_set_listvariable_set_list65,2444
+#define	allocated_variable_expand(allocated_variable_expand78,2984
+
+alloca.c,710
+#define ADDRESS_FUNCTION(ADDRESS_FUNCTION65,2010
+#define ADDRESS_FUNCTION(ADDRESS_FUNCTION67,2073
+typedef void *pointer;pointer71,2131
+typedef char *pointer;pointer73,2160
+#define	NULL	77,2204
+#define malloc 91,2675
+#define	STACK_DIRECTION	104,3074
+#define	STACK_DIR	109,3160
+#define	STACK_DIR	114,3331
+find_stack_direction 117,3372
+#define	ALIGN_SIZE	148,4162
+typedef union hdrhdr151,4204
+} header;header159,4410
+alloca 171,4861
+#define CRAY_STACK242,6374
+struct stack_control_headerstack_control_header245,6467
+struct stack_segment_linkagestack_segment_linkage260,7088
+struct stk_statstk_stat298,8186
+struct stk_trailerstk_trailer327,9609
+i00afunc 356,10268
+i00afunc 430,12216
+
+config.h.in,0
+
+remote-cstms.c,231
+#define __STRICT_BSD__	29,1057
+#define	EXPORT_COMMAND	37,1315
+start_remote_job_p 48,1624
+start_remote_job 109,3409
+remote_status 238,7007
+block_remote_children 249,7326
+unblock_remote_children 258,7526
+remote_kill 265,7644
+
+remote-stub.c,209
+remote_setup 30,1001
+remote_cleanup 37,1055
+start_remote_job_p 44,1147
+start_remote_job 57,1609
+remote_status 74,2179
+block_remote_children 86,2516
+unblock_remote_children 95,2716
+remote_kill 102,2834

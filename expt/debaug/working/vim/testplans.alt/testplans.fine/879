@@ -1,0 +1,16 @@
+#!/usr/bin/expect -f
+spawn $env(SUBJECTS_SRC_DIR)/vim-5.8 -u $env(HOME)/.vimrc $env(TESTS_SRC)/copy1
+expect "copy1"
+sleep 1
+send ":se lines=24\r"
+send ":se columns=80\r"
+send ":redir >> ex_7.1.1.out\r"
+send ":?Thisdoesntexist  p 1\r"
+#send "\r"
+send ":redir END\r"
+
+send ":wq\r"
+expect
+exit -onexit {
+interact
+}

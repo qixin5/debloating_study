@@ -1,0 +1,6 @@
+#bash -r
+
+send "$env(BASH_SRC_DIR)/bash-2.05 -r\n"
+send "cd ..\n"
+send "cd -\n"
+send "exit\n"

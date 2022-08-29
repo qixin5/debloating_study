@@ -1,0 +1,9 @@
+#send ":! \r"
+#expect "@"
+#send ":!echo \$SHLVL >> shell_312.1.1.out\r"
+send ":!echo \"\$SHLVL\" >> other_1.1.1.out \r"
+send "\r"
+#expect "@"
+#send "exit\r"
+#expect "+ Stopped"
+

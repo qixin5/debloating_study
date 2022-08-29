@@ -1,0 +1,7 @@
+send ":redir >> move_117.1.1.out\r"
+send "G"
+send "$"
+send "\007"
+send "w" 
+send "\007"
+send ":redir END\r"

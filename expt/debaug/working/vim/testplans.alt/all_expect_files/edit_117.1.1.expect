@@ -1,0 +1,5 @@
+send -- ":redir >> edit_117.1.1.out\r"
+send -- "3\"byw"
+send -- ":reg b\r"
+expect "continue"
+send -- ":redir END\r"

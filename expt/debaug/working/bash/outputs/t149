@@ -1,0 +1,10 @@
+
+ script for the disown feature
+	Jobs at the start1\
+
+kill -9 %20
+now jobs
+disown -r
+jobs after disown -r
+suicide suicide
+cleaning up background jobs

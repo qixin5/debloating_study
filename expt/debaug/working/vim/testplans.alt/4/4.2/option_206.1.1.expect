@@ -1,0 +1,5 @@
+send ":redir >> option_206.1.1.out\r"
+send ":set tbi\r"
+send ":set tbi?\r"
+send ":redir END\r"
+

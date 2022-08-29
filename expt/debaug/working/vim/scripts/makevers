@@ -1,0 +1,29 @@
+#!/usr/bin/perl
+
+$EXPROOT = "$ENV{experiment_root}/vim";
+
+#Directories
+#$VERS_DIR = "$EXPROOT/versions.alt/versions.seeded";
+$VERS_DIR = "$EXPROOT/versions.alt/versions.orig";
+$SRC_DIR = "$EXPROOT/source";
+$BIN_DIR = "$EXPROOT/source/bin";
+
+#Files
+$COMPILE_OUTPUT_FILE = "$EXPROOT/scripts/COMPILE";
+
+#Commands
+$COPY_CMD = "cp -r -p * $SRC_DIR";
+$INSTALL_CMD = "make config > $COMPILE_OUTPUT_FILE 2>&1 && make install >> $COMPILE_OUTPUT_FILE 2>&1";
+
+
+$i = $ARGV[0];
+
+#COPY SOURCE
+	print("Copying:      ".$VERS_DIR."/v".$i."\n");
+	print("     To:      ".$SRC_DIR."\n");
+	`cd $VERS_DIR/v$i && $COPY_CMD`;
+
+#MAKE VERSION
+	print("\nInstalling:   ".$SRC_DIR."\n");
+	print("        To:   ".$BIN_DIR."\n");
+	`cd $SRC_DIR && $INSTALL_CMD`;

@@ -1,0 +1,5 @@
+send ":redir >> option_82.1.1.out\r"
+send ":set iconstring\r"
+send ":set iconstring?\r"
+send ":redir END\r"
+

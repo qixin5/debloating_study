@@ -1,0 +1,9 @@
+send -- "4a"
+
+send -- "Hello"
+send -- "\033"
+sleep 1
+
+
+
+

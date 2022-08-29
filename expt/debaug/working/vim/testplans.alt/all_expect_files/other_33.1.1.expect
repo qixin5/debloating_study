@@ -1,0 +1,8 @@
+send ":set hf=\${vim_doc}/help.txt\r"
+sleep 1
+send ":redir >> other_33.1.1.out\r"
+send ":h\r"
+
+#expect "help.txt"
+send ":redir END\r"
+send ":q!\r"

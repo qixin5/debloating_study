@@ -1,0 +1,7 @@
+send ":redir >> starting_15.3.1.out\r"
+send ":sar\r"
+send ":q\r"
+send ":wq\r"
+#expect "RETURN"
+#send "\r"
+

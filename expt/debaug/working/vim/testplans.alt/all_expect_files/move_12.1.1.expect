@@ -1,0 +1,9 @@
+send ":redir >> move_12.1.1.out\r"
+send "l" 
+send "\007"
+expect "copy1*col"
+send ":redir END\r"
+
+
+
+

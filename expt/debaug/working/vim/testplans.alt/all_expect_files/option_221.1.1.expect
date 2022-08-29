@@ -1,0 +1,5 @@
+send ":redir >> option_221.1.1.out\r"
+send ":set wrap\r"
+send ":set wrap?\r"
+send ":redir END\r"
+

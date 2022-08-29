@@ -1,0 +1,5 @@
+send ":redir >> option_213.1.1.out\r"
+send ":set uc\r"
+send ":set uc?\r"
+send ":redir END\r"
+

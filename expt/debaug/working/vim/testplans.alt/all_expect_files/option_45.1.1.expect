@@ -1,0 +1,6 @@
+send ":redir >> option_45.1.1.out\r"
+send ":set noerrorbells\r"
+
+send ":set noerrorbells?\r"
+send ":redir END\r"
+

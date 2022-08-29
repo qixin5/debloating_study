@@ -1,0 +1,11 @@
+send -- ":redir >> edit_76.1.1.out\r"
+send -- ":dig\r"
+expect "More"
+send -- "\r"
+expect "More"
+send -- "\r"
+expect "More"
+send -- "\r"
+expect "continue"
+send -- ":redir END\r"
+

@@ -1,0 +1,4 @@
+send ":redir >> ex_55.4.1.out\r"
+send "/\\r\r"
+send "\007"
+send ":redir END\r"

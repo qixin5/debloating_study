@@ -1,0 +1,5 @@
+send "i"
+send "New text"
+send "\033"
+send ":1w! starting_29.1.4.out\r"
+

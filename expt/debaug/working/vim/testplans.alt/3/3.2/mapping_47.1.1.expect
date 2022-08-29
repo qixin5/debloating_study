@@ -1,0 +1,8 @@
+send ":redir >> mapping_47.1.1.out\r"
+send ":ab a abbreviate\r"
+send ":ab abb abbreviation\r"
+send ":ab m mappings\r"
+send ":ab\r"
+send ":abc\r"
+send ":ab\r"
+send ":redir END\r"

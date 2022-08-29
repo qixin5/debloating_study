@@ -1,0 +1,11 @@
+send ":"
+send "redir >> move_151.1.1.out \r"
+send "\007"
+send "ge" 
+send "\007"
+send ":"
+send "redir END\r"
+
+
+
+

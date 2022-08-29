@@ -1,0 +1,6 @@
+send ":redir >> option_125.1.1.out\r"
+send ":set mousem\r"
+send ":set mousem?\r"
+
+send ":redir END\r"
+
