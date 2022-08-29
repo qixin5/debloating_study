@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from __future__ import print_function
-import os, subprocess, sys, pwd
+import os, subprocess, sys, pwd, getpass
 
 DRRUN = '../../../tracers/dynamorio/bin64/drrun'
 CLIENT = './logs/libcbr_indcall.so'
@@ -23,6 +23,9 @@ def test_run(option, reduce_file):
     execute(cmd)
 
 def train():
+    uname = getpass.getuser()
+    uname_colon_uname = uname+":"+uname
+    
     execute('rm -fr input')
     execute('cp -r input.origin/I7 input')
     indir = 'input/'
@@ -30,7 +33,7 @@ def train():
     #0
     execute('cp ' +indir+ 'tmpfile ./')
     train_run('root', 'tmpfile')
-    execute('chown -R qxin6:qxin6 tmpfile')
+    execute('chown -R '+uname_colon_uname+' tmpfile')
     execute('rm -fr tmpfile')
 
     #1
@@ -40,15 +43,15 @@ def train():
 
     #2
     execute('cp ' +indir+ 'tmpfile ./')
-    train_run('qxin6:sudo', 'tmpfile')
+    train_run(uname+':sudo', 'tmpfile')
     execute('rm -fr tmpfile')
 
     #3
     execute('cp ' +indir+ 'tmpfile ./')
     execute('ln -s tmpfile tmpfile_symlnk')
     train_run('root:sudo', 'tmpfile_symlnk')
-    execute('chown -R qxin6:qxin6 tmpfile')
-    execute('chown -R qxin6:qxin6 tmpfile_symlnk')
+    execute('chown -R '+uname_colon_uname+' tmpfile')
+    execute('chown -R '+uname_colon_uname+' tmpfile_symlnk')
     execute('unlink tmpfile_symlnk')
     execute('rm -fr tmpfile')
 
@@ -56,25 +59,25 @@ def train():
     execute('cp ' +indir+ 'tmpfile ./')
     execute('ln -s tmpfile tmpfile_symlnk')
     train_run('-h root:sudo', 'tmpfile_symlnk')
-    execute('chown -R qxin6:qxin6 tmpfile')
-    execute('chown -R qxin6:qxin6 tmpfile_symlnk')
+    execute('chown -R '+uname_colon_uname+' tmpfile')
+    execute('chown -R '+uname_colon_uname+' tmpfile_symlnk')
     execute('unlink tmpfile_symlnk')
     execute('rm -fr tmpfile')
 
     #5
     execute('cp ' +indir+ 'tmpfile ./')
-    train_run('--from=guest qxin6', 'tmpfile')
+    train_run('--from=guest '+uname, 'tmpfile')
     execute('rm -fr tmpfile')
     
     #6
     execute('cp ' +indir+ 'tmpfile ./')
-    train_run('--from=root qxin6', 'tmpfile')
-    execute('chown -R qxin6:qxin6 tmpfile')
+    train_run('--from=root '+uname, 'tmpfile')
+    execute('chown -R '+uname_colon_uname+' tmpfile')
     execute('rm -fr tmpfile')
 
     #7
     execute('cp ' +indir+ 'tmpfile ./')
-    train_run('--from=:qxin6 :sudo', 'tmpfile')
+    train_run('--from=:'+uname+' :sudo', 'tmpfile')
     execute('rm -fr tmpfile')
 
     #8
@@ -86,28 +89,28 @@ def train():
     
     #9
     execute('cp -r ' +indir+ 'linux ./')
-    train_run('-R qxin6:sudo', 'linux')
+    train_run('-R '+uname+':sudo', 'linux')
     execute('rm -fr linux')
     
     #10
     execute('cp -r ' +indir+ 'linux ./')
     execute('ln -s linux linux_symlnk')
     train_run('-R root:sudo', 'linux_symlnk')
-    execute('chown -R qxin6:qxin6 linux')
-    execute('chown -R qxin6:qxin6 linux_symlnk')
+    execute('chown -R '+uname_colon_uname+' linux')
+    execute('chown -R '+uname_colon_uname+' linux_symlnk')
     execute('unlink linux_symlnk')
     execute('rm -fr linux')
 
     #11
     execute('cp -r ' +indir+ 'linux ./')
     execute('ln -s linux linux_symlnk')
-    train_run('-R -H qxin6:sudo', 'linux_symlnk')
+    train_run('-R -H '+uname+':sudo', 'linux_symlnk')
     execute('unlink linux_symlnk')
     execute('rm -fr linux')
 
     #12
     execute('cp -r ' +indir+ 'linux ./')
-    train_run('-v -R qxin6:sudo', 'linux')
+    train_run('-v -R '+uname+':sudo', 'linux')
     execute('rm -fr linux')
 
 

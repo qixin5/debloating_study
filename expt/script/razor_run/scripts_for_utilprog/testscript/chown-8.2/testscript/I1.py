@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from __future__ import print_function
-import os, subprocess, sys, pwd
+import os, subprocess, sys, pwd, getpass
 
 DRRUN = '../../../tracers/dynamorio/bin64/drrun'
 CLIENT = './logs/libcbr_indcall.so'
@@ -23,6 +23,9 @@ def test_run(option, reduce_file):
     execute(cmd)
 
 def train():
+    uname = getpass.getuser()
+    uname_colon_uname = uname+":"+uname
+    
     execute('rm -fr input')
     execute('cp -r input.origin/I1 input')
     indir = 'input/'
@@ -30,17 +33,17 @@ def train():
     #0
     execute('cp ' +indir+ 'file1 ./')
     execute('cp -r ' +indir+ 'dir1 ./')
-    train_run('qxin6', 'file1 dir1')
+    train_run(uname, 'file1 dir1')
     execute('rm -fr file1 dir1')
 
     #1
     execute('cp ' +indir+ 'file2 ./')
-    train_run('qxin6:sudo', 'file2')
+    train_run(uname+':sudo', 'file2')
     execute('rm -fr file2')
     
     #2
     execute('cp ' +indir+ 'file3 ./')
-    train_run('qxin6:', 'file3')
+    train_run(uname+':', 'file3')
     execute('rm -fr file3')
 
 

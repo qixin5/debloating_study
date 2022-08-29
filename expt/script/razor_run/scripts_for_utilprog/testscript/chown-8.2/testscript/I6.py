@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from __future__ import print_function
-import os, subprocess, sys, pwd
+import os, subprocess, sys, pwd, getpass
 
 DRRUN = '../../../tracers/dynamorio/bin64/drrun'
 CLIENT = './logs/libcbr_indcall.so'
@@ -23,45 +23,48 @@ def test_run(option, reduce_file):
     execute(cmd)
 
 def train():
+    uname = getpass.getuser()
+    uname_colon_uname = uname+":"+uname
+    
     execute('rm -fr input')
     execute('cp -r input.origin/I6 input')
     indir = 'input/'
     
     #0
     execute('cp ' +indir+ 'while.c ./')
-    train_run('qxin6', 'while.c')
+    train_run(uname, 'while.c')
     execute('rm -fr while.c')
 
     #1
     execute('cp ' +indir+ 'getval.c ./')
     execute('cp ' +indir+ 'global.c ./')
     execute('cp ' +indir+ 'goto.c ./')
-    train_run('qxin6', 'getval.c global.c goto.c')
+    train_run(uname, 'getval.c global.c goto.c')
     execute('rm -fr getval.c global.c goto.c')
 
     #2
     execute('cp ' +indir+ 'c*.* ./')
-    train_run('qxin6', 'caps.c caps.o charm.c charm.h charm.o cm.sh conio.h constant.h cursor.c cursor.o')
+    train_run(uname, 'caps.c caps.o charm.c charm.h charm.o cm.sh conio.h constant.h cursor.c cursor.o')
     execute('rm -fr caps.c caps.o charm.c charm.h charm.o cm.sh conio.h constant.h cursor.c cursor.o')
 
     #3
     execute('cp -r ' +indir+ 'archive ./')
-    train_run('qxin6', './archive')
+    train_run(uname, './archive')
     execute('rm -fr archive')
 
     #4
     execute('cp -r ' +indir+ 'archive ./')
-    train_run('-R qxin6', './archive/')
+    train_run('-R '+uname, './archive/')
     execute('rm -fr archive')
 
     #5
     execute('cp ' +indir+ 'charm.c ./')
-    train_run('qxin6:sudo', 'charm.c')
+    train_run(uname+':sudo', 'charm.c')
     execute('rm -fr charm.c')
 
     #6
     execute('cp ' +indir+ 'caps.c ./')
-    train_run('qxin6:', 'caps.c')
+    train_run(uname+':', 'caps.c')
     execute('rm -fr caps.c')
 
     #7

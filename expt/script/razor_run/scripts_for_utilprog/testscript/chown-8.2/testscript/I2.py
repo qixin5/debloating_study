@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from __future__ import print_function
-import os, subprocess, sys, pwd
+import os, subprocess, sys, pwd, getpass
 
 DRRUN = '../../../tracers/dynamorio/bin64/drrun'
 CLIENT = './logs/libcbr_indcall.so'
@@ -23,19 +23,22 @@ def test_run(option, reduce_file):
     execute(cmd)
 
 def train():
+    uname = getpass.getuser()
+    uname_colon_uname = uname+":"+uname
+    
     execute('rm -fr input')
     execute('cp -r input.origin/I2 input')
     indir = 'input/'
 
     #0
     execute('cp ' +indir+ 'file1 ./')
-    train_run('qxin6', 'file1')
+    train_run(uname, 'file1')
     execute('rm -fr file1')
 
     #1
     execute('cp ' +indir+ 'file1 ./')
     execute('cp -r ' +indir+ 'dir1 ./') 
-    train_run('qxin6', 'file1 dir1')
+    train_run(uname, 'file1 dir1')
     execute('rm -fr file1 dir1')
 
     #2
@@ -45,12 +48,12 @@ def train():
 
     #3
     execute('cp ' +indir+ 'file1 ./')
-    train_run('qxin6:sudo', 'file1')
+    train_run(uname+':sudo', 'file1')
     execute('rm -fr file1')
 
     #4
     execute('cp ' +indir+ 'file1 ./')
-    train_run('qxin6:', 'file1')
+    train_run(uname+':', 'file1')
     execute('rm -fr file1')
 
     #5
@@ -61,29 +64,29 @@ def train():
     #6
     execute('cp ' +indir+ 'file1 ./')
     execute('ln -s file1 symfile1')
-    train_run('qxin6:', 'symfile1')
+    train_run(uname+':', 'symfile1')
     execute('unlink symfile1')
     execute('rm -fr file1')
 
     #7
     execute('cp ' +indir+ 'file1 ./')
     execute('ln -s file1 symfile1')
-    train_run('-h qxin6', 'symfile1')
+    train_run('-h '+uname, 'symfile1')
     execute('unlink symfile1')
     execute('rm -fr file1')
     
     #8
-    train_run('-R qxin6:', '/foo/bar')
-    execute('chown -R qxin6:qxin6 /foo/bar')
+    train_run('-R '+uname+':', '/foo/bar')
+    execute('chown -R '+uname_colon_uname+' /foo/bar')
 
     #9
-    train_run('-hR qxin6:', '/foo/bar')
-    execute('chown -R qxin6:qxin6 /foo/bar')
+    train_run('-hR '+uname+':', '/foo/bar')
+    execute('chown -R '+uname_colon_uname+' /foo/bar')
 
     #10
     execute('cp ' +indir+ 'file1 ./')
     execute('cp ' +indir+ 'file2 ./')
-    execute('chown qxin6:sudo file1')
+    execute('chown '+uname+':sudo file1')
     train_run('--reference=file1', 'file2')
     execute('rm -fr file1 file2')
 

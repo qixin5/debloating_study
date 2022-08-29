@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from __future__ import print_function
-import os, subprocess, sys, pwd
+import os, subprocess, sys, pwd, getpass
 
 DRRUN = '../../../tracers/dynamorio/bin64/drrun'
 CLIENT = './logs/libcbr_indcall.so'
@@ -23,6 +23,9 @@ def test_run(option, reduce_file):
     execute(cmd)
 
 def train():
+    uname = getpass.getuser()
+    uname_colon_uname = uname+":"+uname
+    
     execute('rm -fr input')
     execute('cp -r input.origin/I3 input')
     indir = 'input/'
@@ -30,7 +33,7 @@ def train():
     #0
     execute('cp ' +indir+ '1.txt ./')
     train_run('root', '1.txt')
-    execute('chown -R qxin6:qxin6 1.txt')
+    execute('chown -R '+uname_colon_uname+' 1.txt')
     execute('rm -fr 1.txt')
 
     #1
@@ -40,29 +43,29 @@ def train():
 
     #2
     execute('cp ' +indir+ '1.txt ./')
-    train_run('qxin6:sudo', '1.txt')
+    train_run(uname+':sudo', '1.txt')
     execute('rm -fr 1.txt')
 
     #3
     execute('cp ' +indir+ '1.txt ./')
-    train_run('--from=qxin6 root', '1.txt')
-    execute('chown -R qxin6:qxin6 1.txt')
+    train_run('--from='+uname+' root', '1.txt')
+    execute('chown -R '+uname_colon_uname+' 1.txt')
     execute('rm -fr 1.txt')
 
     #4
     execute('cp ' +indir+ '1.txt ./')
-    train_run('--from=:qxin6 :sudo', '1.txt')
+    train_run('--from=:'+uname+' :sudo', '1.txt')
     execute('rm -fr 1.txt')
     
     #5
     execute('cp -r ' +indir+ 'sample ./')
     train_run('-R root', 'sample/')
-    execute('chown -R qxin6:qxin6 sample')
+    execute('chown -R '+uname_colon_uname+' sample')
     execute('rm -fr sample')
 
     #6
     execute('cp ' +indir+ '1.txt ./')
-    train_run('-f qxin6', '1.txt')
+    train_run('-f '+uname, '1.txt')
     execute('rm -fr 1.txt')
 
     #7
@@ -75,15 +78,15 @@ def train():
 
     #8
     execute('cp ' +indir+ '1.txt ./')
-    train_run('-v qxin6:sudo', '1.txt')
+    train_run('-v '+uname+':sudo', '1.txt')
     execute('rm -fr 1.txt')
 
     #9
     execute('cp ' +indir+ '1.txt ./')
     execute('ln -s 1.txt 1_link.txt')
     train_run('root:root', '1_link.txt')
-    execute('chown -R qxin6:qxin6 1_link.txt')
-    execute('chown -R qxin6:qxin6 1.txt')
+    execute('chown -R '+uname_colon_uname+' 1_link.txt')
+    execute('chown -R '+uname_colon_uname+' 1.txt')
     execute('unlink 1_link.txt')
     execute('rm -fr 1.txt')
 
@@ -91,8 +94,8 @@ def train():
     execute('cp ' +indir+ '1.txt ./')
     execute('ln -s 1.txt 1_link.txt')
     train_run('-h root:sudo', '1_link.txt')
-    execute('chown -R qxin6:qxin6 1_link.txt')
-    execute('chown -R qxin6:qxin6 1.txt')
+    execute('chown -R '+uname_colon_uname+' 1_link.txt')
+    execute('chown -R '+uname_colon_uname+' 1.txt')
     execute('unlink 1_link.txt')
     execute('rm -fr 1.txt')
 
@@ -100,8 +103,8 @@ def train():
     execute('cp -r ' +indir+ 'sample ./')
     execute('ln -s sample/ symbolic_folder')
     train_run('-R root', 'symbolic_folder')
-    execute('chown -R qxin6:qxin6 symbolic_folder')
-    execute('chown -R qxin6:qxin6 sample')
+    execute('chown -R '+uname_colon_uname+' symbolic_folder')
+    execute('chown -R '+uname_colon_uname+' sample')
     execute('unlink symbolic_folder')
     execute('rm -fr sample')
 
@@ -109,15 +112,15 @@ def train():
     execute('cp -r ' +indir+ 'sample ./')
     execute('ln -s sample/ symbolic_folder')
     train_run('-R -H root', 'symbolic_folder')
-    execute('chown -R qxin6:qxin6 symbolic_folder')
-    execute('chown -R qxin6:qxin6 sample')
+    execute('chown -R '+uname_colon_uname+' symbolic_folder')
+    execute('chown -R '+uname_colon_uname+' sample')
     execute('unlink symbolic_folder')
     execute('rm -fr sample')
 
     #13
     execute('cp ' +indir+ '1.txt ./')
     execute('cp ' +indir+ '2.txt ./')
-    train_run('-c qxin6', '1.txt 2.txt')
+    train_run('-c '+uname, '1.txt 2.txt')
     execute('rm -fr 1.txt 2.txt')
 
 

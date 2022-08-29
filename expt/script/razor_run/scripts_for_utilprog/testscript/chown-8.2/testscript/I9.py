@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from __future__ import print_function
-import os, subprocess, sys, pwd
+import os, subprocess, sys, pwd, getpass
 
 DRRUN = '../../../tracers/dynamorio/bin64/drrun'
 CLIENT = './logs/libcbr_indcall.so'
@@ -23,18 +23,21 @@ def test_run(option, reduce_file):
     execute(cmd)
 
 def train():
+    uname = getpass.getuser()
+    uname_colon_uname = uname+":"+uname
+    
     execute('rm -fr input')
     execute('cp -r input.origin/I9 input')
     indir = 'input/'
 
     #0
     execute('cp ' +indir+ 'chownSample.txt ./')
-    train_run('qxin6', 'chownSample.txt')
+    train_run(uname, 'chownSample.txt')
     execute('rm -fr chownSample.txt')
 
     #1
     execute('cp ' +indir+ 'chownSample.txt ./')
-    train_run('qxin6:sudo', 'chownSample.txt')
+    train_run(uname+':sudo', 'chownSample.txt')
     execute('rm -fr chownSample.txt')
     
     #2
@@ -43,43 +46,43 @@ def train():
     execute('rm -fr chownSample.txt')
     
     #3
-    train_run('qxin6', '/TestUnix')
-    execute('chown -R qxin6:qxin6 /TestUnix')
+    train_run(uname, '/TestUnix')
+    execute('chown -R '+uname_colon_uname+' /TestUnix')
 
     #4
     train_run(':sudo', '/TestUnix')
-    execute('chown -R qxin6:qxin6 /TestUnix')
+    execute('chown -R '+uname_colon_uname+' /TestUnix')
 
     #5
-    train_run('qxin6:sudo', '/TestUnix')
-    execute('chown -R qxin6:qxin6 /TestUnix')
+    train_run(uname+':sudo', '/TestUnix')
+    execute('chown -R '+uname_colon_uname+' /TestUnix')
 
     #6
     execute('chmod 755 -R /tmp/TestUnix')
     execute('rm -fr /tmp/TestUnix')
     execute('mkdir /tmp/TestUnix')
     execute('cp ' +indir+ 'chownSample.txt /tmp/TestUnix/')
-    train_run('qxin6:sudo', '/tmp/TestUnix/chownSample.txt /tmp/TestUnix')
+    train_run(uname+':sudo', '/tmp/TestUnix/chownSample.txt /tmp/TestUnix')
     execute('chmod 755 -R /tmp/TestUnix')
     execute('rm -fr /tmp/TestUnix')
 
     #7
     execute('cp ' +indir+ 'chownSample.txt ./')
     execute('ln -s chownSample.txt symlink')
-    train_run('qxin6', 'symlink')
+    train_run(uname, 'symlink')
     execute('unlink symlink')
     execute('rm -fr chownSample.txt')
 
     #8
     execute('cp ' +indir+ 'chownSample.txt ./')
     execute('ln -s chownSample.txt symlink')
-    train_run('-h qxin6', 'symlink')
+    train_run('-h '+uname, 'symlink')
     execute('unlink symlink')
     execute('rm -fr chownSample.txt')
 
     #9
-    train_run('-R qxin6', '/TestUnix')
-    execute('chown -R qxin6:qxin6 /TestUnix')
+    train_run('-R '+uname, '/TestUnix')
+    execute('chown -R '+uname_colon_uname+' /TestUnix')
     
 
 def test():

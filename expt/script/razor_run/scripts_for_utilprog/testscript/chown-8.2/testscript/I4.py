@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from __future__ import print_function
-import os, subprocess, sys, pwd
+import os, subprocess, sys, pwd, getpass
 
 DRRUN = '../../../tracers/dynamorio/bin64/drrun'
 CLIENT = './logs/libcbr_indcall.so'
@@ -23,23 +23,26 @@ def test_run(option, reduce_file):
     execute(cmd)
 
 def train():
+    uname = getpass.getuser()
+    uname_colon_uname = uname+":"+uname
+    
     execute('rm -fr input')
     execute('cp -r input.origin/I4 input')
     indir = 'input/'
 
     #0
     execute('cp ' +indir+ 'file1.txt ./')
-    train_run('qxin6', 'file1.txt')
+    train_run(uname, 'file1.txt')
     execute('rm -fr file1.txt')
 
     #1
     execute('cp ' +indir+ 'file1.txt ./')
-    train_run('-c qxin6', 'file1.txt')
+    train_run('-c '+uname, 'file1.txt')
     execute('rm -fr file1.txt')
 
     #2
     execute('cp ' +indir+ 'file1.txt ./')
-    train_run('-v qxin6', 'file1.txt')
+    train_run('-v '+uname, 'file1.txt')
     execute('rm -fr file1.txt')
 
     #3
@@ -49,19 +52,19 @@ def train():
 
     #4
     execute('cp ' +indir+ 'greek1 ./')
-    train_run('-v qxin6:sudo', 'greek1')
+    train_run('-v '+uname+':sudo', 'greek1')
     execute('rm -fr greek1')
 
     #5
     execute('cp ' +indir+ 'greek1 ./')
-    train_run('-v --from=qxin6 root', 'greek1')
-    execute('chown -R qxin6:qxin6 greek1')
+    train_run('-v --from='+uname+' root', 'greek1')
+    execute('chown -R '+uname_colon_uname+' greek1')
     execute('rm -fr greek1')
 
     #6
     execute('cp ' +indir+ 'greek1 ./')
-    train_run('-v --from=:qxin6 root', 'greek1')
-    execute('chown -R qxin6:qxin6 greek1')
+    train_run('-v --from=:'+uname+' root', 'greek1')
+    execute('chown -R '+uname_colon_uname+' greek1')
     execute('rm -fr greek1')
 
     #7
@@ -74,7 +77,7 @@ def train():
     #8
     execute('cp ' +indir+ 'greek2 ./')
     execute('cp ' +indir+ 'greek3 ./')
-    train_run('-c qxin6:sudo', 'greek2 greek3')
+    train_run('-c '+uname+':sudo', 'greek2 greek3')
     execute('rm -fr greek2 greek3')
 
 

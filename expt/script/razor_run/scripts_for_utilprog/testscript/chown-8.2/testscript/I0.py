@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from __future__ import print_function
-import os, subprocess, sys, pwd
+import os, subprocess, sys, pwd, getpass
 
 DRRUN = '../../../tracers/dynamorio/bin64/drrun'
 CLIENT = './logs/libcbr_indcall.so'
@@ -23,18 +23,21 @@ def test_run(option, reduce_file):
     execute(cmd)
 
 def train():
+    uname = getpass.getuser()
+    uname_colon_uname = uname+":"+uname
+    
     execute('rm -fr input')
     execute('cp -r input.origin/I0 input')
     indir = 'input/'
 
     #0
     execute('cp ' +indir+ 'demo.txt ./')
-    train_run('qxin6', 'demo.txt')
+    train_run(uname, 'demo.txt')
     execute('rm -fr demo.txt')
 
     #1
     execute('cp ' +indir+ 'demo.txt ./')
-    train_run('qxin6:qxin6', 'demo.txt')
+    train_run(uname_colon_uname, 'demo.txt')
     execute('rm -fr demo.txt')
 
     #2
@@ -49,15 +52,15 @@ def train():
 
     #4
     train_run('root', '/foo')
-    execute('chown -R qxin6:qxin6 /foo')
+    execute('chown -R '+uname_colon_uname+' /foo')
 
     #5
     train_run('root:sudo', '/foo')
-    execute('chown -R qxin6:qxin6 /foo')
+    execute('chown -R '+uname_colon_uname+' /foo')
 
     #6
     train_run('-R root', '/foo')
-    execute('chown -R qxin6:qxin6 /foo')
+    execute('chown -R '+uname_colon_uname+' /foo')
 
 
 def test():

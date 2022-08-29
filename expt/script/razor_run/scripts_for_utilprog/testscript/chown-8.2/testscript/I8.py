@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from __future__ import print_function
-import os, subprocess, sys, pwd
+import os, subprocess, sys, pwd, getpass
 
 DRRUN = '../../../tracers/dynamorio/bin64/drrun'
 CLIENT = './logs/libcbr_indcall.so'
@@ -23,59 +23,62 @@ def test_run(option, reduce_file):
     execute(cmd)
 
 def train():
+    uname = getpass.getuser()
+    uname_colon_uname = uname+":"+uname
+    
     execute('rm -fr input')
     execute('cp -r input.origin/I8 input')
     indir = 'input/'
 
     #0
     execute('cp ' +indir+ 'myfile.txt ./')
-    train_run('qxin6', 'myfile.txt')
+    train_run(uname, 'myfile.txt')
     execute('rm -fr myfile.txt')
 
     #1
     execute('cp ' +indir+ 'myfile.txt ./')
-    train_run('qxin6:sudo', 'myfile.txt')
+    train_run(uname+':sudo', 'myfile.txt')
     execute('rm -fr myfile.txt')
 
     #2
     execute('cp -r ' +indir+ 'otherfiles ./')
-    train_run('-R qxin6:qxin6', 'otherfiles')
+    train_run('-R '+uname_colon_uname, 'otherfiles')
     execute('rm -fr otherfiles')
 
     #3
     execute('cp ' +indir+ 'file.txt ./')
-    train_run('qxin6', 'file.txt')
+    train_run(uname, 'file.txt')
     execute('rm -fr file.txt')
 
     #4
     execute('cp ' +indir+ 'file1 ./')
     execute('cp ' +indir+ 'file2 ./')
     execute('cp ' +indir+ 'file3 ./')
-    train_run('qxin6', 'file1 file2 file3')
+    train_run(uname, 'file1 file2 file3')
     execute('rm -fr file1')
     execute('rm -fr file2')
     execute('rm -fr file3')    
 
     #5
     execute('cp -r ' +indir+ 'myfiles ./')
-    train_run('qxin6', 'myfiles')
+    train_run(uname, 'myfiles')
     execute('rm -fr myfiles')
 
     #6
     execute('cp -r ' +indir+ 'myfiles ./')
-    train_run('-R qxin6', 'myfiles')
+    train_run('-R '+uname, 'myfiles')
     execute('rm -fr myfiles')
 
     #7
     execute('cp ' +indir+ 'file1 ./')
     execute('cp ' +indir+ 'file2 ./')    
-    train_run('qxin6:sudo', 'file1 file2')
+    train_run(uname+':sudo', 'file1 file2')
     execute('rm -fr file1')
     execute('rm -fr file2')
     
     #8
     execute('cp ' +indir+ 'file1 ./')
-    train_run('qxin6:', 'file1')
+    train_run(uname+':', 'file1')
     execute('rm -fr file1')
     
     #9
@@ -95,7 +98,7 @@ def train():
 
     #12
     execute('cp -r ' +indir+ 'Documents ./')
-    train_run('-R qxin6:qxin6', 'Documents')
+    train_run('-R '+uname_colon_uname, 'Documents')
     execute('rm -fr Documents')
 
     #13
@@ -108,7 +111,7 @@ def train():
     execute('cp -r ' +indir+ 'file1 ./')
     execute('cp -r ' +indir+ 'file2 ./')
     execute('cp -r ' +indir+ 'file3 ./')
-    train_run('qxin6', 'file1 file2 file3')
+    train_run(uname, 'file1 file2 file3')
     execute('rm -fr file1 file2 file3')
 
 
