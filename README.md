@@ -10,6 +10,7 @@ This is the artifact associated with the paper "Studying and Understanding the T
 - **docker**: This directory contains the docker file for building a docker image of the testing environment.
 - **expt**: This directory contains testing data and scripts used for debloating.
 - **setup.sh**: This file contains code needed for experimental setup.
+- **build_chisel_debop_from_source.sh**: The script used to build Chisel and Debop from source.
 
 ## Installation
 
