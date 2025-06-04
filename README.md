@@ -16,6 +16,8 @@ This is the artifact associated with the paper "Studying and Understanding the T
 
 Please refer to [INSTALL.md](INSTALL.md).
 
+If you want to use clang-15 instead of clang-9, please refer to the instructions in [for_clang_15/README.md](for_clang_15/README.md).
+
 ## Tools
 
 Please refer to [here](https://github.com/qixin5/debaug) for the debloating tools we developed (i.e., Cov, CovA, and CovF). Please follow [INSTALL.md](INSTALL.md) to install and test the tools.

@@ -21,8 +21,8 @@ cd ../debaug/$BENCH/$PROGNAME || exit 1
 
 GCOV_ANAL_BIN=${DEBAUG_DIR}/bin/gcovanalyzer
 LCOV2GCOV_BIN=${DEBAUG_DIR}/bin/lcov2gcov
-bash_test_script=${DEBSTUDY_DIR}/script/rdsfuzz_sirprog/fuzzscript_used_by_bash/fuzzscript.sh
-vim_test_script=${DEBSTUDY_DIR}/script/rdsfuzz_sirprog/fuzzscript_used_by_vim/fuzzscript.sh
+bash_test_script=${DEBSTUDY_DIR}/expt/script/rdsfuzz_sirprog/fuzzscript_used_by_bash/fuzzscript.sh
+vim_test_script=${DEBSTUDY_DIR}/expt/script/rdsfuzz_sirprog/fuzzscript_used_by_vim/fuzzscript.sh
 
 CURRDIR=$(pwd) #Program's working dir
 
