@@ -4,7 +4,7 @@ SRC=$1
 BIN=$2
 flags=$3
 
-flags="${flags} -L/home/qxin6/debaug_expt/debaug/benchmark/bash-2.05_template/lib"
+flags="${flags} -L $DEBSTUDY_DIR/expt/debaug/benchmark/bash-2.05/lib"
 
 if [ -z $4 ]; then
     COMPILER=clang #Default
