@@ -10,5 +10,5 @@ else
   cp $INDIR/testdir/file3.z $OUTFILE || echo "$0: cp to output dir failed";
 fi
 
-/home/qxin6/debaug_expt/debaug/benchmark/gzip-1.3_template/testscript/util/cleanup.sh $INDIR
+$DEBSTUDY_DIR/expt/debaug/benchmark/gzip-1.3/testscript/util/cleanup.sh $INDIR
 

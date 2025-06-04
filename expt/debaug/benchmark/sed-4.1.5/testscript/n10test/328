@@ -5,5 +5,5 @@ OUTDIR=$2
 TIMEOUT=$3
 INDIR=$4
 
-timeout -k 9 ${TIMEOUT}s $BIN -e 's/dog/cat/' < /home/qxin6/debaug_expt/debaug/working/sed/inputs/stdin.in > $OUTDIR/o328 2>&1
+timeout -k 9 ${TIMEOUT}s $BIN -e 's/dog/cat/' < $INDIR/stdin.in > $OUTDIR/o328 2>&1
 

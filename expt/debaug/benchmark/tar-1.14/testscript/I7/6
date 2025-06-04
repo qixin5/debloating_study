@@ -9,7 +9,7 @@ cp -r $INDIR/myarchive.tar ./
 mkdir tmp
 CURRDIR=$(pwd)
 
-{ timeout -k 9 ${TIMEOUT}s $BIN -xvf $CURRDIR/myarchive.tar -C tmp home/qxin6/debaug_expt/debaug/benchmark/tar-1.14_template/input.origin/I7/anaconda-ks.cfg; } &>$OUTDIR/o6
+{ timeout -k 9 ${TIMEOUT}s $BIN -xvf $CURRDIR/myarchive.tar -C tmp home/qxin6/debaug_expt/debaug/benchmark/tar-1.14/input.origin/I7/anaconda-ks.cfg; } &>$OUTDIR/o6
 
 echo "$?" >>$OUTDIR/o6
 
@@ -17,7 +17,7 @@ if [ -f tmp/default.profraw ]; then
     cp tmp/default.profraw ./
 fi
 
-diff tmp/home/qxin6/debaug_expt/debaug/benchmark/tar-1.14_template/input.origin/I7/anaconda-ks.cfg $INDIR/anaconda-ks.cfg >>$OUTDIR/o6
+diff tmp/home/qxin6/debaug_expt/debaug/benchmark/tar-1.14/input.origin/I7/anaconda-ks.cfg $INDIR/anaconda-ks.cfg >>$OUTDIR/o6
 echo "$?" >>$OUTDIR/o6
 
 

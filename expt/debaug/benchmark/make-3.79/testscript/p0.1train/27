@@ -9,7 +9,7 @@ CURRDIR=$(pwd)
 cp -r -p $INDIR/sdir2 ./sdir
 cd sdir
 timeout -k 9 ${TIMEOUT}s $BIN -f $INDIR/makefile-1a -i -p -w > $OUTDIR/o27 2>&1
-${DEBSTUDY_DIR}/expt/debaug/benchmark/make-3.79_template/testscript/util/rm-makestuff -p $OUTDIR/o27
+${DEBSTUDY_DIR}/expt/debaug/benchmark/make-3.79/testscript/util/rm-makestuff -p $OUTDIR/o27
 ${DEBAUG_DIR}/bin/makeoutputcleanup $OUTDIR/o27
 if [ -f default.profraw ]; then
     mv default.profraw ${CURRDIR}/

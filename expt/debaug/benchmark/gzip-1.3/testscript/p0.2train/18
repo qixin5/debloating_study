@@ -7,4 +7,4 @@ INDIR=$4
 
 timeout -k 9 ${TIMEOUT}s $BIN $INDIR/testdir/file19 -6  > $OUTDIR/o18 2>&1
 
-/home/qxin6/debaug_expt/debaug/benchmark/gzip-1.3_template/testscript/util/cpopt6.sh $INDIR $OUTDIR/o18
+$DEBSTUDY_DIR/expt/debaug/benchmark/gzip-1.3/testscript/util/cpopt6.sh $INDIR $OUTDIR/o18

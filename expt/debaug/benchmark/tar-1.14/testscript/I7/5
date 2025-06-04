@@ -16,10 +16,10 @@ if [ -f tmp/default.profraw ]; then
     cp tmp/default.profraw ./
 fi
 
-diff tmp/home/qxin6/debaug_expt/debaug/benchmark/tar-1.14_template/input.origin/I7/etc/file $INDIR/etc/file
+diff tmp/home/qxin6/debaug_expt/debaug/benchmark/tar-1.14/input.origin/I7/etc/file $INDIR/etc/file
 echo "$?" >>$OUTDIR/o5
 
-diff tmp/home/qxin6/debaug_expt/debaug/benchmark/tar-1.14_template/input.origin/I7/anaconda-ks.cfg $INDIR/anaconda-ks.cfg
+diff tmp/home/qxin6/debaug_expt/debaug/benchmark/tar-1.14/input.origin/I7/anaconda-ks.cfg $INDIR/anaconda-ks.cfg
 echo "$?" >>$OUTDIR/o5
 
 

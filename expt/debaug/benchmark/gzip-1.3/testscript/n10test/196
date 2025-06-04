@@ -5,8 +5,8 @@ OUTDIR=$2
 TIMEOUT=$3
 INDIR=$4
 
-/home/qxin6/debaug_expt/debaug/benchmark/gzip-1.3_template/testscript/util/longfilename.sh $INDIR $OUTDIR/o196
+$DEBSTUDY_DIR/expt/debaug/benchmark/gzip-1.3/testscript/util/longfilename.sh $INDIR $OUTDIR/o196
 
 timeout -k 9 ${TIMEOUT}s $BIN $INDIR/length/abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcde  > $OUTDIR/o196 2>&1
 
-/home/qxin6/debaug_expt/debaug/benchmark/gzip-1.3_template/testscript/util/cplongname.sh $INDIR $OUTDIR/o196
+$DEBSTUDY_DIR/expt/debaug/benchmark/gzip-1.3/testscript/util/cplongname.sh $INDIR $OUTDIR/o196
