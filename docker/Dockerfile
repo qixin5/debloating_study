@@ -14,10 +14,12 @@ RUN sudo ln -s /usr/bin/clang-9 /usr/bin/clang && \
     sudo ln -s /usr/bin/llvm-profdata-9 /usr/bin/llvm-profdata && \
     sudo ln -s /usr/bin/opt-9 /usr/bin/opt
 
+RUN sudo useradd -m -s /bin/bash -u 1000 qxin6
 
-ENV DEBSTUDY_DIR /debloating_study
-ENV DEBAUG_DIR /debloating_study/tools/debaug
-ENV ROPGDT_DIR /debloating_study/tools/ROPgadget
-ENV CHISEL_DIR /debloating_study/tools/chisel
-ENV DEBOP_DIR /debloating_study/tools/debop
-ENV RAZOR_DIR /debloating_study/tools/razor
+
+ENV DEBSTUDY_DIR=/debloating_study
+ENV DEBAUG_DIR=/debloating_study/tools/debaug
+ENV ROPGDT_DIR=/debloating_study/tools/ROPgadget
+ENV CHISEL_DIR=/debloating_study/tools/chisel
+ENV DEBOP_DIR=/debloating_study/tools/debop
+ENV RAZOR_DIR=/debloating_study/tools/razor
