@@ -7,3 +7,6 @@ INDIR=$4
 
 timeout -k 9 ${TIMEOUT}s $BIN 091619552014 &>$OUTDIR/o2
 echo "$?" >>$OUTDIR/o2
+
+# Wait for auto synchronization to reset the system time
+sleep 10
